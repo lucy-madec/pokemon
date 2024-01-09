@@ -28,8 +28,9 @@ class Menu:
                 x =(self.screen_width - L_img_logo)//2
                 y = (self.screen_height - H_img_logo)//2
                 self.screen.blit(img_logo, (x, y))
-
                 
+
+
             else:
                 break
 
