@@ -15,20 +15,25 @@ class Menu:
     def display_menu(self):
         running = True
         start_time = time.time()
+        police = pygame.font.Font("Pokemon Classic",50)
+        black = (255,255,255)
+        orange = (255,103,2)
         while running:
             white = "#ffffff"
-            self.screen.fill(white)
+            self.screen.fill(orange)
             current_time = time.time()
             elapsed_time = current_time - start_time
             
             if elapsed_time < 2 :
-                img_logo =  pygame.image.load("images/images-menu/menu1.png").convert_alpha()
+                prenom = ("Ines Lucy Vanny")
+                texte_prenom = police.render(prenom,True,black)
+                self.screen.blit(texte_prenom,(300,400))                
+                img_logo =  pygame.image.load("images/images-menu/menu1.png").convert()
                 L_img_logo, H_img_logo = img_logo.get_size()
                 img_logo = pygame.transform.scale(img_logo, (L_img_logo,H_img_logo))
                 x =(self.screen_width - L_img_logo)//2
                 y = (self.screen_height - H_img_logo)//2
                 self.screen.blit(img_logo, (x, y))
-                
 
 
             else:
@@ -80,6 +85,6 @@ class Menu:
         self.options_menu()
         pygame.quit()
 
-if __name__ == "__main__":
-    menu = Menu()
-    menu.run()
+
+menu = Menu()
+menu.run()
