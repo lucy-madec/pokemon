@@ -41,33 +41,29 @@ def afficher_options(screen):
     
     img_back = pygame.image.load("images/images-menu/menu2.jpg").convert()
 
+    font_menu = pygame.font.Font(None, 36) 
+
+    options = ["PLAY", "ADD POKEMON", "POKEDEX", "QUIT"]
   
 
     while running:      
 
         white = "#ffffff"
-        grey = "#3c3c3c"
-        option_radius = 10
         screen.blit(img_back, (0,0)) 
-        font = pygame.font.Font(None, 30)
       
-        menu_play = font.render("PLAY", True, grey)
-        menu_add = font.render("ADD POKEMON", True, grey)
-        menu_pokedex = font.render("POKEDEX", True, grey)
-        menu_quit = font.render("QUIT", True, grey)
-        
-        pygame.draw.rect(screen, white, (50, 100, 200, 50), border_radius=option_radius)
-        screen.blit(menu_play, (60, 110))
+        pygame.draw.rect(screen, white, (50, 100, 200, 50))
+        pygame.draw.rect(screen, white, (50, 200, 200, 50))
+        pygame.draw.rect(screen, white, (50, 300, 200, 50))
+        pygame.draw.rect(screen, white, (50, 400, 200, 50))
 
-        pygame.draw.rect(screen, white, (50, 200, 200, 50), border_radius=option_radius)
-        screen.blit(menu_add, (60, 210))
+        for i, option_text in enumerate(options):
 
-        pygame.draw.rect(screen, white, (50, 300, 200, 50), border_radius=option_radius)
-        screen.blit(menu_pokedex, (60, 310))
+            text_render = font_menu.render(option_text, True, (0, 0, 0))  # Couleur du texte: noir
+            text_rect = text_render.get_rect(center=(screen_width // 2, 125 + i * 150))  # Position du texte centré
 
-        pygame.draw.rect(screen, white, (50, 400, 200, 50), border_radius=option_radius)
-        screen.blit(menu_quit, (60, 410))
+            screen.blit(text_render, text_rect)
 
+        # Code pour gérer les interactions avec les options du menu ici
 
         # Pour l'exemple, quittez le jeu si la touche "Escape" est pressée
         for event in pygame.event.get():
