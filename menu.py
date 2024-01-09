@@ -44,11 +44,10 @@ class Menu:
 
             pygame.display.flip()
             self.clock.tick(60)
-        
             
     def options_menu(self): 
         running = True
-        img_back = pygame.image.load("images/images-menu/menu2.jpg").convert()
+        img_back = pygame.image.load("images/images-menu/menu2.jpg").convert_alpha()
 
         white = "#ffffff"
         grey = "#3c3c3c"            
@@ -59,10 +58,8 @@ class Menu:
         rect_play = pygame.Rect(50, 100, 200, 50)
         rect_add = pygame.Rect(50, 200, 200, 50)
         rect_pokedex = pygame.Rect(50, 300, 200, 50)
-        rect_quit = pygame.Rect(50, 400, 200, 50)
+        rect_quit = pygame.Rect(50, 400, 200, 50)       
         
-        
-                        
         while running:  
 
             self.screen.blit(img_back, (0,0)) 
@@ -126,6 +123,7 @@ class Menu:
                         running = False
         
             pygame.display.update()
+            pygame.display.flip()
             self.clock.tick(60)
 
     def run(self):
