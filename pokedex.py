@@ -6,19 +6,22 @@ pygame.init()
 # Paramètres
 largeur_fenetre = 800
 hauteur_fenetre = 600
-taille_image = 100
+taille_image = 800
 
 # Initialisation de la fenêtre
 fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
 pygame.display.set_caption("Défilement d'images")
 
 # Chargement des images
-images = [
-    pygame.image.load("images\images-pokedex\pokedex107.png"),
-    pygame.image.load("images\images-pokedex\pokedex106.png"),
-    pygame.image.load("images\images-pokedex\pokedex108.png"),
-    # Ajoutez autant d'images que nécessaire
-]
+
+img_pokedex1 = pygame.image.load("images\images-pokedex\pokedex107.png").convert_alpha()
+img_pokedex2 = pygame.image.load("images\images-pokedex\pokedex106.png").convert_alpha()
+img_pokedex3 = pygame.image.load("images\images-pokedex\pokedex108.png").convert_alpha()
+
+img_pokedex1 = pygame.transform.scale(img_pokedex1,(800,600))
+img_pokedex2 = pygame.transform.scale(img_pokedex2,(800,600))
+img_pokedex3 = pygame.transform.scale(img_pokedex3,(800,600))
+images = [(img_pokedex1),(img_pokedex2),(img_pokedex3)]
 
 # Position initiale
 position_x = 0
