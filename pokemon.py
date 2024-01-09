@@ -8,4 +8,4 @@ class Pokemon:
         self.defense = defense
 
     def display_pokemon(self):
-        return
+        
