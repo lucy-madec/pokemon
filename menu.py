@@ -47,7 +47,7 @@ class Menu:
             
     def options_menu(self): 
         running = True
-        img_back = pygame.image.load("images/images-menu/menu2.jpg").convert_alpha()
+        img_back = pygame.image.load("images/images-menu/menu2.png").convert()
 
         white = "#ffffff"
         grey = "#3c3c3c"            
