@@ -11,21 +11,11 @@ class Menu:
         self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
         pygame.display.set_caption("Pokémon")
         self.clock = pygame.time.Clock()
-
-    def display_texte(self, texte, couleur, x, y):
-        police_menu = pygame.font.Font("Arial", 30)
-        texte_surface = police_menu.render(texte, True, couleur)
-        self.screen.blit(texte_surface, (x, y))
     
     def display_menu(self):
-        
         running = True
         start_time = time.time()
-        police = pygame.font.Font(None, 36)
-        
         while running:
-            black = (255, 255, 255)
-            font_options = pygame.font.Font(None, 30)
             white = "#ffffff"
             self.screen.fill(white)
             current_time = time.time()
@@ -38,18 +28,8 @@ class Menu:
                 x =(self.screen_width - L_img_logo)//2
                 y = (self.screen_height - H_img_logo)//2
                 self.screen.blit(img_logo, (x, y))
-
-                name1 = font_options.render("Pikachu", True, black)
-                name2 = font_options.render("Charmander", True, black)
-                name3 = font_options.render("Bulbasaur", True, black)
-
                 
 
-                display_texte(self, "Ines Lorquet, Lucy Madec, Vanny Lamorte", black, 300, 150)
-
-                self.screen.blit(name1, (x, y))
-                self.screen.blit(name2, (x, y))
-                self.screen.blit(name3, (x, y))
 
             else:
                 break
@@ -98,7 +78,8 @@ class Menu:
     def run(self):
         self.display_menu()
         self.options_menu()
-        pygame.quit()    
+        pygame.quit()
 
-menu = Menu()
-menu.run()
+if __name__ == "__main__":
+    menu = Menu()
+    menu.run()
