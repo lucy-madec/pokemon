@@ -1,36 +1,36 @@
 import pygame,sys
-
 class Pokemon:
-    def __init__(self, width, height): 
-        pygame.init()
-        self.width = width
-        self.height = height
-        self.window_size = (self.width, self.height)
 
-        # Initialisation de Pygame
+    def __init__(self):
         pygame.init()
-
-        # Création de la fenêtre
-        self.window = pygame = pygame.display.set_mode(self.window_size)
-        pygame.display.set_caption("Ma fenêtre Pygame")
+        self.screen_width = 800
+        self.screen_height = 600
+        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
+        pygame.display.set_caption("Pokémon")
+        self.clock = pygame.time.Clock()
     
-    def main_loop(self):
-        while True:
+    def display_game(self):
+        running = True
+        background_image = pygame.image.load("images/images-partie/pokedex105.jpg").convert()
+
+        while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    self.quit_game()
+                    running = False
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        running = False
+            
+            self.screen.blit(background_image, (0, 0)) # Affiche l'image en position
 
-            # Remplissage de la fenêtre avec un fond blanc
-            self.window.fill((255, 255, 255))
-
-            # Rafraîchissement de l'affichage
             pygame.display.flip()
+            self.clock.tick(60)
+    
+    def run(self):
+        self.display_game()
 
-    def quit_game(self):
         pygame.quit()
-        sys.exit()
 
-# Utilisation de la classe
 if __name__ == "__main__":
-    pygame_window = Pokemon(800, 600)
-    pygame_window.main_loop()
+    game = Pokemon()
+    game.run()
