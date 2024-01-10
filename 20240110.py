@@ -10,20 +10,17 @@ class Menu:
         self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
         pygame.display.set_caption("Pokémon")
         self.clock = pygame.time.Clock()
-        self.white = "#ffffff"
-        self.grey = "#3c3c3c"   
-        self.orange = "#ff6702"
-        self.black = "#0e0f10"
-        
     
     def display_menu(self):
         running = True
         start_time = time.time()
-        police_menu = pygame.font.Font("Pokemon Classic.ttf",10)              
+        police_menu = pygame.font.Font("Pokemon Classic.ttf",10)
+        orange = (255,103, 2)        
+        black =  (0, 0, 0)
 
         while running:
 
-            self.screen.fill(self.orange)
+            self.screen.fill(orange)
             current_time = time.time()
             elapsed_time = current_time - start_time
             
@@ -31,7 +28,7 @@ class Menu:
 
                 # Afficher prénoms
                 prenom = "By  Ines Lorquet - Lucy Madec - Vanny Lamorte"
-                texte_prenom = police_menu.render(prenom, True, self.black)
+                texte_prenom = police_menu.render(prenom, True, black)
                 self.screen.blit(texte_prenom,(220,410))             
 
                 # Afficher background
@@ -52,8 +49,8 @@ class Menu:
         running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
 
-        # white = "#ffffff"
-        # grey = "#3c3c3c"            
+        white = "#ffffff"
+        grey = "#3c3c3c"            
 
         option_radius = 10
 
@@ -68,52 +65,52 @@ class Menu:
             self.screen.blit(img_back, (0,0)) 
             font = pygame.font.Font("Pixeled.ttf", 16)
 
-            menu_play = font.render("PLAY", True, self.grey)
-            menu_add = font.render("ADD POKEMON", True, self.grey)
-            menu_pokedex = font.render("POKEDEX", True, self.grey)
-            menu_quit = font.render("QUIT", True, self.grey)
+            menu_play = font.render("PLAY", True, grey)
+            menu_add = font.render("ADD POKEMON", True, grey)
+            menu_pokedex = font.render("POKEDEX", True, grey)
+            menu_quit = font.render("QUIT", True, grey)
                        
-            pygame.draw.rect(self.screen, self.white, (50, 100, 200, 50), border_radius=option_radius)
+            pygame.draw.rect(self.screen, white, (50, 100, 200, 50), border_radius=option_radius)
             self.screen.blit(menu_play,(125, 100))
 
-            pygame.draw.rect(self.screen, self.white, (50, 200, 200, 50), border_radius=option_radius)
+            pygame.draw.rect(self.screen, white, (50, 200, 200, 50), border_radius=option_radius)
             self.screen.blit(menu_add,(70, 200))
 
-            pygame.draw.rect(self.screen, self.white, (50, 300, 200, 50), border_radius=option_radius)
+            pygame.draw.rect(self.screen, white, (50, 300, 200, 50), border_radius=option_radius)
             self.screen.blit(menu_pokedex,(95, 300))
 
-            pygame.draw.rect(self.screen, self.white, (50, 400, 200, 50), border_radius=option_radius)
+            pygame.draw.rect(self.screen, white, (50, 400, 200, 50), border_radius=option_radius)
             self.screen.blit(menu_quit,(120, 400)) 
 
-            pygame.draw.rect(self.screen, self.white,(310, 100, 440, 350), border_radius=option_radius)
+            pygame.draw.rect(self.screen, white,(310, 100, 440, 350), border_radius=option_radius)
                               
             # Effet hoover au passage de la souris
             if rect_play.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_play.inflate(10, 10), border_radius=option_radius)
+                pygame.draw.rect(self.screen, white, rect_play.inflate(10, 10), border_radius=option_radius)
                 self.screen.blit(menu_play, (125, 100))
             else:
-                pygame.draw.rect(self.screen, self.white, rect_play, border_radius=option_radius)
+                pygame.draw.rect(self.screen, white, rect_play, border_radius=option_radius)
                 self.screen.blit(menu_play, (125, 100))
 
             if rect_add.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_add.inflate(10, 10), border_radius=option_radius)
+                pygame.draw.rect(self.screen, white, rect_add.inflate(10, 10), border_radius=option_radius)
                 self.screen.blit(menu_add, (70, 200))
             else:
-                pygame.draw.rect(self.screen, self.white, rect_add, border_radius=option_radius)
+                pygame.draw.rect(self.screen, white, rect_add, border_radius=option_radius)
                 self.screen.blit(menu_add, (70, 200))
 
             if rect_pokedex.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_pokedex.inflate(10, 10), border_radius=option_radius)
+                pygame.draw.rect(self.screen, white, rect_pokedex.inflate(10, 10), border_radius=option_radius)
                 self.screen.blit(menu_pokedex, (95, 300))
             else:
-                pygame.draw.rect(self.screen, self.white, rect_pokedex, border_radius=option_radius)
+                pygame.draw.rect(self.screen, white, rect_pokedex, border_radius=option_radius)
                 self.screen.blit(menu_pokedex, (95, 300))
 
             if rect_quit.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_quit.inflate(10, 10), border_radius=option_radius)
+                pygame.draw.rect(self.screen, white, rect_quit.inflate(10, 10), border_radius=option_radius)
                 self.screen.blit(menu_quit, (120, 400))
             else:
-                pygame.draw.rect(self.screen, self.white, rect_quit, border_radius=option_radius)
+                pygame.draw.rect(self.screen, white, rect_quit, border_radius=option_radius)
                 self.screen.blit(menu_quit, (120, 400))
 
 
