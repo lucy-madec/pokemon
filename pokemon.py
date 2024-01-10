@@ -1,68 +1,51 @@
+from global_def import Global
 import pygame,sys
-class Pokemon:
+
+class Pokemon(Global):
 
     def __init__(self):
-        pygame.init()
-        self.screen_width = 800
-        self.screen_height = 600
-        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
-        pygame.display.set_caption("Pokémon")
-        self.clock = pygame.time.Clock()
+        Global.__init__(self)
     
-    def display_game(self):
-        running = True
-        background_image = pygame.image.load("images/images-partie/pokedex105.jpg").convert()
+    # Faire le Background
+    def background(self):
+        self.img_back("Background", "images/images-partie/pokedex105.jpg")
 
-        # Couleurs
-        white = (255, 255, 255)
-        black = (0, 0, 0)
-
-        # Rectangle et texte
         rect_width, rect_height = 200, 50
         rect_x = self.screen_width - rect_width - 10
         rect_y = 10
         
-        option_radius = 10
+        # Dessiner le rectangle avec les coins arrondis
+        pygame.draw.rect(self.screen, self.white, (rect_x, rect_y, rect_width, rect_height), border_radius=10)
 
+        # Ajouter du texte centré dans le rectangle
+        font = pygame.font.Font(None, 30)
+        text = font.render("QUIT", True, self.black)
+        text_rect = text.get_rect(center=(rect_x + rect_width //2, rect_height //2))
+        self.screen.blit(text, text_rect)
 
-        while running:
+        # Récupérer de la position de la souris
+        mouse_x, mouse_y, = pygame.mouse.get_pos()
+
+        # Vérifier si le clic de la souris est à l'intérieur du rectangle
+        if rect_x < mouse_x < rect_x + rect_width and rect_y < mouse_y < rect_y + rect_height:
+            pygame.draw.rect(self.screen, (200, 200, 200), (rect_x, rect_y, rect_width, rect_height), border_radius=10)
+
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        running = False
-                elif event.type == pygame.MOUSEBUTTONDOWN:
-                    # Récupération de la position de la souris
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-
-                    # Vérification si le clic de la souris est à l'intérieur du rectangle
-                    if rect_x < mouse_x < rect_x + rect_width and rect_y < mouse_y < rect_y + rect_height:
-                        running = False
-            
-            self.screen.blit(background_image, (0, 0))
-            
-            # Dessin du rectangle avec les coins arrondis
-            pygame.draw.rect(self.screen, white, (rect_x, rect_y, rect_width, rect_height), border_radius=option_radius)
-
-            # Vérification si la souris est sur le rectangle
-            mouse_x, mouse_y = pygame.mouse.get_pos()
-            if rect_x < mouse_x < rect_x + rect_width and rect_y < mouse_y < rect_y + rect_height:
-                pygame.draw.rect(self.screen, (200, 200, 200), (rect_x, rect_y, rect_width, rect_height), border_radius=option_radius)
-
-            # Ajout du texte centré dans le rectangle
-            font = pygame.font.Font(None, 30)
-            text = font.render("QUIT", True, black)
-            text_rect = text.get_rect(center=(rect_x + rect_width //2, rect_height //2))
-            self.screen.blit(text, text_rect)
-
-
-            pygame.display.flip()
-            self.clock.tick(60)
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    # Si le bouton gauche de la souris est cliqué, quitter le programme
+                    if event.button == 1:
+                        pygame.quit()
+                        sys.exit()
     
     def run(self):
-        self.display_game()
-
+        self.running = True
+        while self.running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.running = False
+            self.background()
+            pygame.display.flip()
+            self.clock.tick(30)
         pygame.quit()
 
 if __name__ == "__main__":
