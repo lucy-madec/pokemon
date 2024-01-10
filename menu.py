@@ -1,12 +1,13 @@
 # Importer les modules
 from global_def import Global
+from pokedex import Pokedex
 
 import pygame, time
 
-class Menu(Global): 
+class Menu(Global, Pokedex): 
 
     def __init__(self): 
-        Global.__init__(self)
+        super().__init__()    
 
     
     def display_menu(self):
@@ -25,8 +26,8 @@ class Menu(Global):
                 # Afficher prénoms
                 self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
 
-                # Afficher background
-                self.img_back("img","images/images-menu/menu1.png")
+                # Afficher background forêt
+                self.img_back("img_forest","images/images-menu/menu1.png")
 
             else:
                 break
@@ -35,48 +36,47 @@ class Menu(Global):
             self.clock.tick(60)
             
     def options_menu(self): 
-        running = True
+        running = True      
+
+        # Afficher logo Pokemon
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
 
-        # white = "#ffffff"
-        # grey = "#3c3c3c"            
-
-        option_radius = 10
-
         # Créer le hoover
-        rect_play = pygame.Rect(50, 100, 200, 50)
+        rect_play = pygame.Rect(50, 100, 200, 50)        
         rect_add = pygame.Rect(50, 200, 200, 50)
         rect_pokedex = pygame.Rect(50, 300, 200, 50)
         rect_quit = pygame.Rect(50, 400, 200, 50)       
         
-        while running:  
+        while running: 
+
+            option_radius = 10
 
             self.screen.blit(img_back, (0,0)) 
             font = pygame.font.Font("Pixeled.ttf", 16)
-
             menu_play = font.render("PLAY", True, self.grey)
             menu_add = font.render("ADD POKEMON", True, self.grey)
             menu_pokedex = font.render("POKEDEX", True, self.grey)
             menu_quit = font.render("QUIT", True, self.grey)
-                       
-            pygame.draw.rect(self.screen, self.white, (50, 100, 200, 50), border_radius=option_radius)
+
+            self.rect_radius(10, self.white,50, 100, 200, 50)  
             self.screen.blit(menu_play,(125, 100))
 
-            pygame.draw.rect(self.screen, self.white, (50, 200, 200, 50), border_radius=option_radius)
+            self.rect_radius(10, self.white, 50, 200, 200, 50) 
             self.screen.blit(menu_add,(70, 200))
 
-            pygame.draw.rect(self.screen, self.white, (50, 300, 200, 50), border_radius=option_radius)
+            self.rect_radius(10, self.white,50, 300, 200, 50)   
             self.screen.blit(menu_pokedex,(95, 300))
 
-            pygame.draw.rect(self.screen, self.white, (50, 400, 200, 50), border_radius=option_radius)
+            self.rect_radius(10, self.white,50, 400, 200, 50)  
             self.screen.blit(menu_quit,(120, 400)) 
 
-            pygame.draw.rect(self.screen, self.white,(310, 100, 440, 350), border_radius=option_radius)
-                              
+            self.rect_radius(10, self.white,310, 100, 440, 350) 
+
             # Effet hoover au passage de la souris
             if rect_play.collidepoint(pygame.mouse.get_pos()):
                 pygame.draw.rect(self.screen, self.white, rect_play.inflate(10, 10), border_radius=option_radius)
                 self.screen.blit(menu_play,(125, 100))
+                
             else:
                 pygame.draw.rect(self.screen, self.white, rect_play, border_radius=option_radius)
                 self.screen.blit(menu_play,(125, 100))
@@ -89,7 +89,7 @@ class Menu(Global):
                 self.screen.blit(menu_add, (70, 200))
 
             if rect_pokedex.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_pokedex.inflate(10, 10), border_radius=option_radius)
+                pygame.draw.rect(self.screen, self.white, rect_pokedex.inflate(10, 10), border_radius =option_radius)
                 self.screen.blit(menu_pokedex, (95, 300))
             else:
                 pygame.draw.rect(self.screen, self.white, rect_pokedex, border_radius=option_radius)
