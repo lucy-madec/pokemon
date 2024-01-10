@@ -1,6 +1,6 @@
 import pygame
 class Global:
-    
+
     def __init__(self):
         pygame.init()
         self.screen_width = 800
@@ -18,18 +18,18 @@ class Global:
         self.police_p1 = pygame.font.Font("Pixeled.ttf", 16)
 
     #def text  
-    def text_c1(self,text, coulor, x, y):
-        text_surface = self.police_c2.render(text, True, coulor)
+    def text_c1(self,text, color, x, y):
+        text_surface = self.police_c2.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
-        
-    def text_c2(self,text, coulor, x, y):
-        text_surface = self.police_c1.render(text, True, coulor)
+
+    def text_c2(self,text, color, x, y):
+        text_surface = self.police_c1.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
-        
-    def text_p1(self,text, coulor, x, y):
-        text_surface = self.police_p1.render(text, True, coulor)
+
+    def text_p1(self,text, color, x, y):
+        text_surface = self.police_p1.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
-    
+
     #def image
     def img_back(self,name,path,x,y):
         name =  pygame.image.load(path).convert_alpha()
