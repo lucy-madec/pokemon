@@ -19,11 +19,11 @@ class Global:
 
     #def text  
     def text_c1(self,text, color, x, y):
-        text_surface = self.police_c2.render(text, True, color)
+        text_surface = self.police_c1.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
 
     def text_c2(self,text, color, x, y):
-        text_surface = self.police_c1.render(text, True, color)
+        text_surface = self.police_c2.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
 
     def text_p1(self,text, color, x, y):
@@ -31,16 +31,26 @@ class Global:
         self.screen.blit(text_surface, (x, y))
 
     #def image
-    def img_back(self,name,path,x,y):
+    def img_pokemon(self,name,path,a,b,x,y,):
+        name = pygame.image.load(path)
+        name = name.convert_alpha()
+        name = pygame.transform.scale(name,(a,b))        
+        self.screen.blit(name,(x,y))
+        
+    def img_back(self,name,path):
         name =  pygame.image.load(path).convert_alpha()
         L_name, H_name = name.get_size()
-        img_logo = pygame.transform.scale(img_logo, (L_name,H_name))
+        name = pygame.transform.scale(name, (L_name,H_name))
         x =(self.screen_width - L_name)//2
         y = (self.screen_height - H_name)//2
         self.screen.blit(name, (x, y))
     
-    def img_pokemon(self,name,path,x,y):
-        pass
+    #radius
+    def rect_radius(self,radius,color,x1,y1,x2,y2):
+        r = radius
+        pygame.draw.rect(self.screen,color,(x1,y1,x2,y2),border_radius = r)
+        
+    
 
         
     

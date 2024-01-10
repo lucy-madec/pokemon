@@ -1,5 +1,5 @@
 # Importer les modules
-from global.py import Global
+from global_def import Global
 
 import pygame, time
 
@@ -7,7 +7,7 @@ class Menu(Global):
 
     def __init__(self): 
         Global.__init__(self)
-        
+
     
     def display_menu(self):
         running = True
@@ -20,21 +20,14 @@ class Menu(Global):
             current_time = time.time()
             elapsed_time = current_time - start_time
             
-            if elapsed_time < 2 :
+            if elapsed_time < 2:
 
                 # Afficher prénoms
-                prenom = "By  Ines Lorquet - Lucy Madec - Vanny Lamorte"
-                texte_prenom = police_menu.render(prenom, True, self.black)
-                self.screen.blit(texte_prenom,(220,410))             
+                self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
 
                 # Afficher background
-                img_logo =  pygame.image.load("images/images-menu/menu1.png").convert_alpha()
-                L_img_logo, H_img_logo = img_logo.get_size()
-                img_logo = pygame.transform.scale(img_logo, (L_img_logo,H_img_logo))
-                x =(self.screen_width - L_img_logo)//2
-                y = (self.screen_height - H_img_logo)//2
-                self.screen.blit(img_logo, (x, y))
-                
+                self.img_back("img","images/images-menu/menu1.png")
+
             else:
                 break
 
@@ -83,14 +76,14 @@ class Menu(Global):
             # Effet hoover au passage de la souris
             if rect_play.collidepoint(pygame.mouse.get_pos()):
                 pygame.draw.rect(self.screen, self.white, rect_play.inflate(10, 10), border_radius=option_radius)
-                self.screen.blit(menu_play, (125, 100))
+                self.screen.blit(menu_play,(125, 100))
             else:
                 pygame.draw.rect(self.screen, self.white, rect_play, border_radius=option_radius)
-                self.screen.blit(menu_play, (125, 100))
+                self.screen.blit(menu_play,(125, 100))
 
             if rect_add.collidepoint(pygame.mouse.get_pos()):
                 pygame.draw.rect(self.screen, self.white, rect_add.inflate(10, 10), border_radius=option_radius)
-                self.screen.blit(menu_add, (70, 200))
+                self.screen.blit(menu_add,(70, 200))
             else:
                 pygame.draw.rect(self.screen, self.white, rect_add, border_radius=option_radius)
                 self.screen.blit(menu_add, (70, 200))
