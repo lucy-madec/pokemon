@@ -14,10 +14,10 @@ class Global:
         self.black = "#0e0f10"
         self.blue = "#375daa"
         self.police_c1 = pygame.font.Font("Pokemon Classic.ttf",10)
-        self.police_c2 = pygame.font.Font("Pokemon Classic.ttf",15)        
+        self.police_c2 = pygame.font.Font("Pokemon Classic.ttf",15)  
+        self.police_c3 = pygame.font.Font("Pokemon Classic.ttf",50)      
         self.police_p1 = pygame.font.Font("Pixeled.ttf", 16)
-
-    #def text  
+#def text  
     def text_c1(self,text, color, x, y):
         text_surface = self.police_c1.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
@@ -26,11 +26,15 @@ class Global:
         text_surface = self.police_c2.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
 
+    def text_c3(self,text, color, x, y):
+        text_surface = self.police_c3.render(text, True, color)
+        self.screen.blit(text_surface, (x, y))
+
     def text_p1(self,text, color, x, y):
         text_surface = self.police_p1.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
 
-    #def image
+#def image
     def img_pokemon(self,name,path,a,b,x,y,):
         name = pygame.image.load(path)
         name = name.convert_alpha()
@@ -45,10 +49,20 @@ class Global:
         y = (self.screen_height - H_name)//2
         self.screen.blit(name, (x, y))
     
-    #radius
+# def rectangle
+        
+        # Rectangle 
+    def rect(self,nom, x1,y1,x2,y2):   
+        nom = pygame.Rect(x1,y1,x2,y2)
+
+              # Rectangle Radius
     def rect_radius(self,radius,color,x1,y1,x2,y2):
         r = radius
         pygame.draw.rect(self.screen,color,(x1,y1,x2,y2),border_radius = r)
+
+
+
+
         
     
 
