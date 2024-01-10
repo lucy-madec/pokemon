@@ -24,7 +24,6 @@ class Pokedex:
         background = background.convert()
         self.screen.blit(background, (0,0))
 
-
     def pokemon(self):
         radius = 10
         white = "#ffffff"
@@ -65,18 +64,9 @@ class Pokedex:
         salamèche = pygame.transform.scale(salamèche,(120,129))        
         self.screen.blit(salamèche, (245,442))
         self.l_text("salamèche",black,245,535)
-        
-        # L_pikachu, H_pikachu = pikachu.get_size()
-        # x =(self.screen_width - L_pikachu)//2
-        # y = (self.screen_height - H_pikachu)//2
-        # self.screen.blit(pikachu, (x, y))
-        
+         
         pygame.display.update()
         pygame.display.flip()
-
-
-
-
 
 
     def run(self):
