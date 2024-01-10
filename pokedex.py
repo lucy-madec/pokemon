@@ -1,50 +1,68 @@
+from global_def import Global
 import pygame
-import sys
 
-pygame.init()
+class Pokedex(Global):
+    def __init__(self):
+        Global.__init__(self)
 
-# Paramètres
-largeur_fenetre = 800
-hauteur_fenetre = 600
-taille_image = 800
+        
+    def background(self):
+        background = pygame.image.load('images\images-pokedex\pokedex1020.png')
+        background = background.convert()
+        self.screen.blit(background, (0,0))
 
-# Initialisation de la fenêtre
-fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
-pygame.display.set_caption("Défilement d'images")
 
-# Chargement des images
+    def pokemon(self):
+        self.rect_radius(10,self.white,200, 40, 440, 80)
+        self.text_c1("POKEDEX",self.black,230,30)
 
-img_pokedex1 = pygame.image.load("images\images-pokedex\pokedex107.png").convert_alpha()
-img_pokedex2 = pygame.image.load("images\images-pokedex\pokedex106.png").convert_alpha()
-img_pokedex3 = pygame.image.load("images\images-pokedex\pokedex108.png").convert_alpha()
+        #Créer rectangles haut
+        self.rect_radius(10,self.white,20, 250, 170, 120)
+        self.rect_radius(10,self.white,220, 250, 170, 120)
+        self.rect_radius(10,self.white,420, 250, 170, 120)
+        self.rect_radius(10,self.white,620, 250, 170, 120)
+    
+        #Créer rectangles bas
+        self.rect_radius(10,self.white,20, 450, 170, 120)
+        self.rect_radius(10,self.white,220, 450, 170, 120)
+        self.rect_radius(10,self.white,420, 450, 170, 120)
+        self.rect_radius(10,self.white,620, 250, 170, 120)
+         
+        self.rect_radius(10,self.white,20, 250, 170, 120)
+        #Afficher pokemon pikachu
+        self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',110,119,45,245)
+        self.text_c2("pikachu",self.black,60,345)
 
-img_pokedex1 = pygame.transform.scale(img_pokedex1,(800,600))
-img_pokedex2 = pygame.transform.scale(img_pokedex2,(800,600))
-img_pokedex3 = pygame.transform.scale(img_pokedex3,(800,600))
-images = [(img_pokedex1),(img_pokedex2),(img_pokedex3)]
+        #Afficher pokemon posipi
+        self.img_pokemon("posipi",'images\images-pokedex\pokedex3.png',115,119,45,440)
+        self.text_c2("posipi",self.black,70,545)
 
-# Position initiale
-position_x = 0
+        #Afficher pokemon pyroli
+        self.img_pokemon("pyroli",'images\images-pokedex\pokedex4.png',120,129,245,242)
+        self.text_c2("posipi",self.black,270,345)
 
-# Boucle principale
-clock = pygame.time.Clock()  # Ajout d'une horloge pour réguler la vitesse
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RIGHT:
-                # Défilement vers la droite
-                position_x += taille_image
+        #Afficher pokemon noctali
+        self.img_pokemon("noctali",'images\images-pokedex\pokedex6.png',150,159,425,422)
+        self.text_c2("noctali",self.black,465,545)
 
-    # Affichage des images
-    fenetre.fill((255, 255, 255))  # Fond blanc
-    for image in images:
-        fenetre.blit(image, (position_x, hauteur_fenetre // 2 - taille_image // 2))
-        position_x += taille_image
+        #Afficher pokemon salamèche
+        self.img_pokemon("salamèche",'images\images-pokedex\pokedex5.png',120,129,255,422)
+        self.text_c2("salamèche",self.black,245,545)
 
-    position_x = 0  # Réinitialise la position_x après avoir affiché toutes les images
+        pygame.display.update()
+        pygame.display.flip()
 
-    pygame.display.flip()
-    clock.tick(30)  # Limite la vitesse à 30 images par seconde
+    def run(self):
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+            self.background()
+            self.pokemon()
+            pygame.display.flip()
+            self.clock.tick(30)
+        pygame.quit()
+            
+pokedex1 = Pokedex()
+pokedex1.run()
