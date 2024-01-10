@@ -1,19 +1,12 @@
 # Importer les modules
+from global.py import Global
+
 import pygame, time
 
-class Menu: 
+class Menu(Global): 
 
     def __init__(self): 
-        pygame.init()
-        self.screen_width = 800
-        self.screen_height = 600
-        self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
-        pygame.display.set_caption("Pokémon")
-        self.clock = pygame.time.Clock()
-        self.white = "#ffffff"
-        self.grey = "#3c3c3c"   
-        self.orange = "#ff6702"
-        self.black = "#0e0f10"
+        Global.__init__(self)
         
     
     def display_menu(self):
