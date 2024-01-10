@@ -1,7 +1,5 @@
 # Importer les modules
 from global_def import Global
-
-
 import pygame, time
 
 class Menu(Global): 
@@ -9,30 +7,21 @@ class Menu(Global):
     def __init__(self): 
         Global.__init__(self)
     
-    def display_menu(self):
-        running = True
+    def display_name_background (self):
         start_time = time.time()
-        police_menu = pygame.font.Font("Pokemon Classic.ttf",10)              
-
-        while running:
-
+        while True:
             self.screen.fill(self.orange)
             current_time = time.time()
             elapsed_time = current_time - start_time
-            
             if elapsed_time < 2:
-
-                # Afficher prénoms
                 self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
-
-                # Afficher background forêt
-                self.img_back("img_forest","images/images-menu/menu1.png")
-
+                self.img_back("img_forest", "images/images-menu/menu1.png")
             else:
                 break
-
             pygame.display.flip()
             self.clock.tick(60)
+
+    def animated_image = pygame.image.load
             
     def options_menu(self): 
         running = True      
@@ -49,13 +38,12 @@ class Menu(Global):
         while running: 
 
             option_radius = 10
-
             self.screen.blit(img_back, (0,0)) 
-            font = pygame.font.Font("Pixeled.ttf", 16)
-            menu_play = font.render("PLAY", True, self.grey)
-            menu_add = font.render("ADD POKEMON", True, self.grey)
-            menu_pokedex = font.render("POKEDEX", True, self.grey)
-            menu_quit = font.render("QUIT", True, self.grey)
+            
+            menu_play = self.police_p1.render("PLAY", True, self.grey)
+            menu_add = self.police_p1.render("ADD POKEMON", True, self.grey)
+            menu_pokedex = self.police_p1.render("POKEDEX", True, self.grey)
+            menu_quit = self.police_p1.render("QUIT", True, self.grey)
 
             self.rect_radius(10, self.white,50, 100, 200, 50)  
             self.screen.blit(menu_play,(125, 100))
@@ -101,8 +89,8 @@ class Menu(Global):
                 pygame.draw.rect(self.screen, self.white, rect_quit, border_radius=option_radius)
                 self.screen.blit(menu_quit, (120, 400))
 
-
         # Quittez avec "Escape"
+                
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
@@ -115,7 +103,7 @@ class Menu(Global):
             self.clock.tick(60)
 
     def run(self):
-        self.display_menu()
+        self.display_name_background()
         self.options_menu()
         pygame.quit()
 
