@@ -1,6 +1,7 @@
 # Importer les modules
 from global_def import Global
 
+
 import pygame, time
 
 class Menu(Global): 
@@ -72,7 +73,7 @@ class Menu(Global):
 
             # Effet hoover au passage de la souris
             if rect_play.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_play.inflate(10, 10), border_radius=option_radius)           
+                pygame.draw.rect(self.screen, self.white, rect_play.inflate(10, 10), border_radius=option_radius)
                 self.screen.blit(menu_play,(125, 100))
                 
             else:
