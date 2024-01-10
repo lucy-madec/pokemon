@@ -1,14 +1,19 @@
 # Importer les modules
 from global_def import Global
-from pokedex import Pokedex
+# from play import Play1
+# from pokedex import Pokedex
+import pygame, time , sys
 
-import pygame, time
-
-class Menu(Global, Pokedex): 
+class Menu(Global): 
 
     def __init__(self): 
         super().__init__()    
-
+    def play(self):
+        pass
+    def add_pokemon(self):
+        pass
+    def pokedex(self):
+        pass
     
     def display_menu(self):
         running = True
@@ -16,39 +21,33 @@ class Menu(Global, Pokedex):
         police_menu = pygame.font.Font("Pokemon Classic.ttf",10)              
 
         while running:
-
             self.screen.fill(self.orange)
             current_time = time.time()
             elapsed_time = current_time - start_time
-            
-            if elapsed_time < 2:
-
-                # Afficher prénoms
-                self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
-
-                # Afficher background forêt
-                self.img_back("img_forest","images/images-menu/menu1.png")
-
-            else:
+            if elapsed_time <= 2:
                 break
+
+            # Afficher prénoms
+            self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
+
+            # Afficher background forêt
+            self.img_back("img_forest","images/images-menu/menu1.png")
 
             pygame.display.flip()
             self.clock.tick(60)
             
-    def options_menu(self): 
+    def options_menu(self):
         running = True      
 
         # Afficher logo Pokemon
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
 
         # Créer le hoover
-        rect_play = pygame.Rect(50, 100, 200, 50)        
+        rect_play = pygame.Rect(50, 100, 200, 50)      
         rect_add = pygame.Rect(50, 200, 200, 50)
         rect_pokedex = pygame.Rect(50, 300, 200, 50)
-        rect_quit = pygame.Rect(50, 400, 200, 50)       
-        
-        while running: 
-
+        rect_quit = pygame.Rect(50, 400, 200, 50)
+        while running:
             option_radius = 10
 
             self.screen.blit(img_back, (0,0)) 
@@ -102,22 +101,40 @@ class Menu(Global, Pokedex):
                 pygame.draw.rect(self.screen, self.white, rect_quit, border_radius=option_radius)
                 self.screen.blit(menu_quit, (120, 400))
 
-
-        # Quittez avec "Escape"
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         running = False
-        
             pygame.display.update()
             pygame.display.flip()
             self.clock.tick(60)
 
+# Quittez avec "Escape"
     def run(self):
         self.display_menu()
         self.options_menu()
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+                    sys.exit()
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_pos = pygame.mouse.get_pos()
+                    if self.rect_play.collidepoint(mouse_pos):
+                        print("ok")
+                    elif self.rect_add.collidepoint(mouse_pos): 
+                        print("okay")
+                        # self.Add_pokemon1()                    
+                    elif self.rect_pokedex.collidepoint(mouse_pos):
+                        print("oki")
+                        # self.Pokedex1()
+                            
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        running = False 
         pygame.quit()
 
 menu = Menu()
