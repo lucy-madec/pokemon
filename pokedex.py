@@ -1,11 +1,12 @@
 from global_def import Global
+from pikachu import Pikachu
 import pygame
 
 class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
+        self.pikachu = Pikachu()
 
-        
     def background(self):
         background = pygame.image.load('images\images-pokedex\pokedex1020.png')
         background = background.convert()
@@ -38,7 +39,7 @@ class Pokedex(Global):
 
         #Afficher pokemon pyroli
         self.img_pokemon("pyroli",'images\images-pokedex\pokedex4.png',120,129,245,242)
-        self.text_c2("posipi",self.black,270,345)
+        self.text_c2("pyroli",self.black,270,345)
 
         #Afficher pokemon noctali
         self.img_pokemon("noctali",'images\images-pokedex\pokedex6.png',150,159,425,422)
@@ -67,17 +68,76 @@ class Pokedex(Global):
         pygame.display.update()
         pygame.display.flip()
 
+
+        
     def run(self):
         running = True
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+            #Test cliques sur les rect
+                #Fleche
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(740, 375, 50, 70)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False
+
+                #Rectangle du haut        
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(20, 250, 170, 120)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        self.pikachu.pikachu_run()
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(220, 250, 170, 120)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(420, 250, 170, 120)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(620, 250, 170, 120)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False
+
+                #Rectangle du bas        
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(20, 450, 170, 120)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(220, 450, 170, 120)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(420, 450, 170, 120)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(420, 450, 170, 120)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(620, 450, 170, 120)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False     
+                                                                                    
             self.background()
             self.pokemon()
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
-            
+
 pokedex1 = Pokedex()
 pokedex1.run()
