@@ -8,23 +8,80 @@ class Pokedex(Global):
         Global.__init__(self)
         self.pikachu = Pikachu()
         self.menu = Pikachu()
-
+        self.lst_name = []
+        
     def background(self):
         background = pygame.image.load('images\images-pokedex\pokedex1020.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
-    
+        self.rect_radius(10,self.white,200, 40, 440, 80)
+        self.text_c3("POKEDEX",self.black,230,30)
+
     def button_back(self):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("BACK", self.black, 733, 13)
         pygame.display.update()
         pygame.display.flip()
 
-
-    def pokemon(self):
+    def ajout_pokemon(self): 
+        self.background()
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c3("POKEDEX",self.black,230,30)
 
+        
+        #Créer rectangles haut
+        self.rect_radius(10,self.white,20, 250, 170, 120)
+        self.rect_radius(10,self.white,220, 250, 170, 120)
+        self.rect_radius(10,self.white,420, 250, 170, 120)
+        self.rect_radius(10,self.white,620, 250, 170, 120)
+
+        #Créer rectangles bas
+        self.rect_radius(10,self.white,20, 450, 170, 120)
+        self.rect_radius(10,self.white,220, 450, 170, 120)
+        self.rect_radius(10,self.white,420, 450, 170, 120)
+        self.rect_radius(10,self.white,620, 450, 170, 120)
+        
+        #boutton changer de page
+        self.rect_radius(10,self.yellow,20, 380, 50, 60)
+        pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
+        
+        for name in self.lst_name:
+            if name == "Floravol":
+                self.img_pokemon("pikachu",'images\images-pokedex\pokedex3.png',110,119,45,245)
+                self.text_c2("pikachu",self.black,60,345)
+                
+            if name == "Psykokwak":
+                self.img_pokemon("posipi",'images\images-pokedex\pokedex3.png',115,119,45,440)
+                self.text_c2("posipi",self.black,70,545)
+                
+            if name == "Rondoudou":
+                self.img_pokemon("posipi",'images\images-pokedex\pokedex3.png',115,119,45,440)
+                self.text_c2("posipi",self.black,70,545)
+                
+            if name == "Luxio":
+                self.img_pokemon("noctali",'images\images-pokedex\pokedex6.png',150,159,425,422)
+                self.text_c2("noctali",self.black,465,548)
+                
+            if name == "":
+                self.img_pokemon("salamèche",'images\images-pokedex\pokedex5.png',120,129,255,422)
+                self.text_c2("salamèche",self.black,245,545)
+                
+            if name == "":
+                self.img_pokemon("medhyena",'images\images-pokedex\pokedex7.png',290,299,570,300)
+                self.text_c2("medhyena",self.black,655,545)
+                
+            if name == "":
+                self.img_pokemon("dracaufeu",'images\images-pokedex\pokedex8.png',130,139,455,223)
+                self.text_c2("dracaufeu",self.black,445,347)
+                
+            if name == "":
+                self.img_pokemon("caninos",'images\images-pokedex\pokedex9.png',110,119,640,235)
+                self.text_c2("caninos",self.black,655,347)
+
+            pygame.display.update()
+            pygame.display.flip()
+            
+    def pokemon(self):
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
         self.rect_radius(10,self.white,220, 250, 170, 120)
@@ -70,9 +127,8 @@ class Pokedex(Global):
         self.text_c2("caninos",self.black,655,347)
         
         #boutton changer de page
-        self.rect_radius(10,self.white,740, 375, 50, 70)
-        pygame.draw.lines(self.screen,self.black,True, ((770,410),(750,390),(750,430)),5)
-        
+        self.rect_radius(10,self.yellow,740, 380, 50, 60)
+        pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
         pygame.display.update()
         pygame.display.flip()
 
@@ -81,18 +137,32 @@ class Pokedex(Global):
 
     def run(self):
         running = True
+        poke2 = False
+
+        self.button_back()
+        self.background()
+        self.pokemon()
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-            #Test cliques sur les rect
-                #Fleche
+
+            #Test cliques sur les rectangles
+                #Fleche droite           
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(740, 375, 50, 70)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        running = False
-
+                        poke2 = True
+                    if poke2 == True:
+                        self.ajout_pokemon()
+                #Fleche gauche
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(20, 380, 50, 60)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        self.pokemon()
+                        
                 #Rectangle du haut        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -147,10 +217,11 @@ class Pokedex(Global):
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.menu.pikachu()
                         running = False
-            self.button_back()
-            self.background()
-            self.pokemon()
+
+
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
 
+test1 = Pokedex()
+test1.pokedex_run()
