@@ -13,6 +13,10 @@ class Pokemon(Global):
     def button_quit(self):
         self.rect_radius(10, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
+    
+    def button_back(self):
+        self.rect_radius(10, self.white, 700, 10, 70, 25)
+        self.text_c1("QUIT", self.black, 733, 13)
 
     def run(self):
         self.running = True
