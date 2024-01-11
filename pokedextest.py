@@ -22,13 +22,13 @@ class Pokedex(Global):
         self.rect_radius(10,self.white,220, 250, 170, 120)
         self.rect_radius(10,self.white,420, 250, 170, 120)
         self.rect_radius(10,self.white,620, 250, 170, 120)
-    
+
         #Créer rectangles bas
         self.rect_radius(10,self.white,20, 450, 170, 120)
         self.rect_radius(10,self.white,220, 450, 170, 120)
         self.rect_radius(10,self.white,420, 450, 170, 120)
         self.rect_radius(10,self.white,620, 450, 170, 120)
-        
+
         #Afficher pokemon pikachu
         self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',110,119,45,245)
         self.text_c2("pikachu",self.black,60,345)
