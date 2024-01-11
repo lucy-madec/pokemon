@@ -2,7 +2,7 @@
 from global_def import Global
 from test1 import Test1
 from test2 import Test2
-from pokedex_ancien import Pokedex
+from pokedex import Pokedex
 import pygame, time, sys
 
 class Menu(Global): 
@@ -12,11 +12,7 @@ class Menu(Global):
         self.play = Test1()
         self.add_pokemon = Test2()
         self.pokedex = Pokedex() 
-
-    def menu_run(self):        
-        self.display_name_background() 
-        self.options_menu()       
-    
+         
     def display_name_background (self):
         start_time = time.time()
         while True:
@@ -52,6 +48,8 @@ class Menu(Global):
             self.screen.blit(img_back, (0, 0))
 
             for i, (rect, text) in enumerate(zip(option_rects, option_texts)):
+
+
                 self.draw_menu_option(rect, text, (125 if i != 1 else 70, 100 + i * 100))
 
             self.rect_radius(10, self.white, 310, 100, 440, 350)
@@ -83,7 +81,10 @@ class Menu(Global):
             
             self.clock.tick(60)
 
-    
+    def run(self):        
+        self.display_name_background() 
+        self.options_menu() 
+
 
 menu = Menu()
-menu.menu_run()
+menu.run()
