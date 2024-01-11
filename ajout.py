@@ -13,6 +13,7 @@ class Pokedex(Global):
         self.screen.blit(background, (0,0))
 
     def pokemon(self):
+        
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c1("AJOUTER VOTRE POKÉMON",self.black,230,30)
 
@@ -57,7 +58,7 @@ class Pokedex(Global):
         self.text_c2("dracaufeu",self.black,445,347)
         
         #Afficher pokemon caninos
-        self.img_pokemon("caninos",'images/images-play/Rondoudou.png',10,119,640,235)
+        self.img_pokemon("caninos",'images/images-play/Rondoudou.png',110,119,640,235)
         self.text_c2("caninos",self.black,655,347)
         
         #boutton changer de page
