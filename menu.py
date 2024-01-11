@@ -2,8 +2,7 @@
 from global_def import Global
 from test1 import Test1
 from test2 import Test2
-from pokedextest import Pokedex
-
+from pokedex import Pokedex
 import pygame, time, sys
 
 class Menu(Global): 
@@ -21,7 +20,7 @@ class Menu(Global):
     def display_name_background (self):
         start_time = time.time()
         while True:
-            self.screen.fill(self.orange)
+            self.screen.fill(self.white)
             current_time = time.time()
             elapsed_time = current_time - start_time
             if elapsed_time < 2:
@@ -78,8 +77,8 @@ class Menu(Global):
                                 pygame.quit()
                                 sys.exit()
                             running = False 
-                               
-      
+
+
                 pygame.display.update()
                 pygame.display.flip()
             
