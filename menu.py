@@ -39,7 +39,6 @@ class Menu(Global):
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
         self.screen.blit(menu_text, pos)     
     
-
     def options_menu(self): 
         running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
