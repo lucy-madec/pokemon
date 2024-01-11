@@ -2,18 +2,16 @@
 from global_def import Global
 from test1 import Test1
 from test2 import Test2
-from pokedex_ancien import Pokedex
+from pokedex_am import Pokedex
 import pygame, time, sys
 
 class Menu(Global): 
     def __init__(self): 
         Global.__init__(self)
         self.pokedex = Pokedex()
-
-    def menu_run(self):        
-        self.display_name_background() 
-        self.options_menu()       
-    
+        self.play = Test1
+        self.add_pokemon = Test2
+     
     def display_name_background (self):
         # sourcery skip: remove-unnecessary-else, swap-if-else-branches
         start_time = time.time()
@@ -53,7 +51,7 @@ class Menu(Global):
                 self.draw_menu_option(rect, text, (125 if i != 1 else 70, 100 + i * 100))
 
             self.rect_radius(10, self.white, 310, 100, 440, 350)
-       
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -64,11 +62,11 @@ class Menu(Global):
                     for i, item in enumerate(option_texts):
                         rect = option_rects[i]
                         if rect.collidepoint(mouse_pos):
-                            # if item == "PLAY":
-                            #     self.play.affichage1()
-                            # elif item == "ADD POKEMON":
-                            #     self.add_pokemon.affichage2()
-                            if item == "POKEDEX":
+                            if item == "ADD POKEMON":
+                                self.add_pokemon.affichage2()
+                            elif item == "PLAY":
+                                self.play.affichage1()
+                            elif item == "POKEDEX":
                                 self.pokedex.pokedex_run()
                             elif item == "QUIT":
                                 pygame.quit()
@@ -78,9 +76,11 @@ class Menu(Global):
 
                 pygame.display.update()
                 pygame.display.flip()
-            
-            self.clock.tick(60)
 
+            self.clock.tick(60)
+    def menu_run(self):        
+        self.display_name_background() 
+        self.options_menu()  
     
 
 menu = Menu()

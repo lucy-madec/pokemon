@@ -23,6 +23,5 @@ class Pikachu(Global):
 
             self.pikachu()
             pygame.display.flip()
-            self.clock.tick(30)
         pygame.quit()
 
