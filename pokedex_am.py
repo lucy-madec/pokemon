@@ -94,36 +94,36 @@ class Pokedex(Global):
         self.rect_radius(10,self.white,620, 450, 170, 120)
 
         #Afficher pokemon pikachu
-        self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',110,119,45,245)
-        self.text_c2("pikachu",self.black,60,345)
+        self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',100,109,65,250)
+        self.text_c2("pikachu",self.black,60,342)
 
         #Afficher pokemon posipi
         self.img_pokemon("posipi",'images\images-pokedex\pokedex3.png',115,119,45,440)
-        self.text_c2("posipi",self.black,70,545)
+        self.text_c2("posipi",self.black,70,542)
 
         #Afficher pokemon pyroli
-        self.img_pokemon("pyroli",'images\images-pokedex\pokedex4.png',120,129,245,242)
-        self.text_c2("pyroli",self.black,270,345)
+        self.img_pokemon("pyroli",'images\images-pokedex\pokedex4.png',90,99,265,252)
+        self.text_c2("pyroli",self.black,270,342)
 
         #Afficher pokemon noctali
-        self.img_pokemon("noctali",'images\images-pokedex\pokedex6.png',150,159,425,422)
-        self.text_c2("noctali",self.black,465,548)
+        self.img_pokemon("noctali",'images\images-pokedex\pokedex6.png',130,129,437,435)
+        self.text_c2("noctali",self.black,465,542)
 
         #Afficher pokemon salamèche
-        self.img_pokemon("salamèche",'images\images-pokedex\pokedex5.png',120,129,255,422)
-        self.text_c2("salamèche",self.black,245,545)
+        self.img_pokemon("salamèche",'images\images-pokedex\pokedex5.png',110,119,255,430)
+        self.text_c2("salamèche",self.black,245,542)
         
         #Afficher pokemon medhyena
-        self.img_pokemon("medhyena",'images\images-pokedex\pokedex7.png',290,299,570,300)
-        self.text_c2("medhyena",self.black,655,545)
+        self.img_pokemon("medhyena",'images\images-pokedex\pokedex7.png',260,269,585,320)
+        self.text_c2("medhyena",self.black,655,542)
         
         #Afficher pokemon dracaufeu
-        self.img_pokemon("dracaufeu",'images\images-pokedex\pokedex8.png',130,139,455,223)
-        self.text_c2("dracaufeu",self.black,445,347)
+        self.img_pokemon("dracaufeu",'images\images-pokedex\pokedex8.png',100,109,455,240)
+        self.text_c2("dracaufeu",self.black,445,342)
         
         #Afficher pokemon caninos
-        self.img_pokemon("caninos",'images\images-pokedex\pokedex9.png',110,119,640,235)
-        self.text_c2("caninos",self.black,655,347)
+        self.img_pokemon("caninos",'images\images-pokedex\pokedex9.png',100,109,645,240)
+        self.text_c2("caninos",self.black,655,342)
         
         #boutton changer de page
         self.rect_radius(10,self.yellow,740, 380, 50, 60)
@@ -221,3 +221,6 @@ class Pokedex(Global):
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
+
+test = Pokedex()
+test.pokedex_run ()
