@@ -6,7 +6,7 @@ class Pikachu(Global):
         Global.__init__(self)
 
     def pikachu(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1020.png')
+        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
     

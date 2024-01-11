@@ -76,8 +76,9 @@ class Pokedex(Global):
         pygame.display.update()
         pygame.display.flip()
 
+    def pokedex_run(self):
+        self.run()
 
-        
     def run(self):
         running = True
         while running:
@@ -152,5 +153,3 @@ class Pokedex(Global):
             self.clock.tick(30)
         pygame.quit()
 
-pokedex1 = Pokedex()
-pokedex1.run()

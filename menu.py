@@ -14,6 +14,7 @@ class Menu(Global):
         self.options_menu()       
     
     def display_name_background (self):
+        # sourcery skip: remove-unnecessary-else, swap-if-else-branches
         start_time = time.time()
         while True:
             self.screen.fill(self.white)
