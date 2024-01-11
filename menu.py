@@ -2,7 +2,7 @@
 from global_def import Global
 from test1 import Test1
 from test2 import Test2
-from pokedex import Pokedex
+from pokedex_ancien import Pokedex
 import pygame, time, sys
 
 class Menu(Global): 
