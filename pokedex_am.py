@@ -1,6 +1,6 @@
 from global_def import Global
-from pikachu import Pikachu
-from menu import Menu
+from pikachu_am import Pikachu
+from menu_am import Menu
 import pygame
 
 class Pokedex(Global):
@@ -145,7 +145,7 @@ class Pokedex(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(640, 10, 70, 25)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        running = False  
+                        self.menu.menu_run()
 
             self.background()
             self.pokemon()

@@ -1,15 +1,14 @@
 # Importer les modules
 from global_def import Global
-from pokedex import Pokedex
+from pokedex_am import Pokedex
 import pygame, time, sys
 
 class Menu(Global): 
-
     def __init__(self): 
         Global.__init__(self)
-        self.pokedex = Pokedex() 
+        self.pokedex = Pokedex()
 
-    def run(self):        
+    def menu_run(self):        
         self.display_name_background() 
         self.options_menu()       
     
