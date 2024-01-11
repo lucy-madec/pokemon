@@ -101,13 +101,13 @@ class Pokedex(Global):
         self.img_pokemon("posipi",'images\images-pokedex\pokedex3.png',115,119,45,440)
         self.text_c2("posipi",self.black,70,542)
 
-        #Afficher pokemon pyroli
-        self.img_pokemon("pyroli",'images\images-pokedex\pokedex4.png',90,99,265,252)
-        self.text_c2("pyroli",self.black,270,342)
+        #Afficher pokemon evoli
+        self.img_pokemon("evoli",'images\images-pokedex\pokedex44.png',90,99,265,252)
+        self.text_c2("evoli",self.black,270,342)
 
-        #Afficher pokemon noctali
-        self.img_pokemon("noctali",'images\images-pokedex\pokedex6.png',130,129,437,435)
-        self.text_c2("noctali",self.black,465,542)
+        #Afficher pokemon marcacrin
+        self.img_pokemon("marcacrin",'images\images-pokedex\pokedex10.png',130,129,437,420)
+        self.text_c2("marcacrin",self.black,440,542)
 
         #Afficher pokemon salamèche
         self.img_pokemon("salamèche",'images\images-pokedex\pokedex5.png',110,119,255,430)
@@ -117,9 +117,9 @@ class Pokedex(Global):
         self.img_pokemon("medhyena",'images\images-pokedex\pokedex7.png',260,269,585,320)
         self.text_c2("medhyena",self.black,655,542)
         
-        #Afficher pokemon dracaufeu
-        self.img_pokemon("dracaufeu",'images\images-pokedex\pokedex8.png',100,109,455,240)
-        self.text_c2("dracaufeu",self.black,445,342)
+        #Afficher pokemon tiplouf
+        self.img_pokemon("tiplouf",'images\images-pokedex\pokedex11.png',100,109,455,240)
+        self.text_c2("tiplouf",self.black,460,342)
         
         #Afficher pokemon caninos
         self.img_pokemon("caninos",'images\images-pokedex\pokedex9.png',100,109,645,240)
