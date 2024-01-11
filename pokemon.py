@@ -15,8 +15,8 @@ class Pokemon(Global):
         self.text_c1("QUIT", self.black, 733, 13)
     
     def button_back(self):
-        self.rect_radius(10, self.white, 10, 10, 70, 25)
-        self.text_c1("BACK", self.black, 733, 13)
+        self.rect_radius(10, self.white, 640, 10, 70, 25)
+        self.text_c1("BACK", self.black, 650, 13)
 
     def is_mouse_over_button(self, button_rect):
         mouse_pos = pygame.mouse.get_pos()
@@ -32,9 +32,13 @@ class Pokemon(Global):
                     # Check if the left mouse button is clicked
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         self.running = False
+                    elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                        # Ajoutez ici le code que vous souhaitez exécuter lors du clic sur le bouton "RETOUR"
+                        pass
 
             self.background()
             self.button_quit()
+            self.button_back()
             pygame.display.flip()
             self.clock.tick(30)
             
