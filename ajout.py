@@ -15,7 +15,8 @@ class Pokedex(Global):
     def pokemon(self):
         
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c1("AJOUTER VOTRE POKÉMON",self.black,230,30)
+        self.text_c5("AJOUTER ",self.black,230,30)
+        self.text_c5("VOTRE POKÉMON",self.black,230,55)
 
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
