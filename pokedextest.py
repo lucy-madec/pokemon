@@ -1,11 +1,13 @@
 from global_def import Global
 from pikachu import Pikachu
+from menu import Menu
 import pygame
 
 class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
         self.pikachu = Pikachu()
+        self.menu = Menu()
 
     def background(self):
         background = pygame.image.load('images\images-pokedex\pokedex1020.png')
@@ -15,6 +17,8 @@ class Pokedex(Global):
     def button_back(self):
         self.rect_radius(10, self.white, 640, 10, 70, 25)
         self.text_c1("BACK", self.black, 650, 13)
+        pygame.display.update()
+        pygame.display.flip()
 
 
     def pokemon(self):
@@ -136,7 +140,12 @@ class Pokedex(Global):
                     button_rect = pygame.Rect(620, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         running = False     
-                                                                                    
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_x, mouse_y = pygame.mouse.get_pos()
+                    button_rect = pygame.Rect(640, 10, 70, 25)
+                    if button_rect.collidepoint(mouse_x, mouse_y):
+                        running = False  
+
             self.background()
             self.pokemon()
             pygame.display.flip()
