@@ -11,11 +11,11 @@ class Pokemon(Global):
         self.img_back("Background", "images/images-partie/pokedex105.jpg")
 
     def button_quit(self):
-        self.rect_radius(10, self.white, 720, 10, 70, 25)
+        self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
     def button_back(self):
-        self.rect_radius(10, self.white, 640, 10, 70, 25)
+        self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("BACK", self.black, 650, 13)
 
     def is_mouse_over_button(self, button_rect):
