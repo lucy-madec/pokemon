@@ -20,15 +20,14 @@ class Pokedex(Global):
     def button_back(self):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("BACK", self.black, 733, 13)
-        pygame.display.update()
-        pygame.display.flip()
+        # pygame.display.update()
+        # pygame.display.flip()
 
     def ajout_pokemon(self): 
         self.background()
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c3("POKEDEX",self.black,230,30)
 
-        
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
         self.rect_radius(10,self.white,220, 250, 170, 120)
@@ -222,6 +221,3 @@ class Pokedex(Global):
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
-
-test1 = Pokedex()
-test1.pokedex_run()
