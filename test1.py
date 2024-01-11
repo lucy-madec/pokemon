@@ -1,31 +1,35 @@
+from global_def import Global
 import pygame
 
-# Initialisation de Pygame
-pygame.init()
+class Test1(Global):
+    def __init__(self): 
+            Global.__init__(self)
+        
+    # Initialisation de Pygame
+    pygame.init()
+    def affichage1(self):
+    # Définition de la taille de la fenêtre
+        largeur, hauteur = 800, 600
+        taille_fenetre = (largeur, hauteur)
+        fenetre = pygame.display.set_mode(taille_fenetre)
 
-# Définition de la taille de la fenêtre
-largeur, hauteur = 800, 600
-taille_fenetre = (largeur, hauteur)
+        # Définition de la couleur gris
+        couleur_gris = (150, 150, 150)  # RGB
 
-# Création de la fenêtre
-fenetre = pygame.display.set_mode(taille_fenetre)
-pygame.display.set_caption("Fenêtre Pygame")
+        # Boucle principale
+        en_cours = True
+        while en_cours:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    en_cours = False
 
-# Couleur blanche en RGB
-blanc = (255, 255, 255)
+            # Remplir la fenêtre avec la couleur gris
+            fenetre.fill(self.black)
 
-# Boucle principale
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+            # Mettre à jour l'affichage
+            pygame.display.flip()
 
-    # Remplir la fenêtre avec la couleur blanche
-    fenetre.fill(blanc)
-
-    # Rafraîchir l'affichage
-    pygame.display.flip()
-
-# Quitter Pygame
-pygame.quit()
+    
+        # Quand la boucle est terminée, quitter Pygame
+    pygame.quit()
+    

@@ -17,6 +17,7 @@ class Global:
         self.police_c2 = pygame.font.Font("Pokemon Classic.ttf",15)  
         self.police_c3 = pygame.font.Font("Pokemon Classic.ttf",50)      
         self.police_p1 = pygame.font.Font("Pixeled.ttf", 16)
+        
 #def text  
     def text_c1(self,text, color, x, y):
         text_surface = self.police_c1.render(text, True, color)

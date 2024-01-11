@@ -1,11 +1,22 @@
 # Importer les modules
 from global_def import Global
-import pygame, time
+from test1 import Test1
+from test2 import Test2
+from test3 import Test3
+
+import pygame, time, sys
 
 class Menu(Global): 
 
     def __init__(self): 
         Global.__init__(self)
+        self.T1 = Test1()
+        self.T2 = Test2()
+        self.T3 = Test3() 
+
+    def run(self):        
+        self.display_name_background() 
+        self.options_menu()       
     
     def display_name_background (self):
         start_time = time.time()
@@ -19,93 +30,64 @@ class Menu(Global):
             else:
                 break
             pygame.display.flip()
-            self.clock.tick(60)
+            self.clock.tick(60)            
 
-    def animated_image = pygame.image.load
-            
+    def  draw_menu_option(self, rect, text, pos):
+        menu_text = self.police_p1.render(text, True, self.grey)
+        if rect.collidepoint(pygame.mouse.get_pos()):
+            pygame.draw.rect(self.screen, self.white, rect.inflate(10, 10), border_radius=10)
+        else:
+            pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
+        self.screen.blit(menu_text, pos)     
+    
+
     def options_menu(self): 
-        running = True      
-
-        # Afficher logo Pokemon
+        running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
+        option_rects = [
+            pygame.Rect(50, 100 + i * 100, 200, 50) for i in range(4)
+        ]
 
-        # Créer le hoover
-        rect_play = pygame.Rect(50, 100, 200, 50)        
-        rect_add = pygame.Rect(50, 200, 200, 50)
-        rect_pokedex = pygame.Rect(50, 300, 200, 50)
-        rect_quit = pygame.Rect(50, 400, 200, 50)       
-        
-        while running: 
+        option_texts = ["PLAY", "ADD POKEMON", "POKEDEX", "QUIT"]
 
-            option_radius = 10
-            self.screen.blit(img_back, (0,0)) 
-            
-            menu_play = self.police_p1.render("PLAY", True, self.grey)
-            menu_add = self.police_p1.render("ADD POKEMON", True, self.grey)
-            menu_pokedex = self.police_p1.render("POKEDEX", True, self.grey)
-            menu_quit = self.police_p1.render("QUIT", True, self.grey)
+        while running:
+            self.screen.blit(img_back, (0, 0))
 
-            self.rect_radius(10, self.white,50, 100, 200, 50)  
-            self.screen.blit(menu_play,(125, 100))
+            for i, (rect, text) in enumerate(zip(option_rects, option_texts)):
+                self.draw_menu_option(rect, text, (125 if i != 1 else 70, 100 + i * 100))
 
-            self.rect_radius(10, self.white, 50, 200, 200, 50) 
-            self.screen.blit(menu_add,(70, 200))
-
-            self.rect_radius(10, self.white,50, 300, 200, 50)   
-            self.screen.blit(menu_pokedex,(95, 300))
-
-            self.rect_radius(10, self.white,50, 400, 200, 50)  
-            self.screen.blit(menu_quit,(120, 400)) 
-
-            self.rect_radius(10, self.white,310, 100, 440, 350) 
-
-            # Effet hoover au passage de la souris
-            if rect_play.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_play.inflate(10, 10), border_radius=option_radius)
-                self.screen.blit(menu_play,(125, 100))
-                
-            else:
-                pygame.draw.rect(self.screen, self.white, rect_play, border_radius=option_radius)
-                self.screen.blit(menu_play,(125, 100))
-
-            if rect_add.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_add.inflate(10, 10), border_radius=option_radius)
-                self.screen.blit(menu_add,(70, 200))
-            else:
-                pygame.draw.rect(self.screen, self.white, rect_add, border_radius=option_radius)
-                self.screen.blit(menu_add, (70, 200))
-
-            if rect_pokedex.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_pokedex.inflate(10, 10), border_radius =option_radius)
-                self.screen.blit(menu_pokedex, (95, 300))
-            else:
-                pygame.draw.rect(self.screen, self.white, rect_pokedex, border_radius=option_radius)
-                self.screen.blit(menu_pokedex, (95, 300))
-
-            if rect_quit.collidepoint(pygame.mouse.get_pos()):
-                pygame.draw.rect(self.screen, self.white, rect_quit.inflate(10, 10), border_radius=option_radius)
-                self.screen.blit(menu_quit, (120, 400))
-            else:
-                pygame.draw.rect(self.screen, self.white, rect_quit, border_radius=option_radius)
-                self.screen.blit(menu_quit, (120, 400))
-
-        # Quittez avec "Escape"
-                
+            self.rect_radius(10, self.white, 310, 100, 440, 350)
+       
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False
-                elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE:
-                        running = False
-        
-            pygame.display.update()
-            pygame.display.flip()
+                    pygame.quit()
+                    sys.exit()
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_pos = pygame.mouse.get_pos()
+                    for i, item in enumerate(option_texts):
+                        rect = option_rects[i]
+                        if rect.collidepoint(mouse_pos):
+                            if item == "PLAY":
+                                self.T1.affichage1()
+                                print("T1")
+                            elif item == "ADD POKEMON":
+                                self.T2.affichage2()
+                                print("T2")
+                            elif item == "POKEDEX":
+                                self.T3.affichage3()
+                                print("T3")
+                            elif item == "QUIT":
+                                pygame.quit()
+                                sys.exit()
+                            running = False 
+                               
+      
+                pygame.display.update()
+            
             self.clock.tick(60)
 
-    def run(self):
-        self.display_name_background()
-        self.options_menu()
-        pygame.quit()
+    
 
 menu = Menu()
 menu.run()
