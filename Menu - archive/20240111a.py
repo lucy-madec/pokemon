@@ -2,17 +2,16 @@
 from global_def import Global
 from test1 import Test1
 from test2 import Test2
-from test3 import Test3
-
+from pokedex import Pokedex
 import pygame, time, sys
 
 class Menu(Global): 
 
     def __init__(self): 
         Global.__init__(self)
-        self.T1 = Test1()
-        self.T2 = Test2()
-        self.T3 = Test3() 
+        self.play = Test1()
+        self.add_pokemon = Test2()
+        self.pokedex = Pokedex() 
 
     def run(self):        
         self.display_name_background() 
@@ -21,7 +20,7 @@ class Menu(Global):
     def display_name_background (self):
         start_time = time.time()
         while True:
-            self.screen.fill(self.orange)
+            self.screen.fill(self.white)
             current_time = time.time()
             elapsed_time = current_time - start_time
             if elapsed_time < 2:
@@ -69,21 +68,19 @@ class Menu(Global):
                         rect = option_rects[i]
                         if rect.collidepoint(mouse_pos):
                             if item == "PLAY":
-                                self.T1.affichage1()
-                                print("T1")
+                                self.play.affichage1()
                             elif item == "ADD POKEMON":
-                                self.T2.affichage2()
-                                print("T2")
+                                self.add_pokemon.affichage2()
                             elif item == "POKEDEX":
-                                self.T3.affichage3()
-                                print("T3")
+                                self.pokedex.pokedex_run()
                             elif item == "QUIT":
                                 pygame.quit()
                                 sys.exit()
                             running = False 
-                               
-      
+
+
                 pygame.display.update()
+                pygame.display.flip()
             
             self.clock.tick(60)
 
