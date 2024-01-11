@@ -46,6 +46,7 @@ class Global:
         self.screen.blit(text_surface, (x, y))
 
 #def image
+        
     def img_pokemon(self,name,path,a,b,x,y,):
         name = pygame.image.load(path)
         name = name.convert_alpha()
