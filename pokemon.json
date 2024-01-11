@@ -1,0 +1,9 @@
+pokemon = [
+    {"Nom": "Pikachu", "Type": "Electrique", "Niveau": 1, "Puissance": 55, "PV": 32, "Defense": 40},
+    {"Nom": "Posipi ", "Type": "Electrique", "Niveau": 1, "Puissance": 50, "PV": 60, "Defense": 40},
+    {"Nom": "Pyroli", "Type": "Feu", "Niveau": 1, "Puissance": 130, "PV": 65, "Defense": 60},
+    {"Nom": "Salamèche", "Type": "Feu", "Niveau": 1, "Puissance": 52, "PV": 39, "Defense": 43},
+    {"Nom": "Noctali", "Type": "Ténèbre", "Niveau": 1, "Puissance": 65, "PV": 95, "Defense": 110},
+    {"Nom": "Medhyena", "Type": "Ténèbre", "Niveau": 1, "Puissance": 55, "PV": 35, "Defense": 35},
+    {"Nom": "Dracaufeu", "Type": "Feu", "Niveau": 1, "Puissance": 84, "PV": 78, "Defense": 78},
+    {"Nom": "Caninos", "Type": "Feu", "Niveau": 1, "Puissance": 70, "PV": 55, "Defense": 45}]
