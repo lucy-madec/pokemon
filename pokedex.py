@@ -14,7 +14,7 @@ class Pokedex(Global):
 
     def pokemon(self):
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c1("POKEDEX",self.black,230,30)
+        self.text_c3("POKEDEX",self.black,230,30)
 
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
@@ -59,7 +59,11 @@ class Pokedex(Global):
         #Afficher pokemon caninos
         self.img_pokemon("caninos",'images\images-pokedex\pokedex9.png',110,119,640,235)
         self.text_c2("caninos",self.black,655,347)
-
+        
+        #boutton changer de page
+        self.rect_radius(10,self.white,740, 375, 50, 70)
+        pygame.draw.lines(self.screen,self.black,True, ((770,410),(750,390),(750,430)),5)
+        
         pygame.display.update()
         pygame.display.flip()
 
