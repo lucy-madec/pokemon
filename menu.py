@@ -47,11 +47,19 @@ class Menu(Global):
         while running:
             self.screen.blit(img_back, (0, 0))
 
+
             for i, (rect, text) in enumerate(zip(option_rects, option_texts)):
+                if text == "ADD POKEMON":
+                    position = (70, 100 + i * 100)
+                elif text == "POKEDEX":
+                    position = (100, 100 + i * 100)
+                else:
+                    position = (125, 100 + i * 100)
+
+                self.draw_menu_option(rect, text, position)
 
 
-                self.draw_menu_option(rect, text, (125 if i != 1 else 70, 100 + i * 100))
-
+            
             self.rect_radius(10, self.white, 310, 100, 440, 350)
        
             for event in pygame.event.get():
