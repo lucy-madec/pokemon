@@ -55,6 +55,7 @@ class Global:
         self.screen.blit(name, (x, y))
     
 # def rectangle
+        
         # Rectangle 
     def rect(self,nom, x1,y1,x2,y2):   
         nom = pygame.Rect(x1,y1,x2,y2)
@@ -64,8 +65,9 @@ class Global:
         r = radius
         pygame.draw.rect(self.screen,color,(x1,y1,x2,y2),border_radius = r)
 
-        
-        
+
+
+
         
     
 
