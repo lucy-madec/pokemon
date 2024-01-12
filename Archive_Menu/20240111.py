@@ -2,38 +2,35 @@
 from global_def import Global
 from test1 import Test1
 from test2 import Test2
-from pokedex import Pokedex
+from test3 import Test3
+
 import pygame, time, sys
 
 class Menu(Global): 
 
     def __init__(self): 
         Global.__init__(self)
-        self.play = Test1()
-        self.add_pokemon = Test2()
-        self.pokedex = Pokedex() 
+        self.T1 = Test1()
+        self.T2 = Test2()
+        self.T3 = Test3() 
 
-    def menu_run(self):        
+    def run(self):        
         self.display_name_background() 
         self.options_menu()       
     
     def display_name_background (self):
         start_time = time.time()
         while True:
-            self.screen.fill(self.white)
+            self.screen.fill(self.orange)
             current_time = time.time()
             elapsed_time = current_time - start_time
-
-            # Afficher prenoms
             if elapsed_time < 2:
                 self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
                 self.img_back("img_forest", "images/images-menu/menu1.png")
             else:
                 break
             pygame.display.flip()
-            self.clock.tick(60)
-
-    # Afficher des rectangles blancs pour les options du menu            
+            self.clock.tick(60)            
 
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
@@ -43,9 +40,8 @@ class Menu(Global):
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
         self.screen.blit(menu_text, pos)     
     
-    def options_menu(self): 
 
-        # Définir choix du menu
+    def options_menu(self): 
         running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
         option_rects = [
@@ -55,18 +51,11 @@ class Menu(Global):
         option_texts = ["PLAY", "ADD POKEMON", "POKEDEX", "QUIT"]
 
         while running:
-            self.screen.blit(img_back, (0, 0))           
-            
-            for i, (rect, text) in enumerate(zip(option_rects, option_texts)):
-                if text == "ADD POKEMON":
-                    position = (70, 100 + i * 100)
-                elif text == "POKEDEX":
-                    position = (100, 100 + i * 100)
-                else:
-                    position = (125, 100 + i * 100)
+            self.screen.blit(img_back, (0, 0))
 
-                self.draw_menu_option(rect, text, position)
-            
+            for i, (rect, text) in enumerate(zip(option_rects, option_texts)):
+                self.draw_menu_option(rect, text, (125 if i != 1 else 70, 100 + i * 100))
+
             self.rect_radius(10, self.white, 310, 100, 440, 350)
        
             for event in pygame.event.get():
@@ -74,31 +63,31 @@ class Menu(Global):
                     pygame.quit()
                     sys.exit()
 
-                # Lier les options du menu à d'autres pages
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = pygame.mouse.get_pos()
                     for i, item in enumerate(option_texts):
                         rect = option_rects[i]
                         if rect.collidepoint(mouse_pos):
                             if item == "PLAY":
-                                self.play.affichage1()
+                                self.T1.affichage1()
+                                print("T1")
                             elif item == "ADD POKEMON":
-                                self.add_pokemon.affichage2()
+                                self.T2.affichage2()
+                                print("T2")
                             elif item == "POKEDEX":
-                                self.pokedex.pokedex_run()
+                                self.T3.affichage3()
+                                print("T3")
                             elif item == "QUIT":
                                 pygame.quit()
                                 sys.exit()
                             running = False 
-
+                               
+      
                 pygame.display.update()
-                pygame.display.flip()
             
             self.clock.tick(60)
 
-    def run(self):        
-        self.display_name_background() 
-        self.options_menu() 
+    
 
 menu = Menu()
-menu.menu_run()
+menu.run()
