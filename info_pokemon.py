@@ -10,52 +10,55 @@ class Info_pokemon(Global):
         background = pygame.image.load('images\images-pokedex\pokedex1b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
-        
-    def posipi(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
+        self.button_back()
+    def capumain(self):
+        background = pygame.image.load('images\images-pokedex\pokedex2b.png')
         background = background.convert()
+        self.button_back()
         self.screen.blit(background, (0,0))
         
     def evoli(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
+        background = pygame.image.load('images\images-pokedex\pokedex3b.png')
         background = background.convert()
+        self.button_back()
         self.screen.blit(background, (0,0))
         
     def marcacrin(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
+        background = pygame.image.load('images\images-pokedex\pokedex4b.png')
         background = background.convert()
+        self.button_back()
         self.screen.blit(background, (0,0))
         
     def salameche(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
+        background = pygame.image.load('images\images-pokedex\pokedex5b.png')
         background = background.convert()
+        self.button_back()
         self.screen.blit(background, (0,0))
         
     def medhyena(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
+        background = pygame.image.load('images\images-pokedex\pokedex6b.png')
         background = background.convert()
+        self.button_back()
         self.screen.blit(background, (0,0))
         
     def tiplouf(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
+        background = pygame.image.load('images\images-pokedex\pokedex7b.png')
         background = background.convert()
+        self.button_back()
         self.screen.blit(background, (0,0))
         
     def caninos(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
+        background = pygame.image.load('images\images-pokedex\pokedex8b.png')
         background = background.convert()
-        self.screen.blit(background, (0,0))
         self.button_back()
+        self.screen.blit(background, (0,0))
 
     def button_back(self):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("BACK", self.black, 733, 13)
         pygame.display.update()
         pygame.display.flip()
-        
-    def button_back(self):
-        self.rect_radius(10, self.white, 640, 10, 70, 25)
-        self.text_c1("BACK", self.black, 650, 13)
+    
 
     def info_pokemon_run(self):
         running = True
