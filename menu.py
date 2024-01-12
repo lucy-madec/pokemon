@@ -2,7 +2,7 @@
 from global_def import Global
 from test1 import Test1
 from test2 import Test2
-from pokedex import Pokedex
+from info_pokemon import Info_pokemon
 import pygame, time, sys
 
 class Menu(Global): 
@@ -11,7 +11,7 @@ class Menu(Global):
         Global.__init__(self)
         self.play = Test1()
         self.add_pokemon = Test2()
-        self.pokedex = Pokedex() 
+        self.pokedex = Info_pokemon() 
 
     def menu_run(self):        
         self.display_name_background() 
