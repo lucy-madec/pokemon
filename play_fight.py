@@ -2,7 +2,7 @@ from global_def import Global
 import pygame
 import sys
 
-class Pokemon(Global):
+class Play_Fight(Global):
 
     def __init__(self):
         Global.__init__(self)
