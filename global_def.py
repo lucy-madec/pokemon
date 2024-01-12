@@ -18,7 +18,11 @@ class Global:
         self.police_c2 = pygame.font.Font("Pokemon Classic.ttf",15)  
         self.police_c3 = pygame.font.Font("Pokemon Classic.ttf",50)
         self.police_c4 = pygame.font.Font("Pokemon Classic.ttf",5)  
+<<<<<<<<< Temporary merge branch 1
         self.police_c5 = pygame.font.Font("Pokemon Classic.ttf",35)    
+=========
+        self.police_c5 = pygame.font.Font("Pokemon Classic.ttf",15)    
+>>>>>>>>> Temporary merge branch 2
         self.police_p1 = pygame.font.Font("Pixeled.ttf", 16)
 #def text  
     def text_c1(self,text, color, x, y):
@@ -74,3 +78,4 @@ class Global:
 # Liste
     def lst_name(self, name):
         self.lst_name += [name]
+>>>>>>>>> Temporary merge branch 2

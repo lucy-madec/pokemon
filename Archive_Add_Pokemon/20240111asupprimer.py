@@ -2,7 +2,15 @@
 from global_def import Global
 from test1 import Test1
 from test2 import Test2
+<<<<<<< HEAD:Archive_Pokedex/menu_am.py
+<<<<<<< HEAD:menu.py
+from info_pokemon import Info_pokemon
+=======
 from pokedex_ancien import Pokedex
+>>>>>>> pokedex:Archive_Pokedex/menu_am.py
+=======
+from pokedex_ancien import Pokedex
+>>>>>>> main_bis:Archive_Add_Pokemon/20240111asupprimer.py
 import pygame, time, sys
 
 class Menu(Global): 
@@ -11,7 +19,7 @@ class Menu(Global):
         Global.__init__(self)
         self.play = Test1()
         self.add_pokemon = Test2()
-        self.pokedex = Pokedex() 
+        self.pokedex = Info_pokemon() 
 
     def run(self):        
         self.display_name_background() 
@@ -29,7 +37,13 @@ class Menu(Global):
             else:
                 break
             pygame.display.flip()
+<<<<<<< HEAD:menu.py
+            self.clock.tick(60)
+
+    # Afficher rectangles blancs pour les options du menu            
+=======
             self.clock.tick(60)            
+>>>>>>> pokedex:Archive_Pokedex/menu_am.py
 
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
@@ -39,7 +53,6 @@ class Menu(Global):
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
         self.screen.blit(menu_text, pos)     
     
-
     def options_menu(self): 
         running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
