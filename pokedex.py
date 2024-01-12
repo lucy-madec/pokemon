@@ -1,4 +1,4 @@
-from Archive_Pokedex.global_def import Global
+from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 
@@ -6,7 +6,6 @@ class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
-        self.lst_name = []
         
     def background(self):
         background = pygame.image.load('images\images-pokedex\pokedex0.png')
@@ -40,7 +39,7 @@ class Pokedex(Global):
         
         for name in self.lst_name:
             if name == "Floravol":
-                self.img_pokemon("pikachu",'images\images-pokedex\pokedex3.png',110,119,45,245)
+                self.img_pokemon("pikachu",'images\images-add\pokedex3.png',110,119,45,245)
                 self.text_c2("pikachu",self.black,60,345)
                 
             if name == "Psykokwak":

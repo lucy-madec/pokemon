@@ -1,5 +1,5 @@
-from global_def import Global
-from pikachu import Pikachu
+from Archive_Pokedex.global_def import Global
+from info_pokemon import Info_pokemon
 import pygame
 
 # esssai1
@@ -7,7 +7,7 @@ import pygame
 class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
-        self.pikachu = Pikachu()
+        self.info_pokemon = Info_pokemon()
 
     def background(self):
         background = pygame.image.load('images/images-add/add_pokemon1a.jpg')

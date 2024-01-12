@@ -1,12 +1,12 @@
 from global_def import Global
-# from info_pokemon import Info_pokemon
+from info_pokemon import Info_pokemon
 import pygame
 # esssai1
 
 class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
-        # self.info_pokemon = Info_pokemon()
+        self.info_pokemon = Info_pokemon()
 
     def background(self):
         background = pygame.image.load('images/images-add/add_pokemon1a.jpg')
