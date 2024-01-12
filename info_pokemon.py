@@ -9,6 +9,16 @@ class info_pokemon(Global):
         background = pygame.image.load('images\images-pokedex\pokedex1070.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
+        
+    def pikachu(self):
+        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
+        background = background.convert()
+        self.screen.blit(background, (0,0))
+        
+    def pikachu(self):
+        background = pygame.image.load('images\images-pokedex\pokedex1070.png')
+        background = background.convert()
+        self.screen.blit(background, (0,0))
     
     def button_back(self):
         self.rect_radius(10, self.white, 640, 10, 70, 25)

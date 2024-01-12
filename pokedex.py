@@ -9,7 +9,7 @@ class Pokedex(Global):
         self.lst_name = []
         
     def background(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1020.png')
+        background = pygame.image.load('images\images-pokedex\pokedex0.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.rect_radius(10,self.white,200, 40, 440, 80)
@@ -96,15 +96,15 @@ class Pokedex(Global):
         self.text_c2("pikachu",self.black,60,342)
 
         #Afficher pokemon posipi
-        self.img_pokemon("posipi",'images\images-pokedex\pokedex3.png',115,119,45,440)
+        self.img_pokemon("posipi",'images\images-pokedex\pokedex2.png',115,119,45,440)
         self.text_c2("posipi",self.black,70,542)
 
         #Afficher pokemon evoli
-        self.img_pokemon("evoli",'images\images-pokedex\pokedex44.png',90,99,265,252)
+        self.img_pokemon("evoli",'images\images-pokedex\pokedex3.png',90,99,265,252)
         self.text_c2("evoli",self.black,270,342)
 
         #Afficher pokemon marcacrin
-        self.img_pokemon("marcacrin",'images\images-pokedex\pokedex10.png',130,129,437,420)
+        self.img_pokemon("marcacrin",'images\images-pokedex\pokedex4.png',130,129,437,420)
         self.text_c2("marcacrin",self.black,440,542)
 
         #Afficher pokemon salamèche
@@ -112,15 +112,15 @@ class Pokedex(Global):
         self.text_c2("salamèche",self.black,245,542)
         
         #Afficher pokemon medhyena
-        self.img_pokemon("medhyena",'images\images-pokedex\pokedex7.png',260,269,585,320)
+        self.img_pokemon("medhyena",'images\images-pokedex\pokedex6.png',260,269,585,320)
         self.text_c2("medhyena",self.black,655,542)
         
         #Afficher pokemon tiplouf
-        self.img_pokemon("tiplouf",'images\images-pokedex\pokedex11.png',100,109,455,240)
+        self.img_pokemon("tiplouf",'images\images-pokedex\pokedex7.png',100,109,455,240)
         self.text_c2("tiplouf",self.black,460,342)
         
         #Afficher pokemon caninos
-        self.img_pokemon("caninos",'images\images-pokedex\pokedex9.png',100,109,645,240)
+        self.img_pokemon("caninos",'images\images-pokedex\pokedex8.png',100,109,645,240)
         self.text_c2("caninos",self.black,655,342)
         
         #boutton changer de page
