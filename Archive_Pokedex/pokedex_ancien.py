@@ -1,28 +1,23 @@
 from Archive_Pokedex.global_def import Global
-from info_pokemon import info_pokemon
+from info_pokemon import Pikachu
 import pygame
 
 class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
-        self.info_pokemon = info_pokemon()
-        self.lst_name = []
-        
+        self.pikachu = Pikachu()
     def background(self):
-        background = pygame.image.load('images\images-pokedex\pokedex0.png')
+        background = pygame.image.load('images\images-pokedex\pokedex1020.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
-        self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c3("POKEDEX",self.black,230,30)
-
+    
     def button_back(self):
-        self.rect_radius(5, self.white, 720, 10, 70, 25)
-        self.text_c1("BACK", self.black, 733, 13)
-        # pygame.display.update()
-        # pygame.display.flip()
+        self.rect_radius(10, self.white, 640, 10, 70, 25)
+        self.text_c1("BACK", self.black, 650, 13)
+        pygame.display.update()
+        pygame.display.flip()
 
-    def ajout_pokemon(self): 
-        self.background()
+    def pokemon(self):
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c3("POKEDEX",self.black,230,30)
 
@@ -43,15 +38,15 @@ class Pokedex(Global):
         self.text_c2("pikachu",self.black,60,345)
 
         #Afficher pokemon posipi
-        self.img_pokemon("posipi",'images\images-pokedex\pokedex2.png',115,119,45,440)
+        self.img_pokemon("posipi",'images\images-pokedex\pokedex3.png',115,119,45,440)
         self.text_c2("posipi",self.black,70,545)
 
         #Afficher pokemon pyroli
-        self.img_pokemon("pyroli",'images\images-pokedex\pokedex3.png',120,129,245,242)
+        self.img_pokemon("pyroli",'images\images-pokedex\pokedex4.png',120,129,245,242)
         self.text_c2("pyroli",self.black,270,345)
 
         #Afficher pokemon noctali
-        self.img_pokemon("noctali",'images\images-pokedex\pokedex4.png',150,159,425,422)
+        self.img_pokemon("noctali",'images\images-pokedex\pokedex6.png',150,159,425,422)
         self.text_c2("noctali",self.black,465,548)
 
         #Afficher pokemon salamèche
@@ -59,15 +54,15 @@ class Pokedex(Global):
         self.text_c2("salamèche",self.black,245,545)
         
         #Afficher pokemon medhyena
-        self.img_pokemon("medhyena",'images\images-pokedex\pokedex6.png',290,299,570,300)
+        self.img_pokemon("medhyena",'images\images-pokedex\pokedex7.png',290,299,570,300)
         self.text_c2("medhyena",self.black,655,545)
         
         #Afficher pokemon dracaufeu
-        self.img_pokemon("dracaufeu",'images\images-pokedex\pokedex7.png',130,139,455,223)
+        self.img_pokemon("dracaufeu",'images\images-pokedex\pokedex8.png',130,139,455,223)
         self.text_c2("dracaufeu",self.black,445,347)
         
         #Afficher pokemon caninos
-        self.img_pokemon("caninos",'images\images-pokedex\pokedex8.png',110,119,640,235)
+        self.img_pokemon("caninos",'images\images-pokedex\pokedex9.png',110,119,640,235)
         self.text_c2("caninos",self.black,655,347)
         
         #boutton changer de page
@@ -82,32 +77,18 @@ class Pokedex(Global):
 
     def run(self):
         running = True
-        poke2 = False
-
-        self.button_back()
-        self.background()
-        self.pokemon()
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-
-            #Test cliques sur les rectangles
-                #Fleche droite           
+            #Test cliques sur les rect
+                #Fleche
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(740, 375, 50, 70)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        poke2 = True
-                    if poke2 == True:
-                        self.ajout_pokemon()
-                #Fleche gauche
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(20, 380, 50, 60)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.pokemon()
-                        
+                        running = False
+
                 #Rectangle du haut        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -158,12 +139,12 @@ class Pokedex(Global):
                         running = False     
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(720, 10, 70, 25)
+                    button_rect = pygame.Rect(640, 10, 70, 25)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.pikachu()
-                        running = False
+                        self.menu.run()
 
-
+            self.background()
+            self.pokemon()
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
