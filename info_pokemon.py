@@ -1,5 +1,5 @@
-from Archive_Pokedex.global_def import Global
-# from pokedex import Pokedex
+from global_def import Global
+# from pokedex import Pokedex Voir RYMA
 import pygame
 
 class Info_pokemon(Global):
@@ -53,6 +53,59 @@ class Info_pokemon(Global):
         self.button_back()
         self.screen.blit(background, (0,0))
 
+
+
+
+
+    def etourvol(self):
+        background = pygame.image.load('images\images-pokedex\pokedex208.png')
+        background = background.convert()
+        self.button_back()
+        self.screen.blit(background, (0,0))
+        
+    def lainergie(self):
+        background = pygame.image.load('images\images-pokedex\pokedex212.png')
+        background = background.convert()
+        self.button_back()
+        self.screen.blit(background, (0,0))
+
+    def floravol(self):
+        background = pygame.image.load('images\images-pokedex\pokedex209.png')
+        background = background.convert()
+        self.button_back()
+        self.screen.blit(background, (0,0))
+
+    def luxio(self):
+        background = pygame.image.load('images\images-pokedex\pokedex214.png')
+        background = background.convert()
+        self.button_back()
+        self.screen.blit(background, (0,0))
+
+    def magicarpe(self):
+        background = pygame.image.load('images\images-pokedex\pokedex213.png')
+        background = background.convert()
+        self.button_back()
+        self.screen.blit(background, (0,0))
+        
+    def phanpy(self):
+        background = pygame.image.load('images\images-pokedex\pokedex215.png')
+        background = background.convert()
+        self.button_back()
+        self.screen.blit(background, (0,0))
+        
+    def psykokwak(self):
+        background = pygame.image.load('images\images-pokedex\pokedex210.png')
+        background = background.convert()
+        self.button_back()
+        self.screen.blit(background, (0,0))
+
+    def rondoudou(self):
+        background = pygame.image.load('images\images-pokedex\pokedex211.png')
+        background = background.convert()
+        self.button_back()
+        self.screen.blit(background, (0,0))
+        
+        
     def button_back(self):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("BACK", self.black, 733, 13)

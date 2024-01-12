@@ -1,4 +1,4 @@
-from Archive_Pokedex.global_def import Global
+from global_def import Global
 from info_pokemon import info_pokemon
 import pygame
 
