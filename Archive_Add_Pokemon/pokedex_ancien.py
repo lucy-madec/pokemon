@@ -1,6 +1,10 @@
 from Archive_Pokedex.global_def import Global
 from info_pokemon import Pikachu
 import pygame
+<<<<<<< HEAD:Archive_Pokedex/pokedex_ancien.py
+=======
+# esssai1
+>>>>>>> add_pokemon:add_pokemon.py
 
 class Pokedex(Global):
     def __init__(self):
