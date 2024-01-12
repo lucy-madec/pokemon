@@ -37,43 +37,95 @@ class Pokedex(Global):
         self.rect_radius(10,self.white,220, 450, 170, 120)
         self.rect_radius(10,self.white,420, 450, 170, 120)
         self.rect_radius(10,self.white,620, 450, 170, 120)
+        
+        #boutton changer de page
+        self.rect_radius(10,self.yellow,20, 380, 50, 60)
+        pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
+        
+        for name in self.lst_name:
+            if name == "Floravol":
+                self.img_pokemon("pikachu",'images\images-pokedex\pokedex3.png',110,119,45,245)
+                self.text_c2("pikachu",self.black,60,345)
+                
+            if name == "Psykokwak":
+                self.img_pokemon("posipi",'images\images-pokedex\pokedex3.png',115,119,45,440)
+                self.text_c2("posipi",self.black,70,545)
+                
+            if name == "Rondoudou":
+                self.img_pokemon("posipi",'images\images-pokedex\pokedex3.png',115,119,45,440)
+                self.text_c2("posipi",self.black,70,545)
+                
+            if name == "Luxio":
+                self.img_pokemon("noctali",'images\images-pokedex\pokedex6.png',150,159,425,422)
+                self.text_c2("noctali",self.black,465,548)
+                
+            if name == "":
+                self.img_pokemon("salamèche",'images\images-pokedex\pokedex5.png',120,129,255,422)
+                self.text_c2("salamèche",self.black,245,545)
+                
+            if name == "":
+                self.img_pokemon("medhyena",'images\images-pokedex\pokedex7.png',290,299,570,300)
+                self.text_c2("medhyena",self.black,655,545)
+                
+            if name == "":
+                self.img_pokemon("dracaufeu",'images\images-pokedex\pokedex8.png',130,139,455,223)
+                self.text_c2("dracaufeu",self.black,445,347)
+                
+            if name == "":
+                self.img_pokemon("caninos",'images\images-pokedex\pokedex9.png',110,119,640,235)
+                self.text_c2("caninos",self.black,655,347)
+
+            pygame.display.update()
+            pygame.display.flip()
+            
+    def pokemon(self):
+        #Créer rectangles haut
+        self.rect_radius(10,self.white,20, 250, 170, 120)
+        self.rect_radius(10,self.white,220, 250, 170, 120)
+        self.rect_radius(10,self.white,420, 250, 170, 120)
+        self.rect_radius(10,self.white,620, 250, 170, 120)
+
+        #Créer rectangles bas
+        self.rect_radius(10,self.white,20, 450, 170, 120)
+        self.rect_radius(10,self.white,220, 450, 170, 120)
+        self.rect_radius(10,self.white,420, 450, 170, 120)
+        self.rect_radius(10,self.white,620, 450, 170, 120)
 
         #Afficher pokemon pikachu
-        self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',110,119,45,245)
-        self.text_c2("pikachu",self.black,60,345)
+        self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',100,109,65,250)
+        self.text_c2("pikachu",self.black,60,342)
 
         #Afficher pokemon posipi
         self.img_pokemon("posipi",'images\images-pokedex\pokedex2.png',115,119,45,440)
-        self.text_c2("posipi",self.black,70,545)
+        self.text_c2("posipi",self.black,70,542)
 
-        #Afficher pokemon pyroli
-        self.img_pokemon("pyroli",'images\images-pokedex\pokedex3.png',120,129,245,242)
-        self.text_c2("pyroli",self.black,270,345)
+        #Afficher pokemon evoli
+        self.img_pokemon("evoli",'images\images-pokedex\pokedex3.png',90,99,265,252)
+        self.text_c2("evoli",self.black,270,342)
 
-        #Afficher pokemon noctali
-        self.img_pokemon("noctali",'images\images-pokedex\pokedex4.png',150,159,425,422)
-        self.text_c2("noctali",self.black,465,548)
+        #Afficher pokemon marcacrin
+        self.img_pokemon("marcacrin",'images\images-pokedex\pokedex4.png',130,129,437,420)
+        self.text_c2("marcacrin",self.black,440,542)
 
         #Afficher pokemon salamèche
-        self.img_pokemon("salamèche",'images\images-pokedex\pokedex5.png',120,129,255,422)
-        self.text_c2("salamèche",self.black,245,545)
+        self.img_pokemon("salamèche",'images\images-pokedex\pokedex5.png',110,119,255,430)
+        self.text_c2("salamèche",self.black,245,542)
         
         #Afficher pokemon medhyena
-        self.img_pokemon("medhyena",'images\images-pokedex\pokedex6.png',290,299,570,300)
-        self.text_c2("medhyena",self.black,655,545)
+        self.img_pokemon("medhyena",'images\images-pokedex\pokedex6.png',260,269,585,320)
+        self.text_c2("medhyena",self.black,655,542)
         
-        #Afficher pokemon dracaufeu
-        self.img_pokemon("dracaufeu",'images\images-pokedex\pokedex7.png',130,139,455,223)
-        self.text_c2("dracaufeu",self.black,445,347)
+        #Afficher pokemon tiplouf
+        self.img_pokemon("tiplouf",'images\images-pokedex\pokedex7.png',100,109,455,240)
+        self.text_c2("tiplouf",self.black,460,342)
         
         #Afficher pokemon caninos
-        self.img_pokemon("caninos",'images\images-pokedex\pokedex8.png',110,119,640,235)
-        self.text_c2("caninos",self.black,655,347)
+        self.img_pokemon("caninos",'images\images-pokedex\pokedex8.png',100,109,645,240)
+        self.text_c2("caninos",self.black,655,342)
         
         #boutton changer de page
-        self.rect_radius(10,self.white,740, 375, 50, 70)
-        pygame.draw.lines(self.screen,self.black,True, ((770,410),(750,390),(750,430)),5)
-        
+        self.rect_radius(10,self.yellow,740, 380, 50, 60)
+        pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
         pygame.display.update()
         pygame.display.flip()
 
@@ -168,3 +220,5 @@ class Pokedex(Global):
             self.clock.tick(30)
         pygame.quit()
 
+test = Pokedex()
+test.pokedex_run ()
