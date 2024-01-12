@@ -1,6 +1,8 @@
 from global_def import Global
 import pygame
 
+#testt
+
 class Test1(Global):
     def __init__(self): 
             Global.__init__(self)
