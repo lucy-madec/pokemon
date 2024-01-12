@@ -2,11 +2,15 @@
 from global_def import Global
 from test1 import Test1
 from test2 import Test2
+<<<<<<< HEAD:Archive_Pokedex/menu_am.py
 <<<<<<< HEAD:menu.py
 from info_pokemon import Info_pokemon
 =======
 from pokedex_ancien import Pokedex
 >>>>>>> pokedex:Archive_Pokedex/menu_am.py
+=======
+from pokedex_ancien import Pokedex
+>>>>>>> main_bis:Archive_Add_Pokemon/20240111asupprimer.py
 import pygame, time, sys
 
 class Menu(Global): 
@@ -17,7 +21,7 @@ class Menu(Global):
         self.add_pokemon = Test2()
         self.pokedex = Info_pokemon() 
 
-    def menu_run(self):        
+    def run(self):        
         self.display_name_background() 
         self.options_menu()       
     
@@ -96,4 +100,4 @@ class Menu(Global):
     
 
 menu = Menu()
-menu.menu_run()
+menu.run()
