@@ -70,3 +70,7 @@ class Global:
     def rect_radius(self,radius,color,x1,y1,x2,y2):
         r = radius
         pygame.draw.rect(self.screen,color,(x1,y1,x2,y2),border_radius = r)
+
+# Liste
+    def lst_name(self, name):
+        self.lst_name += [name]
