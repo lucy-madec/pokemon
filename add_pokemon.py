@@ -1,7 +1,6 @@
 from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
-# Test
 
 class Pokedex(Global):
     def __init__(self):
