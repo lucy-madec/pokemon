@@ -33,7 +33,7 @@ class Menu(Global):
             pygame.display.flip()
             self.clock.tick(60)
 
-    # Afficher des rectangles blancs pour les options du menu            
+    # Afficher rectangles blancs pour les options du menu            
 
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
