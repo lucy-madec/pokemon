@@ -15,7 +15,6 @@ class Pokedex(Global):
         self.text_c3("POKEDEX",self.black,230,30)
 
 
-
     def ajout_pokemon(self): 
         self.background()
         self.rect_radius(10,self.white,200, 40, 440, 80)
@@ -228,5 +227,3 @@ class Pokedex(Global):
             self.clock.tick(30)
         pygame.quit()
 
-test = Pokedex()
-test.pokedex_run()
