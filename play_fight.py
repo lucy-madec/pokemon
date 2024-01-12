@@ -8,11 +8,13 @@ class Play_Fight(Global):
         # Appelle le constructeur de la classe parent Global
         Global.__init__(self)
         # Charge l'image pour l'attaque
-        self.attack_image = pygame.image.load("images/images-partie/partie2.png")
+        self.attack_image = pygame.image.load("images/images-play/partie2.png")
+        # Charge l'image pour la défense
+        self.offensive_image = pygame.image.load("images/images-play/partie3.png")
 
     def background(self):
         # Affiche l'image de fond
-        self.img_back("Background", "images/images-partie/partie1.jpg")
+        self.img_back("Background", "images/images-play/partie1.jpg")
 
     def button_quit(self):
         # Affiche le bouton QUIT
@@ -29,11 +31,17 @@ class Play_Fight(Global):
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
     
-    def power_attack(self):
+    def attack_button(self):
         # Affiche le bouton d'attaque
-        self.rect_radius(5, self.orange, 550, 400, 90, 40)
-        self.text_c1("ATTACK", self.black, 560, 410)
-        self.screen.blit(self.attack_image, (560, 460))
+        self.rect_radius(5, self.orange, 550, 450, 95, 70)
+        self.text_c1("ATTACK", self.black, 563, 449)
+        self.screen.blit(self.attack_image, (575, 465))
+
+    def offensive_button(self):
+        # Affiche le bouton de défense
+        self.rect_radius(5, self.blue, 660, 450, 95, 70)
+        self.text_c4("OFFENSIVE", self.white, 613, 449)
+        self.screen.blit(self.offensive_image, (575, 465))
 
     def run(self):
         # La boucle principale du jeu
@@ -55,7 +63,8 @@ class Play_Fight(Global):
             self.background()
             self.button_quit()
             self.button_back()
-            self.power_attack()
+            self.attack_button()
+            self.offensive_button()
             pygame.display.flip()
             self.clock.tick(30)
             
