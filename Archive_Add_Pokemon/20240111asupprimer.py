@@ -13,7 +13,7 @@ class Menu(Global):
         self.add_pokemon = Test2()
         self.pokedex = Pokedex() 
 
-    def menu_run(self):        
+    def run(self):        
         self.display_name_background() 
         self.options_menu()       
     
@@ -86,4 +86,4 @@ class Menu(Global):
     
 
 menu = Menu()
-menu.menu_run()
+menu.run()

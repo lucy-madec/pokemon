@@ -18,7 +18,7 @@ class Global:
         self.police_c2 = pygame.font.Font("Pokemon Classic.ttf",15)  
         self.police_c3 = pygame.font.Font("Pokemon Classic.ttf",50)
         self.police_c4 = pygame.font.Font("Pokemon Classic.ttf",5)  
-        self.police_c5 = pygame.font.Font("Pokemon Classic.ttf",35)    
+        self.police_c5 = pygame.font.Font("Pokemon Classic.ttf", 35)    
         self.police_p1 = pygame.font.Font("Pixeled.ttf", 16)
 #def text  
     def text_c1(self,text, color, x, y):
@@ -70,6 +70,3 @@ class Global:
     def rect_radius(self,radius,color,x1,y1,x2,y2):
         r = radius
         pygame.draw.rect(self.screen,color,(x1,y1,x2,y2),border_radius = r)
-        
-    def lst_name(self,name):
-        self.lst_name += [name]
