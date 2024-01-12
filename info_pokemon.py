@@ -111,7 +111,10 @@ class Info_pokemon(Global):
         self.text_c1("BACK", self.black, 733, 13)
         pygame.display.update()
         pygame.display.flip()
-    
+        
+    def button_back(self):
+        self.rect_radius(10, self.white, 640, 10, 70, 25)
+        self.text_c1("BACK", self.black, 650, 13)
 
     def info_pokemon_run(self):
         running = True
