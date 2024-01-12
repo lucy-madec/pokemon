@@ -1,13 +1,12 @@
-from global_def import Global
+from Archive_Pokedex.global_def import Global
 import pygame
-
-class Test1(Global):
+class Add_pokemon1(Global):
     def __init__(self): 
             Global.__init__(self)
         
     # Initialisation de Pygame
     pygame.init()
-    def affichage1(self):
+    def affichage(self):
     # Définition de la taille de la fenêtre
         largeur, hauteur = 800, 600
         taille_fenetre = (largeur, hauteur)
@@ -24,12 +23,13 @@ class Test1(Global):
                     en_cours = False
 
             # Remplir la fenêtre avec la couleur gris
-            fenetre.fill(self.black)
+            fenetre.fill(couleur_gris)
 
             # Mettre à jour l'affichage
             pygame.display.flip()
 
-    
         # Quand la boucle est terminée, quitter Pygame
     pygame.quit()
     
+test1 = Add_pokemon1()
+test1.affichage()

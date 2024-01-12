@@ -1,13 +1,11 @@
-from global_def import Global
-from pikachu_am import Pikachu
-from pikachu_am import Pikachu
+from Archive_Pokedex.global_def import Global
+from info_pokemon import info_pokemon
 import pygame
 
 class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
-        self.pikachu = Pikachu()
-        self.menu = Pikachu()
+        self.info_pokemon = info_pokemon()
         self.lst_name = []
         
     def background(self):
@@ -214,7 +212,7 @@ class Pokedex(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(720, 10, 70, 25)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.menu.pikachu()
+                        self.info_pokemon.pikachu()
                         running = False
 
 

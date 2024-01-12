@@ -1,5 +1,5 @@
-from global_def import Global
-from pikachu_am import Pikachu
+from Archive_Pokedex.global_def import Global
+from info_pokemon import Pikachu
 import pygame
 
 class Pokedex(Global):

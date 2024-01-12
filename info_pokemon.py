@@ -1,7 +1,7 @@
-from global_def import Global
+from Archive_Pokedex.global_def import Global
 import pygame
 
-class Pikachu(Global):
+class info_pokemon(Global):
     def __init__(self):
         Global.__init__(self)
 

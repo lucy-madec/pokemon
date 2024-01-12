@@ -1,27 +1,22 @@
 # Importer les modules
-from global_def import Global
+from Archive_Pokedex.global_def import Global
 from test1 import Test1
 from test2 import Test2
-from test3 import Test3
-
+from pokedex import Pokedex
 import pygame, time, sys
 
 class Menu(Global): 
-
     def __init__(self): 
         Global.__init__(self)
-        self.T1 = Test1()
-        self.T2 = Test2()
-        self.T3 = Test3() 
-
-    def run(self):        
-        self.display_name_background() 
-        self.options_menu()       
-    
+        self.pokedex = Pokedex()
+        self.play = Test1
+        self.add_pokemon = Test2
+     
     def display_name_background (self):
+        # sourcery skip: remove-unnecessary-else, swap-if-else-branches
         start_time = time.time()
         while True:
-            self.screen.fill(self.orange)
+            self.screen.fill(self.white)
             current_time = time.time()
             elapsed_time = current_time - start_time
             if elapsed_time < 2:
@@ -40,7 +35,6 @@ class Menu(Global):
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
         self.screen.blit(menu_text, pos)     
     
-
     def options_menu(self): 
         running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
@@ -57,7 +51,7 @@ class Menu(Global):
                 self.draw_menu_option(rect, text, (125 if i != 1 else 70, 100 + i * 100))
 
             self.rect_radius(10, self.white, 310, 100, 440, 350)
-       
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -68,26 +62,26 @@ class Menu(Global):
                     for i, item in enumerate(option_texts):
                         rect = option_rects[i]
                         if rect.collidepoint(mouse_pos):
-                            if item == "PLAY":
-                                self.T1.affichage1()
-                                print("T1")
-                            elif item == "ADD POKEMON":
-                                self.T2.affichage2()
-                                print("T2")
+                            if item == "ADD POKEMON":
+                                self.add_pokemon.affichage2()
+                            elif item == "PLAY":
+                                self.play.affichage1()
                             elif item == "POKEDEX":
-                                self.T3.affichage3()
-                                print("T3")
+                                self.pokedex.pokedex_run()
                             elif item == "QUIT":
                                 pygame.quit()
                                 sys.exit()
                             running = False 
-                               
-      
-                pygame.display.update()
-            
-            self.clock.tick(60)
 
+
+                pygame.display.update()
+                pygame.display.flip()
+
+            self.clock.tick(60)
+    def menu_run(self):        
+        self.display_name_background() 
+        self.options_menu()  
     
 
 menu = Menu()
-menu.run()
+menu.menu_run()
