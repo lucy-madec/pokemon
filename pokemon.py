@@ -6,9 +6,10 @@ class Pokemon(Global):
 
     def __init__(self):
         Global.__init__(self)
+        self.attack_image = pygame.image.load("images/images-partie/partie2.png")
 
     def background(self):
-        self.img_back("Background", "images/images-partie/pokedex105.jpg")
+        self.img_back("Background", "images/images-partie/partie1.jpg")
 
     def button_quit(self):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
@@ -21,6 +22,12 @@ class Pokemon(Global):
     def is_mouse_over_button(self, button_rect):
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
+    
+    def power_attack(self):
+        self.rect_radius(5, self.orange, 550, 400, 90, 40)
+        self.text_c1("ATTACK", self.black, 560, 410)
+        self.screen.blit(self.attack_image, (560, 460))
+
 
     def run(self):
         self.running = True
@@ -39,6 +46,7 @@ class Pokemon(Global):
             self.background()
             self.button_quit()
             self.button_back()
+            self.power_attack()
             pygame.display.flip()
             self.clock.tick(30)
             
