@@ -1,5 +1,5 @@
 from global_def import Global
-# from pokedex import Pokedex
+# from pokedex import Pokedex Voir RYMA
 import pygame
 
 class Info_pokemon(Global):
