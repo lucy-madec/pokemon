@@ -13,7 +13,7 @@ class Menu(Global):
         self.add_pokemon = Test2()
         self.pokedex = Pokedex() 
 
-    def menu_run(self):        
+    def run(self):        
         self.display_name_background() 
         self.options_menu()       
     
@@ -29,13 +29,7 @@ class Menu(Global):
             else:
                 break
             pygame.display.flip()
-<<<<<<< HEAD:Archive_Pokedex/menu_am.py
             self.clock.tick(60)            
-=======
-            self.clock.tick(60)
-
-    # Afficher rectangles blancs pour les options du menu            
->>>>>>> menu:menu.py
 
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
@@ -45,6 +39,7 @@ class Menu(Global):
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
         self.screen.blit(menu_text, pos)     
     
+
     def options_menu(self): 
         running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
@@ -92,4 +87,4 @@ class Menu(Global):
     
 
 menu = Menu()
-menu.menu_run()
+menu.run()
