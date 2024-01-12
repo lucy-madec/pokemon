@@ -29,7 +29,13 @@ class Menu(Global):
             else:
                 break
             pygame.display.flip()
+<<<<<<< HEAD:Archive_Pokedex/menu_am.py
             self.clock.tick(60)            
+=======
+            self.clock.tick(60)
+
+    # Afficher rectangles blancs pour les options du menu            
+>>>>>>> menu:menu.py
 
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
