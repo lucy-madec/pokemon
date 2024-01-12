@@ -1,5 +1,5 @@
-from Archive_Pokedex.global_def import Global
-from Archive_Pokedex.info_pokemon import info_pokemon
+from global_def import Global
+from info_pokemon import info_pokemon
 import pygame
 
 class Pokedex(Global):

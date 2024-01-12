@@ -149,8 +149,7 @@ class Pokedex(Global):
                         self.info_pokemon.rondoudou()
                         # self.lst_name("Rondoudou")
 
-                                                                                    
-
+                                                                                
 
             pygame.display.flip()
             self.clock.tick(30)
