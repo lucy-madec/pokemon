@@ -78,4 +78,3 @@ class Global:
 # Liste
     def lst_name(self, name):
         self.lst_name += [name]
-
