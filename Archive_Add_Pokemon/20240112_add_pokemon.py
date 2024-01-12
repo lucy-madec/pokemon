@@ -1,5 +1,5 @@
 from Archive_Pokedex.global_def import Global
-from info_pokemon import Info_pokemon
+from Archive_Pokedex.info_pokemon import Info_pokemon
 import pygame
 
 # esssai1

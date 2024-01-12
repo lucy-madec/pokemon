@@ -72,6 +72,9 @@ class Pokedex(Global):
         self.run()
 
     def run(self):
+        self.background()  
+        self.logo()          
+        self.pokemon()
         running = True
         while running:
             for event in pygame.event.get():
@@ -84,61 +87,70 @@ class Pokedex(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.pikachu.pikachu_run()
+                        self.info_pokemon.etourvol()
+                        # self.lst_name("Etourvol")
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(220, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        # self.lst_name("Magicarpe")
-                        running = False
+                        self.info_pokemon.floravol()
+                        #good
+                        # self.lst_name("Lainergie")
+
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        # self.lst_name("Magicarpe")
-                        running = False
+                        self.info_pokemon.floravol()
+                        # self.lst_name("Floravol")
+
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(620, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        # self.lst_name("Magicarpe")
-                        running = False
+                        self.info_pokemon.luxio()
+                        # self.lst_name("Luxio")
+
 
                 #Rectangle du bas        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
+                        self.info_pokemon.lainergie()
+                        #good
                         # self.lst_name("Magicarpe")
-                        running = False
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(220, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        # self.lst_name("Magicarpe")
-                        running = False
+                        self.info_pokemon.magicarpe()
+                        # self.info_pokemon.phanpy()
+                        # self.lst_name("Phanpy")
+
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        # self.lst_name("Magicarpe")
-                        running = False
+                        self.info_pokemon.psykokwak()
+                        # self.lst_name("Psykokwak")
+
           
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(620, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        # self.lst_name("Magicarpe")
-                        running = False     
+                        self.info_pokemon.rondoudou()
+                        # self.lst_name("Rondoudou")
+
                                                                                     
-            self.background()  
-            self.logo()          
-            self.pokemon()
+
+
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
