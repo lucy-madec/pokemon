@@ -2,7 +2,7 @@ from Archive_Pokedex.global_def import Global
 # from pokedex import Pokedex
 import pygame
 
-class info_pokemon(Global):
+class Info_pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         # self.pokedex = Pokedex()
