@@ -1,4 +1,4 @@
-from Archive_Pokedex.global_def import Global
+from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 
@@ -14,7 +14,6 @@ class Pokedex(Global):
         self.screen.blit(background, (0,0))
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c3("POKEDEX",self.black,230,30)
-
 
 
     def ajout_pokemon(self): 
@@ -227,5 +226,3 @@ class Pokedex(Global):
             self.clock.tick(30)
         pygame.quit()
 
-test = Pokedex()
-test.pokedex_run()
