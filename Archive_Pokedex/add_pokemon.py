@@ -2,7 +2,7 @@ from global_def import Global
 from pikachu import Pikachu
 import pygame
 
-# esssai
+# esssai1
 
 class Pokedex(Global):
     def __init__(self):
