@@ -8,13 +8,13 @@ class Play_Fight(Global):
         # Appelle le constructeur de la classe parent Global
         Global.__init__(self)
         # Charge l'image pour l'attaque
-        self.attack_image = pygame.image.load("images/images-play/partie2.png")
+        self.attack_image = pygame.image.load("images/images-play/play2.png")
         # Charge l'image pour la défense
-        self.offensive_image = pygame.image.load("images/images-play/partie3.png")
+        self.offensive_image = pygame.image.load("images/images-play/play3.png")
 
     def background(self):
         # Affiche l'image de fond
-        self.img_back("Background", "images/images-play/partie1.jpg")
+        self.img_back("Background", "images/images-play/play1.jpg")
 
     def button_quit(self):
         # Affiche le bouton QUIT
