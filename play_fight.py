@@ -62,16 +62,23 @@ class Play_Fight(Global):
         self.rect_radius(5, self.blue, 650, 450, 95, 75)
         self.text_c1("RUN", self.white, 680, 475)      
 
-    def draw_hover_rectangle(self, btn_rect): 
+    def draw_hover_rectangle(self, btn_rect,  image_rect, image_path): 
         # Afficher le rectangle noir au survol de la souris
         if self.is_mouse_over_button(btn_rect):
-            pygame.draw.rect(self.screen, self.black, btn_rect, 4, 5)
+            pygame.draw.rect(self.screen, self.black, btn_rect, 4, 5)   
+             # Pokeball pixeled
+            self.img_pokemon("pokeball", image_path, image_rect[2], image_rect[3], image_rect[0], image_rect[1])
+            
     
-    def rect_hover(self):         
-        self.draw_hover_rectangle(pygame.Rect(450, 450, 95, 75))  # Bag
-        self.draw_hover_rectangle(pygame.Rect(350, 450, 95, 75))  # Fight
-        self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75))  # Pokemon
-        self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75))  # Run
+    def rect_hover(self):   
+
+        self.draw_hover_rectangle(pygame.Rect(350, 450, 95, 75), (430, 445, 20, 20), 'images/images-play/play6.png')  # Fight
+      
+        self.draw_hover_rectangle(pygame.Rect(450, 450, 95, 75),(530, 445, 20, 20),'images/images-play/play6.png' )  # Bag   
+
+        self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), 'images/images-play/play6.png')  # Pokemon
+
+        self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), 'images/images-play/play6.png')  # Run
     
     def run(self):
         # La boucle principale du jeu
@@ -98,10 +105,7 @@ class Play_Fight(Global):
             self.pokemon_button()
             self.bag_button()
             self.run_button()
-
-            self.rect_hover()
-
-           
+            self.rect_hover()    
             
             pygame.display.flip()
             self.clock.tick(30)
