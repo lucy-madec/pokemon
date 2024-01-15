@@ -18,7 +18,7 @@ class Play_Fight(Global):
        
 
         # Rectangle texte
-        self.img_pokemon("rectangle_texte",'images/images-play/play5.png', 250,129,50,422)    
+        self.img_pokemon("rectangle_texte",'images/images-play/play5.png', 250,129,50,4)    
 
         self.text_c2("What will you do ? ", self.black, 70, 475)       
 
