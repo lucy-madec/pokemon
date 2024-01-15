@@ -2,17 +2,17 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 
-class Play_pokemon(Global):
+class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
         
     def background(self):
-        background = pygame.image.load('images\images-pokedex\play4.jpg')
+        background = pygame.image.load('images\images-play\play4.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c3("POKEDEX",self.black,230,30)
+        self.text_c2("Choose your pokemon...",self.black,230,65)
 
     def ajout_pokemon(self): 
         self.background()
@@ -144,7 +144,7 @@ class Play_pokemon(Global):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-
+                    
             #Test cliques sur les rectangles
                 #Fleche droite           
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -159,6 +159,7 @@ class Play_pokemon(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 380, 50, 60)
                     if button_rect.collidepoint(mouse_x, mouse_y):
+                        poke2 = False
                         self.pokemon()
                         
                 #Rectangle du haut        
@@ -214,17 +215,16 @@ class Play_pokemon(Global):
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.medhyena()
 
-                          
+                #Button Back
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(720, 10, 70, 25)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         running = False
 
-
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
 
-test = Play_pokemon()
+test = Pokedex()
 test.pokedex_run()
