@@ -17,7 +17,7 @@ class Play_Fight(Global):
         self.rect_radius(10,self.white,55,430,240,115)  
        
         # Rectangle texte
-        self.img_pokemon("rectangle_texte",'images/images-play/play5.png', 250,129,50,420)    
+        self.img_pokemon("rectangle_texte",'images/images-play/play7.png', 250,129,50,420)    
 
         # Texte action à gauche
         self.text_c2("What will you do ? ", self.black, 70, 475)       
