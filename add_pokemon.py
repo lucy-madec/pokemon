@@ -174,7 +174,6 @@ class Pokedex(Global):
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.psykokwak()
                         # self.lst_name("Psykokwak")
-
           
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()

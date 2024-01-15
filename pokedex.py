@@ -1,11 +1,9 @@
 from global_def import Global
-from info_pokemon import Info_pokemon
 import pygame
 
 class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
-        self.info_pokemon = Info_pokemon()
         self.pok_running = False
         
     def background(self):
@@ -299,3 +297,5 @@ class Pokedex(Global):
             self.clock.tick(30)
         pygame.quit()
 
+# test = Pokedex()
+# test.pokedex_run()
