@@ -12,87 +12,92 @@ class Add_Pokemon(Global):
         self.hover_menu = False 
         self.quit = False
 
-    # Afficher le background
+    # Affiche le background
     def background(self):
         background = pygame.image.load('images/images-add/add_pokemon10.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
 
-    # Afficher le logo "Catch Them All"
+    # Affiche le logo "Catch Them All"
     def logo(self):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110) 
     
+<<<<<<< HEAD
     # Afficher le bouton QUIT
     def button_quit(self): 
 
+=======
+    # Affiche le bouton QUIT
+    def button_quit(self):        
+>>>>>>> aee53f29cb61a854475dfd8c4d165efee3bab9a1
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
-    # Afficher le bouton menu
+    # Affiche le bouton menu
     def button_menu(self):
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
     
-    # Vérifier si le bouton gauche de la souris est cliqué
+    # Vérifie si le bouton gauche de la souris est cliqué
     def is_quit_button_clicked(self):  
         mouse_pos = pygame.mouse.get_pos()
         quit_button_rect = pygame.Rect(720, 10, 70, 25)
         return quit_button_rect.collidepoint(mouse_pos)
     
-    # Vérifier si le bouton menu de la souris est cliqué
+    # Vérifie si le bouton menu de la souris est cliqué
     def is_menu_button_clicked(self):
         mouse_pos = pygame.mouse.get_pos()
         back_button_rect = pygame.Rect(640, 10, 70, 25)
         return back_button_rect.collidepoint(mouse_pos) 
 
-    #  Afficher liste des 8 Pokémons
+    #  Affiche liste des 8 Pokémons
     def pokemon(self):
         
-        # Afficher titre "Add Pokémon"
+        # Affiche titre "Add Pokémon"
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c5("ADD POKEMON",self.black,350,65)
         
-        # Créer rectangles haut
+        # Crée rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
         self.rect_radius(10,self.white,220, 250, 170, 120)
         self.rect_radius(10,self.white,420, 250, 170, 120)
         self.rect_radius(10,self.white,620, 250, 170, 120)
     
-        # Créer rectangles bas
+        # Crée rectangles bas
         self.rect_radius(10,self.white,20, 450, 170, 120)
         self.rect_radius(10,self.white,220, 450, 170, 120)
         self.rect_radius(10,self.white,420, 450, 170, 120)
         self.rect_radius(10,self.white,620, 450, 170, 120)
         
-        # Afficher pokemon Etourvol
+        # Affiche pokemon Etourvol
         self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
         self.text_c2("Etourvol",self.black,60,342)
 
-        # Afficher pokemon Lainergie
+        # Affiche pokemon Lainergie
         self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,65,455)
         self.text_c2("Lainergie",self.black,50,542)
 
-        # Afficher pokemon Floravol
+        # Affiche pokemon Floravol
         self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,265,242)
         self.text_c2("Floravol",self.black,265,342)
 
-        # Afficher pokemon Luxio
+        # Affiche pokemon Luxio
         self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,450,445)
         self.text_c2("Luxio",self.black,470,542)
 
-        # Afficher pokemon Magicarpe
+        # Affiche pokemon Magicarpe
         self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',90,99,255,452)
         self.text_c2("Magicarpe",self.black,245,542)
         
-        # Afficher pokemon Phanpy
+        # Affiche pokemon Phanpy
         self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',80,99,655,450)
         self.text_c2("Phanpy",self.black,670,542)
         
-        # Afficher pokemon Psykokwak
+        # Affiche pokemon Psykokwak
         self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
         self.text_c2("Psykokwak",self.black,440,342)
         
-        # Afficher pokemon Rondoudou
+        # Affiche pokemon Rondoudou
         self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
         self.text_c2("Rondoudou",self.black,642,342) 
 
