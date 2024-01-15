@@ -246,5 +246,5 @@ class Pokedex(Global):
             self.clock.tick(30)
         pygame.quit()
 
-# test = Pokedex()
-# test.pokedex_run()
+test = Pokedex()
+test.pokedex_run()
