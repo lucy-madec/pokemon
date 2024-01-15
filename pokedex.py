@@ -146,12 +146,10 @@ class Pokedex(Global):
         poke2 = False
         self.background()
         self.pokemon()       
-        
-        while self.pok_running:
 
         self.pokemon()
         self.button_menu()        
-        while running:
+        while self.pok_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
