@@ -11,6 +11,7 @@ class Info_pokemon(Global):
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.button_back()
+
     def capumain(self):
         background = pygame.image.load('images\images-pokedex\pokedex2b.png')
         background = background.convert()

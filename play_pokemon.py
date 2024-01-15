@@ -12,7 +12,7 @@ class Play_Pokemon(Global):
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c3("POKEDEX",self.black,230,30)
+        self.text_c2("Choose your pokemon...",self.black,230,65)
 
     def ajout_pokemon(self): 
         self.background()
@@ -123,12 +123,23 @@ class Play_Pokemon(Global):
         pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
         pygame.display.update()
         pygame.display.flip()
-        
-    def button_back(self):
+    
+    def button_quit(self):
+        # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
-        self.text_c1("BACK", self.black, 733, 13)
-        pygame.display.update()
-        pygame.display.flip()
+        self.text_c1("QUIT", self.black, 733, 13)
+    
+    def button_menu(self):
+        # Affiche le bouton BACK
+        self.rect_radius(5, self.white, 640, 10, 70, 25)
+        self.text_c1("MENU", self.black, 650, 13)
+
+    def is_mouse_over_button(self, button_rect):
+        # Vérifie si la souris est au-dessus du bouton
+        mouse_pos = pygame.mouse.get_pos()
+        return button_rect.collidepoint(mouse_pos)
+
+
         
     def play_pokemon_run(self):
         self.run()
@@ -139,12 +150,21 @@ class Play_Pokemon(Global):
 
         self.background()
         self.pokemon()
-        self.button_back()        
+        self.button_quit()
+        self.button_menu()        
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    # Vérifie si le bouton gauche de la souris est cliqué
+                    if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
+                        # Quitte le jeu lors du clic sur le bouton QUIT
+                        self.running = False
+                    elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                        pass
 
+                    
             #Test cliques sur les rectangles
                 #Fleche droite           
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -159,6 +179,7 @@ class Play_Pokemon(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 380, 50, 60)
                     if button_rect.collidepoint(mouse_x, mouse_y):
+                        poke2 = False
                         self.pokemon()
                         
                 #Rectangle du haut        
@@ -214,14 +235,16 @@ class Play_Pokemon(Global):
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.medhyena()
 
-                          
+                #Button Back
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(720, 10, 70, 25)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         running = False
 
-
+            self.button_quit()
+            self.button_menu()
+            
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()

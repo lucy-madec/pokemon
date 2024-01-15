@@ -18,9 +18,9 @@ class Add_Pokemon(Global):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
-    def button_back(self):
-        self.rect_radius(5, self.white, 10, 10, 70, 25)
-        self.text_c1("BACK", self.black, 23, 13)
+    def button_menu(self):
+        self.rect_radius(5, self.white, 640, 10, 70, 25)
+        self.text_c1("MENU", self.black, 650, 13)
     
     def is_quit_button_clicked(self):
         # Vérifie si le bouton gauche de la souris est cliqué
@@ -28,10 +28,10 @@ class Add_Pokemon(Global):
         quit_button_rect = pygame.Rect(720, 10, 70, 25)
         return quit_button_rect.collidepoint(mouse_pos)
     
-    def is_back_button_clicked(self):
+    def is_menu_button_clicked(self):
         mouse_pos = pygame.mouse.get_pos()
-        back_button_rect = pygame.Rect(10, 10, 70, 25)
-        return back_button_rect.collidepoint(mouse_pos)
+        back_menu_rect = pygame.Rect(640, 10, 70, 25)
+        return back_menu_rect.collidepoint(mouse_pos)
     
     def logo(self):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110)     
@@ -113,7 +113,7 @@ class Add_Pokemon(Global):
                     # Quitte le jeu lors du clic sur le bouton QUIT
                     if self.is_quit_button_clicked():    
                         running = False
-                    elif self.is_back_button_clicked():
+                    elif self.is_menu_button_clicked():
                         self.pokemon()
 
             #Test cliques sur les rect                    
@@ -182,12 +182,10 @@ class Add_Pokemon(Global):
                     button_rect = pygame.Rect(620, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.rondoudou()
-                        # self.lst_name("Rondoudou")
-
-                                                                                
-
+                        # self.lst_name("Rondoudou")   
+                                 
             self.button_quit()
-            self.button_back()
+            self.button_menu()
             
             pygame.display.flip()
             self.clock.tick(30)
