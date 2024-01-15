@@ -328,5 +328,5 @@ class Pokedex(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-test = Pokedex()
-test.pokedex_run()
+# test = Pokedex()
+# test.pokedex_run()
