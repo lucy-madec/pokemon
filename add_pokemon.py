@@ -22,14 +22,8 @@ class Add_Pokemon(Global):
     def logo(self):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110) 
     
-<<<<<<< HEAD
-    # Afficher le bouton QUIT
-    def button_quit(self): 
-
-=======
     # Affiche le bouton QUIT
     def button_quit(self):        
->>>>>>> aee53f29cb61a854475dfd8c4d165efee3bab9a1
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
