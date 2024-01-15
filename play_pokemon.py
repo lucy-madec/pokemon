@@ -249,5 +249,5 @@ class Play_Pokemon(Global):
             self.clock.tick(30)
         pygame.quit()
 
-# test = Play_Pokemon()
-# test.play_pokemon_run()
+test = Play_Pokemon()
+test.play_pokemon_run()

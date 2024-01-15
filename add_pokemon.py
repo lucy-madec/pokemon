@@ -2,7 +2,6 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 
-
 class Add_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
@@ -39,7 +38,7 @@ class Add_Pokemon(Global):
     def pokemon(self):
         
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c5("ADD POKEMON",self.black,220,45)
+        self.text_c5("ADD POKEMON",self.black,340,65)
         
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
@@ -191,4 +190,6 @@ class Add_Pokemon(Global):
             self.clock.tick(30)
         pygame.quit()
 
+# test_add_pokemon = Add_Pokemon()
+# test_add_pokemon.add_pokemon_run()
 
