@@ -145,7 +145,7 @@ class Pokedex(Global):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
-
+                    
             #Test cliques sur les rectangles
                 #Fleche droite           
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -160,6 +160,7 @@ class Pokedex(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 380, 50, 60)
                     if button_rect.collidepoint(mouse_x, mouse_y):
+                        poke2 = False
                         self.pokemon()
                         
                 #Rectangle du haut        
@@ -215,15 +216,16 @@ class Pokedex(Global):
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.medhyena()
 
-                          
+                #Button Back
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(720, 10, 70, 25)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         running = False
 
-
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
 
+test = Pokedex()
+test.pokedex_run()
