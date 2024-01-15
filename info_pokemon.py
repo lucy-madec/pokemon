@@ -1,11 +1,12 @@
 from global_def import Global
-# from pokedex import Pokedex Voir RYMA
 import pygame
 
 class Info_pokemon(Global):
     def __init__(self):
         Global.__init__(self)
-        # self.pokedex = Pokedex()
+        self.info_runningning = False
+        self.value_pok_running = True
+        
     def pikachu(self):
         background = pygame.image.load('images\images-pokedex\pokedex1b.png')
         background = background.convert()
@@ -17,45 +18,49 @@ class Info_pokemon(Global):
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
+        self.button_back()
         
     def evoli(self):
         background = pygame.image.load('images\images-pokedex\pokedex3b.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        
+        self.button_back()
+                
     def marcacrin(self):
         background = pygame.image.load('images\images-pokedex\pokedex4b.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        
+        self.button_back()
+                
     def salameche(self):
         background = pygame.image.load('images\images-pokedex\pokedex5b.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        
+        self.button_back()
+                
     def medhyena(self):
         background = pygame.image.load('images\images-pokedex\pokedex6b.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        
+        self.button_back()
+                
     def tiplouf(self):
         background = pygame.image.load('images\images-pokedex\pokedex7b.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        
+        self.button_back()
+                
     def caninos(self):
         background = pygame.image.load('images\images-pokedex\pokedex8b.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-
-
-
+        self.button_back()
 
 
     def etourvol(self):
@@ -63,73 +68,87 @@ class Info_pokemon(Global):
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        
+        self.button_back()
+                
     def lainergie(self):
         background = pygame.image.load('images\images-pokedex\pokedex212.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-
+        self.button_back()
+        
     def floravol(self):
         background = pygame.image.load('images\images-pokedex\pokedex209.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-
+        self.button_back()
+        
     def luxio(self):
         background = pygame.image.load('images\images-pokedex\pokedex214.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-
+        self.button_back()
+        
     def magicarpe(self):
         background = pygame.image.load('images\images-pokedex\pokedex213.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        
+        self.button_back()
+                
     def phanpy(self):
         background = pygame.image.load('images\images-pokedex\pokedex215.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        
+        self.button_back()
+                
     def psykokwak(self):
         background = pygame.image.load('images\images-pokedex\pokedex210.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-
+        self.button_back()
+        
     def rondoudou(self):
         background = pygame.image.load('images\images-pokedex\pokedex211.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        
-        
-    def button_back(self):
+        self.button_back()        
+
+    def button_quit(self):
+        # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
-        self.text_c1("BACK", self.black, 733, 13)
-        pygame.display.update()
-        pygame.display.flip()
-        
+        self.text_c1("QUIT", self.black, 733, 13)
+    
     def button_back(self):
-        self.rect_radius(10, self.white, 640, 10, 70, 25)
+        # Affiche le bouton BACK
+        self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("BACK", self.black, 650, 13)
+        
+    def is_mouse_over_button(self, button_rect):
+        # Vérifie si la souris est au-dessus du bouton
+        mouse_pos = pygame.mouse.get_pos()
+        return button_rect.collidepoint(mouse_pos)
+        
 
     def info_pokemon_run(self):
-        running = True
-        while running:
+        self.button_back()
+        self.button_quit()
+
+        while self.info_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(720, 10, 70, 25)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.pokedex.pokedex_run()
-                        running = False
-
+                    self.info_running = False
+                elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                    # # Vérifie si le bouton gauche de la souris est cliqué
+                    if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
+                    #     # Quitte le jeu lors du clic sur le bouton QUIT
+                        pass
+                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                        self.info_running = False
+                        
             pygame.display.flip()
-        pygame.quit()
-
