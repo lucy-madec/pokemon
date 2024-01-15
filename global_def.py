@@ -14,6 +14,9 @@ class Global:
         self.black = "#0e0f10"
         self.blue = "#375daa"
         self.yellow = "#ffcc01"
+        self.green = "#488030"
+        self.brown = "#e09828"
+        self.pink = "#f8a8b0"
         self.police_c1 = pygame.font.Font("Pokemon Classic.ttf",10)
         self.police_c2 = pygame.font.Font("Pokemon Classic.ttf",15)  
         self.police_c3 = pygame.font.Font("Pokemon Classic.ttf",50)
@@ -48,7 +51,7 @@ class Global:
         self.screen.blit(text_surface, (x, y))
 
 #def image
-    def img_pokemon(self,name,path,a,b,x,y,):
+    def img_pokemon(self,name,path,a,b,x,y):
         name = pygame.image.load(path)
         name = name.convert_alpha()
         name = pygame.transform.scale(name,(a,b))        

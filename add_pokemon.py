@@ -11,7 +11,27 @@ class Pokedex(Global):
         background = pygame.image.load('images/images-add/add_pokemon1a.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
-
+    
+    def button_quit(self):
+        # Affiche le bouton QUIT
+        self.rect_radius(5, self.white, 720, 10, 70, 25)
+        self.text_c1("QUIT", self.black, 733, 13)
+    
+    def button_back(self):
+        self.rect_radius(5, self.white, 640, 10, 70, 25)
+        self.text_c1("BACK", self.black, 650, 13)
+    
+    def is_quit_button_clicked(self):
+        # Vérifie si le bouton gauche de la souris est cliqué
+        mouse_pos = pygame.mouse.get_pos()
+        quit_button_rect = pygame.Rect(720, 10, 70, 25)
+        return quit_button_rect.collidepoint(mouse_pos)
+    
+    def is_back_button_clicked(self):
+        mouse_pos = pygame.mouse.get_pos()
+        back_button_rect = pygame.Rect(640, 10, 70, 25)
+        return back_button_rect.collidepoint(mouse_pos)
+    
     def logo(self):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110)     
 
@@ -62,7 +82,17 @@ class Pokedex(Global):
         
         #Afficher pokemon Rondoudou
         self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
-        self.text_c2("Rondoudou",self.black,642,342)       
+        self.text_c2("Rondoudou",self.black,642,342) 
+
+    def setup_screen(self):
+        self.background()
+        self.logo()
+        self.pokemon()
+        self.button_quit()
+
+    def show_pokemon_list(self):
+        self.setup_screen()
+        pygame.display.flip()
         
         pygame.display.update()
         pygame.display.flip()
@@ -71,14 +101,20 @@ class Pokedex(Global):
         self.run()
 
     def run(self):
-        self.background()  
-        self.logo()          
-        self.pokemon()
+        self.setup_screen()
         running = True
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    # Quitte le jeu lors du clic sur le bouton QUIT
+                    if self.is_quit_button_clicked():    
+                        running = False
+                    elif self.is_back_button_clicked():
+                        self.pokemon()
+
             #Test cliques sur les rect                    
         
                 #Rectangle du haut        
@@ -149,6 +185,9 @@ class Pokedex(Global):
 
                                                                                 
 
+            self.button_quit()
+            self.button_back()
+            
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
