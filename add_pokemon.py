@@ -27,7 +27,6 @@ class Add_Pokemon(Global):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
-    # Affiche le bouton menu
     def button_menu(self):
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
@@ -38,11 +37,13 @@ class Add_Pokemon(Global):
         quit_button_rect = pygame.Rect(720, 10, 70, 25)
         return quit_button_rect.collidepoint(mouse_pos)
     
-    # Vérifie si le bouton menu de la souris est cliqué
     def is_menu_button_clicked(self):
         mouse_pos = pygame.mouse.get_pos()
-        back_button_rect = pygame.Rect(640, 10, 70, 25)
-        return back_button_rect.collidepoint(mouse_pos) 
+        back_menu_rect = pygame.Rect(640, 10, 70, 25)
+        return back_menu_rect.collidepoint(mouse_pos)
+    
+    def logo(self):
+        self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110)     
 
     #  Affiche liste des 8 Pokémons
     def pokemon(self):
@@ -123,6 +124,15 @@ class Add_Pokemon(Global):
                         self.M.menu_run()
                         self.show_menu = True
 
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    # Quitte le jeu lors du clic sur le bouton QUIT
+                    if self.is_quit_button_clicked():    
+                        running = False
+                    elif self.is_menu_button_clicked():
+                        self.pokemon()
+
+            #Test cliques sur les rect                    
+        
                 #Rectangle du haut        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -172,8 +182,7 @@ class Add_Pokemon(Global):
                     button_rect = pygame.Rect(620, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.rondoudou()
-                                                                                             
-
+                                                       
             self.button_quit()
             self.button_menu()
             
