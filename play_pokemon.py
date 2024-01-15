@@ -2,10 +2,11 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 
-class Pokedex(Global):
+class Play_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
+        self.play_pok_running = True
         
     def background(self):
         background = pygame.image.load('images\images-play\play4.jpg')
@@ -141,7 +142,7 @@ class Pokedex(Global):
 
 
         
-    def pokedex_run(self):
+    def play_pokemon_run(self):
         self.run()
 
     def run(self):
@@ -152,17 +153,17 @@ class Pokedex(Global):
         self.pokemon()
         self.button_quit()
         self.button_menu()        
-        while running:
+        while self.play_pok_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False
+                    self.play_pok_running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     # Vérifie si le bouton gauche de la souris est cliqué
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         # Quitte le jeu lors du clic sur le bouton QUIT
-                        self.running = False
-                    elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         pass
+                    elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                        self.play_pok_running = False
 
                     
             #Test cliques sur les rectangles
@@ -242,12 +243,10 @@ class Pokedex(Global):
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         running = False
 
-            self.button_quit()
-            self.button_menu()
+
             
             pygame.display.flip()
             self.clock.tick(30)
-        pygame.quit()
 
-# test = Pokedex()
-# test.pokedex_run()
+# test = Play_Pokemon()
+# test.play_pokemon_run()
