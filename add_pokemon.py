@@ -9,6 +9,8 @@ class Add_Pokemon(Global):
         self.info_pokemon = Info_pokemon()
         self.M = Menu()
         self.show_menu = False
+        self.hover_menu = False 
+        self.quit = False
 
     # Afficher le background
     def background(self):
@@ -21,7 +23,8 @@ class Add_Pokemon(Global):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110) 
     
     # Afficher le bouton QUIT
-    def button_quit(self):        
+    def button_quit(self): 
+
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
