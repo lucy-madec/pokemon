@@ -1,7 +1,6 @@
 from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
-from menu import Menu
 
 class Add_Pokemon(Global):
     def __init__(self):
@@ -185,7 +184,6 @@ class Add_Pokemon(Global):
             
             pygame.display.flip()
             self.clock.tick(30)
-
 
 # test_add_pokemon = Add_Pokemon()
 # test_add_pokemon.add_pokemon_run()
