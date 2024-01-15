@@ -1,6 +1,3 @@
-
-# Menu dernière version 20240112 16:55
-
 # Importer les modules
 from global_def import Global
 from test1 import Test1
