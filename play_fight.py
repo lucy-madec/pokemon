@@ -83,8 +83,7 @@ class Play_Fight(Global):
         # Pokemon
         self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), 'images/images-play/play6.png')  
 
-        # Run
-        self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), 'images/images-play/play6.png')  
+        self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), 'images/images-play/play6.png')  # Run
     
     def run(self):
         # La boucle principale du jeu
@@ -118,6 +117,6 @@ class Play_Fight(Global):
             
         pygame.quit()
 
-# Créer instance Play_Fight exécute le jeu
+# Crée une instance de la classe Play_Fight et exécute le jeu
 game = Play_Fight()
 game.run()
