@@ -1,10 +1,13 @@
 
-# Menu dernière version 20240112 16:55
-
 # Importer les modules
 from global_def import Global
-from test1 import Test1
-from test2 import Test2
+# from test1 import Test1
+# from play_fight import Play_Fight
+
+from play_pokemon import Play_Pokemon
+
+
+from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
 
@@ -12,8 +15,9 @@ class Menu(Global):
 
     def __init__(self): 
         Global.__init__(self)
-        self.play = Test1()
-        self.add_pokemon = Test2()
+        self.play_p = Play_Pokemon()
+        # self.play_f = Play_Fight()
+        self.add_pokemon = Add_Pokemon()
         self.pokedex = Pokedex() 
 
     def menu_run(self):        
@@ -84,9 +88,9 @@ class Menu(Global):
                         rect = option_rects[i]
                         if rect.collidepoint(mouse_pos):
                             if item == "PLAY":
-                                self.play.affichage1()
+                                self.play_p.play_pokemon_run()
                             elif item == "ADD POKEMON":
-                                self.add_pokemon.affichage2()
+                                self.add_pokemon.add_pokemon_run()
                             elif item == "POKEDEX":
                                 self.pokedex.pokedex_run()
                             elif item == "QUIT":

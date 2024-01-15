@@ -2,11 +2,12 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 
-class Pokedex(Global):
+
+class Add_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
-
+        
     def background(self):
         background = pygame.image.load('images/images-add/add_pokemon1a.jpg')
         background = background.convert()
@@ -97,7 +98,7 @@ class Pokedex(Global):
         pygame.display.update()
         pygame.display.flip()
 
-    def pokedex_run(self):
+    def add_pokemon_run(self):
         self.run()
 
     def run(self):
@@ -192,6 +193,4 @@ class Pokedex(Global):
             self.clock.tick(30)
         pygame.quit()
 
-ajout = Pokedex()
-ajout.pokedex_run()
 

@@ -78,6 +78,9 @@ class Play_Fight(Global):
         self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), 'images/images-play/play6.png')  # Pokemon
 
         self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), 'images/images-play/play6.png')  # Run
+
+    def play_fight_run(self): 
+        self.run()
     
     def run(self):
         # La boucle principale du jeu

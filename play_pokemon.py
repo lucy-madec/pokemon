@@ -2,13 +2,13 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 
-class Play_pokemon(Global):
+class Play_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
         
     def background(self):
-        background = pygame.image.load('images\images-pokedex\play4.jpg')
+        background = pygame.image.load('images\images-play\play4.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.rect_radius(10,self.white,200, 40, 440, 80)
@@ -130,7 +130,7 @@ class Play_pokemon(Global):
         pygame.display.update()
         pygame.display.flip()
         
-    def pokedex_run(self):
+    def play_pokemon_run(self):
         self.run()
 
     def run(self):
@@ -226,5 +226,5 @@ class Play_pokemon(Global):
             self.clock.tick(30)
         pygame.quit()
 
-test = Play_pokemon()
-test.pokedex_run()
+# test = Play_Pokemon()
+# test.play_pokemon_run()
