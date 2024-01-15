@@ -99,9 +99,6 @@ class Menu(Global):
             
             self.clock.tick(60)
 
-    def run(self):        
-        self.display_name_background() 
-        self.options_menu() 
 
 menu = Menu()
 menu.menu_run()
