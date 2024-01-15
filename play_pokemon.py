@@ -123,12 +123,20 @@ class Pokedex(Global):
         pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
         pygame.display.update()
         pygame.display.flip()
-        
-    def button_back(self):
+    
+    def button_quit(self):
+        # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
-        self.text_c1("BACK", self.black, 733, 13)
+        self.text_c1("QUIT", self.black, 733, 13)
+        
+    def button_menu(self):
+        # Affiche le bouton MENU
+        self.rect_radius(5, self.white, 720, 10, 70, 25)
+        self.text_c1("MENU", self.black, 733, 13)
         pygame.display.update()
         pygame.display.flip()
+
+
         
     def pokedex_run(self):
         self.run()
@@ -139,11 +147,13 @@ class Pokedex(Global):
 
         self.background()
         self.pokemon()
-        self.button_back()        
+        self.button_quit()
+        self.button_menu()        
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+
                     
             #Test cliques sur les rectangles
                 #Fleche droite           
