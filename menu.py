@@ -1,5 +1,6 @@
-
 # Menu dernière version 20240112 16:55
+from pokedex import Pokedex
+from info_pokemon import Info_pokemon
 
 # Importer les modules
 from global_def import Global
@@ -14,7 +15,7 @@ class Menu(Global):
         Global.__init__(self)
         self.play = Test1()
         self.add_pokemon = Test2()
-        self.pokedex = Pokedex() 
+        self.pokedex = Pokedex()
 
     def menu_run(self):        
         self.display_name_background() 
@@ -88,17 +89,15 @@ class Menu(Global):
                             elif item == "ADD POKEMON":
                                 self.add_pokemon.affichage2()
                             elif item == "POKEDEX":
+                                self.pok_running =  True
                                 self.pokedex.pokedex_run()
                             elif item == "QUIT":
                                 pygame.quit()
                                 sys.exit()
-                            running = False 
-
-                pygame.display.update()
-                pygame.display.flip()
-            
+                            running = False
+            pygame.display.flip()
             self.clock.tick(60)
-
+        pygame.display.flip()
 
 menu = Menu()
 menu.menu_run()
