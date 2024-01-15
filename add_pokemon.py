@@ -182,7 +182,6 @@ class Pokedex(Global):
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.rondoudou()
                         # self.lst_name("Rondoudou")
-
                                                                                 
 
             self.button_quit()
