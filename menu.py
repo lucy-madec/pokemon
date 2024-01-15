@@ -4,7 +4,6 @@ from global_def import Global
 # from play_fight import Play_Fight
 
 from play_pokemon import Play_Pokemon
-
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
@@ -16,13 +15,14 @@ class Menu(Global):
         self.play_p = Play_Pokemon()
         # self.play_f = Play_Fight()
         self.add_pokemon = Add_Pokemon()
-        self.pokedex = Pokedex() 
+        self.pokedex = Pokedex()
 
     def menu_run(self):        
         self.display_name_background() 
         self.options_menu()       
-    
+
     def display_name_background (self):
+        # sourcery skip: remove-unnecessary-else, swap-if-else-branches
         start_time = time.time()
         while True:
             self.screen.fill(self.white)
@@ -49,7 +49,7 @@ class Menu(Global):
         self.screen.blit(menu_text, pos)     
     
     def options_menu(self): 
-
+        
         # Définir choix du menu
         running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
@@ -95,8 +95,8 @@ class Menu(Global):
                             elif item == "QUIT":
                                 pygame.quit()
                                 sys.exit()
-                            running = False
-            pygame.display.flip()
+
+            pygame.display.update()
             self.clock.tick(60)
         pygame.display.flip()
 

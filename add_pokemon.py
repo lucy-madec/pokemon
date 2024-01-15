@@ -6,6 +6,7 @@ class Add_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
+        self.add_running = True
         
     def background(self):
         background = pygame.image.load('images/images-add/add_pokemon1a.jpg')
@@ -26,7 +27,7 @@ class Add_Pokemon(Global):
         mouse_pos = pygame.mouse.get_pos()
         quit_button_rect = pygame.Rect(720, 10, 70, 25)
         return quit_button_rect.collidepoint(mouse_pos)
-    
+
     def is_menu_button_clicked(self):
         mouse_pos = pygame.mouse.get_pos()
         back_menu_rect = pygame.Rect(640, 10, 70, 25)
@@ -102,18 +103,17 @@ class Add_Pokemon(Global):
 
     def run(self):
         self.setup_screen()
-        running = True
-        while running:
+        while self.add_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False
+                    self.add_running = False
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     # Quitte le jeu lors du clic sur le bouton QUIT
                     if self.is_quit_button_clicked():    
-                        running = False
+                        self.add_running = False
                     elif self.is_menu_button_clicked():
-                        self.pokemon()
+                        self.add_running = False
 
             #Test cliques sur les rect                    
         
@@ -138,7 +138,7 @@ class Add_Pokemon(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.floravol()
+                        self.info_pokemon.psykokwak()
                         # self.lst_name("Floravol")
 
 
@@ -146,7 +146,7 @@ class Add_Pokemon(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(620, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.luxio()
+                        self.info_pokemon.rondoudou()
                         # self.lst_name("Luxio")
 
 
@@ -156,7 +156,6 @@ class Add_Pokemon(Global):
                     button_rect = pygame.Rect(20, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.lainergie()
-                        #good
                         # self.lst_name("Magicarpe")
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -164,7 +163,6 @@ class Add_Pokemon(Global):
                     button_rect = pygame.Rect(220, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.magicarpe()
-                        # self.info_pokemon.phanpy()
                         # self.lst_name("Phanpy")
 
 
@@ -172,14 +170,14 @@ class Add_Pokemon(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.psykokwak()
+                        self.info_pokemon.luxio()
                         # self.lst_name("Psykokwak")
           
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(620, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.rondoudou()
+                        self.info_pokemon.phanpy()
                         # self.lst_name("Rondoudou")   
                                  
             self.button_quit()
@@ -187,8 +185,8 @@ class Add_Pokemon(Global):
             
             pygame.display.flip()
             self.clock.tick(30)
-        pygame.quit()
 
-test_add_pokemon = Add_Pokemon()
-test_add_pokemon.add_pokemon_run()
+
+# test_add_pokemon = Add_Pokemon()
+# test_add_pokemon.add_pokemon_run()
 

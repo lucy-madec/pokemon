@@ -4,19 +4,21 @@ import pygame
 class Info_pokemon(Global):
     def __init__(self):
         Global.__init__(self)
+        self.info_runningning = False
+        self.value_pok_running = True
         
     def pikachu(self):
         background = pygame.image.load('images\images-pokedex\pokedex1b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
-        self.button_back1()
+        self.button_back()
 
     def capumain(self):
         background = pygame.image.load('images\images-pokedex\pokedex2b.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        self.button_back1()
+        self.button_back()
         
     def evoli(self):
         background = pygame.image.load('images\images-pokedex\pokedex3b.png')
@@ -59,7 +61,6 @@ class Info_pokemon(Global):
         self.button_back()
         self.screen.blit(background, (0,0))
         self.button_back()
-
 
 
     def etourvol(self):
@@ -118,34 +119,36 @@ class Info_pokemon(Global):
         self.screen.blit(background, (0,0))
         self.button_back()        
 
-    # def button_back(self):
-    #     self.rect_radius(5, self.white, 720, 10, 70, 25)
-    #     self.text_c1("BACK", self.black, 733, 13)
-    #     pygame.display.update()
-    #     pygame.display.flip()
-
-    def button_back1(self):
-        self.rect_radius(5, self.yellow, 620, 10, 70, 25)
-        self.text_c1("BACK", self.black, 633, 13)
-        pygame.display.update()
-        pygame.display.flip()
-        
+    def button_quit(self):
+        # Affiche le bouton QUIT
+        self.rect_radius(5, self.white, 720, 10, 70, 25)
+        self.text_c1("QUIT", self.black, 733, 13)
+    
     def button_back(self):
-        self.rect_radius(10, self.white, 720, 10, 70, 25)
-        self.text_c1("BACK", self.black, 733, 13)
-
+        # Affiche le bouton BACK
+        self.rect_radius(5, self.white, 640, 10, 70, 25)
+        self.text_c1("BACK", self.black, 650, 13)
+        
+    def is_mouse_over_button(self, button_rect):
+        # Vérifie si la souris est au-dessus du bouton
+        mouse_pos = pygame.mouse.get_pos()
+        return button_rect.collidepoint(mouse_pos)
+        
 
     def info_pokemon_run(self):
-        info_run = True
-        while info_run:
+        self.button_back()
+        self.button_quit()
+
+        while self.info_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    info_run = False
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(620, 10, 70, 25)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.pokedex.pokedex_run()
-                        info_run = False
+                    self.info_running = False
+                elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                    # # Vérifie si le bouton gauche de la souris est cliqué
+                    if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
+                    #     # Quitte le jeu lors du clic sur le bouton QUIT
+                        pass
+                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                        self.info_running = False
+                        
             pygame.display.flip()
-        pygame.quit()
