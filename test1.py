@@ -1,7 +1,7 @@
 from global_def import Global
 import pygame
 
-#testt
+#Test Alicia
 
 class Test1(Global):
     def __init__(self): 
