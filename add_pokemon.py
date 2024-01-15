@@ -2,11 +2,11 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 
-class Pokedex(Global):
+class Add_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
-
+        
     def background(self):
         background = pygame.image.load('images/images-add/add_pokemon1a.jpg')
         background = background.convert()
@@ -17,9 +17,9 @@ class Pokedex(Global):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
-    def button_back(self):
+    def button_menu(self):
         self.rect_radius(5, self.white, 640, 10, 70, 25)
-        self.text_c1("BACK", self.black, 650, 13)
+        self.text_c1("MENU", self.black, 650, 13)
     
     def is_quit_button_clicked(self):
         # Vérifie si le bouton gauche de la souris est cliqué
@@ -27,10 +27,10 @@ class Pokedex(Global):
         quit_button_rect = pygame.Rect(720, 10, 70, 25)
         return quit_button_rect.collidepoint(mouse_pos)
     
-    def is_back_button_clicked(self):
+    def is_menu_button_clicked(self):
         mouse_pos = pygame.mouse.get_pos()
-        back_button_rect = pygame.Rect(640, 10, 70, 25)
-        return back_button_rect.collidepoint(mouse_pos)
+        back_menu_rect = pygame.Rect(640, 10, 70, 25)
+        return back_menu_rect.collidepoint(mouse_pos)
     
     def logo(self):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110)     
@@ -38,7 +38,7 @@ class Pokedex(Global):
     def pokemon(self):
         
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c5("ADD POKEMON",self.black,220,45)
+        self.text_c5("ADD POKEMON",self.black,340,65)
         
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
@@ -97,7 +97,7 @@ class Pokedex(Global):
         pygame.display.update()
         pygame.display.flip()
 
-    def pokedex_run(self):
+    def add_pokemon_run(self):
         self.run()
 
     def run(self):
@@ -112,7 +112,7 @@ class Pokedex(Global):
                     # Quitte le jeu lors du clic sur le bouton QUIT
                     if self.is_quit_button_clicked():    
                         running = False
-                    elif self.is_back_button_clicked():
+                    elif self.is_menu_button_clicked():
                         self.pokemon()
 
             #Test cliques sur les rect                    
@@ -180,17 +180,15 @@ class Pokedex(Global):
                     button_rect = pygame.Rect(620, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.rondoudou()
-                        # self.lst_name("Rondoudou")
-
-                                                                                
-
+                        # self.lst_name("Rondoudou")   
+                                 
             self.button_quit()
-            self.button_back()
+            self.button_menu()
             
             pygame.display.flip()
             self.clock.tick(30)
         pygame.quit()
 
-ajout = Pokedex()
-ajout.pokedex_run()
+# test_add_pokemon = Add_Pokemon()
+# test_add_pokemon.add_pokemon_run()
 

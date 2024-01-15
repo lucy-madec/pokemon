@@ -18,7 +18,7 @@ class Play_Fight(Global):
        
 
         # Rectangle texte
-        self.img_pokemon("rectangle_texte",'images/images-play/play5.png', 250,129,50,422)    
+        self.img_pokemon("rectangle_texte",'images/images-play/play5.png', 250,129,50,420)    
 
         self.text_c2("What will you do ? ", self.black, 70, 475)       
 
@@ -33,10 +33,10 @@ class Play_Fight(Global):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
-    def button_back(self):
+    def button_menu(self):
         # Affiche le bouton BACK
         self.rect_radius(5, self.white, 640, 10, 70, 25)
-        self.text_c1("BACK", self.black, 650, 13)
+        self.text_c1("MENU", self.black, 650, 13)
 
     def is_mouse_over_button(self, button_rect):
         # Vérifie si la souris est au-dessus du bouton
@@ -78,6 +78,9 @@ class Play_Fight(Global):
         self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), 'images/images-play/play6.png')  # Pokemon
 
         self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), 'images/images-play/play6.png')  # Run
+
+    def play_fight_run(self): 
+        self.run()
     
     def run(self):
         # La boucle principale du jeu
@@ -99,7 +102,7 @@ class Play_Fight(Global):
             self.background()
             self.rectangle()
             self.button_quit()
-            self.button_back()
+            self.button_menu()
             self.fight_button()
             self.pokemon_button()
             self.bag_button()
@@ -112,5 +115,5 @@ class Play_Fight(Global):
         pygame.quit()
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
-game = Play_Fight()
-game.run()
+# game = Play_Fight()
+# game.run()
