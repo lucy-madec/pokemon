@@ -95,3 +95,6 @@ class Menu(Global):
                 pygame.display.flip()
             
             self.clock.tick(60)
+
+test_menu = Menu()
+test_menu.menu_run()
