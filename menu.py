@@ -1,7 +1,10 @@
 # Importer les modules
 from global_def import Global
-from test1 import Test1
-from test2 import Test2
+# from test1 import Test1
+# from play_fight import Play_Fight
+
+from play_pokemon import Play_Pokemon
+from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
 
@@ -9,15 +12,17 @@ class Menu(Global):
 
     def __init__(self): 
         Global.__init__(self)
-        self.play = Test1()
-        self.add_pokemon = Test2()
-        self.pokedex = Pokedex() 
+        self.play_p = Play_Pokemon()
+        # self.play_f = Play_Fight()
+        self.add_pokemon = Add_Pokemon()
+        self.pokedex = Pokedex()
 
     def menu_run(self):        
         self.display_name_background() 
         self.options_menu()       
-    
+
     def display_name_background (self):
+        # sourcery skip: remove-unnecessary-else, swap-if-else-branches
         start_time = time.time()
         while True:
             self.screen.fill(self.white)
@@ -44,7 +49,7 @@ class Menu(Global):
         self.screen.blit(menu_text, pos)     
     
     def options_menu(self): 
-
+        
         # Définir choix du menu
         running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
@@ -81,21 +86,19 @@ class Menu(Global):
                         rect = option_rects[i]
                         if rect.collidepoint(mouse_pos):
                             if item == "PLAY":
-                                self.play.affichage1()
+                                self.play_p.play_pokemon_run()
                             elif item == "ADD POKEMON":
-                                self.add_pokemon.affichage2()
+                                self.add_pokemon.add_pokemon_run()
                             elif item == "POKEDEX":
+                                self.pok_running =  True
                                 self.pokedex.pokedex_run()
                             elif item == "QUIT":
                                 pygame.quit()
                                 sys.exit()
-                            running = False 
 
-                pygame.display.update()
-                pygame.display.flip()
-            
+            pygame.display.update()
             self.clock.tick(60)
-
+        pygame.display.flip()
 
 menu = Menu()
 menu.menu_run()

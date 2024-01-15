@@ -2,11 +2,12 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 
-class Pokedex(Global):
+class Add_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
-
+        self.add_running = True
+        
     def background(self):
         background = pygame.image.load('images/images-add/add_pokemon1a.jpg')
         background = background.convert()
@@ -26,11 +27,11 @@ class Pokedex(Global):
         mouse_pos = pygame.mouse.get_pos()
         quit_button_rect = pygame.Rect(720, 10, 70, 25)
         return quit_button_rect.collidepoint(mouse_pos)
-    
-    def is_back_button_clicked(self):
+
+    def is_menu_button_clicked(self):
         mouse_pos = pygame.mouse.get_pos()
-        back_button_rect = pygame.Rect(640, 10, 70, 25)
-        return back_button_rect.collidepoint(mouse_pos)
+        back_menu_rect = pygame.Rect(640, 10, 70, 25)
+        return back_menu_rect.collidepoint(mouse_pos)
     
     def logo(self):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110)     
@@ -38,7 +39,7 @@ class Pokedex(Global):
     def pokemon(self):
         
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c5("ADD POKEMON",self.black,220,45)
+        self.text_c5("ADD POKEMON",self.black,340,65)
         
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
@@ -97,23 +98,22 @@ class Pokedex(Global):
         pygame.display.update()
         pygame.display.flip()
 
-    def pokedex_run(self):
+    def add_pokemon_run(self):
         self.run()
 
     def run(self):
         self.setup_screen()
-        running = True
-        while running:
+        while self.add_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False
+                    self.add_running = False
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     # Quitte le jeu lors du clic sur le bouton QUIT
                     if self.is_quit_button_clicked():    
-                        running = False
+                        self.add_running = False
                     elif self.is_menu_button_clicked():
-                        self.pokemon()
+                        self.add_running = False
 
             #Test cliques sur les rect                    
         
@@ -138,7 +138,7 @@ class Pokedex(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.floravol()
+                        self.info_pokemon.psykokwak()
                         # self.lst_name("Floravol")
 
 
@@ -146,7 +146,7 @@ class Pokedex(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(620, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.luxio()
+                        self.info_pokemon.rondoudou()
                         # self.lst_name("Luxio")
 
 
@@ -156,7 +156,6 @@ class Pokedex(Global):
                     button_rect = pygame.Rect(20, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.lainergie()
-                        #good
                         # self.lst_name("Magicarpe")
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -164,7 +163,6 @@ class Pokedex(Global):
                     button_rect = pygame.Rect(220, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.magicarpe()
-                        # self.info_pokemon.phanpy()
                         # self.lst_name("Phanpy")
 
 
@@ -172,25 +170,23 @@ class Pokedex(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.psykokwak()
+                        self.info_pokemon.luxio()
                         # self.lst_name("Psykokwak")
-
           
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(620, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.rondoudou()
-                        # self.lst_name("Rondoudou")
-                                                                                
-
+                        self.info_pokemon.phanpy()
+                        # self.lst_name("Rondoudou")   
+                                 
             self.button_quit()
             self.button_menu()
             
             pygame.display.flip()
             self.clock.tick(30)
-        pygame.quit()
 
-ajout = Pokedex()
-ajout.pokedex_run()
+
+# test_add_pokemon = Add_Pokemon()
+# test_add_pokemon.add_pokemon_run()
 
