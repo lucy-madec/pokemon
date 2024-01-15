@@ -115,5 +115,6 @@ class Play_Fight(Global):
         pygame.quit()
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
+        
 # game = Play_Fight()
 # game.run()

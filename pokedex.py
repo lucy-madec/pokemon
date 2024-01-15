@@ -6,7 +6,7 @@ class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
-        
+                
     def background(self):
         background = pygame.image.load('images\images-pokedex\pokedex0.png')
         background = background.convert()
@@ -155,12 +155,13 @@ class Pokedex(Global):
                 if event.type == pygame.QUIT:
                     running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    # Vérifie si le bouton gauche de la souris est cliqué
+                    # Quitte le jeu lors du clic sur le bouton QUIT
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
-                        # Quitte le jeu lors du clic sur le bouton QUIT
+                       
                         self.running = False
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
-                        pass
+                        self.M.menu_run()
+                        running = False
                     
             #Test cliques sur les rectangles
                 #Fleche droite           
@@ -246,5 +247,5 @@ class Pokedex(Global):
             self.clock.tick(30)
         pygame.quit()
 
-# test = Pokedex()
-# test.pokedex_run()
+test = Pokedex()
+test.pokedex_run()
