@@ -1,6 +1,5 @@
 from global_def import Global
 import pygame
-import sys
 
 class Play_Fight(Global):
 
