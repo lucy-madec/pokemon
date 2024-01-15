@@ -3,7 +3,7 @@ from info_pokemon import Info_pokemon
 import pygame
 from menu import Menu
 
-class Pokedex(Global):
+class Add_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
@@ -11,7 +11,7 @@ class Pokedex(Global):
         self.show_menu = False
 
     def background(self):
-        background = pygame.image.load('images/images-add/add_pokemon1a.jpg')
+        background = pygame.image.load('images/images-add/add_pokemon10.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
     
@@ -41,7 +41,7 @@ class Pokedex(Global):
     def pokemon(self):
         
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c5("ADD POKEMON",self.black,220,45)
+        self.text_c5("ADD POKEMON",self.black,350,65)
         
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
@@ -100,7 +100,7 @@ class Pokedex(Global):
         pygame.display.update()
         pygame.display.flip()
 
-    def pokedex_run(self):
+    def add_pokemon_run(self):
         self.run()
 
     def run(self):
@@ -190,6 +190,6 @@ class Pokedex(Global):
             self.clock.tick(30)
         pygame.quit()
 
-ajout = Pokedex()
-ajout.pokedex_run()
+ajout = Add_Pokemon()
+ajout.add_pokemon_run()
 
