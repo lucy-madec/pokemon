@@ -18,8 +18,8 @@ class Pokedex(Global):
         self.text_c1("QUIT", self.black, 733, 13)
     
     def button_back(self):
-        self.rect_radius(5, self.white, 10, 10, 70, 25)
-        self.text_c1("BACK", self.black, 23, 13)
+        self.rect_radius(5, self.white, 640, 10, 70, 25)
+        self.text_c1("BACK", self.black, 650, 13)
     
     def is_quit_button_clicked(self):
         # Vérifie si le bouton gauche de la souris est cliqué
@@ -29,7 +29,7 @@ class Pokedex(Global):
     
     def is_back_button_clicked(self):
         mouse_pos = pygame.mouse.get_pos()
-        back_button_rect = pygame.Rect(10, 10, 70, 25)
+        back_button_rect = pygame.Rect(640, 10, 70, 25)
         return back_button_rect.collidepoint(mouse_pos)
     
     def logo(self):
