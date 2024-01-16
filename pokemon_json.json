@@ -1,6 +1,6 @@
 [
-    {"Nom": "Pikachu", "Type": "Electrique", "Niveau": 1, "Puissance": 55, "PV": 35, "Defense": 40, "Image": "images/images-pokedex/pokedex1.png"},
-    {"Nom": "Capumain", "Type": "Normal", "Niveau": 1, "Puissance": 70, "PV": 55, "Defense": 55, "Image": "images/images-pokedex/pokedex2.png"},
+    {"Nom": "Pikachu", "Type": "Electrique", "Niveau": 1, "Puissance": 55, "PV": 35, "Defense": 40, "Image": "images/images-pokedex/pokedex1.png", "X": 120, "Y": 210},
+    {"Nom": "Capumain", "Type": "Normal", "Niveau": 1, "Puissance": 70, "PV": 55, "Defense": 55, "Image": "images/images-pokedex/pokedex2.png", "X": 400, "Y": 90},
     {"Nom": "Evoli", "Type": "Normal", "Niveau": 1, "Puissance": 55, "PV": 55, "Defense": 50, "Image": "images/images-pokedex/pokedex3.png"},
     {"Nom": "Marcacrin", "Type": " Glace", "Niveau": 1, "Puissance": 50, "PV": 50, "Defense": 40, "Image": "images/images-pokedex/pokedex4.png"},
     {"Nom": "Salamèche", "Type": "Feu", "Niveau": 1, "Puissance": 52, "PV": 39, "Defense": 43, "Image": "images/images-pokedex/pokedex5.png"},

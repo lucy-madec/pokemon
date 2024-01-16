@@ -17,7 +17,8 @@ class Play_Fight(Global):
     # Affiche le Pokémon du joueur
     def display_pokemon(self, pokemon):
         player_pokemon_image = pygame.image.load(pokemon["Image"])
-        self.screen.blit(player_pokemon_image, (100, 100))
+        x, y = pokemon["X"], pokemon["Y"]
+        self.screen.blit(player_pokemon_image, (x, y))
 
     # Affiche rectangle blanc texte
     def rectangle(self):     
