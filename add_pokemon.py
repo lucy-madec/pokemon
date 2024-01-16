@@ -7,12 +7,12 @@ class Add_Pokemon(Global):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
         self.add_running = True
-        
+
     def background(self):
         background = pygame.image.load('images/images-add/add_pokemon1a.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
-    
+
     def button_quit(self):
         # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
@@ -107,23 +107,22 @@ class Add_Pokemon(Global):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.add_running = False
-
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     # Quitte le jeu lors du clic sur le bouton QUIT
                     if self.is_quit_button_clicked():    
                         self.add_running = False
                     elif self.is_menu_button_clicked():
+                        print("menu")
                         self.add_running = False
 
             #Test cliques sur les rect                    
-        
                 #Rectangle du haut        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.etourvol()
-                        # self.lst_name("Etourvol")
+                        
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()

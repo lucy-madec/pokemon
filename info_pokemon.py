@@ -4,8 +4,8 @@ import pygame
 class Info_pokemon(Global):
     def __init__(self):
         Global.__init__(self)
-        self.info_runningning = False
-        self.value_pok_running = True
+        self.info_running = True
+
         
     def pikachu(self):
         background = pygame.image.load('images\images-pokedex\pokedex1b.png')
@@ -16,21 +16,18 @@ class Info_pokemon(Global):
     def capumain(self):
         background = pygame.image.load('images\images-pokedex\pokedex2b.png')
         background = background.convert()
-        self.button_back()
         self.screen.blit(background, (0,0))
         self.button_back()
         
     def evoli(self):
         background = pygame.image.load('images\images-pokedex\pokedex3b.png')
         background = background.convert()
-        self.button_back()
         self.screen.blit(background, (0,0))
         self.button_back()
                 
     def marcacrin(self):
         background = pygame.image.load('images\images-pokedex\pokedex4b.png')
         background = background.convert()
-        self.button_back()
         self.screen.blit(background, (0,0))
         self.button_back()
                 
@@ -62,28 +59,26 @@ class Info_pokemon(Global):
         self.screen.blit(background, (0,0))
         self.button_back()
 
-
     def etourvol(self):
         background = pygame.image.load('images\images-pokedex\pokedex208.png')
         background = background.convert()
-        self.button_back()
         self.screen.blit(background, (0,0))
-        self.button_back()
-                
+        self.addd_name("etourvol")
+
     def lainergie(self):
         background = pygame.image.load('images\images-pokedex\pokedex212.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
         self.button_back()
-        
+
     def floravol(self):
         background = pygame.image.load('images\images-pokedex\pokedex209.png')
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
         self.button_back()
-        
+
     def luxio(self):
         background = pygame.image.load('images\images-pokedex\pokedex214.png')
         background = background.convert()
@@ -127,16 +122,23 @@ class Info_pokemon(Global):
     def button_back(self):
         # Affiche le bouton BACK
         self.rect_radius(5, self.white, 640, 10, 70, 25)
-        self.text_c1("BACK", self.black, 650, 13)
         
+        
+    def button_add(self):
+        # Affiche le bouton BACK
+        self.rect_radius(5, self.white, 540, 10, 70, 25)
+        self.text_c1("ADD", self.black, 550, 13)
+           
+           
     def is_mouse_over_button(self, button_rect):
         # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
-        
+    
 
+        
     def info_pokemon_run(self):
-        self.button_back()
+        self.button_add()
         self.button_quit()
 
         while self.info_running:
@@ -149,6 +151,10 @@ class Info_pokemon(Global):
                     #     # Quitte le jeu lors du clic sur le bouton QUIT
                         pass
                     if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                        
                         self.info_running = False
+                    # if self.is_mouse_over_button(pygame.Rect(540, 10, 70, 25)):
+                    # # self.add_name("etourvol")
+                    #     print("etourvol")
                         
             pygame.display.flip()

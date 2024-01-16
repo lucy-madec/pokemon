@@ -24,8 +24,10 @@ class Global:
         self.police_c5 = pygame.font.Font("Pokemon Classic.ttf",35)    
         self.police_c5 = pygame.font.Font("Pokemon Classic.ttf",15)    
         self.police_p1 = pygame.font.Font("Pixeled.ttf", 16)
-        self.lst_name = []
-#def text  
+        self.list_name = ["etourvol","lainergie","floravol","luxio","magicarpe","phanpy","psykokwak","rondoudou"]
+        self.add_name = []
+        
+#def text
     def text_c1(self,text, color, x, y):
         text_surface = self.police_c1.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
@@ -77,5 +79,7 @@ class Global:
         pygame.draw.rect(self.screen,color,(x1,y1,x2,y2),border_radius = r)
 
 # Liste
-    def lst_name(self, name):
-        self.lst_name += [name]
+    def addd_name(self,name):
+        self.add_name = []
+        self.add_name.append(name)
+        print(self.add_name)
