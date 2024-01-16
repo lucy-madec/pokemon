@@ -3,38 +3,50 @@ import pygame
 
 class Play_Fight(Global):
 
+    # Appelle le constructeur de la classe parent Global
     def __init__(self):
-        # Appelle le constructeur de la classe parent Global
+        
         Global.__init__(self)
-    
+    # Afficher l'image de fond
     def background(self):
-        # Affiche l'image de fond
         self.img_back("Background", "images/images-play/play1.jpg")
 
+    def message_start(self): 
+        self.text_c2("What will you do ? ", self.black, 70, 475)  
+
+    # Afficher message si le joueur choisit l'option "RUN"
     def message_run(self): 
-        self.text_c2("Le joueur tente de s'échapper !", self.black, 70, 475)  
-        self.text_c2("Vous avez réussi à vous échapper en toute hâte !", self.black, 70, 475)
-        self.text_c2("C'est trop dangereux ici, vous décidez de fuir le combat.", self.black, 70, 475)
+        self.text_c1("C'est trop dangereux ici,", self.black, 70, 455)
+        self.text_c1("vous décidez de fuir ", self.black, 70, 475)
+        self.text_c1(" le combat.", self.black, 70, 495)
 
+    # Afficher message si le joueur choisit l'option "FIGHT"
     def message_fight(self):
-        
-        self.text_c2("Le joueur prépare son Pokémon au combat !", self.black, 70, 475)
-        self.text_c2("Un combat intense commence entre votre Pokémon et le Pokémon sauvage !", self.black, 70, 475)    
-        self.text_c2("Vous avez choisi de rester et de défier le Pokémon sauvage.", self.black, 70, 475)   
-        
+        self.text_c1("Vous avez choisi de ", self.black, 85, 455)
+        self.text_c1("rester et de défier", self.black, 85, 475) 
+        self.text_c1("le Pokémon sauvage.", self.black, 85, 495)   
+
+    # Afficher message si le joueur choisit l'option "BAG"
     def message_bag(self): 
-        self.text_c2("Le joueur fouille dans son sac à la recherche d'objets utiles.", self.black, 70, 475) 
-        self.text_c2("Vous cherchez quelque chose dans votre sac pour aider votre Pokémon.", self.black, 70, 475) 
-        self.text_c2("Le sac est plein d'objets utiles, mais il faut faire vite !", self.black, 70, 475) 
-
+        self.text_c1("Le joueur fouille dans ", self.black, 80, 455)
+        self.text_c1("son sac à la recherche", self.black, 80, 475)
+        self.text_c1("d'objets utiles.", self.black, 80, 495) 
+ 
+    # Afficher message si le joueur choisit l'option "POKEMON"
     def message_pokemon(self): 
-        self.text_c2("Le joueur décide de changer de Pokémon !", self.black, 70, 475)
-        self.text_c2("Vous envoyez un autre Pokémon au combat.", self.black, 70, 475)  
-        self.text_c2("C'est le moment de montrer la puissance d'un autre de vos Pokémon !", self.black, 70, 475)  
+        self.text_c1("Vous envoyez un autre", self.black, 80, 465) 
+        self.text_c1("Pokémon au combat.", self.black, 80, 495)   
      
-        
-        
+    # Afficher message si le joueur gagne
+    def message_end_win(self): 
+        self.text_c2("Félicitations !", self.black, 85, 445)  
+        self.text_c1("Vous avez remporté ", self.black, 85, 475)
+        self.text_c1("la victoire.", self.black, 85, 495)    
 
+    # Afficher message si le joueur perd
+    def message_end_lose(self): 
+        self.text_c6("Vous avez été ", self.black, 105, 465)  
+        self.text_c2("vaincu ! ", self.black, 130, 485)  
 
     def rectangle(self): 
 
@@ -42,14 +54,10 @@ class Play_Fight(Global):
         self.rect_radius(10,self.white,55,430,240,115) 
 
         # Rectangle texte
-        self.img_pokemon("rectangle_texte",'images/images-play/play5.png', 250,129,50,420)    
-
-        # self.text_c2("What will you do ? ", self.black, 70, 475)       
+        self.img_pokemon("rectangle_texte",'images/images-play/play7.png', 250,129,50,420)    
 
         # Rectangle 4actions
-
-        self.rect_radius(10,self.white,335,430,430,115)  
-        
+        self.rect_radius(10,self.white,335,430,430,115)          
         self.img_pokemon("rectangle_option",'images/images-play/play5.png',445,129,325,422)        
        
     def button_quit(self):
@@ -132,8 +140,16 @@ class Play_Fight(Global):
             self.bag_button()
             self.run_button()
             self.rect_hover()
+
+            # Afficher les messages 
+            # self.message_start()
+            # self.message_fight()
+            # # self.message_run()
+            # self.message_pokemon()
+            # self.message_bag()
+            # self.message_end_win()
+            # self.message_end_lose()
                
-            
             pygame.display.flip()
             self.clock.tick(30)
             
@@ -141,5 +157,5 @@ class Play_Fight(Global):
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
         
-# game = Play_Fight()
-# game.run()
+game = Play_Fight()
+game.run()
