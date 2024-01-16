@@ -6,26 +6,25 @@ from pokedex import Pokedex
 import pygame, time, sys
 
 class Menu(Global): 
-
+    
     def __init__(self): 
         Global.__init__(self)
         self.play_p = Play_Pokemon()
         # self.play_f = Play_Fight()
         self.add_pokemon = Add_Pokemon()
         self.pokedex = Pokedex()
+        self.running = True
 
     def menu_run(self):        
         self.display_name_background() 
         self.options_menu()       
 
     def display_name_background (self):
-        # sourcery skip: remove-unnecessary-else, swap-if-else-branches
         start_time = time.time()
         while True:
             self.screen.fill(self.white)
             current_time = time.time()
             elapsed_time = current_time - start_time
-
             # Afficher prenoms
             if elapsed_time < 2:
                 self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
@@ -44,21 +43,19 @@ class Menu(Global):
         else:
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
         self.screen.blit(menu_text, pos)     
-    
+
     def options_menu(self): 
-        
         # Définir choix du menu
-        running = True
+        self.running = True
         img_back = pygame.image.load("images/images-menu/menu2.png").convert()
         option_rects = [
             pygame.Rect(50, 100 + i * 100, 200, 50) for i in range(4)
         ]
-
         option_texts = ["PLAY", "ADD POKEMON", "POKEDEX", "QUIT"]
 
-        while running:
+        while self.running:
             self.screen.blit(img_back, (0, 0))           
-            
+
             for i, (rect, text) in enumerate(zip(option_rects, option_texts)):
                 if text == "ADD POKEMON":
                     position = (70, 100 + i * 100)
@@ -68,9 +65,8 @@ class Menu(Global):
                     position = (125, 100 + i * 100)
 
                 self.draw_menu_option(rect, text, position)
-            
             self.rect_radius(10, self.white, 310, 100, 440, 350)
-       
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -87,6 +83,7 @@ class Menu(Global):
                             elif item == "ADD POKEMON":
                                 self.add_pokemon.add_pokemon_run()
                             elif item == "POKEDEX":
+                                print("pokedex")
                                 self.pok_running =  True
                                 self.pokedex.pokedex_run()
                             elif item == "QUIT":
