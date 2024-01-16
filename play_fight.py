@@ -11,16 +11,40 @@ class Play_Fight(Global):
         # Affiche l'image de fond
         self.img_back("Background", "images/images-play/play1.jpg")
 
+    def message_run(self): 
+        self.text_c2("Le joueur tente de s'échapper !", self.black, 70, 475)  
+        self.text_c2("Vous avez réussi à vous échapper en toute hâte !", self.black, 70, 475)
+        self.text_c2("C'est trop dangereux ici, vous décidez de fuir le combat.", self.black, 70, 475)
+
+    def message_fight(self):
+        
+        self.text_c2("Le joueur prépare son Pokémon au combat !", self.black, 70, 475)
+        self.text_c2("Un combat intense commence entre votre Pokémon et le Pokémon sauvage !", self.black, 70, 475)    
+        self.text_c2("Vous avez choisi de rester et de défier le Pokémon sauvage.", self.black, 70, 475)   
+        
+    def message_bag(self): 
+        self.text_c2("Le joueur fouille dans son sac à la recherche d'objets utiles.", self.black, 70, 475) 
+        self.text_c2("Vous cherchez quelque chose dans votre sac pour aider votre Pokémon.", self.black, 70, 475) 
+        self.text_c2("Le sac est plein d'objets utiles, mais il faut faire vite !", self.black, 70, 475) 
+
+    def message_pokemon(self): 
+        self.text_c2("Le joueur décide de changer de Pokémon !", self.black, 70, 475)
+        self.text_c2("Vous envoyez un autre Pokémon au combat.", self.black, 70, 475)  
+        self.text_c2("C'est le moment de montrer la puissance d'un autre de vos Pokémon !", self.black, 70, 475)  
+     
+        
+        
+
+
     def rectangle(self): 
 
         # Rectangle blanc texte
-        self.rect_radius(10,self.white,55,430,240,115)  
-       
+        self.rect_radius(10,self.white,55,430,240,115) 
 
         # Rectangle texte
         self.img_pokemon("rectangle_texte",'images/images-play/play5.png', 250,129,50,420)    
 
-        self.text_c2("What will you do ? ", self.black, 70, 475)       
+        # self.text_c2("What will you do ? ", self.black, 70, 475)       
 
         # Rectangle 4actions
 
@@ -107,7 +131,8 @@ class Play_Fight(Global):
             self.pokemon_button()
             self.bag_button()
             self.run_button()
-            self.rect_hover()    
+            self.rect_hover()
+               
             
             pygame.display.flip()
             self.clock.tick(30)
