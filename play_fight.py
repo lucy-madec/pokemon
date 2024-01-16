@@ -1,16 +1,23 @@
 from global_def import Global
 import pygame
+import json
 
 class Play_Fight(Global):
 
     # Appelle le constructeur de la classe parent Global
     def __init__(self):
-  
         Global.__init__(self)
+        self.fight_running = True
+        self.running = True
 
     # Affiche image de fond
     def background(self):    
         self.img_back("Background", "images/images-play/play1.jpg")
+
+    # Affiche le Pokémon du joueur
+    def display_pokemon(self, pokemon):
+        player_pokemon_image = pygame.image.load(pokemon["Image"])
+        self.screen.blit(player_pokemon_image, (100, 100))
 
     # Affiche rectangle blanc texte
     def rectangle(self):     
@@ -86,8 +93,14 @@ class Play_Fight(Global):
         self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), 'images/images-play/play6.png')  # Run
     
     def run(self):
+        # Charge les données des Pokémon depuis le fichier JSON
+        with open("pokemon_json.json", "r") as file:
+            pokemon_data = json.load(file)
+
+        # Sélectionne deux Pokémon au hasard pour le combat
+        player_pokemon, opponent_pokemon = pokemon_data[:2]
+
         # La boucle principale du jeu
-        self.running = True
         while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -106,6 +119,8 @@ class Play_Fight(Global):
             self.rectangle()
             self.button_quit()
             self.button_menu()
+            self.display_pokemon(player_pokemon)
+            self.display_pokemon(opponent_pokemon)
             self.fight_button()
             self.pokemon_button()
             self.bag_button()
