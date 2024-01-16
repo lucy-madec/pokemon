@@ -159,7 +159,7 @@ class Play_Fight(Global):
 
             # Afficher les messages 
             self.message_start()
-            # self.message_fight()
+            # # self.message_fight()
             # # self.message_run()
             # self.message_pokemon()
             # self.message_bag()
@@ -173,4 +173,4 @@ class Play_Fight(Global):
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
 # game = Play_Fight()
-# game.run()
+# game.play_fight_run()
