@@ -186,6 +186,6 @@ class Add_Pokemon(Global):
             self.clock.tick(30)
 
 
-test_add_pokemon = Add_Pokemon()
-test_add_pokemon.add_pokemon_run()
+# test_add_pokemon = Add_Pokemon()
+# test_add_pokemon.add_pokemon_run()
 
