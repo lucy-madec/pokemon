@@ -7,7 +7,7 @@ class Pokedex(Global):
         Global.__init__(self)
         self.pok_running = True
         self.info_pokemon = Info_pokemon()
-
+                
     def background(self):
         background = pygame.image.load('images\images-pokedex\pokedex0.png')
         background = background.convert()
@@ -324,5 +324,5 @@ class Pokedex(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-# test = Pokedex()
-# test.pokedex_run()
+test = Pokedex()
+test.pokedex_run()
