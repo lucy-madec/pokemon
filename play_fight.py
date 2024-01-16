@@ -14,6 +14,8 @@ class Play_Fight(Global):
     def background(self):    
         self.img_back("Background", "images/images-play/play1.jpg")
 
+    # Affiche le Pokémon sélectionné
+
     # Affiche le Pokémon du joueur
     def display_pokemon(self, pokemon):
         player_pokemon_image = pygame.image.load(pokemon["Image"])
@@ -97,12 +99,12 @@ class Play_Fight(Global):
         self.run()
 
     def run(self):
-        # Charge les données des Pokémon depuis le fichier JSON
-        with open("pokemon_json.json", "r") as file:
-            pokemon_data = json.load(file)
+        # # Charge les données des Pokémon depuis le fichier JSON
+        # with open("pokemon_json.json", "r") as file:
+        #     pokemon_data = json.load(file)
 
-        # Sélectionne deux Pokémon au hasard pour le combat
-        player_pokemon, opponent_pokemon = pokemon_data[:2]
+        # # Sélectionne deux Pokémon au hasard pour le combat
+        # player_pokemon, opponent_pokemon = pokemon_data[:2]
 
         # La boucle principale du jeu
         while self.running:

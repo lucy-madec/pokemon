@@ -187,7 +187,7 @@ class Play_Pokemon(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        show_play_fight = True  # Changez la valeur pour afficher la page play_fight
+                        show_play_fight = True
                         
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
