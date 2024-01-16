@@ -96,5 +96,5 @@ class Menu(Global):
             pygame.display.update()
             self.clock.tick(60)
 
-# test_menu = Menu()
-# test_menu.menu_run()
+test_menu = Menu()
+test_menu.menu_run()
