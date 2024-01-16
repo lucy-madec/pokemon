@@ -51,12 +51,12 @@ class Play_Fight(Global):
     def rectangle(self): 
 
         # Rectangle blanc texte
-        self.rect_radius(10,self.white,55,430,240,115) 
+        self.rect_radius(10,self.white,55,430,235,115) 
 
         # Rectangle texte
-        self.img_pokemon("rectangle_texte",'images/images-play/play7.png', 250,129,50,420)    
+        self.img_pokemon("rectangle_texte",'images/images-play/play7.png', 270,129,50,420)    
 
-        # Rectangle 4actions
+        # Rectangle 4 actions
         self.rect_radius(10,self.white,335,430,430,115)          
         self.img_pokemon("rectangle_option",'images/images-play/play5.png',445,129,325,422)        
        
@@ -98,23 +98,27 @@ class Play_Fight(Global):
         if self.is_mouse_over_button(btn_rect):
             pygame.draw.rect(self.screen, self.black, btn_rect, 4, 5)   
              # Pokeball pixeled
-            self.img_pokemon("pokeball", image_path, image_rect[2], image_rect[3], image_rect[0], image_rect[1])
-            
+            self.img_pokemon("pokeball", image_path, image_rect[2], image_rect[3], image_rect[0], image_rect[1])           
     
     def rect_hover(self):   
 
         self.draw_hover_rectangle(pygame.Rect(350, 450, 95, 75), (430, 445, 20, 20), 'images/images-play/play6.png')  # Fight
-      
         self.draw_hover_rectangle(pygame.Rect(450, 450, 95, 75),(530, 445, 20, 20),'images/images-play/play6.png' )  # Bag   
-
         self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), 'images/images-play/play6.png')  # Pokemon
-
         self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), 'images/images-play/play6.png')  # Run
 
+    def img_hp(self):
+
+        # PV coté gauche
+        self.img_pokemon("rectangle_option",'images/images-play/play8.png',220,70,25,22)   
+
+        # PV coté droit
+        self.img_pokemon("rectangle_option",'images/images-play/play9.png',220,70,550,320)        
+        
     def play_fight_run(self): 
         self.run()
     
-    def run(self):
+    def play_fight_run(self):
         # La boucle principale du jeu
         self.running = True
         while self.running:
@@ -140,9 +144,10 @@ class Play_Fight(Global):
             self.bag_button()
             self.run_button()
             self.rect_hover()
+            self.img_hp()
 
             # Afficher les messages 
-            # self.message_start()
+            self.message_start()
             # self.message_fight()
             # # self.message_run()
             # self.message_pokemon()
@@ -156,6 +161,5 @@ class Play_Fight(Global):
         pygame.quit()
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
-        
 game = Play_Fight()
-game.run()
+game.play_fight_run()
