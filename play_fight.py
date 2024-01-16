@@ -54,7 +54,7 @@ class Play_Fight(Global):
         self.rect_radius(10,self.white,55,430,235,115) 
 
         # Rectangle texte
-        self.img_pokemon("rectangle_texte",'images/images-play/play7.png', 270,129,50,420)    
+        self.img_pokemon("rectangle_texte",'images/images-play/play7.png', 250,129,50,420)    
 
         # Rectangle 4 actions
         self.rect_radius(10,self.white,335,430,430,115)          
@@ -107,14 +107,23 @@ class Play_Fight(Global):
         self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), 'images/images-play/play6.png')  # Pokemon
         self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), 'images/images-play/play6.png')  # Run
 
-    def img_hp(self):
+    def hp(self):
+
+        # Rectangle noir côté gauche
+        self.rect_radius(0,self.black,112,62,110,10)
 
         # PV coté gauche
-        self.img_pokemon("rectangle_option",'images/images-play/play8.png',220,70,25,22)   
+        self.img_pokemon("rectangle_option",'images/images-play/play8.png', 220,70,25,22)   
+
+        # Rectangle noir HP côté droit
+        self.rect_radius(0,self.black,650,350,110,10)
+
+        # Rectangle noir EXP côté droit
+        self.rect_radius(0,self.black,618,380,135,8)
 
         # PV coté droit
-        self.img_pokemon("rectangle_option",'images/images-play/play9.png',220,70,550,320)        
-        
+        self.img_pokemon("rectangle_option",'images/images-play/play9.png',220,70,550,320) 
+   
     def play_fight_run(self): 
         self.run()
     
@@ -144,7 +153,7 @@ class Play_Fight(Global):
             self.bag_button()
             self.run_button()
             self.rect_hover()
-            self.img_hp()
+            self.hp()
 
             # Afficher les messages 
             self.message_start()
