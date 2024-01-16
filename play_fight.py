@@ -93,6 +93,9 @@ class Play_Fight(Global):
 
         self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), 'images/images-play/play6.png')  # Run
     
+    def play_fight_run(self):
+        self.run()
+
     def run(self):
         # Charge les données des Pokémon depuis le fichier JSON
         with open("pokemon_json.json", "r") as file:
@@ -120,8 +123,6 @@ class Play_Fight(Global):
             self.rectangle()
             self.button_quit()
             self.button_menu()
-            self.display_pokemon(player_pokemon)
-            self.display_pokemon(opponent_pokemon)
             self.fight_button()
             self.pokemon_button()
             self.bag_button()
@@ -134,5 +135,5 @@ class Play_Fight(Global):
         pygame.quit()
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
-game = Play_Fight()
-game.run()
+# game = Play_Fight()
+# game.play_fight_run()
