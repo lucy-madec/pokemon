@@ -5,7 +5,6 @@ class Info_pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.info_running = True
-
         
     def pikachu(self):
         background = pygame.image.load('images\images-pokedex\pokedex1b.png')
@@ -63,7 +62,6 @@ class Info_pokemon(Global):
         background = pygame.image.load('images\images-pokedex\pokedex208.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
-        self.addd_name("etourvol")
 
     def lainergie(self):
         background = pygame.image.load('images\images-pokedex\pokedex212.png')
