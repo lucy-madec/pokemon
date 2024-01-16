@@ -60,41 +60,43 @@ class Play_Fight(Global):
         self.rect_radius(10,self.white,335,430,430,115)          
         self.img_pokemon("rectangle_option",'images/images-play/play5.png',445,129,325,422)        
        
-    def button_quit(self):
-        # Affiche le bouton QUIT
+    # Afficher le bouton QUIT
+    def button_quit(self):        
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
-    def button_menu(self):
-        # Affiche le bouton BACK
+    # Afficher le bouton BACK
+    def button_menu(self):   
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
-
-    def is_mouse_over_button(self, button_rect):
-        # Vérifie si la souris est au-dessus du bouton
+    
+    # Vérifier si la souris est au-dessus du bouton
+    def is_mouse_over_button(self, button_rect):        
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)    
     
-    def fight_button(self):
-        # Affiche le bouton d'attaque
+    # Afficher bouton d'attaque
+    def fight_button(self):        
         self.rect_radius(5, self.pink, 350, 450, 95, 75)
         self.text_c1("FIGHT", self.black, 370, 475)
-    
+
+    # Afficher bouton bag
     def bag_button(self):
         self.rect_radius(5, self.brown, 450, 450, 95, 75)
         self.text_c1("BAG", self.white, 480, 475)     
 
-    def pokemon_button(self):
-        # Affiche le bouton de défense
+    # Afficher bouton Pokémon
+    def pokemon_button(self):       
         self.rect_radius(5, self.green, 550, 450, 95, 75)
         self.text_c1("POKEMON", self.white, 555, 475)
 
+    # Affiche le bouton run
     def run_button(self):
         self.rect_radius(5, self.blue, 650, 450, 95, 75)
         self.text_c1("RUN", self.white, 680, 475)      
 
+    # Afficher rectangle noir au survol de la souris
     def draw_hover_rectangle(self, btn_rect,  image_rect, image_path): 
-        # Afficher le rectangle noir au survol de la souris
         if self.is_mouse_over_button(btn_rect):
             pygame.draw.rect(self.screen, self.black, btn_rect, 4, 5)   
              # Pokeball pixeled
@@ -143,7 +145,7 @@ class Play_Fight(Global):
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         pass
 
-            # Affiche les éléments à l'écran
+            # Afficher éléments écran
             self.background()
             self.rectangle()
             self.button_quit()
@@ -170,5 +172,5 @@ class Play_Fight(Global):
         pygame.quit()
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
-game = Play_Fight()
-game.play_fight_run()
+# game = Play_Fight()
+# game.run()

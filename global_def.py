@@ -81,5 +81,6 @@ class Global:
         pygame.draw.rect(self.screen,color,(x1,y1,x2,y2),border_radius = r)
 
 # Liste
-    def lst_name(self, name):
-        self.lst_name += [name]
+    def addd_name(self,name):
+        self.add_name.append(name)
+        print(self.add_name)
