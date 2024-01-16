@@ -80,6 +80,5 @@ class Global:
 
 # Liste
     def addd_name(self,name):
-        self.add_name = []
         self.add_name.append(name)
         print(self.add_name)
