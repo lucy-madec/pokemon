@@ -12,7 +12,7 @@ class Type:
             return damage
         
     def feu(self, type, damage): 
-        if type == "feu" or type == "eau":
+        if type == "feu" or type == "eau" or type == "roche" or type == "dragon":
             damage = damage // 2
             print(damage)
             print(type)
@@ -24,20 +24,20 @@ class Type:
             print(type)
             return damage
             
-        elif type == "normal" or type == "elec" or type == "sol" or type == "vol":
+        elif type == "normal" or type == "electrique" or type == "sol" or type == "vol":
             damage = damage
             print(damage)
             print(type)
             return damage
         
     def eau(self, type, damage): 
-        if type == "eau" or type == "plante":
+        if type == "eau" or type == "plante" or type == "dragon":
             damage = damage // 2
             print(damage)
             print(type)
             return damage
             
-        elif type == "feu" or type == "sol":
+        elif type == "feu" or type == "sol" or type == "roche":
             damage = damage * 2
             print(damage)
             print(type)
