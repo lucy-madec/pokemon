@@ -13,8 +13,12 @@ class Add_Pokemon(Global):
         background = background.convert()
         self.screen.blit(background, (0,0))
 
-    def button_quit(self):
-        # Affiche le bouton QUIT
+    # Afficher le logo "Catch Them All"
+    def logo(self):
+        self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110) 
+    
+    # Afficher le bouton QUIT
+    def button_quit(self):        
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
@@ -22,8 +26,8 @@ class Add_Pokemon(Global):
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
     
-    def is_quit_button_clicked(self):
-        # Vérifie si le bouton gauche de la souris est cliqué
+    # Vérifier si le bouton gauche de la souris est cliqué
+    def is_quit_button_clicked(self):  
         mouse_pos = pygame.mouse.get_pos()
         quit_button_rect = pygame.Rect(720, 10, 70, 25)
         return quit_button_rect.collidepoint(mouse_pos)
@@ -38,52 +42,54 @@ class Add_Pokemon(Global):
     def logo(self):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110)     
 
+    #  Afficher liste des 8 Pokémons
     def pokemon(self):
         
+        # Afficher titre "Add Pokémon"
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c5("ADD POKEMON",self.black,340,65)
+        self.text_c5("ADD POKEMON",self.black,350,65)
         
-        #Créer rectangles haut
+        # Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
         self.rect_radius(10,self.white,220, 250, 170, 120)
         self.rect_radius(10,self.white,420, 250, 170, 120)
         self.rect_radius(10,self.white,620, 250, 170, 120)
     
-        #Créer rectangles bas
+        # Créer rectangles bas
         self.rect_radius(10,self.white,20, 450, 170, 120)
         self.rect_radius(10,self.white,220, 450, 170, 120)
         self.rect_radius(10,self.white,420, 450, 170, 120)
         self.rect_radius(10,self.white,620, 450, 170, 120)
         
-        #Afficher pokemon Etourvol
+        # Afficher pokemon Etourvol
         self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
         self.text_c2("Etourvol",self.black,60,342)
 
-        #Afficher pokemon Lainergie
+        # Afficher pokemon Lainergie
         self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,65,455)
         self.text_c2("Lainergie",self.black,50,542)
 
-        #Afficher pokemon Floravol
+        # Afficher pokemon Floravol
         self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,265,242)
         self.text_c2("Floravol",self.black,265,342)
 
-        #Afficher pokemon Luxio
+        # Afficher pokemon Luxio
         self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,450,445)
         self.text_c2("Luxio",self.black,470,542)
 
-        #Afficher pokemon Magicarpe
+        # Afficher pokemon Magicarpe
         self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',90,99,255,452)
         self.text_c2("Magicarpe",self.black,245,542)
         
-        #Afficher pokemon Phanpy
+        # Afficher pokemon Phanpy
         self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',80,99,655,450)
         self.text_c2("Phanpy",self.black,670,542)
         
-        #Afficher pokemon Psykokwak
+        # Afficher pokemon Psykokwak
         self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
         self.text_c2("Psykokwak",self.black,440,342)
         
-        #Afficher pokemon Rondoudou
+        # Afficher pokemon Rondoudou
         self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
         self.text_c2("Rondoudou",self.black,642,342) 
 
@@ -118,9 +124,7 @@ class Add_Pokemon(Global):
         self.button_quit()
 
     def show_pokemon_list(self):
-        self.setup_screen()
-        pygame.display.flip()
-        
+        self.setup_screen()       
         pygame.display.update()
         pygame.display.flip()
 
@@ -155,15 +159,13 @@ class Add_Pokemon(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(220, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.floravol()
-
+                        self.info_pokemon.floravol()                      
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.psykokwak()
-
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -203,7 +205,6 @@ class Add_Pokemon(Global):
             self.button_add()
             pygame.display.flip()
             self.clock.tick(30)
-
 
 # test_add_pokemon = Add_Pokemon()
 # test_add_pokemon.add_pokemon_run()

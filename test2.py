@@ -1,3 +1,4 @@
+# Test
 from global_def import Global
 import pygame
 class Test2(Global):

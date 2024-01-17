@@ -1,5 +1,6 @@
 from global_def import Global
 from info_pokemon import Info_pokemon
+from play_fight import Play_Fight
 import pygame
 
 class Play_Pokemon(Global):
@@ -7,44 +8,45 @@ class Play_Pokemon(Global):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
         self.play_pok_running = True
+        self.play_fight = Play_Fight()
         
     def background(self):
         background = pygame.image.load('images\images-play\play4.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
-        self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c2("Choose your pokemon...",self.black,230,65)
+        self.rect_radius(10, self.white, 200, 40, 440, 80)
+        self.text_c2("Choose your pokemon...", self.black, 230, 65)
 
     def ajout_pokemon(self): 
         self.background()
-        self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c3("POKEDEX",self.black,230,30)
+        self.rect_radius(10, self.white, 200, 40, 440, 80)
+        self.text_c3("POKEDEX", self.black, 230, 30)
 
-        #Créer rectangles haut
-        self.rect_radius(10,self.white,20, 250, 170, 120)
-        self.rect_radius(10,self.white,220, 250, 170, 120)
-        self.rect_radius(10,self.white,420, 250, 170, 120)
-        self.rect_radius(10,self.white,620, 250, 170, 120)
+        # Créer rectangles haut
+        self.rect_radius(10, self.white, 20, 250, 170, 120)
+        self.rect_radius(10, self.white, 220, 250, 170, 120)
+        self.rect_radius(10, self.white, 420, 250, 170, 120)
+        self.rect_radius(10, self.white, 620, 250, 170, 120)
 
-        #Créer rectangles bas
-        self.rect_radius(10,self.white,20, 450, 170, 120)
-        self.rect_radius(10,self.white,220, 450, 170, 120)
-        self.rect_radius(10,self.white,420, 450, 170, 120)
-        self.rect_radius(10,self.white,620, 450, 170, 120)
+        # Créer rectangles bas
+        self.rect_radius(10, self.white, 20, 450, 170, 120)
+        self.rect_radius(10, self.white, 220, 450, 170, 120)
+        self.rect_radius(10, self.white, 420, 450, 170, 120)
+        self.rect_radius(10, self.white, 620, 450, 170, 120)
         
-        #boutton changer de page
-        self.rect_radius(10,self.yellow,20, 380, 50, 60)
+        # Bouton changer de page
+        self.rect_radius(10, self.yellow, 20, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
         
         for name in self.lst_name:
                 
             if name == "Etourvol":
                 self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',120,129,255,422)
-                self.text_c2("Etourvol",self.black,245,545)
+                self.text_c2("Etourvol", self.black, 245, 545)
                 
             if name == "Floravol":
                 self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',110,119,45,245)
-                self.text_c2("Floravol",self.black,60,345)
+                self.text_c2("Floravol", self.black, 60, 345)
 
             if name == "Lainergie":
                 self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',290,299,570,300)
@@ -70,26 +72,25 @@ class Play_Pokemon(Global):
                 self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',115,119,45,440)
                 self.text_c2("Rondoudou",self.black,70,545)
 
-
             pygame.display.update()
             pygame.display.flip()
             
     def pokemon(self):
-        #Créer rectangles haut
-        self.rect_radius(10,self.white,20, 250, 170, 120)
-        self.rect_radius(10,self.white,220, 250, 170, 120)
-        self.rect_radius(10,self.white,420, 250, 170, 120)
-        self.rect_radius(10,self.white,620, 250, 170, 120)
+        # Créer rectangles haut
+        self.rect_radius(10, self.white, 20, 250, 170, 120)
+        self.rect_radius(10, self.white, 220, 250, 170, 120)
+        self.rect_radius(10, self.white, 420, 250, 170, 120)
+        self.rect_radius(10, self.white, 620, 250, 170, 120)
 
-        #Créer rectangles bas
-        self.rect_radius(10,self.white,20, 450, 170, 120)
-        self.rect_radius(10,self.white,220, 450, 170, 120)
-        self.rect_radius(10,self.white,420, 450, 170, 120)
-        self.rect_radius(10,self.white,620, 450, 170, 120)
+        # Créer rectangles bas
+        self.rect_radius(10, self.white, 20, 450, 170, 120)
+        self.rect_radius(10, self.white, 220, 450, 170, 120)
+        self.rect_radius(10, self.white, 420, 450, 170, 120)
+        self.rect_radius(10, self.white, 620, 450, 170, 120)
 
-        #Afficher pokemon pikachu
+        # Afficher pokemon pikachu
         self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',100,109,65,250)
-        self.text_c2("pikachu",self.black,60,342)
+        self.text_c2("pikachu", self.black, 60, 342)
 
         #Afficher pokemon capumain
         self.img_pokemon("capumain",'images\images-pokedex\pokedex2.png',115,119,45,440)
@@ -118,9 +119,9 @@ class Play_Pokemon(Global):
         #Afficher pokemon caninos
         self.img_pokemon("caninos",'images\images-pokedex\pokedex8.png',100,109,645,240)
         self.text_c2("caninos",self.black,655,342)
-        
-        #boutton changer de page
-        self.rect_radius(10,self.yellow,740, 380, 50, 60)
+
+        # Bouton changer de page
+        self.rect_radius(10, self.yellow, 740, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
         pygame.display.update()
         pygame.display.flip()
@@ -139,21 +140,20 @@ class Play_Pokemon(Global):
         # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
-
-
         
     def play_pokemon_run(self):
         self.play_pok_running = True
         self.run()
 
     def run(self):
-        running = True
         poke2 = False
+        show_play_fight = False
 
         self.background()
         self.pokemon()
         self.button_quit()
-        self.button_menu()        
+        self.button_menu()   
+
         while self.play_pok_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -166,17 +166,16 @@ class Play_Pokemon(Global):
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         self.play_pok_running = False
 
-                    
-            #Test cliques sur les rectangles
-                #Fleche droite           
+            # Test cliques sur les rectangles
+                # Fleche droite           
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(740, 375, 50, 70)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         poke2 = True
-                    if poke2 == True:
+                    if poke2:
                         self.ajout_pokemon()
-                #Fleche gauche
+                # Fleche gauche
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 380, 50, 60)
@@ -184,30 +183,30 @@ class Play_Pokemon(Global):
                         poke2 = False
                         self.pokemon()
                         
-                #Rectangle du haut        
+                # Rectangle du haut        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.pikachu()
+                        show_play_fight = True
                         
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(220, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.evoli()
+                        show_play_fight = True
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.tiplouf()
+                        show_play_fight = True
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(620, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.caninos()
+                        show_play_fight = True
 
 
                 #Rectangle du bas        
@@ -215,39 +214,48 @@ class Play_Pokemon(Global):
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.capumain()
+                        show_play_fight = True
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(220, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.salameche()
+                        show_play_fight = True
                         
                 #Information Marcacrin 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.marcacrin()
+                        show_play_fight = True
 
                 #Information Medhyena        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(620, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
-                        self.info_pokemon.medhyena()
+                        show_play_fight = True
 
-                #Button Back
+                # Button Back
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(720, 10, 70, 25)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         running = False
 
+            if not show_play_fight:
+                # Affiche la page play_pokemon seulement si show_play_fight est False
+                self.background()
+                self.pokemon()
+                self.button_quit()
+                self.button_menu()
+                pygame.display.flip()
+            else:
+                # Affiche la page play_fight
+                self.play_fight.run()
+                show_play_fight = False  # Réinitialise show_play_fight pour la prochaine itération
 
-            
-            pygame.display.flip()
             self.clock.tick(30)
 
-# test = Play_Pokemon()
-# test.play_pokemon_run()
+test = Play_Pokemon()
+test.play_pokemon_run()
