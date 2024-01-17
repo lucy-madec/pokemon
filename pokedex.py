@@ -162,7 +162,6 @@ class Pokedex(Global):
                         self.running =  True
                         self.pok_running = False
                         
-
             #Test cliques sur les rectangles
                 #Fleche droite           
                 if event.type == pygame.MOUSEBUTTONDOWN:
