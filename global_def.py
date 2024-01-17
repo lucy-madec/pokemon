@@ -21,10 +21,11 @@ class Global:
         self.police_c2 = pygame.font.Font("Pokemon Classic.ttf",15)  
         self.police_c3 = pygame.font.Font("Pokemon Classic.ttf",50)
         self.police_c4 = pygame.font.Font("Pokemon Classic.ttf",5)  
-        self.police_c5 = pygame.font.Font("Pokemon Classic.ttf",35)    
         self.police_c5 = pygame.font.Font("Pokemon Classic.ttf",15)    
+        self.police_c6 = pygame.font.Font("Pokemon Classic.ttf", 12)    
         self.police_p1 = pygame.font.Font("Pixeled.ttf", 16)
         self.lst_name = []
+        
 #def text  
     def text_c1(self,text, color, x, y):
         text_surface = self.police_c1.render(text, True, color)
@@ -44,6 +45,10 @@ class Global:
         
     def text_c5(self,text, color, x, y):
         text_surface = self.police_c5.render(text, True, color)
+        self.screen.blit(text_surface, (x, y))
+    
+    def text_c6(self,text, color, x, y):
+        text_surface = self.police_c6.render(text, True, color)
         self.screen.blit(text_surface, (x, y))
 
     def text_p1(self,text, color, x, y):
@@ -65,8 +70,7 @@ class Global:
         y = (self.screen_height - H_name)//2
         self.screen.blit(name, (x, y))
     
-# def rectangle
-        
+# def rectangle        
         # Rectangle 
     def rect(self,nom, x1,y1,x2,y2):   
         nom = pygame.Rect(x1,y1,x2,y2)
@@ -77,5 +81,6 @@ class Global:
         pygame.draw.rect(self.screen,color,(x1,y1,x2,y2),border_radius = r)
 
 # Liste
-    def lst_name(self, name):
-        self.lst_name += [name]
+    def addd_name(self,name):
+        self.add_name.append(name)
+        print(self.add_name)
