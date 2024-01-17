@@ -143,6 +143,7 @@ class Play_Pokemon(Global):
 
         
     def play_pokemon_run(self):
+        self.play_pok_running = True
         self.run()
 
     def run(self):

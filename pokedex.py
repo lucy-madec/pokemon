@@ -1,7 +1,7 @@
 from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
-
+import json
 class Pokedex(Global):
     def __init__(self):
         Global.__init__(self)
@@ -14,8 +14,27 @@ class Pokedex(Global):
         self.screen.blit(background, (0,0))
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c3("POKEDEX",self.black,230,30)
-        self.list = []
+        
+    def read_json(self,name):
+        with open('add_json.json', 'r') as json_file:
+            data = json.load(json_file)
+        if etourvol_data := next(
+            (pokemon for pokemon in data if pokemon["Nom"] == name), None
+        ):
+            try:
+                with open('pokemon_json.json', 'r') as dest_json_file:
+                    destination_data = json.load(dest_json_file)
+            except FileNotFoundError:
+                destination_data = []
+            destination_data.append(etourvol_data)
 
+            with open('pokemon_json.json', 'w') as new_json_file:
+                json.dump(destination_data, new_json_file, indent=2)
+            print("Le Pokémon Etourvol a été ajouté au pokedex")
+        else:
+            print("Le Pokémon Etourvol n'a pas été trouvé")
+            
+            
     def ajout_pokemon(self): 
         self.background()
         self.rect_radius(10,self.white,200, 40, 440, 80)
@@ -37,39 +56,52 @@ class Pokedex(Global):
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
         
-        for name in self.add_name:
-            self.list = self.add_name
-            if name == "etourvol":
+        #recuperer nom pokemon du pokemon.json
+        with open('pokemon_json.json', 'r') as json_file:
+            data = json.load(json_file)
+        name_pokemons = [pokemon["Nom"] for pokemon in data]
+        
+        for name in name_pokemons:
+            if name == "Etourvol":
+                self.read_json("Etourvol")
                 self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
                 self.text_c2("Etourvol",self.black,60,342)
                 
-            if name == "floravol":
+            if name == "Floravol":
+                self.read_json("Floravol")
                 self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,265,242)
                 self.text_c2("Floravol",self.black,265,342)
 
-            if name == "lainergie":
+            if name == "Lainergie":
+                self.read_json("Lainergie")
                 self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,65,455)
                 self.text_c2("Lainergie",self.black,50,542)
                 
-            if name == "luxio":
+            if name == "Luxio":
+                self.read_json("Luxio")
                 self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,450,445)
                 self.text_c2("Luxio",self.black,470,542)
 
-            if name == "magicarpe":
+            if name == "Magicarpe":
+                self.read_json("Magicarpe")
                 self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',90,99,255,452)
                 self.text_c2("Magicarpe",self.black,245,542)
 
-            if name == "phanpy":
+            if name == "Phanpy":
+                self.read_json("Phanpy")
                 self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',80,99,655,450)
                 self.text_c2("Phanpy",self.black,670,542)
                 
-            if name == "psykokwak":
+            if name == "Psykokwak":
+                self.read_json("Psykokwak")
                 self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
-            if name == "rondoudou":
+            if name == "Rondoudou":
+                self.read_json("Rondoudou")
                 self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
                 self.text_c2("Rondoudou",self.black,642,342) 
+                
             pygame.display.update()
             pygame.display.flip()
             
@@ -138,8 +170,14 @@ class Pokedex(Global):
         # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
-        
+    
+    def is_add_button_clicked(self):
+        mouse_pos = pygame.mouse.get_pos()
+        back_menu_rect = pygame.Rect(540, 10, 70, 25)
+        return back_menu_rect.collidepoint(mouse_pos)
+    
     def pokedex_run(self):
+        self.pok_running = True
         self.run()
 
     def run(self):
@@ -152,16 +190,17 @@ class Pokedex(Global):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.pok_running = False
-                elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     # # Vérifie si le bouton gauche de la souris est cliqué
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                     #     # Quitte le jeu lors du clic sur le bouton QUIT
-                        pass
-                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                        pygame.quit()
+                    if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         print("menu")
                         self.running =  True
                         self.pok_running = False
-                        
+                    if self.is_add_button_clicked():
+                        print("but add")
 
             #Test cliques sur les rectangles
                 #Fleche droite           
@@ -321,8 +360,9 @@ class Pokedex(Global):
 
             self.button_menu()
             self.button_quit()
+            pygame.display.update()
             pygame.display.flip()
             self.clock.tick(30)
 
-test = Pokedex()
-test.pokedex_run()
+# test = Pokedex()
+# test.pokedex_run()

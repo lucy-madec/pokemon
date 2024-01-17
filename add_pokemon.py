@@ -33,10 +33,7 @@ class Add_Pokemon(Global):
         back_menu_rect = pygame.Rect(640, 10, 70, 25)
         return back_menu_rect.collidepoint(mouse_pos)
     
-    def is_add_button_clicked(self):
-        mouse_pos = pygame.mouse.get_pos()
-        back_menu_rect = pygame.Rect(540, 10, 70, 25)
-        return back_menu_rect.collidepoint(mouse_pos)
+
     
     def logo(self):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110)     
@@ -91,18 +88,24 @@ class Add_Pokemon(Global):
         self.text_c2("Rondoudou",self.black,642,342) 
 
 
-    def read_json(self):
-        with open('add_json.json', 'r') as json_file:
-            data = json.load(json_file)
-        if etourvol_data := next(
-            (pokemon for pokemon in data if pokemon["Nom"] == "Etourvol"), None
-        ):
-        destination_data.append(etourvol_data)
-            with open('pokemon_json.json', 'w') as new_json_file:
-                json.dump(etourvol_data, new_json_file, indent=2)
-            print("Le dictionnaire Etourvol a été extrait et sauvegardé dans pokemon_json.json.")
-        else:
-            print("Le Pokémon Etourvol n'a pas été trouvé dans le fichier JSON.")
+    # def read_json(self,name):
+    #     with open('add_json.json', 'r') as json_file:
+    #         data = json.load(json_file)
+    #     if etourvol_data := next(
+    #         (pokemon for pokemon in data if pokemon["Nom"] == name), None
+    #     ):
+    #         try:
+    #             with open('pokemon_json.json', 'r') as dest_json_file:
+    #                 destination_data = json.load(dest_json_file)
+    #         except FileNotFoundError:
+    #             destination_data = []
+    #         destination_data.append(etourvol_data)
+
+    #         with open('pokemon_json.json', 'w') as new_json_file:
+    #             json.dump(destination_data, new_json_file, indent=2)
+    #         print("Le dictionnaire Etourvol a été ajouté à pokemon_json.json.")
+    #     else:
+    #         print("Le Pokémon Etourvol n'a pas été trouvé dans le fichier JSON.")
 
     def button_add(self):
         self.rect_radius(5, self.white, 540, 10, 70, 25)
@@ -122,6 +125,7 @@ class Add_Pokemon(Global):
         pygame.display.flip()
 
     def add_pokemon_run(self):
+        self.add_running = True
         self.run()
 
     def run(self):
@@ -135,11 +139,9 @@ class Add_Pokemon(Global):
                     if self.is_quit_button_clicked():    
                         self.add_running = False
                     elif self.is_menu_button_clicked():
-                        print("menu")
                         self.add_running = False
-                    elif self.is_add_button_clicked():
-                        print("but add")
-                        self.read_json()
+
+                        
 
             #Test cliques sur les rect                    
                 #Rectangle du haut        
