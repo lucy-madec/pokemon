@@ -333,7 +333,7 @@ class Play_Fight(Global):
             pygame.display.flip()
             self.clock.tick(30)
             
-        pygame.quit()
+        # pygame.quit()
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
         
