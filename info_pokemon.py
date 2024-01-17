@@ -51,7 +51,6 @@ class Info_pokemon(Global):
         background = pygame.image.load('images\images-pokedex\pokedex208.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
-        self.button_add()
         
     def lainergie(self):
         background = pygame.image.load('images\images-pokedex\pokedex212.png')

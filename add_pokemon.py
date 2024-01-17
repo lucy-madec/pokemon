@@ -97,8 +97,9 @@ class Add_Pokemon(Global):
         if etourvol_data := next(
             (pokemon for pokemon in data if pokemon["Nom"] == "Etourvol"), None
         ):
+        destination_data.append(etourvol_data)
             with open('pokemon_json.json', 'w') as new_json_file:
-                json.dump(etourvol_data, new_json_file)
+                json.dump(etourvol_data, new_json_file, indent=2)
             print("Le dictionnaire Etourvol a été extrait et sauvegardé dans pokemon_json.json.")
         else:
             print("Le Pokémon Etourvol n'a pas été trouvé dans le fichier JSON.")
@@ -194,8 +195,7 @@ class Add_Pokemon(Global):
                     button_rect = pygame.Rect(620, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.phanpy()
-
-                                 
+                        
             self.button_quit()
             self.button_menu()
             self.button_add()
