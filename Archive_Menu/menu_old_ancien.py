@@ -36,31 +36,22 @@ class Menu(Global):
             pygame.display.flip()
             self.clock.tick(60)
 
-    # Afficher des rectangles blancs pour les options du menu          
+    # Afficher des rectangles blancs pour les options du menu            
+
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
         if rect.collidepoint(pygame.mouse.get_pos()):
-
             pygame.draw.rect(self.screen, self.white, rect.inflate(10, 10), border_radius=10)
         else:
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
-        self.screen.blit(menu_text, pos) 
+        self.screen.blit(menu_text, pos)     
 
-    def logo_liv (self):
-        logo_liv = pygame.image.load("images/images-menu/menu5.png").convert_alpha()
-        logo_liv = pygame.transform.scale(logo_liv,(430,101))   
-        largeur_logo_liv, hauteur_logo_liv, = logo_liv.get_size()       
-        x = (self.screen_width - largeur_logo_liv) //2
-        self.screen.blit(logo_liv,(x,20))
-
-    # Définir choix du menu
     def options_menu(self): 
-       
+        # Définir choix du menu
         self.running = True
-        img_back = pygame.image.load("images/images-menu/menu6.jpg").convert()
-
+        img_back = pygame.image.load("images/images-menu/menu2.png").convert()
         option_rects = [
-            pygame.Rect(50, 100 + i * 65, 200, 50) for i in range(4)
+            pygame.Rect(50, 100 + i * 100, 200, 50) for i in range(4)
         ]
         option_texts = ["PLAY", "ADD POKEMON", "POKEDEX", "QUIT"]
 
@@ -75,7 +66,8 @@ class Menu(Global):
                 else:
                     position = (125, 100 + i * 100)
 
-                self.draw_menu_option(rect, text, position)                
+                self.draw_menu_option(rect, text, position)
+            self.rect_radius(10, self.white, 310, 100, 440, 350)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -99,8 +91,6 @@ class Menu(Global):
                             elif item == "QUIT":
                                 pygame.quit()
                                 sys.exit()
-
-            self.logo_liv()
 
             pygame.display.update()
             self.clock.tick(60)
