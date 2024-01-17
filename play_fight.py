@@ -9,7 +9,6 @@ class Play_Fight(Global):
         Global.__init__(self)
         self.play_fight_running = True
 
-
     # Afficher l'image de fond
     def background(self):
         self.img_back("Background", "images/images-play/play1.jpg")
@@ -102,8 +101,7 @@ class Play_Fight(Global):
             pygame.draw.rect(self.screen, self.black, btn_rect, 4, 5)   
              # Pokeball pixeled
             self.img_pokemon("pokeball", image_path, image_rect[2], image_rect[3], image_rect[0], image_rect[1])
-            
-    
+           
     def rect_hover(self):   
 
         self.draw_hover_rectangle(pygame.Rect(350, 450, 95, 75), (430, 445, 20, 20), 'images/images-play/play6.png')  # Fight

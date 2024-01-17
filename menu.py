@@ -31,7 +31,7 @@ class Menu(Global):
                 self.img_back("img_forest", "images/images-menu/menu1.png")
             else:
                 break
-            pygame.display.flip()
+            # pygame.display.flip()
             self.clock.tick(60)
 
     # Afficher des rectangles blancs pour les options du menu          

@@ -125,10 +125,10 @@ class Add_Pokemon(Global):
         self.pokemon()
         self.button_quit()
 
-    def show_pokemon_list(self):
-        self.setup_screen()       
-        pygame.display.update()
-        pygame.display.flip()
+    # def show_pokemon_list(self):
+    #     self.setup_screen()       
+    #     # pygame.display.update()
+    #     pygame.display.flip()
 
     def add_pokemon_run(self):
         self.add_running = True
@@ -141,12 +141,12 @@ class Add_Pokemon(Global):
                 if event.type == pygame.QUIT:
                     self.add_running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
+
                     # Quitte le jeu lors du clic sur le bouton QUIT
                     if self.is_quit_button_clicked():
                             
                         self.add_running = False  
-                        pygame.quit()  
-                    
+                        pygame.quit()                      
                                                                    
                     elif self.is_menu_button_clicked():
                         self.add_running = False
@@ -154,7 +154,6 @@ class Add_Pokemon(Global):
                         print("but add")
                         self.read_json()                        
 
-            #Test cliques sur les rect                    
                 #Rectangle du haut        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
