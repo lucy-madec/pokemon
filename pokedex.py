@@ -140,6 +140,7 @@ class Pokedex(Global):
         return button_rect.collidepoint(mouse_pos)
         
     def pokedex_run(self):
+        self.pok_running = True
         self.run()
 
     def run(self):
@@ -152,12 +153,14 @@ class Pokedex(Global):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.pok_running = False
-                elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    
                     # # Vérifie si le bouton gauche de la souris est cliqué
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
-                    #     # Quitte le jeu lors du clic sur le bouton QUIT
-                        pass
-                    if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    # Quitte le jeu lors du clic sur le bouton QUIT
+                        pygame.quit() 
+                        
+                    if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         print("menu")
                         self.running =  True
                         self.pok_running = False

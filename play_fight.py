@@ -7,6 +7,9 @@ class Play_Fight(Global):
     def __init__(self):
         
         Global.__init__(self)
+        self.play_fight_running = True
+
+
     # Afficher l'image de fond
     def background(self):
         self.img_back("Background", "images/images-play/play1.jpg")
@@ -126,10 +129,11 @@ class Play_Fight(Global):
         # PV coté droit
         self.img_pokemon("rectangle_option",'images/images-play/play9.png',220,70,550,320) 
    
-    def play_fight_run(self): 
+    def play_fight_run(self):
+        self.play_fight_running = True 
         self.run()
     
-    def play_fight_run(self):
+    def run(self):
         # La boucle principale du jeu
         self.running = True
         while self.running:
@@ -143,7 +147,7 @@ class Play_Fight(Global):
                         # Quitte le jeu lors du clic sur le bouton QUIT
                         self.running = False
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
-                        pass
+                        pygame.quit() 
 
             # Afficher éléments écran
             self.background()
@@ -173,4 +177,4 @@ class Play_Fight(Global):
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
 # game = Play_Fight()
-# game.run()
+# game.play_fight_run()

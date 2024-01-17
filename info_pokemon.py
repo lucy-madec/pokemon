@@ -110,35 +110,26 @@ class Info_pokemon(Global):
         background = background.convert()
         self.button_back()
         self.screen.blit(background, (0,0))
-        self.button_back()        
+        self.button_back()       
 
-    def button_quit(self):
-        # Affiche le bouton QUIT
-        self.rect_radius(5, self.white, 720, 10, 70, 25)
-        self.text_c1("QUIT", self.black, 733, 13)
-    
     def button_back(self):
         # Affiche le bouton BACK
         self.rect_radius(5, self.white, 640, 10, 70, 25)
-        
-        
+                
     def button_add(self):
         # Affiche le bouton BACK
         self.rect_radius(5, self.white, 540, 10, 70, 25)
         self.text_c1("ADD", self.black, 550, 13)
-           
-           
+                      
     def is_mouse_over_button(self, button_rect):
         # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
     
-
         
     def info_pokemon_run(self):
         self.button_add()
-        self.button_quit()
-
+      
         while self.info_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -156,3 +147,6 @@ class Info_pokemon(Global):
                     #     print("etourvol")
                         
             pygame.display.flip()
+
+# test = Info_pokemon ()
+# test.info_pokemon_run()

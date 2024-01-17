@@ -1,12 +1,17 @@
-pokemon = [
-            {"Nom": "Floravol", "Type": "Plante", "Niveau": 1, "Puissance": 45, "PV": 55, "Defense": 50},
-            {"Nom": "Psykokwak", "Type": "Plante", "Niveau": 1, "Puissance": 52, "PV": 50, "Defense": 48},
-            {"Nom": "Rondoudou", "Type": "Fée", "Niveau": 1, "Puissance": 30, "PV": 90, "Defense": 15},
-            {"Nom": "Luxio", "Type": "Electrique", "Niveau": 1, "Puissance": 85, "PV": 60, "Defense": 49},
-            {"Nom": "Etourvol", "Type": "Vol", "Niveau": 1, "Puissance": 75, "PV": 55, "Defense": 50},
-            {"Nom": "Lainergie", "Type": "Electrique", "Niveau": 1, "Puissance": 55, "PV": 70, "Defense": 55},
-            {"Nom": "Phanpy", "Type": "Sol", "Niveau": 1, "Puissance": 60, "PV": 90, "Defense": 60},
-            {"Nom": "Magicarpe", "Type": "Eau", "Niveau": 1, "Puissance": 10, "PV": 20, "Defense": 55}]
+[
+            {"Nom": "Floravol", "Type": "Plante", "Niveau": 1, "Puissance": 45, "PV": 55, "Defense": 50,"Image": "images/images-add/add_pokemon2.png"},
 
+            {"Nom": "Psykokwak", "Type": "Plante", "Niveau": 1, "Puissance": 52, "PV": 50, "Defense": 48,"Image": "images/images-add/add_pokemon7.png"},
 
+            {"Nom": "Rondoudou", "Type": "Fée", "Niveau": 1, "Puissance": 30, "PV": 90, "Defense": 15,"Image": "images/images-add/add_pokemon8.png"},
+
+            {"Nom": "Luxio", "Type": "Electrique", "Niveau": 1, "Puissance": 85, "PV": 60, "Defense": 49,"Image": "images/images-add/add_pokemon4.png"},
+
+            {"Nom": "Etourvol", "Type": "Vol", "Niveau": 1, "Puissance": 75, "PV": 55, "Defense": 50, "Image":"images/images-add/add_pokemon1.png"},
+
+            {"Nom": "Lainergie", "Type": "Electrique", "Niveau": 1, "Puissance": 55, "PV": 70, "Defense": 55,"Image": "images/images-add/add_pokemon3.png"},
+
+            {"Nom": "Phanpy", "Type": "Sol", "Niveau": 1, "Puissance": 60, "PV": 90, "Defense": 60,"Image":"images/images-add/add_pokemon6.png"},
+
+            {"Nom": "Magicarpe", "Type": "Eau", "Niveau": 1, "Puissance": 10, "PV": 20, "Defense": 55,"Image": "images/images-add/add_pokemon5.png"}]
 

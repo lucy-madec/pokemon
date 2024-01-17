@@ -1,10 +1,10 @@
 [
-    {"Nom": "Pikachu", "Type": "Electrique", "Niveau": 1, "Puissance": 55, "PV": 35, "Defense": 40},
-    {"Nom": "Evoli", "Type": "Normal", "Niveau": 1, "Puissance": 55, "PV": 55, "Defense": 50},
-    {"Nom": "Tiplouf", "Type": "Eau", "Niveau": 1, "Puissance": 51, "PV": 53, "Defense": 53},
-    {"Nom": "Caninos", "Type": "Feu", "Niveau": 1, "Puissance": 70, "PV": 55, "Defense": 45},
-    {"Nom": "Capumain", "Type": "Normal", "Niveau": 1, "Puissance": 70, "PV": 55, "Defense": 55},
-    {"Nom": "Salamèche", "Type": "Feu", "Niveau": 1, "Puissance": 52, "PV": 39, "Defense": 43},
-    {"Nom": "Marcacrin", "Type": "Glace", "Niveau": 1, "Puissance": 50, "PV": 50, "Defense": 40},
-    {"Nom": "Medhyena", "Type": "Ténèbres", "Niveau": 1, "Puissance": 55, "PV": 35, "Defense": 35}
+    {"Nom": "Pikachu", "Type": "Electrique", "Niveau": 1, "Puissance": 55, "PV": 35, "Defense": 40, "Image": "images/images-pokedex/pokedex1.png", "X": 120, "Y": 210},
+    {"Nom": "Capumain", "Type": "Normal", "Niveau": 1, "Puissance": 70, "PV": 55, "Defense": 55, "Image": "images/images-pokedex/pokedex2.png", "X": 400, "Y": 90},
+    {"Nom": "Evoli", "Type": "Normal", "Niveau": 1, "Puissance": 55, "PV": 55, "Defense": 50, "Image": "images/images-pokedex/pokedex3.png"},
+    {"Nom": "Marcacrin", "Type": " Glace", "Niveau": 1, "Puissance": 50, "PV": 50, "Defense": 40, "Image": "images/images-pokedex/pokedex4.png"},
+    {"Nom": "Salamèche", "Type": "Feu", "Niveau": 1, "Puissance": 52, "PV": 39, "Defense": 43, "Image": "images/images-pokedex/pokedex5.png"},
+    {"Nom": "Medhyena", "Type": "Ténèbres", "Niveau": 1, "Puissance": 55, "PV": 35, "Defense": 35, "Image": "images/images-pokedex/pokedex6.png"},
+    {"Nom": "Tiplouf", "Type": "Eau", "Niveau": 1, "Puissance": 51, "PV": 53, "Defense": 53, "Image": "images/images-pokedex/pokedex7.png"},
+    {"Nom": "Caninos", "Type": "Feu", "Niveau": 1, "Puissance": 70, "PV": 55, "Defense": 45, "Image": "images/images-pokedex/pokedex8.png"}
 ]
