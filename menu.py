@@ -1,7 +1,5 @@
 # Importer les modules
 from global_def import Global
-# from test1 import Test1
-# from play_fight import Play_Fight
 from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
@@ -106,7 +104,6 @@ class Menu(Global):
 
             pygame.display.update()
             self.clock.tick(60)
-        pygame.display.flip()
 
-menu = Menu()
-menu.menu_run()
+test_menu = Menu()
+test_menu.menu_run()
