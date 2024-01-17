@@ -1,5 +1,7 @@
 # Importer les modules
 from global_def import Global
+# from test1 import Test1
+# from play_fight import Play_Fight
 from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
@@ -31,7 +33,7 @@ class Menu(Global):
                 self.img_back("img_forest", "images/images-menu/menu1.png")
             else:
                 break
-            # pygame.display.flip()
+            pygame.display.flip()
             self.clock.tick(60)
 
     # Afficher des rectangles blancs pour les options du menu          
@@ -104,6 +106,7 @@ class Menu(Global):
 
             pygame.display.update()
             self.clock.tick(60)
+        pygame.display.flip()
 
-test_menu = Menu()
-test_menu.menu_run()
+menu = Menu()
+menu.menu_run()
