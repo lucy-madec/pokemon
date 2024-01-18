@@ -140,7 +140,7 @@ class Play_Pokemon(Global):
         # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
-        
+    
     def play_pokemon_run(self):
         self.play_pok_running = True
         self.run()
@@ -162,9 +162,11 @@ class Play_Pokemon(Global):
                     # Vérifie si le bouton gauche de la souris est cliqué
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         # Quitte le jeu lors du clic sur le bouton QUIT
-                        pass
+                        pygame.quit() 
+                      
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         self.play_pok_running = False
+                        pass 
 
             # Test cliques sur les rectangles
                 # Fleche droite           
@@ -175,6 +177,7 @@ class Play_Pokemon(Global):
                         poke2 = True
                     if poke2:
                         self.ajout_pokemon()
+
                 # Fleche gauche
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -209,7 +212,7 @@ class Play_Pokemon(Global):
                         show_play_fight = True
 
 
-                #Rectangle du bas        
+                # Rectangle du bas        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 450, 170, 120)
@@ -222,14 +225,14 @@ class Play_Pokemon(Global):
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         show_play_fight = True
                         
-                #Information Marcacrin 
+                # Information Marcacrin 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(420, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         show_play_fight = True
 
-                #Information Medhyena        
+                # Information Medhyena        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(620, 450, 170, 120)
@@ -257,5 +260,5 @@ class Play_Pokemon(Global):
 
             self.clock.tick(30)
 
-test = Play_Pokemon()
-test.play_pokemon_run()
+# test = Play_Pokemon()
+# test.play_pokemon_run()

@@ -32,8 +32,7 @@ class Pokedex(Global):
                 json.dump(destination_data, new_json_file, indent=2)
             print("Le Pokémon Etourvol a été ajouté au pokedex")
         else:
-            print("Le Pokémon Etourvol n'a pas été trouvé")
-            
+            print("Le Pokémon Etourvol n'a pas été trouvé")            
             
     def ajout_pokemon(self): 
         self.background()
@@ -199,6 +198,7 @@ class Pokedex(Global):
                         print("menu")
                         self.running =  True
                         self.pok_running = False
+                        
                     if self.is_add_button_clicked():
                         print("but add")
 
@@ -356,7 +356,6 @@ class Pokedex(Global):
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.info_running = True
                             self.info_pokemon.phanpy()
-
 
             self.button_menu()
             self.button_quit()
