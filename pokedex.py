@@ -63,42 +63,42 @@ class Pokedex(Global):
         for name in name_pokemons:
             if name == "Etourvol":
                 self.read_json("Etourvol")
-                self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
+                self.img_pokemon("Etourvol",'images//images-add//add_pokemon1.png',70,89,75,255)
                 self.text_c2("Etourvol",self.black,60,342)
                 
             if name == "Floravol":
                 self.read_json("Floravol")
-                self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,265,242)
+                self.img_pokemon("Floravol",'images//images-add//add_pokemon2.png',100,119,265,242)
                 self.text_c2("Floravol",self.black,265,342)
 
             if name == "Lainergie":
                 self.read_json("Lainergie")
-                self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,65,455)
+                self.img_pokemon("Lainergie",'images//images-add//add_pokemon3.png',85,89,65,455)
                 self.text_c2("Lainergie",self.black,50,542)
                 
             if name == "Luxio":
                 self.read_json("Luxio")
-                self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,450,445)
+                self.img_pokemon("Luxio",'images//images-add//add_pokemon4.png',90,109,450,445)
                 self.text_c2("Luxio",self.black,470,542)
 
             if name == "Magicarpe":
                 self.read_json("Magicarpe")
-                self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',90,99,255,452)
+                self.img_pokemon("Magicarpe",'images//images-add//add_pokemon5.png',90,99,255,452)
                 self.text_c2("Magicarpe",self.black,245,542)
 
             if name == "Phanpy":
                 self.read_json("Phanpy")
-                self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',80,99,655,450)
+                self.img_pokemon("Phanpy",'images//images-add//add_pokemon6.png',80,99,655,450)
                 self.text_c2("Phanpy",self.black,670,542)
                 
             if name == "Psykokwak":
                 self.read_json("Psykokwak")
-                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
+                self.img_pokemon("Psykokwak",'images//images-add//add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
             if name == "Rondoudou":
                 self.read_json("Rondoudou")
-                self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
+                self.img_pokemon("Rondoudou",'images//images-add//add_pokemon8.png',70,79,670,258)
                 self.text_c2("Rondoudou",self.black,642,342) 
                 
             pygame.display.update()
@@ -118,35 +118,35 @@ class Pokedex(Global):
         self.rect_radius(10,self.white,620, 450, 170, 120)
 
         #Afficher pokemon pikachu
-        self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',100,109,65,250)
+        self.img_pokemon("pikachu",'images//images-pokedex//pokedex1.png',100,109,65,250)
         self.text_c2("pikachu",self.black,60,342)
 
         #Afficher pokemon capumain
-        self.img_pokemon("capumain",'images\images-pokedex\pokedex2.png',115,119,45,440)
+        self.img_pokemon("capumain",'images//images-pokedex//pokedex2.png',115,119,45,440)
         self.text_c2("capumain",self.black,60,542)
 
         #Afficher pokemon evoli
-        self.img_pokemon("evoli",'images\images-pokedex\pokedex3.png',90,99,265,252)
+        self.img_pokemon("evoli",'images//images-pokedex//pokedex3.png',90,99,265,252)
         self.text_c2("evoli",self.black,270,342)
 
         #Afficher pokemon marcacrin
-        self.img_pokemon("marcacrin",'images\images-pokedex\pokedex4.png',130,129,437,420)
+        self.img_pokemon("marcacrin",'images//images-pokedex//pokedex4.png',130,129,437,420)
         self.text_c2("marcacrin",self.black,440,542)
 
         #Afficher pokemon salameche
-        self.img_pokemon("salameche",'images\images-pokedex\pokedex5.png',110,119,255,430)
+        self.img_pokemon("salameche",'images//images-pokedex//pokedex5.png',110,119,255,430)
         self.text_c2("salameche",self.black,245,542)
         
         #Afficher pokemon medhyena
-        self.img_pokemon("medhyena",'images\images-pokedex\pokedex6.png',260,269,585,320)
+        self.img_pokemon("medhyena",'images//images-pokedex//pokedex6.png',260,269,585,320)
         self.text_c2("medhyena",self.black,655,542)
         
         #Afficher pokemon tiplouf
-        self.img_pokemon("tiplouf",'images\images-pokedex\pokedex7.png',100,109,455,240)
+        self.img_pokemon("tiplouf",'images//images-pokedex//pokedex7.png',100,109,455,240)
         self.text_c2("tiplouf",self.black,460,342)
         
         #Afficher pokemon caninos
-        self.img_pokemon("caninos",'images\images-pokedex\pokedex8.png',100,109,645,240)
+        self.img_pokemon("caninos",'images//images-pokedex//pokedex8.png',100,109,645,240)
         self.text_c2("caninos",self.black,655,342)
         
         #boutton changer de page
@@ -363,5 +363,5 @@ class Pokedex(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-# test = Pokedex()
-# test.pokedex_run()
+test = Pokedex()
+test.pokedex_run()
