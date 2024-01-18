@@ -210,8 +210,7 @@ class Play_Pokemon(Global):
                     button_rect = pygame.Rect(620, 250, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         show_play_fight = True
-
-
+                        
                 # Rectangle du bas        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()

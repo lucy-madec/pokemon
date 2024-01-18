@@ -161,6 +161,8 @@ class Play_Fight(Global):
         
 # game = Play_Fight()
 # game.run()
+        
+
 # from global_def import Global
 # import pygame
 # import json
