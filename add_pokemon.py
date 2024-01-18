@@ -15,7 +15,7 @@ class Add_Pokemon(Global):
         background = pygame.image.load('images/images-add/add_pokemon10.jpg')
         background = background.convert()
         self.screen.blit(background, (0, 0))
-        
+  
     def read_json(self, name):
         with open('add_json.json', 'r') as json_file:
             data = json.load(json_file)
@@ -33,14 +33,14 @@ class Add_Pokemon(Global):
 
             with open('pokemon.json', 'w') as new_json_file:
                 json.dump(destination_data, new_json_file, indent=2)          
-    
+
     def page1(self): 
         self.background()
         self.background()
         # Afficher titre "CLICK TO ADD POKEMON"
         self.rect_radius(10,self.white,200, 40, 400, 80)
         self.text_c5("CLICK TO ADD POKEMON",self.black,250,65)
-        
+
         # Créer rectangles haut
         self.rect_radius(10,self.white,100, 130, 600, 100) # Etourvol
         self.rect_radius(10,self.white,100, 250, 600, 100) # Floravol
@@ -62,14 +62,14 @@ class Add_Pokemon(Global):
         # Afficher pokemon Luxio
         self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,150,483)
         self.text_c2("Luxio",self.black,390,500)
-        
+
         #boutton changer de page
         self.rect_radius(10,self.yellow,740, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
-        
+
         pygame.display.update()
         pygame.display.flip()
-            
+
     def page2(self):
         # Créer rectangles haut
         self.rect_radius(10,self.white,100, 130, 600, 100) # Magicarpe
@@ -104,7 +104,7 @@ class Add_Pokemon(Global):
         # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
-    
+
     def button_menu(self):
         # Affiche le bouton BACK
         self.rect_radius(5, self.white, 640, 10, 70, 25)
@@ -123,7 +123,7 @@ class Add_Pokemon(Global):
         self.background()
         self.page1()
         self.button_menu()
-        
+
         while self.add_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -156,7 +156,7 @@ class Add_Pokemon(Global):
                             button_rect = pygame.Rect(100, 130, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
                                 self.read_json("Etourvol") 
-                                    
+   
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 250, 600, 100)

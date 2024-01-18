@@ -74,37 +74,5 @@
     "pv": 55,
     "defense": 45,
     "image": "images/images-pokedex/pokedex8.png"
-  },
-  {
-    "nom": "Lainergie",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 70,
-    "defense": 55
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49
-  },
-  {
-    "nom": "Etourvol",
-    "type": "vol",
-    "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50
   }
 ]

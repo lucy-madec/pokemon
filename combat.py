@@ -1,5 +1,6 @@
 from type import Type
 import json, random
+
 class Combat(Type):
 
     def __init__(self):
@@ -10,14 +11,14 @@ class Combat(Type):
         self.pok_player = self.random_pokemon()
         self.puissance_player = self.pok_player["puissance"]
 
-            
+
     def attack(self, pv, puissance, type_player, type_enemy, defense):
         if type_player =="normal":
             pokemon_damage = self.normal(type_enemy, puissance)
             self.damage_poke = pokemon_damage * (1 - defense // 200) 
             remaining_life  = pv - self.damage_poke
             print (f"Le pokemon inflige {self.damage_poke} dégats, l'autre avait {pv}HP, il lui reste {remaining_life }HP mais il avait {defense}de def")
-            return remaining_life 
+            return remaining_life
         
         if type_player =="feu":
             pokemon_damage = self.feu(type_enemy, puissance)
@@ -123,12 +124,11 @@ class Combat(Type):
             remaining_life  = pv - self.damage_poke
             print (f"Le pokemon inflige {self.damage_poke} dégats, l'autre avait {pv}HP, il lui reste {remaining_life }HP mais il avait {defense}de def")
             return remaining_life 
-        
+    
     def read_json(self):
         with open('add_json.json', 'r') as json_file:
-            data = json.load(json_file)
-            return data
-        
+            return json.load(json_file)
+
     def random_pokemon(self):
         random_pokemon = random.choice(self.info_json)
         return {
@@ -140,5 +140,3 @@ class Combat(Type):
             'pv': random_pokemon['pv'],
             'defense': random_pokemon['defense']
         }
-        
-    
