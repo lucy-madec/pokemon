@@ -22,13 +22,13 @@ class Pokedex(Global):
             (pokemon for pokemon in data if pokemon["nom"] == name), None
         ):
             try:
-                with open('pokemon_json.json', 'r') as dest_json_file:
+                with open('pokemon.json', 'r') as dest_json_file:
                     destination_data = json.load(dest_json_file)
             except FileNotFoundError:
                 destination_data = []
             destination_data.append(etourvol_data)
 
-            with open('pokemon_json.json', 'w') as new_json_file:
+            with open('pokemon.json', 'w') as new_json_file:
                 json.dump(destination_data, new_json_file, indent=2)
             print("Le Pokémon Etourvol a été ajouté au pokedex")
         else:
@@ -56,7 +56,7 @@ class Pokedex(Global):
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
         
         #recuperer nom pokemon du pokemon.json
-        with open('pokemon_json.json', 'r') as json_file:
+        with open('pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
         
