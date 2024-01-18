@@ -58,7 +58,7 @@ class Pokedex(Global):
         #recuperer nom pokemon du pokemon.json
         with open('pokemon_json.json', 'r') as json_file:
             data = json.load(json_file)
-        name_pokemons = [pokemon["Nom"] for pokemon in data]
+        name_pokemons = [pokemon["nom"] for pokemon in data]
         
         for name in name_pokemons:
             if name == "Etourvol":
