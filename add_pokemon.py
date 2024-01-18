@@ -53,16 +53,16 @@ class Add_Pokemon(Global):
         self.text_c5("ADD POKEMON",self.black,350,65)
         
         # Créer rectangles haut
-        self.rect_radius(10,self.white,20, 250, 170, 120)
-        self.rect_radius(10,self.white,220, 250, 170, 120)
-        self.rect_radius(10,self.white,420, 250, 170, 120)
+        self.rect_radius(10,self.white,20, 250, 470, 120)
+        # self.rect_radius(10,self.white,220, 250, 170, 120)
+        self.rect_radius(10,self.white,420, 250, 470, 120)
         self.rect_radius(10,self.white,620, 250, 170, 120)
     
         # Créer rectangles bas
-        self.rect_radius(10,self.white,20, 450, 170, 120)
-        self.rect_radius(10,self.white,220, 450, 170, 120)
-        self.rect_radius(10,self.white,420, 450, 170, 120)
-        self.rect_radius(10,self.white,620, 450, 170, 120)
+        self.rect_radius(10,self.white,20, 450, 470, 120)
+        # self.rect_radius(10,self.white,220, 450, 170, 120)
+        self.rect_radius(10,self.white,420, 450, 470, 120)
+        # self.rect_radius(10,self.white,620, 450, 170, 120)
         
         # Afficher pokemon Etourvol
         self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
@@ -210,6 +210,6 @@ class Add_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-# test_add_pokemon = Add_Pokemon()
-# test_add_pokemon.add_pokemon_run()
+test_add_pokemon = Add_Pokemon()
+test_add_pokemon.add_pokemon_run()
 
