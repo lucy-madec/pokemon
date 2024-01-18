@@ -56,14 +56,14 @@ class Pokedex(Global):
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
         
         #recuperer nom pokemon du pokemon.json
-        with open('pokemon_json.json', 'r') as json_file:
+        with open('pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
         
         for name in name_pokemons:
             if name == "Etourvol":
                 self.read_json("Etourvol")
-                self.img_pokemon("Etourvol",r'images//images-add//add_pokemon1.png',70,89,75,255)
+                self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,75,255)
                 self.text_c2("Etourvol",self.black,60,342)
                 
             if name == "Floravol":
