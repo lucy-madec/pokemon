@@ -1,11 +1,14 @@
 # Importer les modules
 from global_def import Global
+# from test1 import Test1
+# from play_fight import Play_Fight
 from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
-class Menu(Global): 
 
+class Menu(Global): 
+    
     def __init__(self): 
         Global.__init__(self)
         self.play_p = Play_Pokemon()
@@ -33,33 +36,22 @@ class Menu(Global):
             pygame.display.flip()
             self.clock.tick(60)
 
-    # Afficher des rectangles blancs pour les options du menu          
+    # Afficher des rectangles blancs pour les options du menu            
+
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
         if rect.collidepoint(pygame.mouse.get_pos()):
-
             pygame.draw.rect(self.screen, self.white, rect.inflate(10, 10), border_radius=10)
         else:
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
-        self.screen.blit(menu_text, pos) 
+        self.screen.blit(menu_text, pos)     
 
-    def logo_liv (self):
-        logo_liv = pygame.image.load("images/images-menu/menu5.png").convert_alpha()
-        logo_liv = pygame.transform.scale(logo_liv,(430,101))   
-        largeur_logo_liv, hauteur_logo_liv, = logo_liv.get_size()       
-        x = (self.screen_width - largeur_logo_liv) //2
-        self.screen.blit(logo_liv,(x,20))
-
-        self.img_pokemon("date","images/images-menu/menu2.jpg", 70,20,365,560)
-       
-    # Définir choix du menu
     def options_menu(self): 
-       
+        # Définir choix du menu
         self.running = True
-        img_back = pygame.image.load("images/images-menu/menu6.jpg").convert()
-
+        img_back = pygame.image.load("images/images-menu/menu2.png").convert()
         option_rects = [
-            pygame.Rect(self.screen_width // 2 - 100, 140 + i * 65, 200, 50) for i in range(4)
+            pygame.Rect(50, 100 + i * 100, 200, 50) for i in range(4)
         ]
         option_texts = ["PLAY", "ADD POKEMON", "POKEDEX", "QUIT"]
 
@@ -68,13 +60,14 @@ class Menu(Global):
 
             for i, (rect, text) in enumerate(zip(option_rects, option_texts)):
                 if text == "ADD POKEMON":
-                    position = (415 - 100, 140 + i * 65, 200, 50)
+                    position = (70, 100 + i * 100)
                 elif text == "POKEDEX":
-                    position = (450 - 100, 140 + i * 65, 200, 50)
+                    position = (100, 100 + i * 100)
                 else:
-                    position = (470- 100, 140 + i * 65, 200, 50)
+                    position = (125, 100 + i * 100)
 
-                self.draw_menu_option(rect, text, position)                
+                self.draw_menu_option(rect, text, position)
+            self.rect_radius(10, self.white, 310, 100, 440, 350)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -99,10 +92,9 @@ class Menu(Global):
                                 pygame.quit()
                                 sys.exit()
 
-            self.logo_liv()
-
             pygame.display.update()
             self.clock.tick(60)
+        pygame.display.flip()
 
-test_menu = Menu()
-test_menu.menu_run()
+menu = Menu()
+menu.menu_run()

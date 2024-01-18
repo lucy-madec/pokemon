@@ -37,7 +37,10 @@ class Add_Pokemon(Global):
         back_menu_rect = pygame.Rect(640, 10, 70, 25)
         return back_menu_rect.collidepoint(mouse_pos)
     
-
+    # def is_add_button_clicked(self):
+    #     mouse_pos = pygame.mouse.get_pos()
+    #     back_menu_rect = pygame.Rect(540, 10, 70, 25)
+    #     return back_menu_rect.collidepoint(mouse_pos)
     
     def logo(self):
         self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110)     
@@ -93,7 +96,6 @@ class Add_Pokemon(Global):
         self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
         self.text_c2("Rondoudou",self.black,642,342) 
 
-
     # def read_json(self,name):
     #     with open('add_json.json', 'r') as json_file:
     #         data = json.load(json_file)
@@ -123,10 +125,10 @@ class Add_Pokemon(Global):
         self.pokemon()
         self.button_quit()
 
-    def show_pokemon_list(self):
-        self.setup_screen()       
-        pygame.display.update()
-        pygame.display.flip()
+    # def show_pokemon_list(self):
+    #     self.setup_screen()       
+    #     # pygame.display.update()
+    #     pygame.display.flip()
 
     def add_pokemon_run(self):
         self.add_running = True
@@ -139,15 +141,19 @@ class Add_Pokemon(Global):
                 if event.type == pygame.QUIT:
                     self.add_running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
+
                     # Quitte le jeu lors du clic sur le bouton QUIT
-                    if self.is_quit_button_clicked():    
-                        self.add_running = False
+                    if self.is_quit_button_clicked():
+                            
+                        self.add_running = False  
+                        pygame.quit()                      
+                                                                   
                     elif self.is_menu_button_clicked():
                         self.add_running = False
+                    elif self.is_add_button_clicked():
+                        print("but add")
+                        self.read_json()                        
 
-                        
-
-            #Test cliques sur les rect                    
                 #Rectangle du haut        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -173,7 +179,6 @@ class Add_Pokemon(Global):
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.rondoudou()
 
-
                 #Rectangle du bas        
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
@@ -186,7 +191,6 @@ class Add_Pokemon(Global):
                     button_rect = pygame.Rect(220, 450, 170, 120)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         self.info_pokemon.magicarpe()
-
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()

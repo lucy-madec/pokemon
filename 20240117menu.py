@@ -1,11 +1,14 @@
 # Importer les modules
 from global_def import Global
+# from test1 import Test1
+# from play_fight import Play_Fight
 from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
-class Menu(Global): 
 
+class Menu(Global): 
+    
     def __init__(self): 
         Global.__init__(self)
         self.play_p = Play_Pokemon()
@@ -103,6 +106,7 @@ class Menu(Global):
 
             pygame.display.update()
             self.clock.tick(60)
+        pygame.display.flip()
 
-test_menu = Menu()
-test_menu.menu_run()
+menu = Menu()
+menu.menu_run()
