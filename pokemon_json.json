@@ -1,78 +1,78 @@
 [
   {
-    "Nom": "Pikachu",
-    "Type": "Electrique",
-    "Niveau": 1,
-    "Puissance": 55,
-    "PV": 35,
-    "Defense": 40,
-    "Image": "images/images-pokedex/pokedex1.png",
-    "X": 120,
-    "Y": 210
+    "nom": "Pikachu",
+    "type": "electrique",
+    "niveau": 1,
+    "puissance": 55,
+    "pv": 35,
+    "defense": 40,
+    "image": "images/images-pokedex/pokedex1.png",
+    "x": 120,
+    "y": 210
   },
   {
-    "Nom": "Capumain",
-    "Type": "Normal",
-    "Niveau": 1,
-    "Puissance": 70,
-    "PV": 55,
-    "Defense": 55,
-    "Image": "images/images-pokedex/pokedex2.png",
-    "X": 400,
-    "Y": 90
+    "nom": "Capumain",
+    "type": "normal",
+    "niveau": 1,
+    "puissance": 70,
+    "pv": 55,
+    "defense": 55,
+    "image": "images/images-pokedex/pokedex2.png",
+    "x": 400,
+    "y": 90
   },
   {
-    "Nom": "Evoli",
-    "Type": "Normal",
-    "Niveau": 1,
-    "Puissance": 55,
-    "PV": 55,
-    "Defense": 50,
-    "Image": "images/images-pokedex/pokedex3.png"
+    "nom": "Evoli",
+    "type": "normal",
+    "niveau": 1,
+    "puissance": 55,
+    "pv": 55,
+    "defense": 50,
+    "image": "images/images-pokedex/pokedex3.png"
   },
   {
-    "Nom": "Marcacrin",
-    "Type": " Glace",
-    "Niveau": 1,
-    "Puissance": 50,
-    "PV": 50,
-    "Defense": 40,
-    "Image": "images/images-pokedex/pokedex4.png"
+    "nom": "Marcacrin",
+    "type": " glace",
+    "niveau": 1,
+    "puissance": 50,
+    "pv": 50,
+    "defense": 40,
+    "image": "images/images-pokedex/pokedex4.png"
   },
   {
-    "Nom": "Salam\u00c3\u00a8che",
-    "Type": "Feu",
-    "Niveau": 1,
-    "Puissance": 52,
-    "PV": 39,
-    "Defense": 43,
-    "Image": "images/images-pokedex/pokedex5.png"
+    "nom": "Salameche",
+    "type": "feu",
+    "niveau": 1,
+    "puissance": 52,
+    "pv": 39,
+    "defense": 43,
+    "image": "images/images-pokedex/pokedex5.png"
   },
   {
-    "Nom": "Medhyena",
-    "Type": "T\u00c3\u00a9n\u00c3\u00a8bres",
-    "Niveau": 1,
-    "Puissance": 55,
-    "PV": 35,
-    "Defense": 35,
-    "Image": "images/images-pokedex/pokedex6.png"
+    "nom": "Medhyena",
+    "type": "tenebres",
+    "niveau": 1,
+    "puissance": 55,
+    "pv": 35,
+    "defense": 35,
+    "image": "images/images-pokedex/pokedex6.png"
   },
   {
-    "Nom": "Tiplouf",
-    "Type": "Eau",
-    "Niveau": 1,
-    "Puissance": 51,
-    "PV": 53,
-    "Defense": 53,
-    "Image": "images/images-pokedex/pokedex7.png"
+    "nom": "Tiplouf",
+    "type": "eau",
+    "niveau": 1,
+    "puissance": 51,
+    "pv": 53,
+    "defense": 53,
+    "image": "images/images-pokedex/pokedex7.png"
   },
   {
-    "Nom": "Caninos",
-    "Type": "Feu",
-    "Niveau": 1,
-    "Puissance": 70,
-    "PV": 55,
-    "Defense": 45,
-    "Image": "images/images-pokedex/pokedex8.png"
+    "nom": "Caninos",
+    "type": "feu",
+    "niveau": 1,
+    "puissance": 70,
+    "pv": 55,
+    "defense": 45,
+    "image": "images/images-pokedex/pokedex8.png"
   }
 ]
