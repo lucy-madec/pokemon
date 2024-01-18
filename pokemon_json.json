@@ -1,6 +1,6 @@
 [
   {
-    "nom": "pikachu",
+    "nom": "Pikachu",
     "type": "electrique",
     "niveau": 1,
     "puissance": 55,
@@ -11,7 +11,7 @@
     "y": 210
   },
   {
-    "nom": "capumain",
+    "nom": "Capumain",
     "type": "normal",
     "niveau": 1,
     "puissance": 70,
@@ -22,7 +22,7 @@
     "y": 90
   },
   {
-    "nom": "evoli",
+    "nom": "Evoli",
     "type": "normal",
     "niveau": 1,
     "puissance": 55,
@@ -31,7 +31,7 @@
     "image": "images/images-pokedex/pokedex3.png"
   },
   {
-    "nom": "marcacrin",
+    "nom": "Marcacrin",
     "type": " glace",
     "niveau": 1,
     "puissance": 50,
@@ -40,7 +40,7 @@
     "image": "images/images-pokedex/pokedex4.png"
   },
   {
-    "nom": "salameche",
+    "nom": "Salameche",
     "type": "feu",
     "niveau": 1,
     "puissance": 52,
@@ -49,7 +49,7 @@
     "image": "images/images-pokedex/pokedex5.png"
   },
   {
-    "nom": "medhyena",
+    "nom": "Medhyena",
     "type": "tenebres",
     "niveau": 1,
     "puissance": 55,
@@ -58,7 +58,7 @@
     "image": "images/images-pokedex/pokedex6.png"
   },
   {
-    "nom": "tiplouf",
+    "nom": "Tiplouf",
     "type": "eau",
     "niveau": 1,
     "puissance": 51,
@@ -67,7 +67,7 @@
     "image": "images/images-pokedex/pokedex7.png"
   },
   {
-    "nom": "caninos",
+    "nom": "Caninos",
     "type": "feu",
     "niveau": 1,
     "puissance": 70,

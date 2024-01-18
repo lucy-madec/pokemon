@@ -9,7 +9,7 @@ class Play_Pokemon(Global):
         # self.play_fight = Play_Fight()
                 
     def background(self):
-        background = pygame.image.load('images\images-play\play4.jpg')
+        background = pygame.image.load(r'images\images-play\play4.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.rect_radius(10, self.white, 200, 40, 440, 80)
@@ -121,7 +121,7 @@ class Play_Pokemon(Global):
         self.text_c2("medhyena",self.black,655,542)
         
         # Afficher pokemon tiplouf
-        self.img_pokemon("tiplouf",'images\images-pokedex\pokedex7.png',100,109,455,240)
+        self.img_pokemon("tiplouf",r'images\images-pokedex\pokedex7.png',100,109,455,240)
         self.text_c2("tiplouf",self.black,460,342)
         
         # Afficher pokemon caninos
@@ -342,5 +342,5 @@ class Play_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-# test = Play_Pokemon()
-# test.play_pokemon_run()
+test = Play_Pokemon()
+test.play_pokemon_run()
