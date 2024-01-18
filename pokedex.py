@@ -13,26 +13,7 @@ class Pokedex(Global):
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c3("POKEDEX",self.black,230,30)
-        
-    def read_json(self,name):
-        with open('add_json.json', 'r') as json_file:
-            data = json.load(json_file)
-        if etourvol_data := next(
-            (pokemon for pokemon in data if pokemon["Nom"] == name), None
-        ):
-            try:
-                with open('pokemon_json.json', 'r') as dest_json_file:
-                    destination_data = json.load(dest_json_file)
-            except FileNotFoundError:
-                destination_data = []
-            destination_data.append(etourvol_data)
-
-            with open('pokemon_json.json', 'w') as new_json_file:
-                json.dump(destination_data, new_json_file, indent=2)
-            print("Le Pokémon Etourvol a été ajouté au pokedex")
-        else:
-            print("Le Pokémon Etourvol n'a pas été trouvé")            
+        self.text_c3("POKEDEX",self.black,230,30)     
             
     def ajout_pokemon(self): 
         self.background()
@@ -56,48 +37,41 @@ class Pokedex(Global):
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
         
         #recuperer nom pokemon du pokemon.json
-        with open('pokemon_json.json', 'r') as json_file:
+        with open('pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
         
         for name in name_pokemons:
-            if name == "etourvol":
-                self.read_json("Etourvol")
+            if name == "Etourvol":
                 self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
                 self.text_c2("Etourvol",self.black,60,342)
                 
-            if name == "floravol":
-                self.read_json("Floravol")
+            if name == "Floravol":
                 self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,265,242)
                 self.text_c2("Floravol",self.black,265,342)
 
-            if name == "lainergie":
-                self.read_json("Lainergie")
+            if name == "Lainergie":
                 self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,65,455)
                 self.text_c2("Lainergie",self.black,50,542)
                 
-            if name == "luxio":
-                self.read_json("Luxio")
+            if name == "Luxio":
                 self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,450,445)
                 self.text_c2("Luxio",self.black,470,542)
 
-            if name == "magicarpe":
+            if name == "Magicarpe":
                 self.read_json("Magicarpe")
                 self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',90,99,255,452)
                 self.text_c2("Magicarpe",self.black,245,542)
 
-            if name == "phanpy":
-                self.read_json("phanpy")
+            if name == "Phanpy":
                 self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',80,99,655,450)
                 self.text_c2("Phanpy",self.black,670,542)
                 
-            if name == "psykokwak":
-                self.read_json("psykokwak")
+            if name == "Psykokwak":
                 self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
-            if name == "rondoudou":
-                self.read_json("rondoudou")
+            if name == "Pondoudou":
                 self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
                 self.text_c2("Rondoudou",self.black,642,342) 
                 
@@ -152,6 +126,7 @@ class Pokedex(Global):
         #boutton changer de page
         self.rect_radius(10,self.yellow,740, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
+        
         pygame.display.update()
         pygame.display.flip()
 
@@ -169,11 +144,7 @@ class Pokedex(Global):
         # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
-    
-    def is_add_button_clicked(self):
-        mouse_pos = pygame.mouse.get_pos()
-        back_menu_rect = pygame.Rect(540, 10, 70, 25)
-        return back_menu_rect.collidepoint(mouse_pos)
+
     
     def pokedex_run(self):
         self.pok_running = True
@@ -195,12 +166,9 @@ class Pokedex(Global):
                     #     # Quitte le jeu lors du clic sur le bouton QUIT
                         pygame.quit()
                     if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
-                        print("menu")
                         self.running =  True
                         self.pok_running = False
                         
-                    if self.is_add_button_clicked():
-                        print("but add")
 
             #Test cliques sur les rectangles
                 #Fleche droite           
