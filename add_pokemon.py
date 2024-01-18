@@ -49,8 +49,8 @@ class Add_Pokemon(Global):
     def pokemon(self):
         
         # Afficher titre "Add Pokémon"
-        self.rect_radius(10,self.white,200, 40, 440, 80)
-        self.text_c5("ADD POKEMON",self.black,350,65)
+        self.rect_radius(10,self.white,200, 40, 400, 80)
+        # self.text_c5("ADD POKEMON",self.black,350,65)
         
         # Créer rectangles haut
         self.rect_radius(10,self.white,100, 490, 600, 100)
