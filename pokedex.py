@@ -63,7 +63,7 @@ class Pokedex(Global):
         for name in name_pokemons:
             if name == "Etourvol":
                 self.read_json("Etourvol")
-                self.img_pokemon("Etourvol",r'images//images-add//add_pokemon1.png',70,89,75,255)
+                self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,75,255)
                 self.text_c2("Etourvol",self.black,60,342)
                 
             if name == "Floravol":
