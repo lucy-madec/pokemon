@@ -9,7 +9,7 @@ class Pokedex(Global):
         self.info_pokemon = Info_pokemon()
                 
     def background(self):
-        background = pygame.image.load('images\images-pokedex\pokedex0.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex0.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.rect_radius(10,self.white,200, 40, 440, 80)
@@ -19,7 +19,7 @@ class Pokedex(Global):
         with open('add_json.json', 'r') as json_file:
             data = json.load(json_file)
         if etourvol_data := next(
-            (pokemon for pokemon in data if pokemon["Nom"] == name), None
+            (pokemon for pokemon in data if pokemon["nom"] == name), None
         ):
             try:
                 with open('pokemon_json.json', 'r') as dest_json_file:
@@ -56,7 +56,7 @@ class Pokedex(Global):
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
         
         #recuperer nom pokemon du pokemon.json
-        with open('pokemon_json.json', 'r') as json_file:
+        with open('pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
         
@@ -93,7 +93,7 @@ class Pokedex(Global):
                 
             if name == "Psykokwak":
                 self.read_json("Psykokwak")
-                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
+                self.img_pokemon("Psykokwak",r'images//images-add//add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
             if name == "Rondoudou":
@@ -118,31 +118,31 @@ class Pokedex(Global):
         self.rect_radius(10,self.white,620, 450, 170, 120)
 
         #Afficher pokemon pikachu
-        self.img_pokemon("pikachu",r'images\images-pokedex\pokedex1.png',100,109,65,250)
+        self.img_pokemon("pikachu",r'images/images-pokedex/pokedex1.png',100,109,65,250)
         self.text_c2("pikachu",self.black,60,342)
 
         #Afficher pokemon capumain
-        self.img_pokemon("capumain",r'images\images-pokedex\pokedex2.png',115,119,45,440)
+        self.img_pokemon("capumain",r'images/images-pokedex/pokedex2.png',115,119,45,440)
         self.text_c2("capumain",self.black,60,542)
 
         #Afficher pokemon evoli
-        self.img_pokemon("evoli",r'images\images-pokedex\pokedex3.png',90,99,265,252)
+        self.img_pokemon("evoli",r'images/images-pokedex/pokedex3.png',90,99,265,252)
         self.text_c2("evoli",self.black,270,342)
 
         #Afficher pokemon marcacrin
-        self.img_pokemon("marcacrin",r'images\images-pokedex\pokedex4.png',130,129,437,420)
+        self.img_pokemon("marcacrin",r'images/images-pokedex/pokedex4.png',130,129,437,420)
         self.text_c2("marcacrin",self.black,440,542)
 
         #Afficher pokemon salameche
-        self.img_pokemon("salameche",r'images\images-pokedex\pokedex5.png',110,119,255,430)
+        self.img_pokemon("salameche",r'images//images-pokedex//pokedex5.png',110,119,255,430)
         self.text_c2("salameche",self.black,245,542)
         
         #Afficher pokemon medhyena
-        self.img_pokemon("medhyena",r'images\images-pokedex\pokedex6.png',260,269,585,320)
+        self.img_pokemon("medhyena",r'images//images-pokedex//pokedex6.png',260,269,585,320)
         self.text_c2("medhyena",self.black,655,542)
         
         #Afficher pokemon tiplouf
-        self.img_pokemon("tiplouf",'images\images-pokedex\pokedex7.png',100,109,455,240)
+        self.img_pokemon("tiplouf",r'images//images-pokedex//pokedex7.png',100,109,455,240)
         self.text_c2("tiplouf",self.black,460,342)
         
         #Afficher pokemon caninos
@@ -198,6 +198,7 @@ class Pokedex(Global):
                         print("menu")
                         self.running =  True
                         self.pok_running = False
+                        
                     if self.is_add_button_clicked():
                         print("but add")
 
@@ -362,5 +363,5 @@ class Pokedex(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-test = Pokedex()
-test.pokedex_run()
+# test = Pokedex()
+# test.pokedex_run()
