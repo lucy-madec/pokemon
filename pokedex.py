@@ -195,7 +195,6 @@ class Pokedex(Global):
                     #     # Quitte le jeu lors du clic sur le bouton QUIT
                         pygame.quit()
                     if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
-                        print("menu")
                         self.running =  True
                         self.pok_running = False
                         
