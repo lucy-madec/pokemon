@@ -9,13 +9,13 @@ class Add_Pokemon(Global):
         self.add_running = True
 
     def background(self):
-        background = pygame.image.load('images/images-add/add_pokemon10.jpg')
+        background = pygame.image.load(r'images/images-add/add_pokemon10.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
 
     # Afficher le logo "Catch Them All"
     def logo(self):
-        self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110) 
+        self.img_pokemon("tagline",r'images/images-add/add_pokemon9.png',175,100,340,110) 
     
     # Afficher le bouton QUIT
     def button_quit(self):        
@@ -43,7 +43,7 @@ class Add_Pokemon(Global):
     #     return back_menu_rect.collidepoint(mouse_pos)
     
     def logo(self):
-        self.img_pokemon("tagline",'images/images-add/add_pokemon9.png',175,100,340,110)     
+        self.img_pokemon("tagline",r'images/images-add/add_pokemon9.png',175,100,340,110)     
 
     #  Afficher liste des 8 Pokémons
     def pokemon(self):
@@ -65,35 +65,35 @@ class Add_Pokemon(Global):
         self.rect_radius(10,self.white,620, 450, 170, 120)
         
         # Afficher pokemon Etourvol
-        self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
+        self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,75,255)
         self.text_c2("Etourvol",self.black,60,342)
 
         # Afficher pokemon Lainergie
-        self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,65,455)
+        self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,65,455)
         self.text_c2("Lainergie",self.black,50,542)
 
         # Afficher pokemon Floravol
-        self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,265,242)
+        self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,265,242)
         self.text_c2("Floravol",self.black,265,342)
 
         # Afficher pokemon Luxio
-        self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,450,445)
+        self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,445)
         self.text_c2("Luxio",self.black,470,542)
 
         # Afficher pokemon Magicarpe
-        self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',90,99,255,452)
+        self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',90,99,255,452)
         self.text_c2("Magicarpe",self.black,245,542)
         
         # Afficher pokemon Phanpy
-        self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',80,99,655,450)
+        self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',80,99,655,450)
         self.text_c2("Phanpy",self.black,670,542)
         
         # Afficher pokemon Psykokwak
-        self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
+        self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',70,89,465,253)
         self.text_c2("Psykokwak",self.black,440,342)
         
         # Afficher pokemon Rondoudou
-        self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
+        self.img_pokemon("Rondoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
         self.text_c2("Rondoudou",self.black,642,342) 
 
     # def read_json(self,name):
