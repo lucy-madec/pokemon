@@ -8,7 +8,7 @@ class Play_Pokemon(Global):
         Global.__init__(self)
         self.info_pokemon = Info_pokemon()
         self.play_pok_running = True
-        self.play_fight = Play_Fight()
+        # self.play_fight = Play_Fight()
         
     def background(self):
         background = pygame.image.load('images\images-play\play4.jpg')
