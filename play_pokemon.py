@@ -2,7 +2,7 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 from play_fight import Play_Fight
 import pygame
-
+import json
 class Play_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
@@ -19,9 +19,6 @@ class Play_Pokemon(Global):
 
     def ajout_pokemon(self): 
         self.background()
-        self.rect_radius(10, self.white, 200, 40, 440, 80)
-        self.text_c3("POKEDEX", self.black, 230, 30)
-
         # Créer rectangles haut
         self.rect_radius(10, self.white, 20, 250, 170, 120)
         self.rect_radius(10, self.white, 220, 250, 170, 120)
@@ -38,40 +35,52 @@ class Play_Pokemon(Global):
         self.rect_radius(10, self.yellow, 20, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
         
-        for name in self.lst_name:
+         #recuperer nom pokemon du pokemon.json
+        with open('pokemon_json.json', 'r') as json_file:
+            data = json.load(json_file)
+        name_pokemons = [pokemon["nom"] for pokemon in data]
+        
+        for name in name_pokemons:
+            if name == "etourvol":
+                self.read_json("Etourvol")
+                self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
+                self.text_c2("Etourvol",self.black,60,342)
                 
-            if name == "Etourvol":
-                self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',120,129,255,422)
-                self.text_c2("Etourvol", self.black, 245, 545)
-                
-            if name == "Floravol":
-                self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',110,119,45,245)
-                self.text_c2("Floravol", self.black, 60, 345)
+            if name == "floravol":
+                self.read_json("Floravol")
+                self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,265,242)
+                self.text_c2("Floravol",self.black,265,342)
 
-            if name == "Lainergie":
-                self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',290,299,570,300)
-                self.text_c2("Lainergie",self.black,655,545)
+            if name == "lainergie":
+                self.read_json("Lainergie")
+                self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,65,455)
+                self.text_c2("Lainergie",self.black,50,542)
                 
-            if name == "Luxio":
-                self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',150,159,425,422)
-                self.text_c2("Luxio",self.black,465,548)
+            if name == "luxio":
+                self.read_json("Luxio")
+                self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,450,445)
+                self.text_c2("Luxio",self.black,470,542)
 
-            if name == "Magicarpe":
-                self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',130,139,455,223)
-                self.text_c2("Magicarpe",self.black,445,347)
+            if name == "magicarpe":
+                self.read_json("Magicarpe")
+                self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',90,99,255,452)
+                self.text_c2("Magicarpe",self.black,245,542)
 
-            if name == "Phanpy":
-                self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',110,119,640,235)
-                self.text_c2("Phanpy",self.black,655,347)
+            if name == "phanpy":
+                self.read_json("phanpy")
+                self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',80,99,655,450)
+                self.text_c2("Phanpy",self.black,670,542)
                 
-            if name == "Psykokwak":
-                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',115,119,45,440)
-                self.text_c2("Psykokwak",self.black,70,545)
+            if name == "psykokwak":
+                self.read_json("psykokwak")
+                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
+                self.text_c2("Psykokwak",self.black,440,342)
                 
-            if name == "Rondoudou":
-                self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',115,119,45,440)
-                self.text_c2("Rondoudou",self.black,70,545)
-
+            if name == "rondoudou":
+                self.read_json("rondoudou")
+                self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
+                self.text_c2("Rondoudou",self.black,642,342) 
+                
             pygame.display.update()
             pygame.display.flip()
             
@@ -166,7 +175,6 @@ class Play_Pokemon(Global):
                       
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         self.play_pok_running = False
-                        pass 
 
             # Test cliques sur les rectangles
                 # Fleche droite           
@@ -175,7 +183,7 @@ class Play_Pokemon(Global):
                     button_rect = pygame.Rect(740, 375, 50, 70)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         poke2 = True
-                    if poke2:
+                    if poke2 == True:
                         self.ajout_pokemon()
 
                 # Fleche gauche
@@ -186,65 +194,68 @@ class Play_Pokemon(Global):
                         poke2 = False
                         self.pokemon()
                         
-                # Rectangle du haut        
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(20, 250, 170, 120)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        show_play_fight = True
-                        
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(220, 250, 170, 120)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        show_play_fight = True
+                if poke2 == False:
+                    #Rectangle du haut
+                    self.button_menu()        
+                    # Rectangle du haut        
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(20, 250, 170, 120)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            show_play_fight = True
+                            
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(220, 250, 170, 120)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            show_play_fight = True
 
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(420, 250, 170, 120)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        show_play_fight = True
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(420, 250, 170, 120)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            show_play_fight = True
 
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(620, 250, 170, 120)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        show_play_fight = True
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(620, 250, 170, 120)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            show_play_fight = True
 
+  
+                    # Rectangle du bas        
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(20, 450, 170, 120)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            show_play_fight = True
 
-                # Rectangle du bas        
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(20, 450, 170, 120)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        show_play_fight = True
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(220, 450, 170, 120)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            show_play_fight = True
+                    
+                    # Information Marcacrin 
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(420, 450, 170, 120)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            show_play_fight = True
 
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(220, 450, 170, 120)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        show_play_fight = True
-                        
-                # Information Marcacrin 
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(420, 450, 170, 120)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        show_play_fight = True
+                    # Information Medhyena        
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(620, 450, 170, 120)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            show_play_fight = True
 
-                # Information Medhyena        
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(620, 450, 170, 120)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        show_play_fight = True
-
-                # Button Back
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(720, 10, 70, 25)
-                    if button_rect.collidepoint(mouse_x, mouse_y):
-                        running = False
+                    # Button Back
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(720, 10, 70, 25)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            running = False
 
             if not show_play_fight:
                 # Affiche la page play_pokemon seulement si show_play_fight est False

@@ -58,46 +58,46 @@ class Pokedex(Global):
         #recuperer nom pokemon du pokemon.json
         with open('pokemon_json.json', 'r') as json_file:
             data = json.load(json_file)
-        name_pokemons = [pokemon["Nom"] for pokemon in data]
+        name_pokemons = [pokemon["nom"] for pokemon in data]
         
         for name in name_pokemons:
-            if name == "Etourvol":
+            if name == "etourvol":
                 self.read_json("Etourvol")
                 self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
                 self.text_c2("Etourvol",self.black,60,342)
                 
-            if name == "Floravol":
+            if name == "floravol":
                 self.read_json("Floravol")
                 self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,265,242)
                 self.text_c2("Floravol",self.black,265,342)
 
-            if name == "Lainergie":
+            if name == "lainergie":
                 self.read_json("Lainergie")
                 self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,65,455)
                 self.text_c2("Lainergie",self.black,50,542)
                 
-            if name == "Luxio":
+            if name == "luxio":
                 self.read_json("Luxio")
                 self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,450,445)
                 self.text_c2("Luxio",self.black,470,542)
 
-            if name == "Magicarpe":
+            if name == "magicarpe":
                 self.read_json("Magicarpe")
                 self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',90,99,255,452)
                 self.text_c2("Magicarpe",self.black,245,542)
 
-            if name == "Phanpy":
-                self.read_json("Phanpy")
+            if name == "phanpy":
+                self.read_json("phanpy")
                 self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',80,99,655,450)
                 self.text_c2("Phanpy",self.black,670,542)
                 
-            if name == "Psykokwak":
-                self.read_json("Psykokwak")
+            if name == "psykokwak":
+                self.read_json("psykokwak")
                 self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
-            if name == "Rondoudou":
-                self.read_json("Rondoudou")
+            if name == "rondoudou":
+                self.read_json("rondoudou")
                 self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
                 self.text_c2("Rondoudou",self.black,642,342) 
                 
@@ -211,7 +211,7 @@ class Pokedex(Global):
                         poke2 = True
                     if poke2 == True:
                         self.ajout_pokemon()
-                
+
                 #Fleche gauche
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()

@@ -4,9 +4,8 @@ from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
-
 class Menu(Global): 
-    
+
     def __init__(self): 
         Global.__init__(self)
         self.play_p = Play_Pokemon()
