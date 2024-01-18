@@ -102,7 +102,6 @@ class Play_Fight(Global):
             pygame.draw.rect(self.screen, self.black, btn_rect, 4, 5)   
              # Pokeball pixeled
             self.img_pokemon("pokeball", image_path, image_rect[2], image_rect[3], image_rect[0], image_rect[1])
-            
     
     def rect_hover(self):   
 
