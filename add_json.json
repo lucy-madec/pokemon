@@ -1,17 +1,10 @@
 [
-            {"Nom": "Floravol", "Type": "Plante", "Niveau": 1, "Puissance": 45, "PV": 55, "Defense": 50,"Image": "images/images-add/add_pokemon2.png"},
-
-            {"Nom": "Psykokwak", "Type": "Plante", "Niveau": 1, "Puissance": 52, "PV": 50, "Defense": 48,"Image": "images/images-add/add_pokemon7.png"},
-
-            {"Nom": "Rondoudou", "Type": "Fée", "Niveau": 1, "Puissance": 30, "PV": 90, "Defense": 15,"Image": "images/images-add/add_pokemon8.png"},
-
-            {"Nom": "Luxio", "Type": "Electrique", "Niveau": 1, "Puissance": 85, "PV": 60, "Defense": 49,"Image": "images/images-add/add_pokemon4.png"},
-
-            {"Nom": "Etourvol", "Type": "Vol", "Niveau": 1, "Puissance": 75, "PV": 55, "Defense": 50, "Image":"images/images-add/add_pokemon1.png"},
-
-            {"Nom": "Lainergie", "Type": "Electrique", "Niveau": 1, "Puissance": 55, "PV": 70, "Defense": 55,"Image": "images/images-add/add_pokemon3.png"},
-
-            {"Nom": "Phanpy", "Type": "Sol", "Niveau": 1, "Puissance": 60, "PV": 90, "Defense": 60,"Image":"images/images-add/add_pokemon6.png"},
-
-            {"Nom": "Magicarpe", "Type": "Eau", "Niveau": 1, "Puissance": 10, "PV": 20, "Defense": 55,"Image": "images/images-add/add_pokemon5.png"}]
-
+    {"nom": "Floravol", "type": "plante", "niveau": 1, "puissance": 45, "pv": 55, "defense": 50},
+    {"nom": "Psykokwak", "type": "plante", "niveau": 1, "puissance": 52, "pv": 50, "defense": 48},
+    {"nom": "Rondoudou", "type": "fee", "niveau": 1, "puissance": 30, "pv": 90, "defense": 15},
+    {"nom": "Luxio", "type": "electrique", "niveau": 1, "puissance": 85, "pv": 60, "defense": 49},
+    {"nom": "Etourvol", "type": "vol", "niveau": 1, "puissance": 75, "pv": 55, "defense": 50},
+    {"nom": "Lainergie", "type": "electrique", "niveau": 1, "puissance": 55, "pv": 70, "defense": 55},
+    {"nom": "Phanpy", "type": "sol", "niveau": 1, "puissance": 60, "pv": 90, "defense": 60},
+    {"nom": "Magicarpe", "type": "eau", "niveau": 1, "puissance": 10, "pv": 20, "defense": 55}
+]
