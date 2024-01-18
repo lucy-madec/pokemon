@@ -19,7 +19,7 @@ class Pokedex(Global):
         with open('add_json.json', 'r') as json_file:
             data = json.load(json_file)
         if etourvol_data := next(
-            (pokemon for pokemon in data if pokemon["Nom"] == name), None
+            (pokemon for pokemon in data if pokemon["nom"] == name), None
         ):
             try:
                 with open('pokemon_json.json', 'r') as dest_json_file:
@@ -58,7 +58,7 @@ class Pokedex(Global):
         #recuperer nom pokemon du pokemon.json
         with open('pokemon_json.json', 'r') as json_file:
             data = json.load(json_file)
-        name_pokemons = [pokemon["Nom"] for pokemon in data]
+        name_pokemons = [pokemon["nom"] for pokemon in data]
         
         for name in name_pokemons:
             if name == "Etourvol":
@@ -363,5 +363,5 @@ class Pokedex(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-test = Pokedex()
-test.pokedex_run()
+# test = Pokedex()
+# test.pokedex_run()

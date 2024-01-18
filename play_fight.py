@@ -175,5 +175,5 @@ class Play_Fight(Global):
 
 # Crée une instance de la classe Play_Fight et exécute le jeu
         
-game = Play_Fight()
-game.play_fight_run()
+# game = Play_Fight()
+# game.play_fight_run()
