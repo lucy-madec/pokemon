@@ -12,7 +12,7 @@ class Add_Pokemon(Global):
         self.poke2 = False
         
     def background(self):
-        background = pygame.image.load('images/images-add/add_pokemon10.jpg')
+        background = pygame.image.load(r'images/images-add/add_pokemon10.jpg')
         background = background.convert()
         self.screen.blit(background, (0, 0))
   
