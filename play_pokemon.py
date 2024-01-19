@@ -3,7 +3,6 @@ from play_fight import Play_Fight
 
 import pygame
 import json
-
 class Play_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
@@ -74,7 +73,7 @@ class Play_Pokemon(Global):
                 
             if name == "Psykokwak":
                 self.read_json("Psykokwak")
-                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
+                self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
             if name == "Rondoudou":
@@ -84,7 +83,7 @@ class Play_Pokemon(Global):
         
             pygame.display.update()
             pygame.display.flip()
-            
+
     def pokemon(self):
         # Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
@@ -276,6 +275,13 @@ class Play_Pokemon(Global):
                     self.button_menu()
                     self.button_quit() 
 
+  
+                    # Rectangle du bas        
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        mouse_x, mouse_y = pygame.mouse.get_pos()
+                        button_rect = pygame.Rect(20, 450, 170, 120)
+                        if button_rect.collidepoint(mouse_x, mouse_y):
+                            show_play_fight = True
 
                 # PAGE 2 : Rectangle du haut                  
                     

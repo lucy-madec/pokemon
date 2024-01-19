@@ -4,9 +4,8 @@ from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
-
 class Menu(Global): 
-    
+
     def __init__(self): 
         Global.__init__(self)
         self.play_p = Play_Pokemon()
@@ -28,7 +27,7 @@ class Menu(Global):
             # Afficher prenoms
             if elapsed_time < 2:
                 self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
-                self.img_back("img_forest", "images/images-menu/menu1.png")
+                self.img_back("img_forest", r"images/images-menu/menu1.png")
             else:
                 break
             pygame.display.flip()
@@ -93,7 +92,6 @@ class Menu(Global):
                             elif item == "ADD POKEMON":
                                 self.add_pokemon.add_pokemon_run()
                             elif item == "POKEDEX":
-                                print("pokedex")
                                 self.pok_running =  True
                                 self.pokedex.pokedex_run()
                             elif item == "QUIT":
