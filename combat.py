@@ -9,7 +9,6 @@ class Combat(Type):
         self.type_rival = self.pok_rival["type"]
         self.pok_player = self.random_pokemon()
         self.puissance_player = self.pok_player["puissance"]
-
             
     def attack(self, pv, puissance, type_player, type_enemy, defense):
         if type_player =="normal":
@@ -123,6 +122,16 @@ class Combat(Type):
             remaining_life  = pv - self.damage_poke
             print (f"Le pokemon inflige {self.damage_poke} dégats, l'autre avait {pv}HP, il lui reste {remaining_life }HP mais il avait {defense}de def")
             return remaining_life 
+        
+    def recup_poke_winner(self, poke_player, poke_advers, poke_player_hp, poke_rand_hp):
+        if poke_player_hp <= 0:
+            self.game_over = True
+            self.win = poke_advers
+        elif poke_rand_hp <= 0:
+            self.game_over = True
+            self.win = poke_player
+
+        return self.win
         
     def read_json(self):
         with open('add_json.json', 'r') as json_file:

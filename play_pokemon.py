@@ -2,6 +2,8 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 import json
+
+
 class Play_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
@@ -342,5 +344,5 @@ class Play_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-# test = Play_Pokemon()
-# test.play_pokemon_run()
+test = Play_Pokemon()
+test.play_pokemon_run()
