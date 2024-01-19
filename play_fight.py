@@ -8,8 +8,7 @@ class Play_Fight(Global):
         
         Global.__init__(self)
         self.play_fight_running = True
-
-
+     
     # Afficher l'image de fond
     def background(self):
         self.img_back("Background", r"images/images-play/play1.jpg")
@@ -49,7 +48,7 @@ class Play_Fight(Global):
     # Afficher message si le joueur perd
     def message_end_lose(self): 
         self.text_c6("Vous avez été ", self.black, 105, 465)  
-        self.text_c2("vaincu ! ", self.black, 130, 485)  
+        self.text_c2("vaincu ! ", self.black, 130, 485)      
 
     def rectangle(self): 
 
@@ -137,16 +136,17 @@ class Play_Fight(Global):
         while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+
                     # Quitte le programme lorsque la fenêtre est fermée
                     self.running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    # Vérifie si le bouton gauche de la souris est cliqué
-                    if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
-                        # Quitte le jeu lors du clic sur le bouton QUIT
-                        self.running = False
-                    elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
-                        pygame.quit() 
 
+                    if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
+                        pygame.quit() 
+                        
+                    elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                        self.play_fight_running = False 
+           
             # Affiche les éléments à l'écran
             self.background()
             self.rectangle()
@@ -171,9 +171,9 @@ class Play_Fight(Global):
             pygame.display.flip()
             self.clock.tick(30)
             
-        pygame.quit()
+     
 
-# Crée une instance de la classe Play_Fight et exécute le jeu
+# Créer une instance de la classe Play_Fight et exécute le jeu
         
 # game = Play_Fight()
 # game.play_fight_run()
