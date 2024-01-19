@@ -27,7 +27,7 @@ class Menu(Global):
             # Afficher prenoms
             if elapsed_time < 2:
                 self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
-                self.img_back("img_forest", "images/images-menu/menu1.png")
+                self.img_back("img_forest", r"images/images-menu/menu1.png")
             else:
                 break
             pygame.display.flip()

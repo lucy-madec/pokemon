@@ -48,19 +48,19 @@ class Add_Pokemon(Global):
         self.rect_radius(10,self.white,100, 490, 600, 100) # Luxio
 
         # Afficher pokemon Etourvol
-        self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,150,135)
+        self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,150,135)
         self.text_c2("Etourvol",self.black,390,142)
         
         # Afficher pokemon Floravol
-        self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,150,240)
+        self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,150,240)
         self.text_c2("Floravol",self.black,390,255)
 
         # Afficher pokemon Lainergie
-        self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,150,373)
+        self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,150,373)
         self.text_c2("Lainergie",self.black,390,380)
 
         # Afficher pokemon Luxio
-        self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,150,483)
+        self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,150,483)
         self.text_c2("Luxio",self.black,390,500)
 
         #boutton changer de page
@@ -78,19 +78,19 @@ class Add_Pokemon(Global):
         self.rect_radius(10,self.white,100, 490, 600, 100) # Roudoudou
         
         # Afficher pokemon Magicarpe
-        self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',70,89,150,135)
+        self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',70,89,150,135)
         self.text_c2("Magicarpe",self.black,390,142)
         
         # Afficher pokemon Phanpy
-        self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',70,89,150,255)
+        self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',70,89,150,255)
         self.text_c2("Phanpy",self.black,390,255)
         
         # Afficher pokemon Psykokwak
-        self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',85,89,150,373)
+        self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',85,89,150,373)
         self.text_c2("Psykokwak",self.black,390,380)
         
         # Afficher pokemon Rondoudou
-        self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',60,89,150,493)
+        self.img_pokemon("Rondoudou",r'images/images-add/add_pokemon8.png',60,89,150,493)
         self.text_c2("Rondoudou",self.black,390,500) 
 
         #boutton de gauche
@@ -209,5 +209,5 @@ class Add_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-test_add_pokemon = Add_Pokemon()
-test_add_pokemon.add_pokemon_run()
+# test_add_pokemon = Add_Pokemon()
+# test_add_pokemon.add_pokemon_run()

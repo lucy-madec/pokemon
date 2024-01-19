@@ -73,7 +73,7 @@ class Play_Pokemon(Global):
                 
             if name == "Psykokwak":
                 self.read_json("Psykokwak")
-                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
+                self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
             if name == "Rondoudou":
@@ -358,5 +358,5 @@ class Play_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-test = Play_Pokemon()
-test.play_pokemon_run()
+# test = Play_Pokemon()
+# test.play_pokemon_run()

@@ -64,7 +64,7 @@
     "puissance": 51,
     "pv": 53,
     "defense": 53,
-    "image": "images/images-pokedex/pokedex7.png"
+    "image":"images/images-pokedex/pokedex7.png"
   },
   {
     "nom": "Caninos",
@@ -74,13 +74,5 @@
     "pv": 55,
     "defense": 45,
     "image": "images/images-pokedex/pokedex8.png"
-  },
-  {
-    "nom": "Etourvol",
-    "type": "vol",
-    "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50
   }
 ]
