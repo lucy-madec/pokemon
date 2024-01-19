@@ -1,4 +1,5 @@
 from global_def import Global
+from info_pokemon import Info_pokemon
 import pygame
 import json
 
@@ -6,6 +7,7 @@ class Add_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.add_running = True
+        self.info_pokemon = Info_pokemon()
         self.page = 1
         self.poke2 = False
         
@@ -30,30 +32,14 @@ class Add_Pokemon(Global):
             destination_data.append(pokemon_data)
 
             with open('pokemon.json', 'w') as new_json_file:
-                json.dump(destination_data, new_json_file, indent=2)  
-
-    def read_json(self):
-        with open('add_json.json', 'r') as json_file:
-            return json.load(json_file)
-
-    def strategy_poke(self):
-        random_pokemon = random.choice(self.info_json)
-        return {
-            'numero': random_pokemon['numero'],
-            'nom': random_pokemon['nom'],
-            'type': random_pokemon['type'],
-            'puissance': random_pokemon['puissance'],
-            'pv': random_pokemon['pv'],
-            'defense': random_pokemon['defense']
-        }
-              
+                json.dump(destination_data, new_json_file, indent=2)          
 
     def page1(self): 
         self.background()
         self.background()
         # Afficher titre "CLICK TO ADD POKEMON"
-        self.rect_radius(10,self.white, 200, 10, 400, 55)
-        self.text_c5("CLICK TO ADD POKEMON",self.black,250, 25)
+        self.rect_radius(10,self.white,200, 40, 400, 80)
+        self.text_c5("CLICK TO ADD A POKEMON",self.black,220,65)
 
         # Créer rectangles haut
         self.rect_radius(10,self.white,100, 130, 600, 100) # Etourvol
@@ -96,7 +82,7 @@ class Add_Pokemon(Global):
         self.text_c2("Magicarpe",self.black,390,142)
         
         # Afficher pokemon Phanpy
-        self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png', 70, 89, 150,255)
+        self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',70,89,150,255)
         self.text_c2("Phanpy",self.black,390,255)
         
         # Afficher pokemon Psykokwak
@@ -104,7 +90,7 @@ class Add_Pokemon(Global):
         self.text_c2("Psykokwak",self.black,390,380)
         
         # Afficher pokemon Rondoudou
-        self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,89,150,493)
+        self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',60,89,150,493)
         self.text_c2("Rondoudou",self.black,390,500) 
 
         #boutton de gauche
@@ -201,7 +187,7 @@ class Add_Pokemon(Global):
                                     
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
-                            button_rect = pygame.Rect(100, 250, 600, 100)
+                            button_rect = pygame.Rect(70, 230, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
                                 self.read_json("Phanpy")
                                             
@@ -217,15 +203,11 @@ class Add_Pokemon(Global):
                             if button_rect.collidepoint(mouse_x, mouse_y):
                                 self.read_json("Roudoudou")
 
-
-            # Info Pokémon: 
-                                
-            
             self.button_menu()
             self.button_quit()
             pygame.display.update()
             pygame.display.flip()
             self.clock.tick(30)
 
-# test_add_pokemon = Add_Pokemon()
-# test_add_pokemon.add_pokemon_run()
+test_add_pokemon = Add_Pokemon()
+test_add_pokemon.add_pokemon_run()
