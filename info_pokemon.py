@@ -7,83 +7,83 @@ class Info_pokemon(Global):
         self.info_running = True
         
     def pikachu(self):
-        background = pygame.image.load('images\images-pokedex\pokedex1b.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex1b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
 
     def capumain(self):
-        background = pygame.image.load('images\images-pokedex\pokedex2b.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex2b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
         
     def evoli(self):
-        background = pygame.image.load('images\images-pokedex\pokedex3b.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex3b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
                 
     def marcacrin(self):
-        background = pygame.image.load('images\images-pokedex\pokedex4b.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex4b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
                 
     def salameche(self):
-        background = pygame.image.load('images\images-pokedex\pokedex5b.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex5b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
                 
     def medhyena(self):
-        background = pygame.image.load('images\images-pokedex\pokedex6b.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex6b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
                 
     def tiplouf(self):
-        background = pygame.image.load('images\images-pokedex\pokedex7b.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex7b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
                 
     def caninos(self):
-        background = pygame.image.load('images\images-pokedex\pokedex8b.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex8b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
 
 
     def etourvol(self):
-        background = pygame.image.load('images\images-pokedex\pokedex208.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex208.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
         
     def lainergie(self):
-        background = pygame.image.load('images\images-pokedex\pokedex212.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex212.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
 
     def floravol(self):
-        background = pygame.image.load('images\images-pokedex\pokedex209.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex209.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
 
     def luxio(self):
-        background = pygame.image.load('images\images-pokedex\pokedex214.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex214.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
         
     def magicarpe(self):
-        background = pygame.image.load('images\images-pokedex\pokedex213.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex213.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
                 
     def phanpy(self):
-        background = pygame.image.load('images\images-pokedex\pokedex215.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex215.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
                 
     def psykokwak(self):
-        background = pygame.image.load('images\images-pokedex\pokedex210.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex210.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
         
     def rondoudou(self):
-        background = pygame.image.load('images\images-pokedex\pokedex211.png')
+        background = pygame.image.load(r'images\images-pokedex\pokedex211.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.button_back()       
