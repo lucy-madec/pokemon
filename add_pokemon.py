@@ -1,5 +1,5 @@
 from global_def import Global
-from info_pokemon import Info_pokemon
+from play_fight import Play_Fight()
 import pygame
 import json
 
@@ -7,7 +7,7 @@ class Add_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.add_running = True
-        self.info_pokemon = Info_pokemon()
+        self.play_f = Play_Fight()
         self.page = 1
         self.poke2 = False
         
@@ -209,5 +209,5 @@ class Add_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-# test_add_pokemon = Add_Pokemon()
-# test_add_pokemon.add_pokemon_run()
+test_add_pokemon = Add_Pokemon()
+test_add_pokemon.add_pokemon_run()
