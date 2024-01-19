@@ -36,7 +36,7 @@ class Play_Pokemon(Global):
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
         
          #recuperer nom pokemon du pokemon.json
-        with open('pokemon_json.json', 'r') as json_file:
+        with open('pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
         
@@ -83,7 +83,7 @@ class Play_Pokemon(Global):
                 
             pygame.display.update()
             pygame.display.flip()
-            
+
     def pokemon(self):
         # Créer rectangles haut
         self.rect_radius(10, self.white, 20, 250, 170, 120)
@@ -99,7 +99,7 @@ class Play_Pokemon(Global):
 
         # Afficher pokemon pikachu
         self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',100,109,65,250)
-        self.text_c2("pikachu", self.black, 60, 342)
+        self.text_c2("pikachu", self.black, 60, 342)       
 
         #Afficher pokemon capumain
         self.img_pokemon("capumain",'images\images-pokedex\pokedex2.png',115,119,45,440)
@@ -149,6 +149,11 @@ class Play_Pokemon(Global):
         # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
+    
+ 
+ 
+
+
     
     def play_pokemon_run(self):
         self.play_pok_running = True

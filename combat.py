@@ -5,11 +5,6 @@ class Combat(Type):
 
     def __init__(self):
         Type.__init__(self)
-        self.info_json = self.read_json()
-        self.pok_rival = self.random_pokemon()
-        self.type_rival = self.pok_rival["type"]
-        self.pok_player = self.random_pokemon()
-        self.puissance_player = self.pok_player["puissance"]
 
 
     def attack(self, pv, puissance, type_player, type_enemy, defense):
@@ -125,18 +120,4 @@ class Combat(Type):
             print (f"Le pokemon inflige {self.damage_poke} dégats, l'autre avait {pv}HP, il lui reste {remaining_life }HP mais il avait {defense}de def")
             return remaining_life 
     
-    def read_json(self):
-        with open('add_json.json', 'r') as json_file:
-            return json.load(json_file)
-
-    def random_pokemon(self):
-        random_pokemon = random.choice(self.info_json)
-        return {
-            'numero': random_pokemon['numero'],
-            'nom': random_pokemon['nom'],
-            # 'fin': random_pokemon['evol'],
-            'type': random_pokemon['type'],
-            'puissance': random_pokemon['puissance'],
-            'pv': random_pokemon['pv'],
-            'defense': random_pokemon['defense']
-        }
+   
