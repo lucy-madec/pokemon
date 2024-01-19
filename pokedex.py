@@ -23,13 +23,13 @@ class Pokedex(Global):
             (pokemon for pokemon in data if pokemon["nom"] == name), None
         ):
             try:
-                with open('pokemon_json.json', 'r') as dest_json_file:
+                with open('pokemon.json', 'r') as dest_json_file:
                     destination_data = json.load(dest_json_file)
             except FileNotFoundError:
                 destination_data = []
             destination_data.append(etourvol_data)
 
-            with open('pokemon_json.json', 'w') as new_json_file:
+            with open('pokemon.json', 'w') as new_json_file:
                 json.dump(destination_data, new_json_file, indent=2)
             print("Le Pokémon Etourvol a été ajouté au pokedex")
         else:
@@ -69,27 +69,27 @@ class Pokedex(Global):
                 
             if name == "Floravol":
                 self.read_json("Floravol")
-                self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,265,242)
+                self.img_pokemon("Floravol",r'images//images-add//add_pokemon2.png',100,119,265,242)
                 self.text_c2("Floravol",self.black,265,342)
 
             if name == "Lainergie":
                 self.read_json("Lainergie")
-                self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,65,455)
+                self.img_pokemon("Lainergie",r'images//images-add//add_pokemon3.png',85,89,65,455)
                 self.text_c2("Lainergie",self.black,50,542)
                 
             if name == "Luxio":
                 self.read_json("Luxio")
-                self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,445)
+                self.img_pokemon("Luxio",r'images//images-add//add_pokemon4.png',90,109,450,445)
                 self.text_c2("Luxio",self.black,470,542)
 
             if name == "Magicarpe":
                 self.read_json("Magicarpe")
-                self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',90,99,255,452)
+                self.img_pokemon("Magicarpe",r'images//images-add//add_pokemon5.png',90,99,255,452)
                 self.text_c2("Magicarpe",self.black,245,542)
 
             if name == "Phanpy":
                 self.read_json("Phanpy")
-                self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',80,99,655,450)
+                self.img_pokemon("Phanpy",r'images//images-add//add_pokemon6.png',80,99,655,450)
                 self.text_c2("Phanpy",self.black,670,542)
                 
             if name == "Psykokwak":
@@ -99,7 +99,7 @@ class Pokedex(Global):
                 
             if name == "Rondoudou":
                 self.read_json("Rondoudou")
-                self.img_pokemon("Rondoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
+                self.img_pokemon("Rondoudou",r'images//images-add//add_pokemon8.png',70,79,670,258)
                 self.text_c2("Rondoudou",self.black,642,342) 
                 
             pygame.display.update()
@@ -147,7 +147,7 @@ class Pokedex(Global):
         self.text_c2("tiplouf",self.black,460,342)
         
         #Afficher pokemon caninos
-        self.img_pokemon("caninos",r'images\images-pokedex\pokedex8.png',100,109,645,240)
+        self.img_pokemon("caninos",r'images//images-pokedex//pokedex8.png',100,109,645,240)
         self.text_c2("caninos",self.black,655,342)
         
         #boutton changer de page
@@ -196,6 +196,7 @@ class Pokedex(Global):
                     #     # Quitte le jeu lors du clic sur le bouton QUIT
                         pygame.quit()
                     if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                        print("menu")
                         self.running =  True
                         self.pok_running = False
                         

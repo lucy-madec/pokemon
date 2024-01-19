@@ -93,6 +93,7 @@ class Menu(Global):
                             elif item == "ADD POKEMON":
                                 self.add_pokemon.add_pokemon_run()
                             elif item == "POKEDEX":
+                                print("pokedex")
                                 self.pok_running =  True
                                 self.pokedex.pokedex_run()
                             elif item == "QUIT":
