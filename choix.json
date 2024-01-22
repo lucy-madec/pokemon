@@ -1,0 +1,11 @@
+[
+  {
+    "nom": "Roudoudou",
+    "type": "fee",
+    "niveau": 1,
+    "puissance": 30,
+    "pv": 90,
+    "defense": 15,
+    "image": "images/images-add/add_pokemon8.png"
+  }
+]

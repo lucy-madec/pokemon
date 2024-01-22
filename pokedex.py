@@ -60,8 +60,7 @@ class Pokedex(Global):
                 self.text_c2("Luxio",self.black,470,542)
 
             if name == "Magicarpe":
-                self.read_json("Magicarpe")
-                self.img_pokemon("Magicarpe",r'images//images-add//add_pokemon5.png',90,99,255,452)
+                self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',90,99,255,452)
                 self.text_c2("Magicarpe",self.black,245,542)
 
             if name == "Phanpy":
@@ -72,9 +71,9 @@ class Pokedex(Global):
                 self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
-            if name == "Pondoudou":
-                self.img_pokemon("Rondoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
-                self.text_c2("Rondoudou",self.black,642,342) 
+            if name == "Roudoudou":
+                self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
+                self.text_c2("Roudoudou",self.black,642,342) 
 
             pygame.display.update()
             pygame.display.flip()
@@ -288,7 +287,7 @@ class Pokedex(Global):
                         button_rect = pygame.Rect(620, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.info_running = True
-                            self.info_pokemon.rondoudou()
+                            self.info_pokemon.roudoudou()
 
 
                     #Rectangle du bas    

@@ -1,7 +1,7 @@
 [
     {"nom": "Floravol", "type": "plante", "niveau": 1, "puissance": 45, "pv": 55, "defense": 50, "image": "images/images-add/add_pokemon2.png"},
     {"nom": "Psykokwak", "type": "plante", "niveau": 1, "puissance": 52, "pv": 50, "defense": 48, "image": "images/images-add/add_pokemon7.png"},
-    {"nom": "Rondoudou", "type": "fee", "niveau": 1, "puissance": 30, "pv": 90, "defense": 15,"image": "images/images-add/add_pokemon8.png"},
+    {"nom": "Roudoudou", "type": "fee", "niveau": 1, "puissance": 30, "pv": 90, "defense": 15,"image": "images/images-add/add_pokemon8.png"},
     {"nom": "Luxio", "type": "electrique", "niveau": 1, "puissance": 85, "pv": 60, "defense": 49, "image": "images/images-add/add_pokemon4.png"},
     {"nom": "Etourvol", "type": "vol", "niveau": 1, "puissance": 75, "pv": 55, "defense": 50,"image": "images/images-add/add_pokemon1.png"},
     {"nom": "Lainergie", "type": "electrique", "niveau": 1, "puissance": 55, "pv": 70, "defense": 55,"image": "images/images-add/add_pokemon3.png"},
