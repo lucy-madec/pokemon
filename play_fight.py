@@ -61,39 +61,59 @@ class Play_Fight(Global):
         # Rectangle 4 actions
         self.rect_radius(10,self.white,335,430,430,115)          
         self.img_pokemon("rectangle_option",r'images/images-play/play5.png',445,129,325,422)        
-       
+
+    # Affiche le bouton QUIT
     def button_quit(self):
+<<<<<<< HEAD
         # Afficher le bouton QUIT
+=======
+>>>>>>> e62bd4783c1e3730701750cb38a3c0d6adc7d20f
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
-    
+
+    # Affiche le bouton BACK
     def button_menu(self):
+<<<<<<< HEAD
         # Afficher le bouton BACK
+=======
+>>>>>>> e62bd4783c1e3730701750cb38a3c0d6adc7d20f
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
 
+    # Vérifie si la souris est au-dessus du bouton
     def is_mouse_over_button(self, button_rect):
+<<<<<<< HEAD
         # Vérifier si la souris est au-dessus du bouton
+=======
+>>>>>>> e62bd4783c1e3730701750cb38a3c0d6adc7d20f
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)    
     
+    # Affiche le bouton d'attaque
     def fight_button(self):
+<<<<<<< HEAD
         # Afficher le bouton d'attaque
+=======
+>>>>>>> e62bd4783c1e3730701750cb38a3c0d6adc7d20f
         self.rect_radius(5, self.pink, 350, 450, 95, 75)
         self.text_c1("FIGHT", self.black, 370, 475)
     
     def bag_button(self):
         self.rect_radius(5, self.brown, 450, 450, 95, 75)
-        self.text_c1("BAG", self.white, 480, 475)     
+        self.text_c1("BAG", self.black, 480, 475)     
 
+    # Affiche le bouton de défense
     def pokemon_button(self):
+<<<<<<< HEAD
         # Afficher le bouton de défense
+=======
+>>>>>>> e62bd4783c1e3730701750cb38a3c0d6adc7d20f
         self.rect_radius(5, self.green, 550, 450, 95, 75)
-        self.text_c1("POKEMON", self.white, 555, 475)
+        self.text_c1("POKEMON", self.black, 555, 475)
 
     def run_button(self):
         self.rect_radius(5, self.blue, 650, 450, 95, 75)
-        self.text_c1("RUN", self.white, 680, 475)      
+        self.text_c1("RUN", self.black, 680, 475)      
 
     def draw_hover_rectangle(self, btn_rect,  image_rect, image_path): 
         # Afficher le rectangle noir au survol de la souris
