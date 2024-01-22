@@ -82,7 +82,7 @@ class Info_pokemon(Global):
         background = background.convert()
         self.screen.blit(background, (0,0))
         
-    def rondoudou(self):
+    def roudoudou(self):
         background = pygame.image.load(r'images\images-pokedex\pokedex211.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
