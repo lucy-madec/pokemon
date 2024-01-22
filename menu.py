@@ -4,9 +4,8 @@ from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
-
 class Menu(Global): 
-    
+
     def __init__(self): 
         Global.__init__(self)
         self.play_p = Play_Pokemon()
@@ -28,7 +27,7 @@ class Menu(Global):
             # Afficher prenoms
             if elapsed_time < 2:
                 self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
-                self.img_back("img_forest", "images/images-menu/menu1.png")
+                self.img_back("img_forest", r"images/images-menu/menu1.png")
             else:
                 break
             pygame.display.flip()
@@ -38,26 +37,25 @@ class Menu(Global):
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
         if rect.collidepoint(pygame.mouse.get_pos()):
-
             pygame.draw.rect(self.screen, self.white, rect.inflate(10, 10), border_radius=10)
         else:
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
         self.screen.blit(menu_text, pos) 
 
     def logo_liv (self):
-        logo_liv = pygame.image.load("images/images-menu/menu5.png").convert_alpha()
+        logo_liv = pygame.image.load(r"images/images-menu/menu5.png").convert_alpha()
         logo_liv = pygame.transform.scale(logo_liv,(430,101))   
         largeur_logo_liv, hauteur_logo_liv, = logo_liv.get_size()       
         x = (self.screen_width - largeur_logo_liv) //2
         self.screen.blit(logo_liv,(x,20))
 
-        self.img_pokemon("date","images/images-menu/menu2.jpg", 70,20,365,560)
+        self.img_pokemon("date",r"images/images-menu/menu2.jpg", 70,20,365,560)
        
     # Définir choix du menu
     def options_menu(self): 
        
         self.running = True
-        img_back = pygame.image.load("images/images-menu/menu6.jpg").convert()
+        img_back = pygame.image.load(r"images/images-menu/menu6.jpg").convert()
 
         option_rects = [
             pygame.Rect(self.screen_width // 2 - 100, 140 + i * 65, 200, 50) for i in range(4)
@@ -93,7 +91,6 @@ class Menu(Global):
                             elif item == "ADD POKEMON":
                                 self.add_pokemon.add_pokemon_run()
                             elif item == "POKEDEX":
-                                print("pokedex")
                                 self.pok_running =  True
                                 self.pokedex.pokedex_run()
                             elif item == "QUIT":

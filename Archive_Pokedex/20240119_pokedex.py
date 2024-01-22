@@ -8,10 +8,9 @@ class Pokedex(Global):
         Global.__init__(self)
         self.pok_running = True
         self.info_pokemon = Info_pokemon()
-        self.show_image = True
 
     def background(self):
-        background = pygame.image.load(r'images\images-pokedex\pokedex0.png')
+        background = pygame.image.load('images\images-pokedex\pokedex0.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.rect_radius(10,self.white,200, 40, 440, 80)
@@ -24,23 +23,15 @@ class Pokedex(Global):
 
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
-        self.img_pokemon("Etourvol", r'images/images-pokedex/pokedex116.png',115,119, 50, 250)
         self.rect_radius(10,self.white,220, 250, 170, 120)
-        self.img_pokemon("Floravol", r'images/images-pokedex/pokedex116.png',115,119,250,250)
         self.rect_radius(10,self.white,420, 250, 170, 120)
-        self.img_pokemon("Psykokwak", r'images/images-pokedex/pokedex116.png',115,119,450,250)
         self.rect_radius(10,self.white,620, 250, 170, 120)
-        self.img_pokemon("Roudoudou", r'images/images-pokedex/pokedex116.png',115,119,650,250)
 
         #Créer rectangles bas
         self.rect_radius(10,self.white,20, 450, 170, 120)
-        self.img_pokemon("Lainergie", r'images/images-pokedex/pokedex116.png',115,119,50,450)
         self.rect_radius(10,self.white,220, 450, 170, 120)
-        self.img_pokemon("Magicarpe", r'images/images-pokedex/pokedex116.png',115,119,250,450)
         self.rect_radius(10,self.white,420, 450, 170, 120)
-        self.img_pokemon("Luxio", r'images/images-pokedex/pokedex116.png',115,119,450,449)
         self.rect_radius(10,self.white,620, 450, 170, 120)
-        self.img_pokemon("Phanpy", r'images/images-pokedex/pokedex116.png',115,119,650,450)
 
         #boutton de gauche
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
@@ -50,40 +41,40 @@ class Pokedex(Global):
         with open('pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
-    
+
         for name in name_pokemons:
             if name == "Etourvol":
-                self.rect_radius(10,self.white,20, 250, 170, 120)
-                self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,75,255)
-
+                self.img_pokemon("Etourvol",'images/images-add/add_pokemon1.png',70,89,75,255)
+                self.text_c2("Etourvol",self.black,60,342)
+                
             if name == "Floravol":
-                self.rect_radius(10,self.white,220, 250, 170, 120)
-                self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,265,242)
- 
-            if name == "Lainergie":
-                self.rect_radius(10,self.white,20, 450, 170, 120)
-                self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,65,455)
+                self.img_pokemon("Floravol",'images/images-add/add_pokemon2.png',100,119,265,242)
+                self.text_c2("Floravol",self.black,265,342)
 
+            if name == "Lainergie":
+                self.img_pokemon("Lainergie",'images/images-add/add_pokemon3.png',85,89,65,455)
+                self.text_c2("Lainergie",self.black,50,542)
+                
             if name == "Luxio":
-                self.rect_radius(10,self.white,420, 450, 170, 120)
-                self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,445)     
+                self.img_pokemon("Luxio",'images/images-add/add_pokemon4.png',90,109,450,445)
+                self.text_c2("Luxio",self.black,470,542)
 
             if name == "Magicarpe":
-                self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',90,99,255,452)
+                self.read_json("Magicarpe")
+                self.img_pokemon("Magicarpe",'images/images-add/add_pokemon5.png',90,99,255,452)
                 self.text_c2("Magicarpe",self.black,245,542)
 
             if name == "Phanpy":
-                self.rect_radius(10,self.white,620, 450, 170, 120)
-                self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',80,99,665,450)
-
+                self.img_pokemon("Phanpy",'images/images-add/add_pokemon6.png',80,99,655,450)
+                self.text_c2("Phanpy",self.black,670,542)
+                
             if name == "Psykokwak":
-                self.rect_radius(10,self.white,420, 250, 170, 120)
-                self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',70,89,465,253)
+                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
-            if name == "Roudoudou":
-                self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
-                self.text_c2("Roudoudou",self.black,642,342) 
+            if name == "Pondoudou":
+                self.img_pokemon("Rondoudou",'images/images-add/add_pokemon8.png',70,79,670,258)
+                self.text_c2("Rondoudou",self.black,642,342) 
 
             pygame.display.update()
             pygame.display.flip()
@@ -102,35 +93,35 @@ class Pokedex(Global):
         self.rect_radius(10,self.white,620, 450, 170, 120)
 
         #Afficher pokemon pikachu
-        self.img_pokemon("pikachu",r'images/images-pokedex/pokedex1.png',100,109,65,250)
+        self.img_pokemon("pikachu",'images\images-pokedex\pokedex1.png',100,109,65,250)
         self.text_c2("pikachu",self.black,60,342)
 
         #Afficher pokemon capumain
-        self.img_pokemon("capumain",r'images/images-pokedex/pokedex2.png',115,119,45,440)
+        self.img_pokemon("capumain",'images\images-pokedex\pokedex2.png',115,119,45,440)
         self.text_c2("capumain",self.black,60,542)
 
         #Afficher pokemon evoli
-        self.img_pokemon("evoli",r'images/images-pokedex/pokedex3.png',90,99,265,252)
+        self.img_pokemon("evoli",'images\images-pokedex\pokedex3.png',90,99,265,252)
         self.text_c2("evoli",self.black,270,342)
 
         #Afficher pokemon marcacrin
-        self.img_pokemon("marcacrin",r'images/images-pokedex/pokedex4.png',130,129,437,420)
+        self.img_pokemon("marcacrin",'images\images-pokedex\pokedex4.png',130,129,437,420)
         self.text_c2("marcacrin",self.black,440,542)
 
         #Afficher pokemon salameche
-        self.img_pokemon("salameche",r'images//images-pokedex//pokedex5.png',110,119,255,430)
+        self.img_pokemon("salameche",'images\images-pokedex\pokedex5.png',110,119,255,430)
         self.text_c2("salameche",self.black,245,542)
 
         #Afficher pokemon medhyena
-        self.img_pokemon("medhyena",r'images//images-pokedex//pokedex6.png',260,269,585,320)
+        self.img_pokemon("medhyena",'images\images-pokedex\pokedex6.png',260,269,585,320)
         self.text_c2("medhyena",self.black,655,542)
 
         #Afficher pokemon tiplouf
-        self.img_pokemon("tiplouf",r'images//images-pokedex//pokedex7.png',100,109,455,240)
+        self.img_pokemon("tiplouf",'images\images-pokedex\pokedex7.png',100,109,455,240)
         self.text_c2("tiplouf",self.black,460,342)
 
         #Afficher pokemon caninos
-        self.img_pokemon("caninos",r'images//images-pokedex//pokedex8.png',100,109,645,240)
+        self.img_pokemon("caninos",'images\images-pokedex\pokedex8.png',100,109,645,240)
         self.text_c2("caninos",self.black,655,342)
 
         #boutton changer de page
@@ -280,7 +271,6 @@ class Pokedex(Global):
                         mouse_x, mouse_y = pygame.mouse.get_pos()
                         button_rect = pygame.Rect(220, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
-                            
                             self.info_running = True
                             self.info_pokemon.floravol()
 
@@ -297,9 +287,9 @@ class Pokedex(Global):
                         mouse_x, mouse_y = pygame.mouse.get_pos()
                         button_rect = pygame.Rect(620, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
-                            print("rou")
                             self.info_running = True
-                            self.info_pokemon.roudoudou()
+                            self.info_pokemon.rondoudou()
+
 
                     #Rectangle du bas    
                     #Information lainergie             
