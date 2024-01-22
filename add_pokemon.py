@@ -15,7 +15,7 @@ class Add_Pokemon(Global):
         background = pygame.image.load(r'images/images-add/add_pokemon10.jpg')
         background = background.convert()
         self.screen.blit(background, (0, 0))
-  
+
     def read_json(self, name):
         with open('add_json.json', 'r') as json_file:
             data = json.load(json_file)
