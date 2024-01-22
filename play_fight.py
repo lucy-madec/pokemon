@@ -61,24 +61,24 @@ class Play_Fight(Global):
         # Rectangle 4 actions
         self.rect_radius(10,self.white,335,430,430,115)          
         self.img_pokemon("rectangle_option",r'images/images-play/play5.png',445,129,325,422)        
-       
+
+    # Affiche le bouton QUIT
     def button_quit(self):
-        # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
-    
+
+    # Affiche le bouton BACK
     def button_menu(self):
-        # Affiche le bouton BACK
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
 
+    # Vérifie si la souris est au-dessus du bouton
     def is_mouse_over_button(self, button_rect):
-        # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)    
     
+    # Affiche le bouton d'attaque
     def fight_button(self):
-        # Affiche le bouton d'attaque
         self.rect_radius(5, self.pink, 350, 450, 95, 75)
         self.text_c1("FIGHT", self.black, 370, 475)
     
@@ -86,8 +86,8 @@ class Play_Fight(Global):
         self.rect_radius(5, self.brown, 450, 450, 95, 75)
         self.text_c1("BAG", self.white, 480, 475)     
 
+    # Affiche le bouton de défense
     def pokemon_button(self):
-        # Affiche le bouton de défense
         self.rect_radius(5, self.green, 550, 450, 95, 75)
         self.text_c1("POKEMON", self.white, 555, 475)
 
