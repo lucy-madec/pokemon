@@ -8,7 +8,7 @@ class Pokedex(Global):
         Global.__init__(self)
         self.pok_running = True
         self.info_pokemon = Info_pokemon()
-        self.show_image = False
+        self.show_image = True
 
     def background(self):
         background = pygame.image.load(r'images\images-pokedex\pokedex0.png')
@@ -24,15 +24,23 @@ class Pokedex(Global):
 
         #Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
+        self.img_pokemon("Etourvol", r'images/images-pokedex/pokedex116.png',115,119, 50, 250)
         self.rect_radius(10,self.white,220, 250, 170, 120)
+        self.img_pokemon("Floravol", r'images/images-pokedex/pokedex116.png',115,119,250,250)
         self.rect_radius(10,self.white,420, 250, 170, 120)
+        self.img_pokemon("Psykokwak", r'images/images-pokedex/pokedex116.png',115,119,450,250)
         self.rect_radius(10,self.white,620, 250, 170, 120)
+        self.img_pokemon("Roudoudou", r'images/images-pokedex/pokedex116.png',115,119,650,250)
 
         #Créer rectangles bas
         self.rect_radius(10,self.white,20, 450, 170, 120)
+        self.img_pokemon("Lainergie", r'images/images-pokedex/pokedex116.png',115,119,50,450)
         self.rect_radius(10,self.white,220, 450, 170, 120)
+        self.img_pokemon("Magicarpe", r'images/images-pokedex/pokedex116.png',115,119,250,450)
         self.rect_radius(10,self.white,420, 450, 170, 120)
+        self.img_pokemon("Luxio", r'images/images-pokedex/pokedex116.png',115,119,450,449)
         self.rect_radius(10,self.white,620, 450, 170, 120)
+        self.img_pokemon("Phanpy", r'images/images-pokedex/pokedex116.png',115,119,650,450)
 
         #boutton de gauche
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
@@ -42,40 +50,39 @@ class Pokedex(Global):
         with open('pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
-
+    
         for name in name_pokemons:
             if name == "Etourvol":
+                self.rect_radius(10,self.white,20, 250, 170, 120)
                 self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,75,255)
-                self.text_c2("Etourvol",self.black,60,342)
-                
-            if name == "Floravol":
-                self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,265,242)
-                self.text_c2("Floravol",self.black,265,342)
 
+            if name == "Floravol":
+                self.rect_radius(10,self.white,220, 250, 170, 120)
+                self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,265,242)
+ 
             if name == "Lainergie":
+                self.rect_radius(10,self.white,20, 450, 170, 120)
                 self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,65,455)
-                self.text_c2("Lainergie",self.black,50,542)
-                
+
             if name == "Luxio":
-                self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,445)
-                self.text_c2("Luxio",self.black,470,542)
+                self.rect_radius(10,self.white,420, 450, 170, 120)
+                self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,445)     
 
             if name == "Magicarpe":
-                self.read_json("Magicarpe")
+                self.rect_radius(10,self.white,220, 450, 170, 120)
                 self.img_pokemon("Magicarpe",r'images//images-add//add_pokemon5.png',90,99,255,452)
-                self.text_c2("Magicarpe",self.black,245,542)
 
             if name == "Phanpy":
-                self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',80,99,655,450)
-                self.text_c2("Phanpy",self.black,670,542)
-                
+                self.rect_radius(10,self.white,620, 450, 170, 120)
+                self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',80,99,665,450)
+
             if name == "Psykokwak":
+                self.rect_radius(10,self.white,420, 250, 170, 120)
                 self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',70,89,465,253)
-                self.text_c2("Psykokwak",self.black,440,342)
-                
-            if name == "Pondoudou":
-                self.img_pokemon("Rondoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
-                self.text_c2("Rondoudou",self.black,642,342) 
+
+            if name == "Roudoudou":
+                self.rect_radius(10,self.white,620, 250, 170, 120)
+                self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)                
 
             pygame.display.update()
             pygame.display.flip()
@@ -272,6 +279,7 @@ class Pokedex(Global):
                         mouse_x, mouse_y = pygame.mouse.get_pos()
                         button_rect = pygame.Rect(220, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
+                            
                             self.info_running = True
                             self.info_pokemon.floravol()
 
@@ -288,9 +296,9 @@ class Pokedex(Global):
                         mouse_x, mouse_y = pygame.mouse.get_pos()
                         button_rect = pygame.Rect(620, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
+                            print("rou")
                             self.info_running = True
                             self.info_pokemon.rondoudou()
-
 
                     #Rectangle du bas    
                     #Information lainergie             

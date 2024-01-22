@@ -37,7 +37,6 @@ class Menu(Global):
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
         if rect.collidepoint(pygame.mouse.get_pos()):
-
             pygame.draw.rect(self.screen, self.white, rect.inflate(10, 10), border_radius=10)
         else:
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
