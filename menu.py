@@ -54,7 +54,7 @@ class Menu(Global):
        
     # Définir choix du menu
     def options_menu(self): 
-
+       
         self.running = True
         img_back = pygame.image.load(r"images/images-menu/menu6.jpg").convert()
 
