@@ -44,7 +44,7 @@ class Starter(Global):
                             return self.poke_player
 
 
-self.img_background(525, 350, 1050, 700, "starter/starterbg")
+            self.img_background(525, 350, 1050, 700, "starter/starterbg")
             self.texte(30, "Choisissez un Pokémon", self.white, 525, 220)
             self.img(160, 435, 180, 180, f"pokemon/{self.pokedex.starter()[0]['nom'].lower()}")
             self.img(400, 435, 180, 180, f"pokemon/{self.pokedex.starter()[1]['nom'].lower()}")
