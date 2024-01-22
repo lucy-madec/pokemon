@@ -1,245 +1,78 @@
 [
   {
-    "nom": "Etourvol",
-    "type": "vol",
-    "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
-  },
-  {
-    "nom": "Etourvol",
-    "type": "vol",
-    "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
-  },
-  {
-    "nom": "Floravol",
-    "type": "plante",
-    "niveau": 1,
-    "puissance": 45,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon2.png"
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
-    "nom": "Lainergie",
+    "nom": "Pikachu",
     "type": "electrique",
     "niveau": 1,
     "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
+    "pv": 35,
+    "defense": 40,
+    "image": "images/images-pokedex/pokedex1.png",
+    "x": 120,
+    "y": 210
   },
   {
-    "nom": "Lainergie",
-    "type": "electrique",
+    "nom": "Capumain",
+    "type": "normal",
+    "niveau": 1,
+    "puissance": 70,
+    "pv": 55,
+    "defense": 55,
+    "image": "images/images-pokedex/pokedex2.png",
+    "x": 400,
+    "y": 90
+  },
+  {
+    "nom": "Evoli",
+    "type": "normal",
     "niveau": 1,
     "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
-  },
-  {
-    "nom": "Lainergie",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
-  },
-  {
-    "nom": "Lainergie",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
-  },
-  {
-    "nom": "Etourvol",
-    "type": "vol",
-    "niveau": 1,
-    "puissance": 75,
     "pv": 55,
     "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
+    "image": "images/images-pokedex/pokedex3.png"
   },
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Marcacrin",
+    "type": " glace",
     "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
+    "puissance": 50,
+    "pv": 50,
+    "defense": 40,
+    "image": "images/images-pokedex/pokedex4.png"
   },
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Salameche",
+    "type": "feu",
     "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
+    "puissance": 52,
+    "pv": 39,
+    "defense": 43,
+    "image": "images/images-pokedex/pokedex5.png"
   },
   {
-    "nom": "Etourvol",
-    "type": "vol",
-    "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
-  },
-  {
-    "nom": "Lainergie",
-    "type": "electrique",
+    "nom": "Medhyena",
+    "type": "tenebres",
     "niveau": 1,
     "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
+    "pv": 35,
+    "defense": 35,
+    "image": "images/images-pokedex/pokedex6.png"
   },
   {
-    "nom": "Lainergie",
-    "type": "electrique",
+    "nom": "Tiplouf",
+    "type": "eau",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
+    "puissance": 51,
+    "pv": 53,
+    "defense": 53,
+    "image": "images/images-pokedex/pokedex7.png"
   },
   {
-    "nom": "Lainergie",
-    "type": "electrique",
+    "nom": "Caninos",
+    "type": "feu",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
-  },
-  {
-    "nom": "Lainergie",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
-    "nom": "Floravol",
-    "type": "plante",
-    "niveau": 1,
-    "puissance": 45,
+    "puissance": 70,
     "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon2.png"
-  },
-  {
-    "nom": "Lainergie",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
-  },
-  {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
-    "nom": "Etourvol",
-    "type": "vol",
-    "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
+    "defense": 45,
+    "image": "images/images-pokedex/pokedex8.png"
   }
 ]

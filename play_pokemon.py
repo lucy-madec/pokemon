@@ -1,24 +1,23 @@
 from global_def import Global
 from play_fight import Play_Fight
-
 import pygame
 import json
+
 class Play_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)
         self.play_pok_running = True
         self.play_f = Play_Fight()
-                
+    
     def background(self):
         background = pygame.image.load(r'images\images-play\play4.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
         self.rect_radius(10, self.white, 200, 40, 440, 80)
         self.text_c2("Choose your pokemon...", self.black, 230, 65)
-          
+
     def ajout_pokemon(self): 
         self.background()
-    
         # Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
         self.rect_radius(10,self.white,220, 250, 170, 120)
@@ -34,7 +33,7 @@ class Play_Pokemon(Global):
         # Boutton de gauche
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
-        
+
         # Recuperer nom pokemon du pokemon.json
         with open('pokemon.json', 'r') as json_file:
             data = json.load(json_file)
@@ -72,8 +71,8 @@ class Play_Pokemon(Global):
                 self.text_c2("Phanpy",self.black,670,542)
 
             if name == "Psykokwak":
-                # self.read_json("Psykokwak")
-                self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',70,89,465,253)
+                self.read_json("Psykokwak")
+                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
                 self.text_c2("Psykokwak",self.black,440,342)
                 
             if name == "Roudoudou":
@@ -83,7 +82,7 @@ class Play_Pokemon(Global):
         
             pygame.display.update()
             pygame.display.flip()
-
+            
     def pokemon(self):
         # Créer rectangles haut
         self.rect_radius(10,self.white,20, 250, 170, 120)
@@ -294,13 +293,6 @@ class Play_Pokemon(Global):
                     self.button_menu()
                     self.button_quit() 
 
-  
-                    # Rectangle du bas        
-                    if event.type == pygame.MOUSEBUTTONDOWN:
-                        mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(20, 450, 170, 120)
-                        if button_rect.collidepoint(mouse_x, mouse_y):
-                            show_play_fight = True
 
                 # PAGE 2 : Rectangle du haut                  
                     
@@ -368,6 +360,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Luxio")
                             self.play_f.play_fight_run()
+                            
 
                     # Information phanpy        
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -377,7 +370,6 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Phanpy")
                             self.play_f.play_fight_run()
-
             self.button_menu()
             self.button_quit()
 

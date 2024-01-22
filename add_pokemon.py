@@ -93,9 +93,9 @@ class Add_Pokemon(Global):
         self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',85,89,150,373)
         self.text_c2("Psykokwak",self.black,390,380)
         
-        # Afficher pokemon Rondoudou
-        self.img_pokemon("Rondoudou",r'images/images-add/add_pokemon8.png',60,89,150,493)
-        self.text_c2("Rondoudou",self.black,390,500) 
+        # Afficher pokemon Roudoudou
+        self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',60,89,150,493)
+        self.text_c2("Roudoudou",self.black,390,500) 
 
         #boutton de gauche
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
