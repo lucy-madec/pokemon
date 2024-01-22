@@ -156,8 +156,8 @@ class Play_Fight(Global):
     
     def run(self):
         # La boucle principale du jeu
-        self.running = True
-        while self.running:
+        self.play_fight_running = True
+        while self.play_fight_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
 
@@ -193,11 +193,10 @@ class Play_Fight(Global):
             # self.message_end_lose()
                
             pygame.display.flip()
-            self.clock.tick(30)
             
      
 
 # Créer une instance de la classe Play_Fight et exécute le jeu
         
-game = Play_Fight()
-game.play_fight_run()
+# game = Play_Fight()
+# game.play_fight_run()

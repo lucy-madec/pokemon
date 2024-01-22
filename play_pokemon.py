@@ -352,5 +352,5 @@ class Play_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-test = Play_Pokemon()
-test.play_pokemon_run()
+# test = Play_Pokemon()
+# test.play_pokemon_run()
