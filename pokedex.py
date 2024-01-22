@@ -23,23 +23,23 @@ class Pokedex(Global):
         self.text_c3("POKEDEX",self.black,230,30)
 
         #Créer rectangles haut
-        self.rect_radius(10,self.white,20, 250, 170, 120)
+        self.rect_radius(10,self.black,20, 250, 170, 120)
         self.img_pokemon("Etourvol", r'images/images-pokedex/pokedex116.png',115,119, 50, 250)
-        self.rect_radius(10,self.white,220, 250, 170, 120)
+        self.rect_radius(10,self.black,220, 250, 170, 120)
         self.img_pokemon("Floravol", r'images/images-pokedex/pokedex116.png',115,119,250,250)
-        self.rect_radius(10,self.white,420, 250, 170, 120)
+        self.rect_radius(10,self.black,420, 250, 170, 120)
         self.img_pokemon("Psykokwak", r'images/images-pokedex/pokedex116.png',115,119,450,250)
-        self.rect_radius(10,self.white,620, 250, 170, 120)
+        self.rect_radius(10,self.black,620, 250, 170, 120)
         self.img_pokemon("Roudoudou", r'images/images-pokedex/pokedex116.png',115,119,650,250)
 
         #Créer rectangles bas
-        self.rect_radius(10,self.white,20, 450, 170, 120)
+        self.rect_radius(10,self.black,20, 450, 170, 120)
         self.img_pokemon("Lainergie", r'images/images-pokedex/pokedex116.png',115,119,50,450)
-        self.rect_radius(10,self.white,220, 450, 170, 120)
+        self.rect_radius(10,self.black,220, 450, 170, 120)
         self.img_pokemon("Magicarpe", r'images/images-pokedex/pokedex116.png',115,119,250,450)
-        self.rect_radius(10,self.white,420, 450, 170, 120)
+        self.rect_radius(10,self.black,420, 450, 170, 120)
         self.img_pokemon("Luxio", r'images/images-pokedex/pokedex116.png',115,119,450,449)
-        self.rect_radius(10,self.white,620, 450, 170, 120)
+        self.rect_radius(10,self.black,620, 450, 170, 120)
         self.img_pokemon("Phanpy", r'images/images-pokedex/pokedex116.png',115,119,650,450)
 
         #boutton de gauche
@@ -340,5 +340,5 @@ class Pokedex(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-# test = Pokedex()
-# test.pokedex_run()
+test = Pokedex()
+test.pokedex_run()
