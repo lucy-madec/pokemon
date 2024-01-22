@@ -84,16 +84,16 @@ class Play_Fight(Global):
     
     def bag_button(self):
         self.rect_radius(5, self.brown, 450, 450, 95, 75)
-        self.text_c1("BAG", self.white, 480, 475)     
+        self.text_c1("BAG", self.black, 480, 475)     
 
     # Affiche le bouton de défense
     def pokemon_button(self):
         self.rect_radius(5, self.green, 550, 450, 95, 75)
-        self.text_c1("POKEMON", self.white, 555, 475)
+        self.text_c1("POKEMON", self.black, 555, 475)
 
     def run_button(self):
         self.rect_radius(5, self.blue, 650, 450, 95, 75)
-        self.text_c1("RUN", self.white, 680, 475)      
+        self.text_c1("RUN", self.black, 680, 475)      
 
     def draw_hover_rectangle(self, btn_rect,  image_rect, image_path): 
         # Afficher le rectangle noir au survol de la souris
