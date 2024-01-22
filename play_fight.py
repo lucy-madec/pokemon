@@ -1,5 +1,5 @@
 from global_def import Global
-import pygame
+import pygame, json
 
 class Play_Fight(Global):
 
@@ -63,22 +63,22 @@ class Play_Fight(Global):
         self.img_pokemon("rectangle_option",r'images/images-play/play5.png',445,129,325,422)        
        
     def button_quit(self):
-        # Affiche le bouton QUIT
+        # Afficher le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
     def button_menu(self):
-        # Affiche le bouton BACK
+        # Afficher le bouton BACK
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
 
     def is_mouse_over_button(self, button_rect):
-        # Vérifie si la souris est au-dessus du bouton
+        # Vérifier si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)    
     
     def fight_button(self):
-        # Affiche le bouton d'attaque
+        # Afficher le bouton d'attaque
         self.rect_radius(5, self.pink, 350, 450, 95, 75)
         self.text_c1("FIGHT", self.black, 370, 475)
     
@@ -87,7 +87,7 @@ class Play_Fight(Global):
         self.text_c1("BAG", self.white, 480, 475)     
 
     def pokemon_button(self):
-        # Affiche le bouton de défense
+        # Afficher le bouton de défense
         self.rect_radius(5, self.green, 550, 450, 95, 75)
         self.text_c1("POKEMON", self.white, 555, 475)
 
@@ -125,6 +125,29 @@ class Play_Fight(Global):
 
         # PV coté droit
         self.img_pokemon("rectangle_option",r'images/images-play/play9.png',220,70,550,320) 
+
+    def read_json(self, name):
+        with open('add_json.json', 'r') as json_file:
+            data = json.load(json_file)
+
+        if pokemon_data := next(
+            (pokemon for pokemon in data if pokemon["nom"] == name), None
+        ):
+            try:
+                with open('pokemon.json', 'r') as dest_json_file:
+                    destination_data = json.load(dest_json_file)
+            except FileNotFoundError:
+                destination_data = []
+
+            destination_data.append(pokemon_data)
+
+            with open('pokemon.json', 'w') as new_json_file:
+                json.dump(destination_data, new_json_file, indent=2) 
+                
+    def pokemon(self): 
+              # Afficher pokemon pikachu
+        self.img_pokemon("pikachu",r'images\images-pokedex\pokedex1.png',100,109,65,250)
+        self.text_c2("pikachu",self.black,60,342)
    
     def play_fight_run(self):
         self.play_fight_running = True 
@@ -175,5 +198,5 @@ class Play_Fight(Global):
 
 # Créer une instance de la classe Play_Fight et exécute le jeu
         
-# game = Play_Fight()
-# game.play_fight_run()
+game = Play_Fight()
+game.play_fight_run()

@@ -336,6 +336,7 @@ class Play_Pokemon(Global):
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.play_fight_running = True
                             self.play_f.play_fight_run()
+                            
 
                     # Information phanpy        
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -344,7 +345,6 @@ class Play_Pokemon(Global):
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.play_fight_running = True
                             self.play_f.play_fight_run()
-
             self.button_menu()
             self.button_quit()
 
@@ -352,5 +352,5 @@ class Play_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-# test = Play_Pokemon()
-# test.play_pokemon_run()
+test = Play_Pokemon()
+test.play_pokemon_run()
