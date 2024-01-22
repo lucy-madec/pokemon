@@ -116,40 +116,39 @@ class Play_Fight(Global):
         # Rectangle 4 actions
         self.rect_radius(10,self.white,335,430,430,115)          
         self.img_pokemon("rectangle_option",r'images/images-play/play5.png',445,129,325,422)        
-
-    # Affiche le bouton QUIT
+       
     def button_quit(self):
+        # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
-
-    # Affiche le bouton BACK
+    
     def button_menu(self):
-      
+        # Affiche le bouton BACK
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
 
-    # Vérifie si la souris est au-dessus du bouton
     def is_mouse_over_button(self, button_rect):
+        # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)    
     
-    # Affiche le bouton d'attaque
     def fight_button(self):
+        # Affiche le bouton d'attaque
         self.rect_radius(5, self.pink, 350, 450, 95, 75)
         self.text_c1("FIGHT", self.black, 370, 475)
     
     def bag_button(self):
         self.rect_radius(5, self.brown, 450, 450, 95, 75)
-        self.text_c1("BAG", self.black, 480, 475)     
+        self.text_c1("BAG", self.white, 480, 475)     
 
-    # Affiche le bouton de défense
     def pokemon_button(self):
+        # Affiche le bouton de défense
         self.rect_radius(5, self.green, 550, 450, 95, 75)
-        self.text_c1("POKEMON", self.black, 555, 475)
+        self.text_c1("POKEMON", self.white, 555, 475)
 
     def run_button(self):
         self.rect_radius(5, self.blue, 650, 450, 95, 75)
-        self.text_c1("RUN", self.black, 680, 475)      
+        self.text_c1("RUN", self.white, 680, 475)      
 
     def draw_hover_rectangle(self, btn_rect,  image_rect, image_path): 
         # Afficher le rectangle noir au survol de la souris
@@ -179,29 +178,6 @@ class Play_Fight(Global):
 
         # PV coté droit
         self.img_pokemon("rectangle_option",r'images/images-play/play9.png',220,70,550,320) 
-
-    def read_json(self, name):
-        with open('add_json.json', 'r') as json_file:
-            data = json.load(json_file)
-
-        if pokemon_data := next(
-            (pokemon for pokemon in data if pokemon["nom"] == name), None
-        ):
-            try:
-                with open('pokemon.json', 'r') as dest_json_file:
-                    destination_data = json.load(dest_json_file)
-            except FileNotFoundError:
-                destination_data = []
-
-            destination_data.append(pokemon_data)
-
-            with open('pokemon.json', 'w') as new_json_file:
-                json.dump(destination_data, new_json_file, indent=2) 
-                
-    def pokemon(self): 
-              # Afficher pokemon pikachu
-        self.img_pokemon("pikachu",r'images\images-pokedex\pokedex1.png',100,109,65,250)
-        self.text_c2("pikachu",self.black,60,342)
    
     def play_fight_run(self):
         self.play_fight_running = True 
@@ -209,8 +185,8 @@ class Play_Fight(Global):
 
     def run(self):
         # La boucle principale du jeu
-        self.play_fight_running = True
-        while self.play_fight_running:
+        self.running = True
+        while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
 
@@ -247,6 +223,7 @@ class Play_Fight(Global):
             # self.message_end_lose()
                
             pygame.display.flip()
+            self.clock.tick(30)
             
      
 

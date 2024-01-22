@@ -15,7 +15,7 @@ class Add_Pokemon(Global):
         background = pygame.image.load(r'images/images-add/add_pokemon10.jpg')
         background = background.convert()
         self.screen.blit(background, (0, 0))
-  
+
     def read_json(self, name):
         with open('add_json.json', 'r') as json_file:
             data = json.load(json_file)
@@ -32,7 +32,10 @@ class Add_Pokemon(Global):
             destination_data.append(pokemon_data)
 
             with open('pokemon.json', 'w') as new_json_file:
-                json.dump(destination_data, new_json_file, indent=2)          
+                json.dump(destination_data, new_json_file, indent=2) 
+
+
+             
 
     def page1(self): 
         self.background()
@@ -67,6 +70,7 @@ class Add_Pokemon(Global):
         self.rect_radius(10,self.yellow,740, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
 
+
         pygame.display.update()
         pygame.display.flip()
 
@@ -89,16 +93,19 @@ class Add_Pokemon(Global):
         self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',85,89,150,373)
         self.text_c2("Psykokwak",self.black,390,380)
         
-        # Afficher pokemon Rondoudou
-        self.img_pokemon("Rondoudou",r'images/images-add/add_pokemon8.png',60,89,150,493)
-        self.text_c2("Rondoudou",self.black,390,500) 
+        # Afficher pokemon Roudoudou
+        self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',60,89,150,493)
+        self.text_c2("Roudoudou",self.black,390,500) 
 
         #boutton de gauche
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
+
         
         pygame.display.update()
         pygame.display.flip()
+        
+    
         
     def button_quit(self):
         # Affiche le bouton QUIT
@@ -123,6 +130,7 @@ class Add_Pokemon(Global):
         self.background()
         self.page1()
         self.button_menu()
+      
 
         while self.add_running:
             for event in pygame.event.get():
@@ -205,6 +213,8 @@ class Add_Pokemon(Global):
 
             self.button_menu()
             self.button_quit()
+            # self.draw_hover_rectangle()
+
             pygame.display.update()
             pygame.display.flip()
             self.clock.tick(30)
