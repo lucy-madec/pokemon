@@ -13,8 +13,6 @@ class Play_Fight(Global):
         self.run_clicked = False
 
 
-
-     
     # Afficher l'image de fond
     def background(self):
         self.img_back("Background", r"images/images-play/play1.jpg")
