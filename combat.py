@@ -1,4 +1,4 @@
-from type import Type
+from type_pok import Type
 import json, random
 
 class Combat(Type):
@@ -11,7 +11,7 @@ class Combat(Type):
         self.pok_player = self.random_pokemon()
         self.puissance_player = self.pok_player["puissance"]
 
-            
+
     def attack(self, pv, puissance, type_player, type_enemy, defense):
         if type_player =="normal":
             pokemon_damage = self.normal(type_enemy, puissance)
