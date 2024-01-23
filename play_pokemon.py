@@ -1,5 +1,6 @@
 from global_def import Global
 from play_fight import Play_Fight
+import random
 import pygame
 import json
 
@@ -139,13 +140,13 @@ class Play_Pokemon(Global):
             data = json.load(json_file)
 
         pokemon_data = next((pokemon for pokemon in data if pokemon["nom"] == name), None)
-
         if pokemon_data:
             with open('choix.json', 'w') as new_json_file:
                 json.dump([pokemon_data], new_json_file, indent=2)
-        else:
-            print(f"Pokemon {name} Non Trouvé")
-            
+                
+    #Choisi aléatoirement un pokemon ennemi   
+ 
+          
     def button_quit(self):
         # Afficher le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
@@ -181,7 +182,6 @@ class Play_Pokemon(Global):
                 if event.type == pygame.QUIT:
                     self.play_pok_running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         pygame.quit()
                                          
@@ -250,7 +250,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Caninos")
                             self.play_f.play_fight_run()
-
+                            
                 # PAGE 1 : Rectangle du bas  
 
                     # Accéder à la section combat en choisissant Capumain                    

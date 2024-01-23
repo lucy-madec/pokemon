@@ -125,20 +125,20 @@ class Combat(Type):
             print (f"Le pokemon inflige {self.damage_poke} dégats, l'autre avait {pv}HP, il lui reste {remaining_life }HP mais il avait {defense}de def")
             return remaining_life 
         
-    def read_json(self):
-        with open('add_json.json', 'r') as json_file:
-            data = json.load(json_file)
-            return data
+    # def read_json(self):
+    #     with open('add_json.json', 'r') as json_file:
+    #         data = json.load(json_file)
+    #         return data
         
-    def random_pokemon(self):
-        random_pokemon = random.choice(self.info_json)
-        return {
-            'numero': random_pokemon['numero'],
-            'nom': random_pokemon['nom'],
-            'type': random_pokemon['type'],
-            'puissance': random_pokemon['puissance'],
-            'pv': random_pokemon['pv'],
-            'defense': random_pokemon['defense']
-        }
+    # def random_pokemon(self):
+    #     random_pokemon = random.choice(self.info_json)
+    #     return {
+    #         'numero': random_pokemon['numero'],
+    #         'nom': random_pokemon['nom'],
+    #         'type': random_pokemon['type'],
+    #         'puissance': random_pokemon['puissance'],
+    #         'pv': random_pokemon['pv'],
+    #         'defense': random_pokemon['defense']
+    #     }
         
     
