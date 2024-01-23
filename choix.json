@@ -1,13 +1,11 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Medhyena",
+    "type": "tenebres",
     "niveau": 1,
     "puissance": 55,
     "pv": 35,
-    "defense": 40,
-    "image": "images/images-pokedex/pokedex1.png",
-    "x": 120,
-    "y": 210
+    "defense": 35,
+    "image": "images/images-pokedex/pokedex6.png"
   }
 ]
