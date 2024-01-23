@@ -47,7 +47,7 @@ class Combat(Type):
             remaining_life  = pv - self.damage_poke
             print (f"Le pokemon inflige {self.damage_poke} dégats, l'autre avait {pv}HP, il lui reste {remaining_life }HP mais il avait {defense}de def")
             return remaining_life 
-        
+
         if type_player =="glace":
             pokemon_damage = self.glace(type_enemy, puissance)
             self.damage_poke = pokemon_damage * (1 - defense // 200) 
