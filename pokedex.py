@@ -82,8 +82,9 @@ class Pokedex(Global):
                 self.text_c2("Psykokwak",self.black,440,342)
                 
             if name == "Roudoudou":
-                self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
                 self.text_c2("Roudoudou",self.black,642,342) 
+                self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
+                
 
             pygame.display.update()
             pygame.display.flip()
@@ -340,5 +341,5 @@ class Pokedex(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-test = Pokedex()
-test.pokedex_run()
+# test = Pokedex()
+# test.pokedex_run()

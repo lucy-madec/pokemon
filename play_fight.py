@@ -1,5 +1,6 @@
 from global_def import Global
 import pygame
+import random
 import json
 class Play_Fight(Global):
 
@@ -48,8 +49,54 @@ class Play_Fight(Global):
     # Afficher message si le joueur perd
     def message_end_lose(self): 
         self.text_c6("Vous avez été ", self.black, 105, 465)  
-        self.text_c2("vaincu ! ", self.black, 130, 485)      
-        
+        self.text_c2("vaincu ! ", self.black, 130, 485)   
+    
+    #Choisi aléatoirement un pokemon ennemi   
+    def enemy(self):
+        with open('ennemi.json', 'r') as json_file:
+            data = json.load(json_file)
+        name_pokemons = [pokemon["nom"] for pokemon in data]
+        random_pokemon = random.choice(name_pokemons)
+        for pokemon in random_pokemon:
+            if pokemon["nom"] == random_pokemon:
+                name = pokemon["nom"]
+                type_pokemon = pokemon["type"]
+                level = pokemon["niveau"]
+                puissance = pokemon["puissance"]
+                pv = pokemon["pv"]
+                defense = pokemon["defense"]
+                image = pokemon["image"]
+
+        for name in name_pokemons:
+            if name == "Spectrum":
+                self.img_pokemon("Spectrum",r'images/images-enemy/enemy1.png',200,209,120,225)
+    
+            if name == "Soporifix":
+                self.img_pokemon("Soporifix",r'images/images-enemy/enemy2.png',190,209,120,225)
+
+            if name == "Manzai":
+                self.img_pokemon("Manzai",r'images/images-enemy/enemy3.png',205,209,100,205)
+                                
+            if name == "Magireve":
+                self.img_pokemon("Magireve",r'images/images-enemy/enemy4.png',150,169,139,245)
+
+            if name == "Coupenotte":
+                self.img_pokemon("Coupenotte",r'images/images-enemy/enemy5.png',190,199,120,225)
+
+            if name == "Charibari":
+                self.img_pokemon("Charibari",r'images/images-enemy/enemy6.png',180,199,109,225)
+                
+            if name == "Carapuce":
+                self.img_pokemon("Carapuce",r'images/images-enemy/enemy7.png',230,219,100,200)
+                
+            if name == "Poussacha":
+                self.img_pokemon("Poussacha",r'images/images-enemy/enemy8.png',190,209,100,205)
+                
+            if name == "Chochodile":
+                self.img_pokemon("Chochodile",r'images/images-enemy/enemy9.png',170,189,109,225)
+                
+                
+    #Afficher pokemon choisi pour le fight
     def choose(self):
         with open('choix.json', 'r') as json_file:
             data = json.load(json_file)
@@ -104,7 +151,6 @@ class Play_Fight(Global):
             if name == "Roudoudou":
                 self.img_pokemon("Roudoudou",r'images/images-fight/fight16.png',180,189,109,225)
 
-                
     def rectangle(self): 
 
         # Rectangle blanc texte
