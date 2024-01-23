@@ -11,8 +11,6 @@ class Play_Fight(Global):
         self.play_fight_running = True
         self.c = Cloud ()
 
-
-     
     # Afficher l'image de fond
     def background(self):
         self.img_back("Background", r"images/images-play/play1.jpg")
@@ -239,7 +237,7 @@ class Play_Fight(Global):
 
                     # Pokemon
                     # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
-                            self.play_fight_running = False 
+                        self.play_fight_running = False 
                     #     self.play_pok_running = True
                         
                     # Run                        
@@ -279,5 +277,5 @@ class Play_Fight(Global):
                
             pygame.display.flip()
        
-game = Play_Fight()
-game.play_fight_run()
+# game = Play_Fight()
+# game.play_fight_run()
