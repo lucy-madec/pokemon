@@ -57,7 +57,7 @@ class Play_Fight(Global):
 
         for name in name_pokemons:
             if name == "Pikachu":
-                self.img_pokemon("Pikachu",r'images/images-fight/fight1.png',200,209,120,225)
+                self.img_pokemon("Pikachu",r'images/images-fight/fight.png',250,259,400,70)
                 
             if name == "Capumain":
                 self.img_pokemon("Capumain",r'images/images-fight/fight2.png',190,209,120,225)
