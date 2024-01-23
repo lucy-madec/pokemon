@@ -11,6 +11,7 @@ class Play_Fight(Global):
         self.play_fight_running = True
         self.c = Cloud ()
         self.run_clicked = False
+        self.cloud = False
 
 
     # Afficher l'image de fond
@@ -246,12 +247,8 @@ class Play_Fight(Global):
                     elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
                         self.play_fight_running = True
                         self.run_clicked = True
-                        self.message_run()
-                        self.c.cloud()
-            if not self.run_clicked:
-                self.message_start()
-            else:
-                self.message_run()
+                        # self.message_run()
+            
 
             # Afficher les éléments à l'écran
             self.background()
@@ -265,6 +262,15 @@ class Play_Fight(Global):
             self.rect_hover()
             self.choose()
             self.hp()
+
+            if not self.run_clicked:
+                self.message_start()
+            else:
+                self.message_run()
+                if not self.cloud:
+                    self.c.cloud()
+                    self.cloud = True
+
 
             # Afficher les messages 
             # self.message_start()
