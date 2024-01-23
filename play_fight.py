@@ -6,10 +6,10 @@ class Play_Fight(Global):
 
     # Appelle le constructeur de la classe parent Global
     def __init__(self):
-        
+
         Global.__init__(self)
         self.play_fight_running = True
-     
+
     # Afficher l'image de fond
     def background(self):
         self.img_back("Background", r"images/images-play/play1.jpg")
