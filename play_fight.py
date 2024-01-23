@@ -1,4 +1,5 @@
 from global_def import Global
+from cloud import Cloud
 import pygame
 import json
 class Play_Fight(Global):
@@ -8,6 +9,9 @@ class Play_Fight(Global):
         
         Global.__init__(self)
         self.play_fight_running = True
+        self.c = Cloud ()
+
+
      
     # Afficher l'image de fond
     def background(self):
@@ -48,8 +52,9 @@ class Play_Fight(Global):
     # Afficher message si le joueur perd
     def message_end_lose(self): 
         self.text_c6("Vous avez été ", self.black, 105, 465)  
-        self.text_c2("vaincu ! ", self.black, 130, 485)      
-        
+        self.text_c2("vaincu ! ", self.black, 130, 485)    
+
+
     def choose(self):
         with open('choix.json', 'r') as json_file:
             data = json.load(json_file)
@@ -107,13 +112,11 @@ class Play_Fight(Global):
                 
     def rectangle(self): 
 
-        # Rectangle blanc texte
+        # Rectangle blanc de gauche pour le texte
         self.rect_radius(10,self.white,55,430,235,115) 
-
-        # Rectangle texte
         self.img_pokemon("rectangle_texte",r'images/images-play/play7.png', 250,129,50,420)    
 
-        # Rectangle 4 actions
+        # Rectangle de droite avec 4 choix d'actions
         self.rect_radius(10,self.white,335,430,430,115)          
         self.img_pokemon("rectangle_option",r'images/images-play/play5.png',445,129,325,422)        
 
@@ -122,22 +125,22 @@ class Play_Fight(Global):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
 
-    # Affiche le bouton BACK
-    def button_menu(self):
-      
+    # Afficher le bouton BACK
+    def button_menu(self):      
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
 
-    # Vérifie si la souris est au-dessus du bouton
+    # Vérifier si la souris est au-dessus du bouton
     def is_mouse_over_button(self, button_rect):
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)    
     
-    # Affiche le bouton d'attaque
+    # Afficher le bouton d'attaque
     def fight_button(self):
         self.rect_radius(5, self.pink, 350, 450, 95, 75)
         self.text_c1("FIGHT", self.black, 370, 475)
-    
+
+    # Afficher le bouton bag
     def bag_button(self):
         self.rect_radius(5, self.brown, 450, 450, 95, 75)
         self.text_c1("BAG", self.black, 480, 475)     
@@ -159,10 +162,10 @@ class Play_Fight(Global):
             self.img_pokemon("pokeball", image_path, image_rect[2], image_rect[3], image_rect[0], image_rect[1])
     
     def rect_hover(self):
-        self.draw_hover_rectangle(pygame.Rect(350, 450, 95, 75), (430, 445, 20, 20), r'images/images-play/play6.png')  # Fight
-        self.draw_hover_rectangle(pygame.Rect(450, 450, 95, 75),(530, 445, 20, 20),r'images/images-play/play6.png' )  # Bag   
-        self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), r'images/images-play/play6.png')  # Pokemon
-        self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), r'images/images-play/play6.png')  # Run
+        self.draw_hover_rectangle(pygame.Rect(350, 450, 95, 75), (430, 445, 20, 20), r'images/images-play/play6.png')   # Fight
+        self.draw_hover_rectangle(pygame.Rect(450, 450, 95, 75),(530, 445, 20, 20),r'images/images-play/play6.png' )    # Bag   
+        self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), r'images/images-play/play6.png')   # Pokemon
+        self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), r'images/images-play/play6.png')    # Run
 
     def hp(self):
         # Rectangle noir côté gauche
@@ -199,7 +202,8 @@ class Play_Fight(Global):
                 json.dump(destination_data, new_json_file, indent=2) 
                 
     def pokemon(self): 
-              # Afficher pokemon pikachu
+
+        # Afficher pokemon pikachu
         self.img_pokemon("pikachu",r'images\images-pokedex\pokedex1.png',100,109,65,250)
         self.text_c2("pikachu",self.black,60,342)
    
@@ -208,23 +212,50 @@ class Play_Fight(Global):
         self.run()
 
     def run(self):
-        # La boucle principale du jeu
+
+        # Boucle principale du jeu
         self.play_fight_running = True
         while self.play_fight_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
 
-                    # Quitte le programme lorsque la fenêtre est fermée
+                    # Quitter le programme lorsque la fenêtre est fermée
                     self.running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 
+                    # Quit
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         pygame.quit() 
 
+                    # Menu
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         self.play_fight_running = False 
 
-            # Affiche les éléments à l'écran
+                    #  # Fight                      
+                    # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
+
+                    # # Bag                        
+                    # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
+
+                    # Pokemon
+                    # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
+                            self.play_fight_running = False 
+                    #     self.play_pok_running = True
+                        
+                    # Run                        
+                    elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
+                        self.play_fight_running = True
+                        self.c.cloud()
+
+
+      
+             
+                        
+                        
+                        
+
+
+            # Afficher les éléments à l'écran
             self.background()
             self.rectangle()
             self.button_quit()
@@ -247,10 +278,6 @@ class Play_Fight(Global):
             # self.message_end_lose()
                
             pygame.display.flip()
-            
-     
-
-# Créer une instance de la classe Play_Fight et exécute le jeu
-        
-# game = Play_Fight()
-# game.play_fight_run()
+       
+game = Play_Fight()
+game.play_fight_run()
