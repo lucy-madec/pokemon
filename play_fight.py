@@ -152,7 +152,7 @@ class Play_Fight(Global):
         self.text_c1("RUN", self.black, 680, 475)      
 
     def draw_hover_rectangle(self, btn_rect,  image_rect, image_path): 
-        # Afficher le rectangle noir au survol de la souris
+        # Affiche le rectangle noir au survol de la souris
         if self.is_mouse_over_button(btn_rect):
             pygame.draw.rect(self.screen, self.black, btn_rect, 4, 5)   
              # Pokeball pixeled
