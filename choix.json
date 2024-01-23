@@ -1,13 +1,13 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Capumain",
+    "type": "normal",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 35,
-    "defense": 40,
-    "image": "images/images-pokedex/pokedex1.png",
-    "x": 120,
-    "y": 210
+    "puissance": 70,
+    "pv": 55,
+    "defense": 55,
+    "image": "images/images-pokedex/pokedex2.png",
+    "x": 400,
+    "y": 90
   }
 ]
