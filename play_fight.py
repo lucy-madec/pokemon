@@ -1,4 +1,5 @@
 from global_def import Global
+from combat import Combat
 import pygame
 import random
 import json
@@ -6,10 +7,10 @@ class Play_Fight(Global):
 
     # Appelle le constructeur de la classe parent Global
     def __init__(self):
-
         Global.__init__(self)
+        self.combat = Combat()
         self.play_fight_running = True
-
+        
     # Afficher l'image de fond
     def background(self):
         self.img_back("Background", r"images/images-play/play1.jpg")
@@ -50,7 +51,7 @@ class Play_Fight(Global):
     def message_end_lose(self): 
         self.text_c6("Vous avez été ", self.black, 105, 465)  
         self.text_c2("vaincu ! ", self.black, 130, 485)   
-    
+        
     #Choisi aléatoirement un pokemon ennemi   
     def enemy(self):
         with open('ennemi.json', 'r') as json_file:
@@ -59,49 +60,57 @@ class Play_Fight(Global):
         random_pokemon = random.choice(name_pokemons)
         for pokemon in random_pokemon:
             if pokemon["nom"] == random_pokemon:
-                name = pokemon["nom"]
-                type_pokemon = pokemon["type"]
-                level = pokemon["niveau"]
-                puissance = pokemon["puissance"]
-                pv = pokemon["pv"]
-                defense = pokemon["defense"]
-                image = pokemon["image"]
+                self.name_rival = pokemon["nom"]
+                self.type_rival = pokemon["type"]
+                self.level_rival = pokemon["niveau"]
+                self.puissance_rivel = pokemon["puissance"]
+                self.pv_rival = pokemon["pv"]
+                self.defense_rival = pokemon["defense"]
 
         for name in name_pokemons:
             if name == "Spectrum":
-                self.img_pokemon("Spectrum",r'images/images-enemy/enemy1.png',200,209,120,225)
+                self.img_pokemon("Spectrum",r'images/images-enemy1.png', 200,209,400,105)
     
             if name == "Soporifix":
-                self.img_pokemon("Soporifix",r'images/images-enemy/enemy2.png',190,209,120,225)
+                self.img_pokemon("Soporifix",r'images/images-enemy/enemy2.png', 180,189,400,90)
 
             if name == "Manzai":
-                self.img_pokemon("Manzai",r'images/images-enemy/enemy3.png',205,209,100,205)
+                self.img_pokemon("Manzai",r'images/images-enemy/enemy3.png', 200,209,430,80)
                                 
             if name == "Magireve":
-                self.img_pokemon("Magireve",r'images/images-enemy/enemy4.png',150,169,139,245)
+                self.img_pokemon("Magireve",r'images/images-enemy/enemy4.png', 200,209,430,80)
 
             if name == "Coupenotte":
-                self.img_pokemon("Coupenotte",r'images/images-enemy/enemy5.png',190,199,120,225)
+                self.img_pokemon("Coupenotte",r'images/images-enemy/enemy5.png', 200,209,430,80)
 
             if name == "Charibari":
-                self.img_pokemon("Charibari",r'images/images-enemy/enemy6.png',180,199,109,225)
+                self.img_pokemon("Charibari",r'images/images-enemy/enemy6.png',200,209,430,80)
                 
             if name == "Carapuce":
-                self.img_pokemon("Carapuce",r'images/images-enemy/enemy7.png',230,219,100,200)
+                self.img_pokemon("Carapuce",r'images/images-enemy/enemy7.png',200,209,430,80)
                 
             if name == "Poussacha":
-                self.img_pokemon("Poussacha",r'images/images-enemy/enemy8.png',190,209,100,205)
+                self.img_pokemon("Poussacha",r'images/images-enemy/enemy8.png',250,259,400,70)
                 
             if name == "Chochodile":
-                self.img_pokemon("Chochodile",r'images/images-enemy/enemy9.png',170,189,109,225)
+                self.img_pokemon("Chochodile",r'images/images-enemy/enemy9.png', 250,259,400,70)
                 
-                
+
     #Afficher pokemon choisi pour le fight
     def choose(self):
         with open('choix.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
-
+        for pokemon in name_pokemons:
+            if pokemon["nom"] == name_pokemons:
+                self.name = pokemon["nom"]
+                self.type_pokemon = pokemon["type"]
+                self.level = pokemon["niveau"]
+                self.puissance = pokemon["puissance"]
+                self.pv = pokemon["pv"]
+                self.defense = pokemon["defense"]
+                self.image = pokemon["image"]
+                
         for name in name_pokemons:
             if name == "Pikachu":
                 self.img_pokemon("Pikachu",r'images/images-fight/fight1.png',200,209,120,225)
@@ -259,16 +268,20 @@ class Play_Fight(Global):
         while self.play_fight_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-
                     # Quitte le programme lorsque la fenêtre est fermée
                     self.running = False
+                    
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         pygame.quit() 
 
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
-                        self.play_fight_running = False 
+                        self.play_fight_running = False
+                        
+                    elif self.is_mouse_over_button(pygame.Rect(350, 450, 95, 75)):
+                        # self.combat.attack(self.pv,self.puissance,self.type_pokemon,self.type_rival,self.defense)
+                        self.message_fight()
 
             # Affiche les éléments à l'écran
             self.background()
@@ -285,8 +298,8 @@ class Play_Fight(Global):
 
             # Afficher les messages 
             self.message_start()
-            # # self.message_fight()
-            # # self.message_run()
+            # self.message_fight()
+            # self.message_run()
             # self.message_pokemon()
             # self.message_bag()
             # self.message_end_win()
@@ -294,9 +307,6 @@ class Play_Fight(Global):
                
             pygame.display.flip()
             
-     
-
-# Créer une instance de la classe Play_Fight et exécute le jeu
         
 # game = Play_Fight()
 # game.play_fight_run()
