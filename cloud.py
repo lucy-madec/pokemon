@@ -59,5 +59,5 @@ class Cloud(Global):
         # pygame.quit()
         # sys.exit()
 
-test1 = Cloud()
-test1.cloud()
+# test1 = Cloud()
+# test1.cloud()
