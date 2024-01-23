@@ -87,13 +87,13 @@ class Play_Fight(Global):
                 self.img_pokemon("Charibari",r'images/images-enemy/enemy6.png',200,209,430,80)
                 
             if name == "Carapuce":
-                self.img_pokemon("Carapuce",r'images/images-enemy/enemy7.png',230,219,100,200)
+                self.img_pokemon("Carapuce",r'images/images-enemy/enemy7.png',200,209,430,80)
                 
             if name == "Poussacha":
-                self.img_pokemon("Poussacha",r'images/images-enemy/enemy8.png',190,209,100,205)
+                self.img_pokemon("Poussacha",r'images/images-enemy/enemy8.png',250,259,400,70)
                 
             if name == "Chochodile":
-                self.img_pokemon("Chochodile",r'images/images-enemy/enemy9.png',170,189,109,225)
+                self.img_pokemon("Chochodile",r'images/images-enemy/enemy9.png', 250,259,400,70)
                 
 
     #Afficher pokemon choisi pour le fight
