@@ -135,7 +135,6 @@ class Combat(Type):
         return {
             'numero': random_pokemon['numero'],
             'nom': random_pokemon['nom'],
-            # 'fin': random_pokemon['evol'],
             'type': random_pokemon['type'],
             'puissance': random_pokemon['puissance'],
             'pv': random_pokemon['pv'],
