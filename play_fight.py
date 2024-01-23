@@ -167,6 +167,12 @@ class Play_Fight(Global):
         self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), r'images/images-play/play6.png')   # Pokemon
         self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), r'images/images-play/play6.png')    # Run
 
+    def life1(self): 
+        self.rect_radius(0,self.orange,112,102,110,10)
+
+    def life2(self): 
+        self.rect_radius(0,self.orange,650,400,110,10)
+
     def hp(self):
         # Rectangle noir côté gauche
         self.rect_radius(0,self.black,112,62,110,10)
@@ -264,6 +270,8 @@ class Play_Fight(Global):
             self.run_button()
             self.rect_hover()
             self.choose()
+            self.life1()
+            self.life2()
             self.hp()
 
             # Afficher les messages 
