@@ -1,10 +1,18 @@
 [
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Pikachu",
+    "type": "electrique",
     "niveau": 1,
     "puissance": 55,
     "pv": 35,
     "defense": 40
+  },
+  {
+    "nom": "Spectrum",
+    "type": "poison",
+    "niveau": 1,
+    "puissance": 50,
+    "pv": 45,
+    "defense": 45
   }
 ]

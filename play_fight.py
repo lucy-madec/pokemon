@@ -349,7 +349,7 @@ class Play_Fight(Global):
 
             self.rival()
             # Afficher les messages 
-            self.message_start()
+            # self.message_start()
             # self.message_fight()
             # self.message_run()
             # self.message_pokemon()
