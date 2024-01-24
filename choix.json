@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Caninos",
+    "type": "feu",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 35,
-    "defense": 40
+    "puissance": 70,
+    "pv": 55,
+    "defense": 45
   },
   {
-    "nom": "Spectrum",
-    "type": "poison",
+    "nom": "Chochodile",
+    "type": "feu",
     "niveau": 1,
-    "puissance": 50,
-    "pv": 45,
-    "defense": 45
+    "puissance": 45,
+    "pv": 67,
+    "defense": 59
   }
 ]
