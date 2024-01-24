@@ -44,36 +44,36 @@ class Play_Pokemon(Global):
         for name in name_pokemons:
 
             if name == "Etourvol":
-                self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,75,255)
-                self.text_c2("Etourvol",self.black,60,342)
+                self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,75,155)
+                self.text_c2("Etourvol",self.black,60,242)
                 
             if name == "Floravol":
-                self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,265,242)
-                self.text_c2("Floravol",self.black,265,342)
-
-            if name == "Lainergie":
-                self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,65,455)
-                self.text_c2("Lainergie",self.black,50,542)
-                
-            if name == "Luxio":
-                self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,445)
-                self.text_c2("Luxio",self.black,470,542)
-
-            if name == "Magicarpe":
-                self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',90,99,255,452)
-                self.text_c2("Magicarpe",self.black,245,542)
-
-            if name == "Phanpy":
-                self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',80,99,655,450)
-                self.text_c2("Phanpy",self.black,670,542)
+                self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,265,142)
+                self.text_c2("Floravol",self.black,265,242)
 
             if name == "Psykokwak":
-                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,253)
-                self.text_c2("Psykokwak",self.black,440,342)
-                
+                self.img_pokemon("Psykokwak",'images/images-add/add_pokemon7.png',70,89,465,153)
+                self.text_c2("Psykokwak",self.black,440, 242)
+
             if name == "Roudoudou":
-                self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
-                self.text_c2("Roudoudou",self.black,642,342)        
+                self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,158)
+                self.text_c2("Roudoudou",self.black,642,242)  
+
+            if name == "Lainergie":
+                self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,65,305)
+                self.text_c2("Lainergie",self.black,50,390)
+                
+            if name == "Luxio":
+                self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,295)
+                self.text_c2("Luxio",self.black,470,390)
+
+            if name == "Magicarpe":
+                self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',90,99,255,302)
+                self.text_c2("Magicarpe",self.black,245,390)
+
+            if name == "Phanpy":
+                self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',80,99,655,300)
+                self.text_c2("Phanpy",self.black,670,390)      
         
             pygame.display.update()
             pygame.display.flip()

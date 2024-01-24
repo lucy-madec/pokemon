@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Medhyena",
+    "type": "tenebres",
     "niveau": 1,
     "puissance": 55,
     "pv": 35,
-    "defense": 40
+    "defense": 35
   },
   {
-    "nom": "Magireve",
-    "type": "spectre",
+    "nom": "Poussacha",
+    "type": "plante",
     "niveau": 1,
-    "puissance": 60,
-    "pv": 60,
-    "defense": 60
+    "puissance": 61,
+    "pv": 40,
+    "defense": 54
   }
 ]
