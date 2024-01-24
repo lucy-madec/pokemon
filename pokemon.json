@@ -126,5 +126,13 @@
     "puissance": 52,
     "pv": 50,
     "defense": 48
+  },
+  {
+    "nom": "Lainergie",
+    "type": "electrique",
+    "niveau": 1,
+    "puissance": 55,
+    "pv": 70,
+    "defense": 55
   }
 ]
