@@ -1,12 +1,12 @@
 [
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Evoli",
+    "type": "normal",
     "niveau": 1,
-    "puissance": 75,
+    "puissance": 55,
     "pv": 55,
     "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
+    "image": "images/images-pokedex/pokedex3.png"
   },
   {
     "nom": "Spectrum",

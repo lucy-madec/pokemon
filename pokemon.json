@@ -72,15 +72,6 @@
     "image": "images/images-pokedex/pokedex8.png"
   },
   {
-    "nom": "Etourvol",
-    "type": "vol",
-    "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
-  },
-  {
     "nom": "Floravol",
     "type": "plante",
     "niveau": 1,
@@ -99,15 +90,6 @@
     "image": "images/images-add/add_pokemon3.png"
   },
   {
-    "nom": "Luxio",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49,
-    "image": "images/images-add/add_pokemon4.png"
-  },
-  {
     "nom": "Magicarpe",
     "type": "eau",
     "niveau": 1,
@@ -124,15 +106,6 @@
     "pv": 90,
     "defense": 60,
     "image": "images/images-add/add_pokemon6.png"
-  },
-  {
-    "nom": "Psykokwak",
-    "type": "plante",
-    "niveau": 1,
-    "puissance": 52,
-    "pv": 50,
-    "defense": 48,
-    "image": "images/images-add/add_pokemon7.png"
   },
   {
     "nom": "Roudoudou",
