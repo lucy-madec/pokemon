@@ -1,5 +1,6 @@
 from global_def import Global
 from cloud import Cloud
+from pokedex import Pokedex
 import random
 import pygame
 import json
@@ -12,6 +13,7 @@ class Play_Fight(Global):
         self.c = Cloud ()
         self.run_clicked = False
         self.enemy_chosen = False
+        self.poke = Pokedex()
         
     # Afficher l'image de fond
     def background(self):
@@ -308,10 +310,10 @@ class Play_Fight(Global):
                     # # Bag                        
                     # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
 
-                    # # Pokemon
-                    # elif self.is_mouse_over_button (pygame.Rect(550, 450, 95, 75)): 
-                    #         self.play_fight_running = False 
-                    #         self.poke.pokedex_run()
+                    # Pokemon
+                    elif self.is_mouse_over_button (pygame.Rect(550, 450, 95, 75)): 
+                            self.play_fight_running = False 
+                            self.poke.pokedex_run()
                       
                         
                     # Run                        

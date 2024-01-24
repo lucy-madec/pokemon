@@ -8,11 +8,11 @@
     "defense": 40
   },
   {
-    "nom": "Manzai",
-    "type": "roche",
+    "nom": "Magireve",
+    "type": "spectre",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 50,
-    "defense": 95
+    "puissance": 60,
+    "pv": 60,
+    "defense": 60
   }
 ]
