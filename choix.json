@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Etourvol",
+    "type": "vol",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 35,
-    "defense": 40
+    "puissance": 75,
+    "pv": 55,
+    "defense": 50
   },
   {
-    "nom": "Spectrum",
-    "type": "poison",
+    "nom": "Magireve",
+    "type": "spectre",
     "niveau": 1,
-    "puissance": 50,
-    "pv": 45,
-    "defense": 45
+    "puissance": 60,
+    "pv": 60,
+    "defense": 60
   }
 ]
