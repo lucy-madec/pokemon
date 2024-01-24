@@ -8,11 +8,11 @@
     "defense": 45
   },
   {
-    "nom": "Spectrum",
-    "type": "poison",
+    "nom": "Charibari",
+    "type": "acier",
     "niveau": 1,
-    "puissance": 50,
-    "pv": 45,
-    "defense": 45
+    "puissance": 80,
+    "pv": 72,
+    "defense": 49
   }
 ]

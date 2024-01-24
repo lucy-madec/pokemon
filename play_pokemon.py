@@ -9,6 +9,7 @@ class Play_Pokemon(Global):
         self.play_pok_running = True
         self.play_f = Play_Fight()
     
+    # Afficher background
     def background(self):
         background = pygame.image.load(r'images\images-play\play4.jpg')
         background = background.convert()
@@ -31,7 +32,7 @@ class Play_Pokemon(Global):
         self.rect_radius(10,self.white,420, 300, 170, 120)  # Luxio
         self.rect_radius(10,self.white,620, 300, 170, 120)  # Phanpy
 
-        # Flèche de gauche
+        # Flèche gauche
         self.rect_radius(10,self.yellow, 20, 80, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((50,90),(30,110),(50,130)), 7)
 
@@ -72,8 +73,8 @@ class Play_Pokemon(Global):
 
             if name == "Phanpy":
                 self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',80,99,655,300)
-                self.text_c2("Phanpy",self.black,670,390)
-
+                self.text_c2("Phanpy",self.black,670,390)      
+        
             pygame.display.update()
             pygame.display.flip()
             
@@ -121,7 +122,7 @@ class Play_Pokemon(Global):
         self.img_pokemon("medhyena",r'images\images-pokedex\pokedex6.png',260,269,585,170)
         self.text_c2("medhyena",self.black,655,390)
         
-        # Flèche de droite
+        # Flèche droite
         self.rect_radius(10,self.yellow,740, 80, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((750,90),(770,110),(750,130)), 7)
         pygame.display.update()
@@ -139,18 +140,18 @@ class Play_Pokemon(Global):
         else:
             print(f"Pokemon {name} Non Trouvé")
             
+    # Afficher bouton QUIT
     def button_quit(self):
-        # Afficher le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
     
+    # Afficher bouton BACK
     def button_menu(self):
-        # Afficher le bouton BACK
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
 
+    # Vérifier si souris au-dessus du bouton
     def is_mouse_over_button(self, button_rect):
-        # Vérifier si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)   
 
@@ -186,7 +187,7 @@ class Play_Pokemon(Global):
                     if poke2 == True:
                         self.ajout_pokemon()
 
-                # Fleche gauche
+                # Flèche gauche
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
                     button_rect = pygame.Rect(20, 80, 50, 60)
@@ -195,10 +196,11 @@ class Play_Pokemon(Global):
                         self.pokemon()
                 
                 if poke2 == False:
+
                     # Rectangle du haut
                     self.button_menu() 
 
-                # PAGE 1 : Rectangles du haut 
+                # PAGE 1 : Rectangles haut 
 
                     # Accéder à la section combat en choisissant Pikachu         
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -295,7 +297,8 @@ class Play_Pokemon(Global):
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.play_fight_running = True
                             self.pokemon_choose("Etourvol")
-                            self.play_f.play_fight_run()
+                            self.play_f.play_fight_run()                           
+                            self.play_pok_running = False 
 
                     # Accéder à la section combat en choisissant Floravol                    
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -305,6 +308,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Floravol")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
 
                     # Accéder à la section combat en choisissant Psykokwak
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -314,6 +318,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Psykokwak")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
                             
                     # Accéder à la section combat en choisissant Roudoudou
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -323,6 +328,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Roudoudou")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
 
                 # PAGE 2 : Rectangle du haut 
 
@@ -334,6 +340,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Lainergie")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
                             
                     # Accéder à la section combat en choisissant Magicarpe
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -343,6 +350,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Magicarpe")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
                             
                     # Accéder à la section combat en choisissant Luxio
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -352,7 +360,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Luxio")
                             self.play_f.play_fight_run()
-                            
+                            self.play_pok_running = False                             
 
                     # Accéder à la section combat en choisissant Phanpy        
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -362,6 +370,8 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Phanpy")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
+
             self.button_menu()
             self.button_quit()
 
