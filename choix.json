@@ -1,19 +1,19 @@
 [
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Pikachu",
+    "type": "electrique",
     "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon1.png"
+    "puissance": 55,
+    "pv": 35,
+    "defense": 40,
+    "image": "images/images-pokedex/pokedex1.png"
   },
   {
-    "nom": "Spectrum",
-    "type": "poison",
+    "nom": "Carapuce",
+    "type": "eau",
     "niveau": 1,
-    "puissance": 50,
-    "pv": 45,
-    "defense": 45
+    "puissance": 48,
+    "pv": 44,
+    "defense": 65
   }
 ]
