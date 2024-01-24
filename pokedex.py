@@ -69,8 +69,8 @@ class Pokedex(Global):
                 self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,445)     
 
             if name == "Magicarpe":
+                self.rect_radius(10,self.white,220, 450, 170, 120)
                 self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',90,99,255,452)
-                self.text_c2("Magicarpe",self.black,245,542)
 
             if name == "Phanpy":
                 self.rect_radius(10,self.white,620, 450, 170, 120)
@@ -79,10 +79,9 @@ class Pokedex(Global):
             if name == "Psykokwak":
                 self.rect_radius(10,self.white,420, 250, 170, 120)
                 self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',70,89,465,253)
-                self.text_c2("Psykokwak",self.black,440,342)
                 
             if name == "Roudoudou":
-                self.text_c2("Roudoudou",self.black,642,342) 
+                self.rect_radius(10,self.white,620, 250, 170, 120)
                 self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
                 
 
@@ -298,7 +297,6 @@ class Pokedex(Global):
                         mouse_x, mouse_y = pygame.mouse.get_pos()
                         button_rect = pygame.Rect(620, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
-                            print("rou")
                             self.info_running = True
                             self.info_pokemon.roudoudou()
 
@@ -317,7 +315,7 @@ class Pokedex(Global):
                         button_rect = pygame.Rect(220, 450, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.info_running = True
-                            self.info_pokemon.salameche()
+                            self.info_pokemon.magicarpe()
                             
                     #Information Luxio
                     if event.type == pygame.MOUSEBUTTONDOWN:

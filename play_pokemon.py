@@ -70,7 +70,6 @@ class Play_Pokemon(Global):
                 self.text_c2("Psykokwak",self.black,440,342)
                 
             if name == "Roudoudou":
-                # self.read_json("Roudoudou")
                 self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
                 self.text_c2("Roudoudou",self.black,642,342)        
         

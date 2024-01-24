@@ -1,18 +1,19 @@
 [
   {
-    "nom": "Lainergie",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 70,
-    "defense": 55
-  },
-  {
-    "nom": "Poussacha",
+    "nom": "Psykokwak",
     "type": "plante",
     "niveau": 1,
-    "puissance": 61,
-    "pv": 40,
-    "defense": 54
+    "puissance": 52,
+    "pv": 50,
+    "defense": 48,
+    "image": "images/images-add/add_pokemon7.png"
+  },
+  {
+    "nom": "Coupenotte",
+    "type": "dragon",
+    "niveau": 1,
+    "puissance": 87,
+    "pv": 46,
+    "defense": 60
   }
 ]
