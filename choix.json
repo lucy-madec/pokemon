@@ -1,7 +1,7 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Etourvol",
+    "type": "vol",
     "niveau": 1,
     "puissance": 55,
     "pv": 35,

@@ -32,10 +32,7 @@ class Add_Pokemon(Global):
             destination_data.append(pokemon_data)
 
             with open('pokemon.json', 'w') as new_json_file:
-                json.dump(destination_data, new_json_file, indent=2) 
-
-
-             
+                json.dump(destination_data, new_json_file, indent=2)            
 
     def page1(self): 
         self.background()
@@ -153,8 +150,7 @@ class Add_Pokemon(Global):
     def run(self):
         self.background()
         self.page1()
-        self.button_menu()
-      
+        self.button_menu()     
 
         while self.add_running:
             for event in pygame.event.get():
@@ -237,7 +233,6 @@ class Add_Pokemon(Global):
 
             self.button_menu()
             self.button_quit()
-            # self.draw_hover_rectangle()
 
             pygame.display.update()
             pygame.display.flip()
