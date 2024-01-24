@@ -34,12 +34,9 @@ class Add_Pokemon(Global):
             with open('pokemon.json', 'w') as new_json_file:
                 json.dump(destination_data, new_json_file, indent=2) 
 
-
-             
-
     def page1(self): 
         self.background()
-        self.background()
+        
         # Afficher titre "CLICK TO ADD POKEMON"
         self.rect_radius(10,self.white,200, 40, 400, 80)
         self.text_c5("CLICK TO ADD A POKEMON",self.black,220,65)
@@ -70,6 +67,21 @@ class Add_Pokemon(Global):
         self.rect_radius(10,self.yellow,740, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
 
+    def draw_hover_rectangle(self, btn_rect):
+        # Vérifier si la souris est au-dessus du rectangle
+        if self.is_mouse_over_button(btn_rect):
+            # Afficher le contour du rectangle en jaune au survol de la souris
+            pygame.draw.rect(self.screen, self.yellow, btn_rect, 4, 5)
+        else:
+            # Effacer l'effet de survol si la souris n'est pas au-dessus du bouton
+            pygame.draw.rect(self.screen, self.white, btn_rect, 4, 5)            
+
+    # Créer le contour du rectangle en jaune au survol de la souris
+    def rect_hover(self):
+        self.draw_hover_rectangle(pygame.Rect(100, 130, 600, 100))  # Etourvol et Magicarpe
+        self.draw_hover_rectangle(pygame.Rect(100, 250, 600, 100))  # Floravol et Phanpy
+        self.draw_hover_rectangle(pygame.Rect(100, 370, 600, 100))  # Lainergie et Psykokwak
+        self.draw_hover_rectangle(pygame.Rect(100, 490, 600, 100))  # Luxio et Roudoudou
 
         pygame.display.update()
         pygame.display.flip()
@@ -101,12 +113,9 @@ class Add_Pokemon(Global):
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
 
-        
         pygame.display.update()
         pygame.display.flip()
-        
     
-        
     def button_quit(self):
         # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
@@ -131,7 +140,6 @@ class Add_Pokemon(Global):
         self.page1()
         self.button_menu()
       
-
         while self.add_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -213,7 +221,7 @@ class Add_Pokemon(Global):
 
             self.button_menu()
             self.button_quit()
-            # self.draw_hover_rectangle()
+            self.rect_hover()
 
             pygame.display.update()
             pygame.display.flip()
