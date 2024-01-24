@@ -8,20 +8,11 @@
     "defense": 50
   },
   {
-<<<<<<< HEAD
     "nom": "Poussacha",
     "type": "plante",
     "niveau": 1,
     "puissance": 61,
     "pv": 40,
     "defense": 54
-=======
-    "nom": "Magireve",
-    "type": "spectre",
-    "niveau": 1,
-    "puissance": 60,
-    "pv": 60,
-    "defense": 60
->>>>>>> fe8be321423891ef82b4c447ebaac1c04c3273c7
   }
 ]
