@@ -8,10 +8,9 @@ class Play_Fight(Global):
     def __init__(self):
         
         Global.__init__(self)
-        self.play_fight_running = True
+        self.play_fight_running = False
         self.c = Cloud ()
         self.run_clicked = False
-
 
     # Afficher l'image de fond
     def background(self):
@@ -220,7 +219,6 @@ class Play_Fight(Global):
     def run(self):
 
         # Boucle principale du jeu
-        self.play_fight_running = True
         while self.play_fight_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -235,7 +233,8 @@ class Play_Fight(Global):
 
                     # Menu
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
-                        self.play_fight_running = False 
+                            self.play_fight_running = False 
+                        
 
                     #  # Fight                      
                     # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
@@ -249,11 +248,16 @@ class Play_Fight(Global):
                     #     self.play_pok_running = True
                         
                     # Run                        
-                    elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
-                        self.play_fight_running = True
+                    elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)):   
+                        self.play_fight_running = False                       
                         self.run_clicked = True
                         self.message_run()
                         self.c.cloud()
+
+
+                  
+
+
             if not self.run_clicked:
                 self.message_start()
             else:
@@ -285,5 +289,5 @@ class Play_Fight(Global):
                
             pygame.display.flip()
        
-game = Play_Fight()
-game.play_fight_run()
+# game = Play_Fight()
+# game.play_fight_run()

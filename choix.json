@@ -1,13 +1,10 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Roudoudou",
+    "type": "fee",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 35,
-    "defense": 40,
-    "image": "images/images-pokedex/pokedex1.png",
-    "x": 120,
-    "y": 210
+    "puissance": 30,
+    "pv": 90,
+    "defense": 15
   }
 ]
