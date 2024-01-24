@@ -1,19 +1,19 @@
 [
   {
-    "nom": "Floravol",
-    "type": "plante",
+    "nom": "Etourvol",
+    "type": "vol",
     "niveau": 1,
-    "puissance": 45,
+    "puissance": 75,
     "pv": 55,
     "defense": 50,
-    "image": "images/images-add/add_pokemon2.png"
+    "image": "images/images-add/add_pokemon1.png"
   },
   {
-    "nom": "Carapuce",
-    "type": "eau",
+    "nom": "Spectrum",
+    "type": "poison",
     "niveau": 1,
-    "puissance": 48,
-    "pv": 44,
-    "defense": 65
+    "puissance": 50,
+    "pv": 45,
+    "defense": 45
   }
 ]
