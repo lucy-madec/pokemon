@@ -104,38 +104,6 @@
     "defense": 55
   },
   {
-    "nom": "Psykokwak",
-    "type": "plante",
-    "niveau": 1,
-    "puissance": 52,
-    "pv": 50,
-    "defense": 48
-  },
-  {
-    "nom": "Roudoudou",
-    "type": "fee",
-    "niveau": 1,
-    "puissance": 30,
-    "pv": 90,
-    "defense": 15
-  },
-  {
-    "nom": "Roudoudou",
-    "type": "fee",
-    "niveau": 1,
-    "puissance": 30,
-    "pv": 90,
-    "defense": 15
-  },
-  {
-    "nom": "Psykokwak",
-    "type": "plante",
-    "niveau": 1,
-    "puissance": 52,
-    "pv": 50,
-    "defense": 48
-  },
-  {
     "nom": "Phanpy",
     "type": "sol",
     "niveau": 1,
@@ -144,11 +112,19 @@
     "defense": 60
   },
   {
-    "nom": "Magicarpe",
-    "type": "eau",
+    "nom": "Psykokwak",
+    "type": "plante",
     "niveau": 1,
-    "puissance": 10,
-    "pv": 20,
-    "defense": 55
+    "puissance": 52,
+    "pv": 50,
+    "defense": 48
+  },
+  {
+    "nom": "Roudoudou",
+    "type": "fee",
+    "niveau": 1,
+    "puissance": 30,
+    "pv": 90,
+    "defense": 15
   }
 ]
