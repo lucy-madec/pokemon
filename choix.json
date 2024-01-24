@@ -8,11 +8,11 @@
     "defense": 5
   },
   {
-    "nom": "Coupenotte",
-    "type": "dragon",
+    "nom": "Manzai",
+    "type": "roche",
     "niveau": 1,
-    "puissance": 87,
-    "pv": 46,
-    "defense": 60
+    "puissance": 80,
+    "pv": 50,
+    "defense": 95
   }
 ]
