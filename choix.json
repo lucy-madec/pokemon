@@ -1,10 +1,18 @@
 [
   {
-    "nom": "Evoli",
-    "type": "normal",
+    "nom": "Pikachu",
+    "type": "electrique",
     "niveau": 1,
     "puissance": 55,
-    "pv": 55,
-    "defense": 50
+    "pv": 35,
+    "defense": 40
+  },
+  {
+    "nom": "Chochodile",
+    "type": "feu",
+    "niveau": 1,
+    "puissance": 45,
+    "pv": 67,
+    "defense": 59
   }
 ]
