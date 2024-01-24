@@ -1,13 +1,19 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Etourvol",
+    "type": "vol",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 35,
-    "defense": 40,
-    "image": "images/images-pokedex/pokedex1.png",
-    "x": 120,
-    "y": 210
+    "puissance": 75,
+    "pv": 55,
+    "defense": 50,
+    "image": "images/images-add/add_pokemon1.png"
+  },
+  {
+    "nom": "Spectrum",
+    "type": "poison",
+    "niveau": 1,
+    "puissance": 50,
+    "pv": 45,
+    "defense": 45
   }
 ]
