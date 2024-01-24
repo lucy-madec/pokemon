@@ -3,16 +3,16 @@
     "nom": "Pikachu",
     "type": "electrique",
     "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50
+    "puissance": 55,
+    "pv": 35,
+    "defense": 40
   },
   {
-    "nom": "Magireve",
-    "type": "spectre",
+    "nom": "Coupenotte",
+    "type": "dragon",
     "niveau": 1,
-    "puissance": 60,
-    "pv": 60,
+    "puissance": 87,
+    "pv": 46,
     "defense": 60
   }
 ]
