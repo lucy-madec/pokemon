@@ -295,7 +295,8 @@ class Play_Pokemon(Global):
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.play_fight_running = True
                             self.pokemon_choose("Etourvol")
-                            self.play_f.play_fight_run()
+                            self.play_f.play_fight_run()                           
+                            self.play_pok_running = False 
 
                     # Accéder à la section combat en choisissant Floravol                    
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -305,6 +306,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Floravol")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
 
                     # Accéder à la section combat en choisissant Psykokwak
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -314,6 +316,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Psykokwak")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
                             
                     # Accéder à la section combat en choisissant Roudoudou
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -323,6 +326,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Roudoudou")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
 
                 # PAGE 2 : Rectangle du haut 
 
@@ -334,6 +338,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Lainergie")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
                             
                     # Accéder à la section combat en choisissant Magicarpe
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -343,6 +348,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Magicarpe")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
                             
                     # Accéder à la section combat en choisissant Luxio
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -352,6 +358,7 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Luxio")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
                             
 
                     # Accéder à la section combat en choisissant Phanpy        
@@ -362,6 +369,8 @@ class Play_Pokemon(Global):
                             self.play_fight_running = True
                             self.pokemon_choose("Phanpy")
                             self.play_f.play_fight_run()
+                            self.play_pok_running = False 
+                            
             self.button_menu()
             self.button_quit()
 

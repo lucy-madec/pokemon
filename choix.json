@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Floravol",
-    "type": "plante",
+    "nom": "Luxio",
+    "type": "electrique",
     "niveau": 1,
-    "puissance": 45,
-    "pv": 55,
-    "defense": 5
+    "puissance": 85,
+    "pv": 60,
+    "defense": 49
   },
   {
-    "nom": "Manzai",
-    "type": "roche",
+    "nom": "Poussacha",
+    "type": "plante",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 50,
-    "defense": 95
+    "puissance": 61,
+    "pv": 40,
+    "defense": 54
   }
 ]

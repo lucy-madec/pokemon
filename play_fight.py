@@ -313,12 +313,10 @@ class Play_Fight(Global):
                     # Pokemon
                     elif self.is_mouse_over_button (pygame.Rect(550, 450, 95, 75)): 
                             self.play_fight_running = False 
-                            self.poke.pokedex_run()
-                      
+                            self.poke.pokedex_run()                      
                         
                     # Run                        
                     elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)):   
-                        self.play_fight_running = False                       
                         self.run_clicked = True
                         self.message_run()
                         self.c.cloud()
