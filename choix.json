@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Evoli",
-    "type": "normal",
+    "nom": "Caninos",
+    "type": "feu",
     "niveau": 1,
-    "puissance": 55,
+    "puissance": 70,
     "pv": 55,
-    "defense": 50
+    "defense": 45
   },
   {
-    "nom": "Manzai",
-    "type": "roche",
+    "nom": "Spectrum",
+    "type": "poison",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 50,
-    "defense": 95
+    "puissance": 50,
+    "pv": 45,
+    "defense": 45
   }
 ]
