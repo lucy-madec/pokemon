@@ -6,9 +6,7 @@
     "puissance": 55,
     "pv": 35,
     "defense": 40,
-    "image": "images/images-pokedex/pokedex1.png",
-    "x": 120,
-    "y": 210
+    "image": "images/images-pokedex/pokedex1.png"
   },
   {
     "nom": "Capumain",
@@ -17,9 +15,7 @@
     "puissance": 70,
     "pv": 55,
     "defense": 55,
-    "image": "images/images-pokedex/pokedex2.png",
-    "x": 400,
-    "y": 90
+    "image": "images/images-pokedex/pokedex2.png"
   },
   {
     "nom": "Evoli",
@@ -74,14 +70,5 @@
     "pv": 55,
     "defense": 45,
     "image": "images/images-pokedex/pokedex8.png"
-  },
-  {
-    "nom": "Floravol",
-    "type": "plante",
-    "niveau": 1,
-    "puissance": 45,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon2.png"
   }
 ]

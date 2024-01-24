@@ -2,20 +2,38 @@ from type_pok import Type
 import json, random
 
 class Combat(Type):
-
+    
     def __init__(self):
         Type.__init__(self)
-        self.info_json = self.read_json()
-        self.pok_rival = self.random_pokemon()
+        # self.info_json = self.read_json()
+        # self.pok_rival = 
         self.type_rival = self.pok_rival["type"]
-        self.pok_player = self.random_pokemon()
+        # self.pok_player = 
         self.puissance_player = self.pok_player["puissance"]
 
-
     def attack(self, pv, puissance, type_player, type_enemy, defense):
+        
+        with open('choix.json', 'r') as choix_file:
+            choix_data = json.load(choix_file)
+        if choix_data:
+            pokemon_dict = choix_data[0]
+            rival_dict = choix_data[1]
+
+            name_pokemon= pokemon_dict["nom"]
+            type_pokemon = pokemon_dict["type"]
+            puissance_pokemon = pokemon_dict["puissance"]
+            pv_pokemon = pokemon_dict["pv"]
+            defense_pokemon = pokemon_dict["defense"]
+            
+            name_rival = rival_dict["nom"]
+            type_rival = rival_dict["type"]
+            puissance_rival = rival_dict["puissance"]
+            pv_rival = rival_dict["pv"]
+            defense_rival = rival_dict["defense"]
+
         if type_player =="normal":
             pokemon_damage = self.normal(type_enemy, puissance)
-            self.damage_poke = pokemon_damage * (1 - defense // 200) 
+            self.damage_poke = pokemon_damage * (1 - defense // 200)
             remaining_life  = pv - self.damage_poke
             print (f"Le pokemon inflige {self.damage_poke} dégats, l'autre avait {pv}HP, il lui reste {remaining_life }HP mais il avait {defense}de def")
             return remaining_life
@@ -124,21 +142,4 @@ class Combat(Type):
             remaining_life  = pv - self.damage_poke
             print (f"Le pokemon inflige {self.damage_poke} dégats, l'autre avait {pv}HP, il lui reste {remaining_life }HP mais il avait {defense}de def")
             return remaining_life 
-        
-    # def read_json(self):
-    #     with open('add_json.json', 'r') as json_file:
-    #         data = json.load(json_file)
-    #         return data
-        
-    # def random_pokemon(self):
-    #     random_pokemon = random.choice(self.info_json)
-    #     return {
-    #         'numero': random_pokemon['numero'],
-    #         'nom': random_pokemon['nom'],
-    #         'type': random_pokemon['type'],
-    #         'puissance': random_pokemon['puissance'],
-    #         'pv': random_pokemon['pv'],
-    #         'defense': random_pokemon['defense']
-    #     }
-        
-    
+         

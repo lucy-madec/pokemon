@@ -1,11 +1,18 @@
 [
   {
-    "nom": "Medhyena",
-    "type": "tenebres",
+    "nom": "Lainergie",
+    "type": "electrique",
     "niveau": 1,
     "puissance": 55,
-    "pv": 35,
-    "defense": 35,
-    "image": "images/images-pokedex/pokedex6.png"
+    "pv": 70,
+    "defense": 55
+  },
+  {
+    "nom": "Poussacha",
+    "type": "plante",
+    "niveau": 1,
+    "puissance": 61,
+    "pv": 40,
+    "defense": 54
   }
 ]
