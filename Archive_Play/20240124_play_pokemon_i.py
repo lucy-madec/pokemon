@@ -14,35 +14,33 @@ class Play_Pokemon(Global):
         background = pygame.image.load(r'images\images-play\play4.jpg')
         background = background.convert()
         self.screen.blit(background, (0,0))
-        self.rect_radius(10, self.white, 180, 10, 400, 80)
-        self.text_c2("Choose your pokemon...", self.black, 230, 35)
+        self.rect_radius(10, self.white, 200, 40, 440, 80)
+        self.text_c2("Choose your pokemon...", self.black, 230, 65)
 
     def ajout_pokemon(self): 
         self.background()
+        # Créer rectangles haut
+        self.rect_radius(10,self.white,20, 250, 170, 120)
+        self.rect_radius(10,self.white,220, 250, 170, 120)
+        self.rect_radius(10,self.white,420, 250, 170, 120)
+        self.rect_radius(10,self.white,620, 250, 170, 120)
 
-        # PAGE 2: Rectangles blancs
+        # Créer rectangles bas
+        self.rect_radius(10,self.white,20, 450, 170, 120)
+        self.rect_radius(10,self.white,220, 450, 170, 120)
+        self.rect_radius(10,self.white,420, 450, 170, 120)
+        self.rect_radius(10,self.white,620, 450, 170, 120)
 
-        self.rect_radius(10,self.white,20, 150, 170, 120)   # Etourvol 
-        self.rect_radius(10,self.white,220, 150, 170, 120)  # Floravol
-        self.rect_radius(10,self.white,420, 150, 170, 120)  # Psykokwak
-        self.rect_radius(10,self.white,620, 150, 170, 120)  # Roudoudou
+        # Boutton de gauche
+        self.rect_radius(10,self.yellow,20, 380, 50, 60)
+        pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
 
-        self.rect_radius(10,self.white,20, 300, 170, 120)   # Lainergie
-        self.rect_radius(10,self.white,220, 300, 170, 120)  # Magicarpe
-        self.rect_radius(10,self.white,420, 300, 170, 120)  # Luxio
-        self.rect_radius(10,self.white,620, 300, 170, 120)  # Phanpy
-
-        # Flèche de gauche
-        self.rect_radius(10,self.yellow, 20, 80, 50, 60)
-        pygame.draw.polygon(self.screen, self.blue, ((50,90),(30,110),(50,130)), 7)
-
-        # Récuperer nom pokemon du pokemon.json
+        # Recuperer nom pokemon du pokemon.json
         with open('pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
 
         for name in name_pokemons:
-
             if name == "Etourvol":
                 self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,75,255)
                 self.text_c2("Etourvol",self.black,60,342)
@@ -72,6 +70,7 @@ class Play_Pokemon(Global):
                 self.text_c2("Psykokwak",self.black,440,342)
                 
             if name == "Roudoudou":
+                # self.read_json("Roudoudou")
                 self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
                 self.text_c2("Roudoudou",self.black,642,342)        
         
@@ -79,52 +78,53 @@ class Play_Pokemon(Global):
             pygame.display.flip()
             
     def pokemon(self):
+        # Créer rectangles haut
+        self.rect_radius(10,self.white,20, 250, 170, 120)
+        self.rect_radius(10,self.white,220, 250, 170, 120)
+        self.rect_radius(10,self.white,420, 250, 170, 120)
+        self.rect_radius(10,self.white,620, 250, 170, 120)
 
-        # PAGE 1     
-              
-        # Afficher pokemon Pikachu
-        self.rect_radius(10,self.white,20, 150, 170, 120) 
-        self.img_pokemon("pikachu",r'images\images-pokedex\pokedex1.png',100,109,65,150)
-        self.text_c2("pikachu",self.black,60,242)
+        # Créer rectangles bas
+        self.rect_radius(10,self.white,20, 450, 170, 120)
+        self.rect_radius(10,self.white,220, 450, 170, 120)
+        self.rect_radius(10,self.white,420, 450, 170, 120)
+        self.rect_radius(10,self.white,620, 450, 170, 120)
 
-        # Afficher pokemon Evoli
-        self.rect_radius(10,self.white,220, 150, 170, 120)
-        self.img_pokemon("evoli",r'images\images-pokedex\pokedex3.png',90,99,265,152)
-        self.text_c2("evoli",self.black,270,242)
+        # Afficher pokemon pikachu
+        self.img_pokemon("pikachu",r'images\images-pokedex\pokedex1.png',100,109,65,250)
+        self.text_c2("pikachu",self.black,60,342)
 
-        # Afficher pokemon Tiplouf
-        self.rect_radius(10,self.white,420, 150, 170, 120)
-        self.img_pokemon("tiplouf",r'images\images-pokedex\pokedex7.png',100,109,455,140)
-        self.text_c2("tiplouf",self.black,460,242)
+        # Afficher pokemon capumain
+        self.img_pokemon("capumain",r'images\images-pokedex\pokedex2.png',115,119,45,440)
+        self.text_c2("capumain",self.black,60,542)
 
-        # Afficher pokemon Caninos
-        self.rect_radius(10,self.white,620, 150, 170, 120)
-        self.img_pokemon("caninos",r'images\images-pokedex\pokedex8.png',100,109,645,140)
-        self.text_c2("caninos",self.black,655,242)     
+        # Afficher pokemon evoli
+        self.img_pokemon("evoli",r'images\images-pokedex\pokedex3.png',90,99,265,252)
+        self.text_c2("evoli",self.black,270,342)
 
-        # Afficher pokemon Capumain
-        self.rect_radius(10,self.white,20, 300, 170, 120)
-        self.img_pokemon("capumain",r'images\images-pokedex\pokedex2.png',115,119,45,290)
-        self.text_c2("capumain",self.black,60,390)
+        # Afficher pokemon marcacrin
+        self.img_pokemon("marcacrin",r'images\images-pokedex\pokedex4.png',130,129,437,420)
+        self.text_c2("marcacrin",self.black,440,542)
 
-        # Afficher pokemon Salameche
-        self.rect_radius(10,self.white,220, 300, 170, 120)
-        self.img_pokemon("salameche",r'images\images-pokedex\pokedex5.png',110,119,255,280)
-        self.text_c2("salameche",self.black,245,390)
-
-        # Afficher pokemon Marcacrin
-        self.rect_radius(10,self.white,420, 300, 170, 120)
-        self.img_pokemon("marcacrin",r'images\images-pokedex\pokedex4.png',130,129,437,270)
-        self.text_c2("marcacrin",self.black,440,390)      
+        # Afficher pokemon salameche
+        self.img_pokemon("salameche",r'images\images-pokedex\pokedex5.png',110,119,255,430)
+        self.text_c2("salameche",self.black,245,542)
         
-        # Afficher pokemon Medhyena        
-        self.rect_radius(10,self.white,620, 300, 170, 120)
-        self.img_pokemon("medhyena",r'images\images-pokedex\pokedex6.png',260,269,585,170)
-        self.text_c2("medhyena",self.black,655,390)
+        # Afficher pokemon medhyena
+        self.img_pokemon("medhyena",r'images\images-pokedex\pokedex6.png',260,269,585,320)
+        self.text_c2("medhyena",self.black,655,542)
         
-        # Flèche de droite
-        self.rect_radius(10,self.yellow,740, 80, 50, 60)
-        pygame.draw.polygon(self.screen, self.blue, ((750,90),(770,110),(750,130)), 7)
+        # Afficher pokemon tiplouf
+        self.img_pokemon("tiplouf",r'images\images-pokedex\pokedex7.png',100,109,455,240)
+        self.text_c2("tiplouf",self.black,460,342)
+        
+        # Afficher pokemon caninos
+        self.img_pokemon("caninos",r'images\images-pokedex\pokedex8.png',100,109,645,240)
+        self.text_c2("caninos",self.black,655,342)        
+        
+        # Boutton changer de page
+        self.rect_radius(10,self.yellow,740, 380, 50, 60)
+        pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
         pygame.display.update()
         pygame.display.flip()
 
@@ -183,10 +183,10 @@ class Play_Pokemon(Global):
                     if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         self.play_pok_running = False
 
-                # Flèche droite           
+                # Fleche droite           
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(740, 80, 50, 70)
+                    button_rect = pygame.Rect(740, 375, 50, 70)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         poke2 = True
                     if poke2 == True:
@@ -195,7 +195,7 @@ class Play_Pokemon(Global):
                 # Fleche gauche
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = pygame.mouse.get_pos()
-                    button_rect = pygame.Rect(20, 80, 50, 60)
+                    button_rect = pygame.Rect(20, 380, 50, 60)
                     if button_rect.collidepoint(mouse_x, mouse_y):
                         poke2 = False
                         self.pokemon()
@@ -209,43 +209,40 @@ class Play_Pokemon(Global):
                     # Accéder à la section combat en choisissant Pikachu         
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(20, 150, 170, 120)
+                        button_rect = pygame.Rect(20, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
                             self.enemy_chosen = False
                             self.pokemon_choose("Pikachu")
-                            self.play_f.play_fight_run()  
-                            self.play_pok_running = False 
+                            self.play_f.play_fight_run()     
                             
                     # Accéder à la section combat en choisissant Evoli                            
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(220, 150, 170, 120)
+                        button_rect = pygame.Rect(220, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
                             self.enemy_chosen = False
                             self.pokemon_choose("Evoli")
                             self.play_f.play_fight_run()
-                            self.play_pok_running = False 
 
                     # Accéder à la section combat en choisissant Tiplouf 
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(420, 150, 170, 120)
+                        button_rect = pygame.Rect(420, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
                             self.enemy_chosen = False
                             self.pokemon_choose("Tiplouf")
                             self.play_f.play_fight_run()
-                            self.play_pok_running = False 
 
                     # Accéder à la section combat en choisissant Caninos 
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(620, 150, 170, 120)
+                        button_rect = pygame.Rect(620, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
@@ -258,61 +255,58 @@ class Play_Pokemon(Global):
                     # Accéder à la section combat en choisissant Capumain                    
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(20, 300, 170, 120)
+                        button_rect = pygame.Rect(20, 450, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
                             self.enemy_chosen = False
                             self.pokemon_choose("Capumain")
                             self.play_f.play_fight_run()
-                            self.play_pok_running = False 
 
                     # Accéder à la section combat en choisissant Salameche 
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(220, 300, 170, 120)
+                        button_rect = pygame.Rect(220, 450, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
                             self.enemy_chosen = False
                             self.pokemon_choose("Salameche")
                             self.play_f.play_fight_run()
-                            self.play_pok_running = False 
                             
                     # Accéder à la section combat en choisissant Marcacrin 
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(420, 300, 170, 120)
+                        button_rect = pygame.Rect(420, 450, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
                             self.enemy_chosen = False
                             self.pokemon_choose("Marcacrin")
                             self.play_f.play_fight_run()
-                            self.play_pok_running = False 
 
                     # Accéder à la section combat en choisissant Medhyena        
-                    if event.type == pygame.MOUSEBUTTONDOWN : 
+                    if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(620, 300, 170, 120)
+                        button_rect = pygame.Rect(620, 450, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
                             self.enemy_chosen = False
                             self.pokemon_choose("Medhyena")
                             self.play_f.play_fight_run()
-                            self.play_pok_running = False 
 
                 if poke2 == True:
                     self.button_menu()
                     self.button_quit() 
+
 
                 # PAGE 2 : Rectangle du haut                  
                     
                     # Accéder à la section combat en choisissant Etourvol           
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(20, 150, 170, 120)
+                        button_rect = pygame.Rect(20, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
@@ -323,7 +317,7 @@ class Play_Pokemon(Global):
                     # Accéder à la section combat en choisissant Floravol                    
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(220, 150, 170, 120)
+                        button_rect = pygame.Rect(220, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
@@ -334,7 +328,7 @@ class Play_Pokemon(Global):
                     # Accéder à la section combat en choisissant Psykokwak
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(420, 150, 170, 120)
+                        button_rect = pygame.Rect(420, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
@@ -345,7 +339,7 @@ class Play_Pokemon(Global):
                     # Accéder à la section combat en choisissant Roudoudou
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(620, 150, 170, 120)
+                        button_rect = pygame.Rect(620, 250, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
@@ -358,7 +352,7 @@ class Play_Pokemon(Global):
                     # Accéder à la section combat en choisissant lainergie             
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(20, 300, 170, 120)
+                        button_rect = pygame.Rect(20, 450, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
@@ -369,7 +363,7 @@ class Play_Pokemon(Global):
                     # Accéder à la section combat en choisissant Magicarpe
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(220, 300, 170, 120)
+                        button_rect = pygame.Rect(220, 450, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
@@ -380,7 +374,7 @@ class Play_Pokemon(Global):
                     # Accéder à la section combat en choisissant Luxio
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(420, 300, 170, 120)
+                        button_rect = pygame.Rect(420, 450, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
@@ -392,7 +386,7 @@ class Play_Pokemon(Global):
                     # Accéder à la section combat en choisissant Phanpy        
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         mouse_x, mouse_y = pygame.mouse.get_pos()
-                        button_rect = pygame.Rect(620, 300, 170, 120)
+                        button_rect = pygame.Rect(620, 450, 170, 120)
                         if button_rect.collidepoint(mouse_x, mouse_y):
                             self.json_empty()
                             self.play_fight_running = True
@@ -406,5 +400,5 @@ class Play_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-test = Play_Pokemon()
-test.play_pokemon_run()
+# test = Play_Pokemon()
+# test.play_pokemon_run()

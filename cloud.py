@@ -1,14 +1,11 @@
 from global_def import Global
 import pygame
 
-
 class Cloud(Global):
     def __init__(self):
         Global.__init__(self)
-        self.cloud_over = False
 
     def cloud(self):
-        self.cloud_over = False
         pygame.init()
 
         image_path = r"images/images-play/play100.png"
@@ -56,8 +53,6 @@ class Cloud(Global):
                 pygame.display.flip()
                 pygame.time.delay(100)
                 pygame.display.flip()
-
-        self.cloud_over = True
                 
 
         # pygame.quit()

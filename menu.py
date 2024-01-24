@@ -4,6 +4,7 @@ from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
+
 class Menu(Global): 
 
     def __init__(self): 
@@ -13,7 +14,7 @@ class Menu(Global):
         self.pokedex = Pokedex()
         self.running = True
 
-    def menu_run(self):        
+    def menu_run(self): 
         self.display_name_background() 
         self.options_menu()       
 
