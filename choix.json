@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Luxio",
-    "type": "electrique",
+    "nom": "Evoli",
+    "type": "normal",
     "niveau": 1,
-    "puissance": 85,
-    "pv": 60,
-    "defense": 49
+    "puissance": 55,
+    "pv": 55,
+    "defense": 50
   },
   {
-    "nom": "Poussacha",
-    "type": "plante",
+    "nom": "Charibari",
+    "type": "acier",
     "niveau": 1,
-    "puissance": 61,
-    "pv": 40,
-    "defense": 54
+    "puissance": 80,
+    "pv": 72,
+    "defense": 49
   }
 ]
