@@ -1,22 +1,22 @@
 class Type: 
 
-    def __init__(self, type, damage): 
-        self.type = type
+    def __init__(self, type_rival, damage): 
+        self.type_rival = type_rival
         self.damage = damage
 
-    def normal(self, type, damage):
-        if type == "roche" or type == "acier":
-            damage = damage // 2
-            print(damage)
-            print(type)
-            return damage
-        
+    def normal(self):
+        if self.type_rival == "roche" or self.type_rival == "acier":
+            self.damage = self.damage // 2
+            print(self.damage)
+            print(self.type_rival)
+            return self.damage
+
         elif type == "normal" or type == "feu" or type == "eau" or type == "plante" or type == "electrique" or type == "glace" or type == "combat" or type == "poison" or type == "sol" or type == "vol" or type == "psy" or type == "insecte" or type == "spectre" or type == "dragon" or type == "tenebres" or type == "fee":
-            damage = damage
-            print(damage)
-            print(type)
-            return damage
-        
+            self.damage = self.damage
+            print(self.damage)
+            print(self.type_rival)
+            return self.damage
+
     def feu(self, type, damage): 
         if type == "feu" or type == "eau" or type == "roche" or type == "dragon":
             damage = damage // 2

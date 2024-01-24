@@ -1,0 +1,83 @@
+[
+    {
+      "nom": "Spectrum",
+      "type": "poison",
+      "niveau": 1,
+      "puissance": 50,
+      "pv": 45,
+      "defense": 45,
+      "image": "images/images-enemy/enemy1.png"
+    },
+    {
+      "nom": "Soporifix",
+      "type": "psy",
+      "niveau": 1,
+      "puissance": 48,
+      "pv": 60,
+      "defense": 45,
+      "image": "images/images-enemy/enemy2.png"
+    },
+    {
+      "nom": "Manzai",
+      "type": "roche",
+      "niveau": 1,
+      "puissance": 80,
+      "pv": 50,
+      "defense": 95,
+      "image": "images/images-enemy/enemy3.png"
+    },
+    {
+      "nom": "Magireve",
+      "type": "spectre",
+      "niveau": 1,
+      "puissance": 60,
+      "pv": 60,
+      "defense": 60,
+      "image": "images/images-enemy/enemy4.png"
+    },
+    {
+      "nom": "Coupenotte",
+      "type": "dragon",
+      "niveau": 1,
+      "puissance": 87,
+      "pv": 46,
+      "defense": 60,
+      "image": "images/images-enemy/enemy5.png"
+    },
+    {
+      "nom": "Charibari",
+      "type": "acier",
+      "niveau": 1,
+      "puissance": 80,
+      "pv": 72,
+      "defense": 49,
+      "image": "images/images-enemy/enemy6.png"
+    },
+    {
+      "nom": "Carapuce",
+      "type": "eau",
+      "niveau": 1,
+      "puissance": 48,
+      "pv": 44,
+      "defense": 65,
+      "image": "images/images-enemy/enemy7.png"
+    },
+    {
+      "nom": "Poussacha",
+      "type": "plante",
+      "niveau": 1,
+      "puissance": 61,
+      "pv": 40,
+      "defense": 54,
+      "image": "images/images-enemy/enemy8.png"
+    },
+    {
+      "nom": "Chochodile",
+      "type": "feu",
+      "niveau": 1,
+      "puissance": 45,
+      "pv": 67,
+      "defense": 59,
+      "image": "images/images-enemy/enemy9.png"
+    }
+  ]

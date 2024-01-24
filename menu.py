@@ -4,17 +4,17 @@ from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon
 from pokedex import Pokedex
 import pygame, time, sys
+
 class Menu(Global): 
 
     def __init__(self): 
         Global.__init__(self)
         self.play_p = Play_Pokemon()
-        # self.play_f = Play_Fight()
         self.add_pokemon = Add_Pokemon()
         self.pokedex = Pokedex()
         self.running = True
 
-    def menu_run(self):        
+    def menu_run(self): 
         self.display_name_background() 
         self.options_menu()       
 

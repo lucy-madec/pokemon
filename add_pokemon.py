@@ -34,12 +34,9 @@ class Add_Pokemon(Global):
             with open('pokemon.json', 'w') as new_json_file:
                 json.dump(destination_data, new_json_file, indent=2) 
 
-
-             
-
     def page1(self): 
         self.background()
-        self.background()
+        
         # Afficher titre "CLICK TO ADD POKEMON"
         self.rect_radius(10,self.white,200, 40, 400, 80)
         self.text_c5("CLICK TO ADD A POKEMON",self.black,220,65)
@@ -51,25 +48,37 @@ class Add_Pokemon(Global):
         self.rect_radius(10,self.white,100, 490, 600, 100) # Luxio
 
         # Afficher pokemon Etourvol
-        self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,150,135)
-        self.text_c2("Etourvol",self.black,390,142)
-        
+        self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,140,135)
+        self.information("Etourvol",250,150)        
         # Afficher pokemon Floravol
-        self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,150,240)
-        self.text_c2("Floravol",self.black,390,255)
-
+        self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,130,240)
+        self.information("Floravol",250,270)
         # Afficher pokemon Lainergie
-        self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,150,373)
-        self.text_c2("Lainergie",self.black,390,380)
-
+        self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,139,373)
+        self.information("Lainergie",250,390)
         # Afficher pokemon Luxio
-        self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,150,483)
-        self.text_c2("Luxio",self.black,390,500)
-
-        #boutton changer de page
+        self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,137,483)
+        self.information("Luxio",250,510)
+        
+        # Bouton changer de page
         self.rect_radius(10,self.yellow,740, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
 
+    def draw_hover_rectangle(self, btn_rect):
+        # Vérifier si la souris est au-dessus du rectangle
+        if self.is_mouse_over_button(btn_rect):
+            # Afficher le contour du rectangle en jaune au survol de la souris
+            pygame.draw.rect(self.screen, self.yellow, btn_rect, 4, 5)
+        else:
+            # Effacer l'effet de survol si la souris n'est pas au-dessus du bouton
+            pygame.draw.rect(self.screen, self.white, btn_rect, 4, 5)            
+
+    # Créer le contour du rectangle en jaune au survol de la souris
+    def rect_hover(self):
+        self.draw_hover_rectangle(pygame.Rect(100, 130, 600, 100))  # Etourvol et Magicarpe
+        self.draw_hover_rectangle(pygame.Rect(100, 250, 600, 100))  # Floravol et Phanpy
+        self.draw_hover_rectangle(pygame.Rect(100, 370, 600, 100))  # Lainergie et Psykokwak
+        self.draw_hover_rectangle(pygame.Rect(100, 490, 600, 100))  # Luxio et Roudoudou
 
         pygame.display.update()
         pygame.display.flip()
@@ -82,31 +91,57 @@ class Add_Pokemon(Global):
         self.rect_radius(10,self.white,100, 490, 600, 100) # Roudoudou
         
         # Afficher pokemon Magicarpe
-        self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',70,89,150,135)
-        self.text_c2("Magicarpe",self.black,390,142)
-        
+        self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',70,89,147,135)
+        self.information("Magicarpe",250,150)
+                
         # Afficher pokemon Phanpy
-        self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',70,89,150,255)
-        self.text_c2("Phanpy",self.black,390,255)
-        
+        self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',70,89,143,255)
+        self.information("Phanpy",250,270)
+                
         # Afficher pokemon Psykokwak
-        self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',85,89,150,373)
-        self.text_c2("Psykokwak",self.black,390,380)
+        self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',85,89,135,373)
+        self.information("Psykokwak",250,390)
         
         # Afficher pokemon Roudoudou
-        self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',60,89,150,493)
-        self.text_c2("Roudoudou",self.black,390,500) 
+        self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',90,89,136,493)
+        self.information("Roudoudou",250,510)
 
         #boutton de gauche
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
 
-        
         pygame.display.update()
         pygame.display.flip()
+
+    def information(self,name_pokemon,x,y):
+        with open('add_json.json', 'r') as fichier:
+            donnees_pokemons = json.load(fichier)
+
+        for pokemon in donnees_pokemons:
+            if pokemon["nom"] == name_pokemon:
+                name = pokemon["nom"]
+                type_pokemon = pokemon["type"]
+                level = pokemon["niveau"]
+                puissance = pokemon["puissance"]
+                pv = pokemon["pv"]
+                defense = pokemon["defense"]
+
+        self.text_c2("NAME",self.black,x,y)
+        self.text_c2("TYPE",self.black,x,y+20)
+        self.text_c2("LEVEL",self.black,x,y+40)
         
-    
+        self.text_c2(name,self.black,x+90,y)
+        self.text_c2(type_pokemon,self.black,x+90,y+20)
+        self.text_c2(str(level),self.black,x+90,y+40)
+            
+        self.text_c2("POWER",self.black,x+250,y)
+        self.text_c2("PV",self.black,x+250,y+20)
+        self.text_c2("DEFENSE",self.black,x+250,y+40)
         
+        self.text_c2(str(puissance),self.black,x+375,y)
+        self.text_c2(str(pv),self.black,x+375,y+20)
+        self.text_c2(str(defense),self.black,x+375,y+40)
+
     def button_quit(self):
         # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
@@ -131,7 +166,6 @@ class Add_Pokemon(Global):
         self.page1()
         self.button_menu()
       
-
         while self.add_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -213,7 +247,7 @@ class Add_Pokemon(Global):
 
             self.button_menu()
             self.button_quit()
-            # self.draw_hover_rectangle()
+            self.rect_hover()
 
             pygame.display.update()
             pygame.display.flip()
