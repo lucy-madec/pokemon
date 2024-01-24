@@ -83,5 +83,14 @@
     "pv": 90,
     "defense": 15,
     "image": "images/images-add/add_pokemon8.png"
+  },
+  {
+    "nom": "Etourvol",
+    "type": "vol",
+    "niveau": 1,
+    "puissance": 75,
+    "pv": 55,
+    "defense": 50,
+    "image": "images/images-add/add_pokemon1.png"
   }
 ]
