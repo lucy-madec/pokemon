@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Medhyena",
-    "type": "tenebres",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 35,
-    "defense": 35
-  },
-  {
-    "nom": "Poussacha",
+    "nom": "Floravol",
     "type": "plante",
     "niveau": 1,
-    "puissance": 61,
-    "pv": 40,
-    "defense": 54
+    "puissance": 45,
+    "pv": 55,
+    "defense": 5
+  },
+  {
+    "nom": "Coupenotte",
+    "type": "dragon",
+    "niveau": 1,
+    "puissance": 87,
+    "pv": 46,
+    "defense": 60
   }
 ]
