@@ -11,6 +11,7 @@ class Play_Fight(Global):
         self.play_fight_running = True
         self.c = Cloud ()
         self.run_clicked = False
+        self.cloud = False
 
 
     # Afficher l'image de fond
@@ -63,7 +64,6 @@ class Play_Fight(Global):
         for name in name_pokemons:
             if name == "Pikachu" and not self.run_clicked:
                 self.img_pokemon("Pikachu",r'images/images-fight/fight1.png',200,209,120,225)
-                self.text_c2(name, self.black, 200, 50)
                 
             if name == "Capumain" and not self.run_clicked:
                 self.img_pokemon("Capumain",r'images/images-fight/fight2.png',190,209,120,225)
@@ -168,12 +168,6 @@ class Play_Fight(Global):
         self.draw_hover_rectangle(pygame.Rect(550, 450, 95, 75), (630, 445, 20, 20), r'images/images-play/play6.png')   # Pokemon
         self.draw_hover_rectangle(pygame.Rect(650, 450, 95, 75),(730, 445, 20, 20), r'images/images-play/play6.png')    # Run
 
-    def life1(self): 
-        self.rect_radius(0,self.orange,112,102,110,10)
-
-    def life2(self): 
-        self.rect_radius(0,self.orange,650,400,110,10)
-
     def hp(self):
         # Rectangle noir côté gauche
         self.rect_radius(0,self.black,112,62,110,10)
@@ -212,6 +206,7 @@ class Play_Fight(Global):
 
         # Afficher pokemon pikachu
         self.img_pokemon("pikachu",r'images\images-pokedex\pokedex1.png',100,109,65,250)
+        self.text_c2("pikachu",self.black,60,342)
    
     def play_fight_run(self):
         self.play_fight_running = True 
@@ -252,12 +247,8 @@ class Play_Fight(Global):
                     elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
                         self.play_fight_running = True
                         self.run_clicked = True
-                        self.message_run()
-                        self.c.cloud()
-            if not self.run_clicked:
-                self.message_start()
-            else:
-                self.message_run()
+                        # self.message_run()
+            
 
             # Afficher les éléments à l'écran
             self.background()
@@ -270,9 +261,16 @@ class Play_Fight(Global):
             self.run_button()
             self.rect_hover()
             self.choose()
-            self.life1()
-            self.life2()
             self.hp()
+
+            if not self.run_clicked:
+                self.message_start()
+            else:
+                self.message_run()
+                if not self.cloud:
+                    self.c.cloud()
+                    self.cloud = True
+
 
             # Afficher les messages 
             # self.message_start()
@@ -285,5 +283,5 @@ class Play_Fight(Global):
                
             pygame.display.flip()
        
-# game = Play_Fight()
-# game.play_fight_run()
+game = Play_Fight()
+game.play_fight_run()
