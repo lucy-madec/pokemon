@@ -1,19 +1,19 @@
 [
   {
-    "nom": "Psykokwak",
+    "nom": "Floravol",
     "type": "plante",
     "niveau": 1,
-    "puissance": 52,
-    "pv": 50,
-    "defense": 48,
-    "image": "images/images-add/add_pokemon7.png"
+    "puissance": 45,
+    "pv": 55,
+    "defense": 50,
+    "image": "images/images-add/add_pokemon2.png"
   },
   {
-    "nom": "Coupenotte",
-    "type": "dragon",
+    "nom": "Manzai",
+    "type": "roche",
     "niveau": 1,
-    "puissance": 87,
-    "pv": 46,
-    "defense": 60
+    "puissance": 80,
+    "pv": 50,
+    "defense": 95
   }
 ]
