@@ -5,15 +5,14 @@
     "niveau": 1,
     "puissance": 55,
     "pv": 55,
-    "defense": 50,
-    "image": "images/images-pokedex/pokedex3.png"
+    "defense": 50
   },
   {
-    "nom": "Manzai",
-    "type": "roche",
+    "nom": "Poussacha",
+    "type": "plante",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 50,
-    "defense": 95
+    "puissance": 61,
+    "pv": 40,
+    "defense": 54
   }
 ]
