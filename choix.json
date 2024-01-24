@@ -9,11 +9,11 @@
     "image": "images/images-pokedex/pokedex3.png"
   },
   {
-    "nom": "Spectrum",
-    "type": "poison",
+    "nom": "Manzai",
+    "type": "roche",
     "niveau": 1,
-    "puissance": 50,
-    "pv": 45,
-    "defense": 45
+    "puissance": 80,
+    "pv": 50,
+    "defense": 95
   }
 ]

@@ -5,8 +5,7 @@
     "niveau": 1,
     "puissance": 55,
     "pv": 35,
-    "defense": 40,
-    "image": "images/images-pokedex/pokedex1.png"
+    "defense": 40
   },
   {
     "nom": "Capumain",
@@ -14,8 +13,7 @@
     "niveau": 1,
     "puissance": 70,
     "pv": 55,
-    "defense": 55,
-    "image": "images/images-pokedex/pokedex2.png"
+    "defense": 55
   },
   {
     "nom": "Evoli",
@@ -23,8 +21,7 @@
     "niveau": 1,
     "puissance": 55,
     "pv": 55,
-    "defense": 50,
-    "image": "images/images-pokedex/pokedex3.png"
+    "defense": 50
   },
   {
     "nom": "Marcacrin",
@@ -32,8 +29,7 @@
     "niveau": 1,
     "puissance": 50,
     "pv": 50,
-    "defense": 40,
-    "image": "images/images-pokedex/pokedex4.png"
+    "defense": 40
   },
   {
     "nom": "Salameche",
@@ -41,8 +37,7 @@
     "niveau": 1,
     "puissance": 52,
     "pv": 39,
-    "defense": 43,
-    "image": "images/images-pokedex/pokedex5.png"
+    "defense": 43
   },
   {
     "nom": "Medhyena",
@@ -50,8 +45,7 @@
     "niveau": 1,
     "puissance": 55,
     "pv": 35,
-    "defense": 35,
-    "image": "images/images-pokedex/pokedex6.png"
+    "defense": 35
   },
   {
     "nom": "Tiplouf",
@@ -59,8 +53,7 @@
     "niveau": 1,
     "puissance": 51,
     "pv": 53,
-    "defense": 53,
-    "image": "images/images-pokedex/pokedex7.png"
+    "defense": 53
   },
   {
     "nom": "Caninos",
@@ -68,52 +61,6 @@
     "niveau": 1,
     "puissance": 70,
     "pv": 55,
-    "defense": 45,
-    "image": "images/images-pokedex/pokedex8.png"
-  },
-  {
-    "nom": "Floravol",
-    "type": "plante",
-    "niveau": 1,
-    "puissance": 45,
-    "pv": 55,
-    "defense": 50,
-    "image": "images/images-add/add_pokemon2.png"
-  },
-  {
-    "nom": "Lainergie",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 70,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon3.png"
-  },
-  {
-    "nom": "Magicarpe",
-    "type": "eau",
-    "niveau": 1,
-    "puissance": 10,
-    "pv": 20,
-    "defense": 55,
-    "image": "images/images-add/add_pokemon5.png"
-  },
-  {
-    "nom": "Phanpy",
-    "type": "sol",
-    "niveau": 1,
-    "puissance": 60,
-    "pv": 90,
-    "defense": 60,
-    "image": "images/images-add/add_pokemon6.png"
-  },
-  {
-    "nom": "Roudoudou",
-    "type": "fee",
-    "niveau": 1,
-    "puissance": 30,
-    "pv": 90,
-    "defense": 15,
-    "image": "images/images-add/add_pokemon8.png"
+    "defense": 45
   }
 ]

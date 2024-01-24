@@ -10,7 +10,6 @@ class Menu(Global):
     def __init__(self): 
         Global.__init__(self)
         self.play_p = Play_Pokemon()
-        # self.play_f = Play_Fight()
         self.add_pokemon = Add_Pokemon()
         self.pokedex = Pokedex()
         self.running = True
