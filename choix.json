@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Caninos",
-    "type": "feu",
+    "nom": "Etourvol",
+    "type": "vol",
     "niveau": 1,
-    "puissance": 70,
+    "puissance": 75,
     "pv": 55,
-    "defense": 45
+    "defense": 50
   },
   {
-    "nom": "Charibari",
-    "type": "acier",
+    "nom": "Magireve",
+    "type": "spectre",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 72,
-    "defense": 49
+    "puissance": 60,
+    "pv": 60,
+    "defense": 60
   }
 ]

@@ -197,7 +197,7 @@ class Play_Pokemon(Global):
                 
                 if poke2 == False:
 
-                    # Rectangle du haut
+                    # Rectangle haut
                     self.button_menu() 
 
                 # PAGE 1 : Rectangles haut 
@@ -288,7 +288,7 @@ class Play_Pokemon(Global):
                     self.button_menu()
                     self.button_quit() 
 
-                # PAGE 2 : Rectangle du haut                  
+                # PAGE 2 : Rectangle haut                  
                     
                     # Accéder à la section combat en choisissant Etourvol           
                     if event.type == pygame.MOUSEBUTTONDOWN:
@@ -330,7 +330,7 @@ class Play_Pokemon(Global):
                             self.play_f.play_fight_run()
                             self.play_pok_running = False 
 
-                # PAGE 2 : Rectangle du haut 
+                # PAGE 2 : Rectangle haut 
 
                     # Accéder à la section combat en choisissant Lainergie             
                     if event.type == pygame.MOUSEBUTTONDOWN:

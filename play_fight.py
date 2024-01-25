@@ -148,7 +148,7 @@ class Play_Fight(Global):
         self.rect_radius(5, self.brown, 450, 450, 95, 75)
         self.text_c1("BAG", self.black, 480, 475)     
 
-    # Afficher le bouton pokémon
+    # Afficher bouton pokémon
     def pokemon_button(self):
         self.rect_radius(5, self.green, 550, 450, 95, 75)
         self.text_c1("POKEMON", self.black, 555, 475)
@@ -291,7 +291,7 @@ class Play_Fight(Global):
 
     def run(self):
 
-        # Boucle principale du jeu
+        # Boucle principale jeu
         self.play_fight_running = True
         self.enemy_chosen = False
         
@@ -332,7 +332,7 @@ class Play_Fight(Global):
             else:
                 self.message_run()
 
-            # Afficher les éléments à l'écran
+            # Afficher éléments écran
             self.background()
             self.rectangle()
             self.button_quit()
