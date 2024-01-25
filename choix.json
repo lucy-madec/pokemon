@@ -8,11 +8,11 @@
     "defense": 40
   },
   {
-    "nom": "Magireve",
-    "type": "spectre",
+    "nom": "Chochodile",
+    "type": "feu",
     "niveau": 1,
-    "puissance": 60,
-    "pv": 60,
-    "defense": 60
+    "puissance": 45,
+    "pv": 67,
+    "defense": 59
   }
 ]
