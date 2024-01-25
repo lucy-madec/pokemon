@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Tiplouf",
-    "type": "eau",
+    "nom": "Etourvol",
+    "type": "vol",
     "niveau": 1,
-    "puissance": 51,
-    "pv": 53,
-    "defense": 53
+    "puissance": 75,
+    "pv": 55,
+    "defense": 50
   },
   {
-    "nom": "Coupenotte",
-    "type": "dragon",
+    "nom": "Spectrum",
+    "type": "poison",
     "niveau": 1,
-    "puissance": 87,
-    "pv": 46,
-    "defense": 60
+    "puissance": 50,
+    "pv": 45,
+    "defense": 45
   }
 ]
