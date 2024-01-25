@@ -2,7 +2,7 @@ from global_def import Global
 import pygame
 import sys
 
-class Test1(Global):
+class Cloud(Global):
     def __init__(self):
         Global.__init__(self)
 
@@ -17,8 +17,8 @@ class Test1(Global):
         image1_path = r"images/images-play/play101.png"
         image = pygame.image.load(image_path)
         image1 = pygame.image.load(image1_path)
-        image = pygame.transform.scale(image, (150, 159))
-        image1 = pygame.transform.scale(image, (170, 179))
+        image = pygame.transform.scale(image,(150, 159))
+        image1 = pygame.transform.scale(image,(170, 179))
         image = image.convert_alpha()
         repetitions = 1
 
@@ -26,7 +26,7 @@ class Test1(Global):
             self.img_pokemon("pikachu",r'images\images-pokedex\pokedex1.png',230,239,65,250)
             fenetre.blit(image, (65, 250))
             pygame.display.flip()
-            pygame.time.delay(150)()
+            pygame.time.delay(150)
             fenetre.fill((0, 0, 0))
             pygame.display.flip()
             
@@ -72,5 +72,5 @@ class Test1(Global):
         pygame.quit()
         sys.exit()
 
-test1 = Test1()
-test1.affichage1()
+# test1 = Cloud()
+# test1.affichage1()

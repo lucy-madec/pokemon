@@ -1,19 +1,18 @@
 [
   {
-    "nom": "Psykokwak",
-    "type": "plante",
+    "nom": "Evoli",
+    "type": "normal",
     "niveau": 1,
-    "puissance": 52,
-    "pv": 50,
-    "defense": 48,
-    "image": "images/images-add/add_pokemon7.png"
+    "puissance": 55,
+    "pv": 55,
+    "defense": 50
   },
   {
-    "nom": "Coupenotte",
-    "type": "dragon",
+    "nom": "Charibari",
+    "type": "acier",
     "niveau": 1,
-    "puissance": 87,
-    "pv": 46,
-    "defense": 60
+    "puissance": 80,
+    "pv": 72,
+    "defense": 49
   }
 ]

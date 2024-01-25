@@ -10,7 +10,6 @@ class Menu(Global):
     def __init__(self): 
         Global.__init__(self)
         self.play_p = Play_Pokemon()
-        # self.play_f = Play_Fight()
         self.add_pokemon = Add_Pokemon()
         self.pokedex = Pokedex()
         self.running = True
@@ -19,12 +18,14 @@ class Menu(Global):
         self.display_name_background() 
         self.options_menu()       
 
+    # Afficher logo pokemon et noms
     def display_name_background (self):
         start_time = time.time()
         while True:
             self.screen.fill(self.white)
             current_time = time.time()
             elapsed_time = current_time - start_time
+
             # Afficher prenoms
             if elapsed_time < 2:
                 self.text_c1("By  Ines Lorquet - Lucy Madec - Vanny Lamorte", self.black, 220, 410)
@@ -34,7 +35,7 @@ class Menu(Global):
             pygame.display.flip()
             self.clock.tick(60)
 
-    # Afficher des rectangles blancs pour les options du menu          
+    # Afficher rectangles blancs : options du menu          
     def  draw_menu_option(self, rect, text, pos):
         menu_text = self.police_p1.render(text, True, self.grey)
         if rect.collidepoint(pygame.mouse.get_pos()):
@@ -43,6 +44,7 @@ class Menu(Global):
             pygame.draw.rect(self.screen, self.white, rect, border_radius=10)
         self.screen.blit(menu_text, pos) 
 
+    # Afficher logo pokemon pixelled
     def logo_liv (self):
         logo_liv = pygame.image.load(r"images/images-menu/menu5.png").convert_alpha()
         logo_liv = pygame.transform.scale(logo_liv,(430,101))   
@@ -52,7 +54,7 @@ class Menu(Global):
 
         self.img_pokemon("date",r"images/images-menu/menu2.jpg", 70,20,365,560)
        
-    # Définir choix du menu
+    # Définir choix menu
     def options_menu(self): 
        
         self.running = True
@@ -81,7 +83,7 @@ class Menu(Global):
                     pygame.quit()
                     sys.exit()
 
-                # Lier les options du menu à d'autres pages
+                # Lier options menu à autres pages
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = pygame.mouse.get_pos()
                     for i, item in enumerate(option_texts):
