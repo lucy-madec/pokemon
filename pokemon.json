@@ -54,5 +54,21 @@
     "puissance": 51,
     "pv": 53,
     "defense": 53
-  }  
+  },
+  {
+    "nom": "Caninos",
+    "type": "feu",
+    "niveau": 1,
+    "puissance": 70,
+    "pv": 55,
+    "defense": 45
+  },
+  {
+    "nom": "Floravol",
+    "type": "plante",
+    "niveau": 1,
+    "puissance": 45,
+    "pv": 55,
+    "defense": 5
+  }
 ]
