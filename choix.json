@@ -8,11 +8,11 @@
     "defense": 50
   },
   {
-    "nom": "Magireve",
-    "type": "spectre",
+    "nom": "Carapuce",
+    "type": "eau",
     "niveau": 1,
-    "puissance": 60,
-    "pv": 60,
-    "defense": 60
+    "puissance": 48,
+    "pv": 44,
+    "defense": 65
   }
 ]
