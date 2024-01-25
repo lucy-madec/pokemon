@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Pikachu",
+    "type": "electrique",
     "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50
+    "puissance": 55,
+    "pv": 35,
+    "defense": 40
   },
   {
-    "nom": "Chochodile",
-    "type": "feu",
+    "nom": "Carapuce",
+    "type": "eau",
     "niveau": 1,
-    "puissance": 45,
-    "pv": 67,
-    "defense": 59
+    "puissance": 48,
+    "pv": 44,
+    "defense": 65
   }
 ]
