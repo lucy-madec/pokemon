@@ -18,13 +18,11 @@ class Pokedex(Global):
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c3("POKEDEX",self.black,230,30)     
     
-    # Afficher page 2
+    # Afficher page 2 Pokedex
     def ajout_pokemon(self): 
         
         # Afficher titre
         self.background()
-
-        # Afficher titre
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c3("POKEDEX",self.black,230,30)
 
@@ -48,7 +46,7 @@ class Pokedex(Global):
         self.rect_radius(10,self.black,620, 450, 170, 120)
         self.img_pokemon("Phanpy", r'images/images-pokedex/pokedex116.png',115,119,650,450)
 
-        # Bouton gauche
+        # Boutton gauche
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
 
@@ -172,7 +170,7 @@ class Pokedex(Global):
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
 
-    # Vérifier si souris au-dessus du bouton
+    # Vérifier si la souris est au-dessus du bouton
     def is_mouse_over_button(self, button_rect):
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
@@ -192,11 +190,9 @@ class Pokedex(Global):
                 if event.type == pygame.QUIT:
                     self.pok_running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-
                     # Vérifier si le bouton gauche de la souris est cliqué
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
-
-                    # Quitter jeu lors du clic sur le bouton QUIT
+                    #     # Quitterle jeu lors du clic sur le bouton QUIT
                         pygame.quit()
                     if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         self.pok_running = False
@@ -328,7 +324,7 @@ class Pokedex(Global):
                             self.info_running = True
                             self.info_pokemon.roudoudou()
 
-                # Rectangle bas
+                # Rectangle du bas
                                 
                     # Information Lainergie             
                     if event.type == pygame.MOUSEBUTTONDOWN:
