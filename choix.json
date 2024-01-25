@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Evoli",
+    "type": "normal",
     "niveau": 1,
     "puissance": 55,
-    "pv": 35,
-    "defense": 40
+    "pv": 55,
+    "defense": 50
   },
   {
-    "nom": "Magireve",
-    "type": "spectre",
+    "nom": "Poussacha",
+    "type": "plante",
     "niveau": 1,
-    "puissance": 60,
-    "pv": 60,
-    "defense": 60
+    "puissance": 61,
+    "pv": 40,
+    "defense": 54
   }
 ]

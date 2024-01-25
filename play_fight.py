@@ -196,7 +196,8 @@ class Play_Fight(Global):
         # PV coté droit
         self.img_pokemon("rectangle_option",r'images/images-play/play9.png',220,70,550,320)
 
-        # Afficher nom du Pokémon au-dessus du rectangle HP
+    # Afficher nom Pokemon player
+    def display_name_pokemon(self):
         with open('choix.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
 
@@ -364,6 +365,7 @@ class Play_Fight(Global):
             self.life1()
             self.life2()
             self.hp()
+            self.display_name_pokemon()
             
             if not self.enemy_chosen:
                 self.enemy()
