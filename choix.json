@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Etourvol",
+    "type": "vol",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 35,
-    "defense": 40
+    "puissance": 75,
+    "pv": 55,
+    "defense": 50
   },
   {
-    "nom": "Soporifix",
-    "type": "psy",
+    "nom": "Charibari",
+    "type": "acier",
     "niveau": 1,
-    "puissance": 48,
-    "pv": 60,
-    "defense": 45
+    "puissance": 80,
+    "pv": 72,
+    "defense": 49
   }
 ]
