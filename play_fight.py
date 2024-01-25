@@ -413,6 +413,7 @@ class Play_Fight(Global):
             self.attack_player.pv_start(self.pv_rival)
             
             self.rect_hp(650,350,110,10,self.attack_enemy.remaining_life_player,self.pv_pokemon)
+            print(self.attack_enemy.remaining_life_player)
             self.rect_hp(75,52,110,10,self.attack_player.remaining_life_enemy,self.pv_rival)
             
             self.image_hp()        

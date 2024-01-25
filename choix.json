@@ -8,11 +8,11 @@
     "defense": 40
   },
   {
-    "nom": "Poussacha",
-    "type": "plante",
+    "nom": "Soporifix",
+    "type": "psy",
     "niveau": 1,
-    "puissance": 61,
-    "pv": 40,
-    "defense": 54
+    "puissance": 48,
+    "pv": 60,
+    "defense": 45
   }
 ]
