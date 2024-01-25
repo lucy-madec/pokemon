@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Evoli",
-    "type": "normal",
+    "nom": "Etourvol",
+    "type": "vol",
     "niveau": 1,
-    "puissance": 55,
+    "puissance": 75,
     "pv": 55,
     "defense": 50
   },
   {
-    "nom": "Charibari",
-    "type": "acier",
+    "nom": "Chochodile",
+    "type": "feu",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 72,
-    "defense": 49
+    "puissance": 45,
+    "pv": 67,
+    "defense": 59
   }
 ]
