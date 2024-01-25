@@ -70,13 +70,5 @@
     "puissance": 75,
     "pv": 55,
     "defense": 50
-  },
-  {
-    "nom": "Floravol",
-    "type": "plante",
-    "niveau": 1,
-    "puissance": 45,
-    "pv": 55,
-    "defense": 5
   }
 ]

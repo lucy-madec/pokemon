@@ -59,34 +59,49 @@ class Pokedex(Global):
             if name == "Etourvol":
                 self.rect_radius(10,self.white,20, 250, 170, 120)
                 self.img_pokemon("Etourvol",r'images/images-add/add_pokemon1.png',70,89,75,255)
+                self.text_c2(name, self.black, 58, 342)
 
             if name == "Floravol":
                 self.rect_radius(10,self.white,220, 250, 170, 120)
                 self.img_pokemon("Floravol",r'images/images-add/add_pokemon2.png',100,119,265,242)
+                self.text_c2(name, self.black, 260, 342)
+
  
             if name == "Lainergie":
                 self.rect_radius(10,self.white,20, 450, 170, 120)
                 self.img_pokemon("Lainergie",r'images/images-add/add_pokemon3.png',85,89,65,455)
+                self.text_c2(name, self.black, 50, 542)
+
 
             if name == "Luxio":
                 self.rect_radius(10,self.white,420, 450, 170, 120)
-                self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,445)     
+                self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,450,445)
+                self.text_c2(name, self.black, 470, 542)
+     
 
             if name == "Magicarpe":
                 self.rect_radius(10,self.white,220, 450, 170, 120)
                 self.img_pokemon("Magicarpe",r'images/images-add/add_pokemon5.png',90,99,255,452)
+                self.text_c2(name, self.black, 245, 542)
+
 
             if name == "Phanpy":
                 self.rect_radius(10,self.white,620, 450, 170, 120)
                 self.img_pokemon("Phanpy",r'images/images-add/add_pokemon6.png',80,99,665,450)
+                self.text_c2(name, self.black, 660, 542)
+
 
             if name == "Psykokwak":
                 self.rect_radius(10,self.white,420, 250, 170, 120)
                 self.img_pokemon("Psykokwak",r'images/images-add/add_pokemon7.png',70,89,465,253)
+                self.text_c2(name, self.black, 440, 342)
+
                 
             if name == "Roudoudou":
                 self.rect_radius(10,self.white,620, 250, 170, 120)
                 self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',70,79,670,258)
+                self.text_c2(name, self.black, 640, 342)
+
                 
 
             pygame.display.update()
@@ -108,35 +123,35 @@ class Pokedex(Global):
 
         # Afficher pokemon Pikachu
         self.img_pokemon("pikachu",r'images/images-pokedex/pokedex1.png',100,109,65,250)
-        self.text_c2("pikachu",self.black,60,342)
+        self.text_c2("Pikachu",self.black,60,342)
 
         # Afficher pokemon Capumain
-        self.img_pokemon("capumain",r'images/images-pokedex/pokedex2.png',115,119,45,440)
-        self.text_c2("capumain",self.black,60,542)
+        self.img_pokemon("apumain",r'images/images-pokedex/pokedex2.png',115,119,45,440)
+        self.text_c2("Capumain",self.black,60,542)
 
         # Afficher pokemon Evoli
         self.img_pokemon("evoli",r'images/images-pokedex/pokedex3.png',90,99,265,252)
-        self.text_c2("evoli",self.black,270,342)
+        self.text_c2("Evoli",self.black,270,342)
 
         # Afficher pokemon Marcacrin
         self.img_pokemon("marcacrin",r'images/images-pokedex/pokedex4.png',130,129,437,420)
-        self.text_c2("marcacrin",self.black,440,542)
+        self.text_c2("Marcacrin",self.black,440,542)
 
         # Afficher pokemon Salameche
         self.img_pokemon("salameche",r'images//images-pokedex//pokedex5.png',110,119,255,430)
-        self.text_c2("salameche",self.black,245,542)
+        self.text_c2("Salameche",self.black,245,542)
 
         # Afficher pokemon Medhyena
         self.img_pokemon("medhyena",r'images//images-pokedex//pokedex6.png',260,269,585,320)
-        self.text_c2("medhyena",self.black,655,542)
+        self.text_c2("Medhyena",self.black,655,542)
 
         # Afficher pokemon Tiplouf
         self.img_pokemon("tiplouf",r'images//images-pokedex//pokedex7.png',100,109,455,240)
-        self.text_c2("tiplouf",self.black,460,342)
+        self.text_c2("Tiplouf",self.black,460,342)
 
         # Afficher pokemon Caninos
         self.img_pokemon("caninos",r'images//images-pokedex//pokedex8.png',100,109,645,240)
-        self.text_c2("caninos",self.black,655,342)
+        self.text_c2("Caninos",self.black,655,342)
 
         # Flèche droite
         self.rect_radius(10,self.yellow,740, 380, 50, 60)
