@@ -53,10 +53,6 @@ class Cloud(Global):
                 pygame.display.flip()
                 pygame.time.delay(100)
                 pygame.display.flip()
-                
-
-        # pygame.quit()
-        # sys.exit()
 
 # test1 = Cloud()
 # test1.cloud()

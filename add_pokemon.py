@@ -76,7 +76,6 @@ class Add_Pokemon(Global):
             pygame.draw.rect(self.screen, self.white, btn_rect, 4, 5)            
 
     # Créer contour rectangle jaune au survol souris
-    
     def rect_hover(self):
         self.draw_hover_rectangle(pygame.Rect(100, 130, 600, 100))  # Etourvol et Magicarpe
         self.draw_hover_rectangle(pygame.Rect(100, 250, 600, 100))  # Floravol et Phanpy

@@ -1,4 +1,3 @@
-# Importer les modules
 from global_def import Global
 from play_pokemon import Play_Pokemon
 from add_pokemon import Add_Pokemon

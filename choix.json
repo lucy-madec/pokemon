@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Evoli",
-    "type": "normal",
+    "nom": "Tiplouf",
+    "type": "eau",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 55,
-    "defense": 50
+    "puissance": 51,
+    "pv": 53,
+    "defense": 53
   },
   {
-    "nom": "Charibari",
-    "type": "acier",
+    "nom": "Soporifix",
+    "type": "psy",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 72,
-    "defense": 49
+    "puissance": 48,
+    "pv": 60,
+    "defense": 45
   }
 ]
