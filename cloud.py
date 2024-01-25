@@ -1,6 +1,5 @@
 from global_def import Global
 import pygame
-import sys
 
 class Cloud(Global):
     def __init__(self):

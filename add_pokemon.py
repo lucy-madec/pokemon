@@ -11,6 +11,7 @@ class Add_Pokemon(Global):
         self.page = 1
         self.poke2 = False
         
+    # Afficher background
     def background(self):
         background = pygame.image.load(r'images/images-add/add_pokemon10.jpg')
         background = background.convert()
@@ -32,11 +33,11 @@ class Add_Pokemon(Global):
             destination_data.append(pokemon_data)
 
             with open('pokemon.json', 'w') as new_json_file:
-                json.dump(destination_data, new_json_file, indent=2)            
+                json.dump(destination_data, new_json_file, indent=2) 
 
     def page1(self): 
         self.background()
-        self.background()
+        
         # Afficher titre "CLICK TO ADD POKEMON"
         self.rect_radius(10,self.white,200, 40, 400, 80)
         self.text_c5("CLICK TO ADD A POKEMON",self.black,220,65)
@@ -60,10 +61,27 @@ class Add_Pokemon(Global):
         self.img_pokemon("Luxio",r'images/images-add/add_pokemon4.png',90,109,137,483)
         self.information("Luxio",250,510)
         
-        # Bouton changer de page
+        # Flèche droite
         self.rect_radius(10,self.yellow,740, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((770,410),(750,390),(750,430)), 7)
 
+    def draw_hover_rectangle(self, btn_rect):        
+        # Vérifier souris au-dessus rectangle
+        if self.is_mouse_over_button(btn_rect):
+
+            # Afficher contour du rectangle jaune survol souris
+            pygame.draw.rect(self.screen, self.yellow, btn_rect, 4, 5)
+        else:
+            # Effacer effet survol si souris pas au-dessus bouton
+            pygame.draw.rect(self.screen, self.white, btn_rect, 4, 5)            
+
+    # Créer contour rectangle jaune au survol souris
+    
+    def rect_hover(self):
+        self.draw_hover_rectangle(pygame.Rect(100, 130, 600, 100))  # Etourvol et Magicarpe
+        self.draw_hover_rectangle(pygame.Rect(100, 250, 600, 100))  # Floravol et Phanpy
+        self.draw_hover_rectangle(pygame.Rect(100, 370, 600, 100))  # Lainergie et Psykokwak
+        self.draw_hover_rectangle(pygame.Rect(100, 490, 600, 100))  # Luxio et Roudoudou
 
         pygame.display.update()
         pygame.display.flip()
@@ -91,13 +109,14 @@ class Add_Pokemon(Global):
         self.img_pokemon("Roudoudou",r'images/images-add/add_pokemon8.png',90,89,136,493)
         self.information("Roudoudou",250,510)
 
-        #boutton de gauche
+        # Flèche gauche
         self.rect_radius(10,self.yellow,20, 380, 50, 60)
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
 
         pygame.display.update()
         pygame.display.flip()
 
+    # Afficher information pokémon depuis json
     def information(self,name_pokemon,x,y):
         with open('add_json.json', 'r') as fichier:
             donnees_pokemons = json.load(fichier)
@@ -127,19 +146,18 @@ class Add_Pokemon(Global):
         self.text_c2(str(pv),self.black,x+375,y+20)
         self.text_c2(str(defense),self.black,x+375,y+40)
 
-
+    # Afficher bouton QUIT
     def button_quit(self):
-        # Affiche le bouton QUIT
         self.rect_radius(5, self.white, 720, 10, 70, 25)
         self.text_c1("QUIT", self.black, 733, 13)
 
+    # Afficher bouton BACK
     def button_menu(self):
-        # Affiche le bouton BACK
         self.rect_radius(5, self.white, 640, 10, 70, 25)
         self.text_c1("MENU", self.black, 650, 13)
 
+    # Vérifier si souris au-dessus bouton
     def is_mouse_over_button(self, button_rect):
-        # Vérifie si la souris est au-dessus du bouton
         mouse_pos = pygame.mouse.get_pos()
         return button_rect.collidepoint(mouse_pos)
 
@@ -147,11 +165,12 @@ class Add_Pokemon(Global):
         self.add_running = True
         self.run()
 
+    # Boucle principale
     def run(self):
         self.background()
         self.page1()
-        self.button_menu()     
-
+        self.button_menu()
+      
         while self.add_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -162,7 +181,7 @@ class Add_Pokemon(Global):
                     if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         self.add_running = False  
 
-                    # Logique de clic sur les flèches gauche et droite
+                    # Clic flèches gauche et droite
                     mouse_x, mouse_y = pygame.mouse.get_pos()
 
                     # Flèche droite
@@ -177,8 +196,8 @@ class Add_Pokemon(Global):
 
                     if not self.poke2:
                         self.button_menu() 
-                        self.button_menu() 
-                        #Rectangle Page 1       
+
+                        # Rectangles Page 1       
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 130, 600, 100)
@@ -206,7 +225,8 @@ class Add_Pokemon(Global):
                     if self.poke2:
                         self.button_menu()
                         self.button_quit() 
-                        #Rectangles Page 2
+
+                        # Rectangles Page 2
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 130, 600, 100)
@@ -233,6 +253,7 @@ class Add_Pokemon(Global):
 
             self.button_menu()
             self.button_quit()
+            self.rect_hover()
 
             pygame.display.update()
             pygame.display.flip()
