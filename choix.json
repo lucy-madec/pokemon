@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Tiplouf",
-    "type": "eau",
+    "nom": "Capumain",
+    "type": "normal",
     "niveau": 1,
-    "puissance": 51,
-    "pv": 53,
-    "defense": 53
+    "puissance": 70,
+    "pv": 55,
+    "defense": 55
   },
   {
-    "nom": "Soporifix",
-    "type": "psy",
+    "nom": "Coupenotte",
+    "type": "dragon",
     "niveau": 1,
-    "puissance": 48,
-    "pv": 60,
-    "defense": 45
+    "puissance": 87,
+    "pv": 46,
+    "defense": 60
   }
 ]

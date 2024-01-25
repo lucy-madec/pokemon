@@ -66,7 +66,6 @@ class Play_Fight(Global):
         for name in name_pokemons:
             if name == "Pikachu" and not self.run_clicked:
                 self.img_pokemon("Pikachu",r'images/images-fight/fight1.png',200,209,120,225)
-                self.text_c2(name, self.black, 200, 50)
                 
             if name == "Capumain" and not self.run_clicked:
                 self.img_pokemon("Capumain",r'images/images-fight/fight2.png',190,209,120,225)
@@ -195,7 +194,17 @@ class Play_Fight(Global):
         self.rect_radius(0,self.black,618,380,135,8)
 
         # PV coté droit
-        self.img_pokemon("rectangle_option",r'images/images-play/play9.png',220,70,550,320) 
+        self.img_pokemon("rectangle_option",r'images/images-play/play9.png',220,70,550,320)
+
+        # Afficher nom du Pokémon au-dessus du rectangle HP
+        with open('choix.json', 'r') as choix_file:
+            choix_data = json.load(choix_file)
+
+        name_pokemons = [pokemon["nom"] for pokemon in choix_data]
+
+        if name_pokemons:
+            current_pokemon_name = name_pokemons[0]
+            self.text_c2(current_pokemon_name, self.black, 40, 30)
     
     # Lien au fichier JSON
     def read_json(self, name):
@@ -260,30 +269,39 @@ class Play_Fight(Global):
         for name in name_pokemons:
             if name == "Spectrum":
                 self.img_pokemon("Spectrum",r'images/images-enemy/enemy1.png', 200,209,400,105)
+                self.text_c2(name, self.black, 590, 323)
     
             elif name == "Soporifix":
                 self.img_pokemon("Soporifix",r'images/images-enemy/enemy2.png', 180,189,400,90)
+                self.text_c2(name, self.black, 580, 322)
 
             elif name == "Manzai":
                 self.img_pokemon("Manzai",r'images/images-enemy/enemy3.png', 200,209,430,80)
+                self.text_c2(name, self.black, 620, 323)
                                 
             elif name == "Magireve":
                 self.img_pokemon("Magireve",r'images/images-enemy/enemy4.png', 200,209,430,80)
+                self.text_c2(name, self.black, 590, 322)
 
             elif name == "Coupenotte":
                 self.img_pokemon("Coupenotte",r'images/images-enemy/enemy5.png', 200,209,430,80)
+                self.text_c1(name, self.black, 595, 328)
 
             elif name == "Charibari":
                 self.img_pokemon("Charibari",r'images/images-enemy/enemy6.png',200,209,430,80)
+                self.text_c2(name, self.black, 590, 322)
                 
             elif name == "Carapuce":
                 self.img_pokemon("Carapuce",r'images/images-enemy/enemy7.png',200,209,430,80)
+                self.text_c2(name, self.black, 585, 323)
 
             elif name == "Poussacha":
                 self.img_pokemon("Poussacha",r'images/images-enemy/enemy8.png',250,259,400,70)
+                self.text_c2(name, self.black, 580, 323)
 
             elif name == "Chochodile":
                 self.img_pokemon("Chochodile",r'images/images-enemy/enemy9.png', 250,259,400,70)
+                self.text_c2(name, self.black, 580, 323)
    
     def play_fight_run(self):
         self.play_fight_running = True 
