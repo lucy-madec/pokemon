@@ -196,7 +196,6 @@ class Play_Fight(Global):
         # PV coté droit
         self.img_pokemon("rectangle_option",r'images/images-play/play9.png',220,70,550,320)   
 
-
     # Lien au fichier JSON
     def read_json(self, name):
         with open('add_json.json', 'r') as json_file:
@@ -252,9 +251,8 @@ class Play_Fight(Global):
         with open('choix.json', 'w') as choix_file:
             json.dump(choix_data, choix_file, indent=2)
         
-
+    # Récupérer info pokemon depuis choix.json
     def information(self):
-        
         with open('choix.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
         if choix_data:
@@ -273,7 +271,6 @@ class Play_Fight(Global):
             self.pv_rival = rival_dict["pv"]
             self.defense_rival = rival_dict["defense"]
 
-        # self.remaining_life = self.pv_pokemon
     # Afficher pv texte
     def show_pv(self):
         with open('choix.json', 'r') as choix_file:
@@ -327,6 +324,7 @@ class Play_Fight(Global):
 
             elif name == "Chochodile":
                 self.img_pokemon("Chochodile",r'images/images-enemy/enemy9.png', 250,259,400,70)
+                
     # Afficher barre hp
     def rect_hp(self, x, y, longueur, largeur, hp, hp_max):
             if longueur * hp // hp_max >= 110:
@@ -343,7 +341,6 @@ class Play_Fight(Global):
         self.run()
 
     def run(self):
-
         # Boucle principale du jeu
         self.play_fight_running = True
         self.enemy_chosen = False
@@ -371,13 +368,13 @@ class Play_Fight(Global):
                             self.attack_e = True
                             
                         elif self.attack_e == True:
-                            self.attack_player.attack_e(self.pv_pokemon,self.puissance_rival,self.type_rival,self.type_pokemon,self.defense_pokemon,self.name_rival,self.name_pokemon)
+                            self.attack_enemy.attack_e(self.pv_pokemon,self.puissance_rival,self.type_rival,self.type_pokemon,self.defense_pokemon,self.name_rival,self.name_pokemon)
                             self.attack_e = False
                             self.attack_p = True
                         
                     # Bag                        
-                    elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
-                        self.message_bag()
+                    # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
+                    #     self.message_bag()
 
                     # Pokemon
                     elif self.is_mouse_over_button (pygame.Rect(550, 450, 95, 75)): 
@@ -391,7 +388,6 @@ class Play_Fight(Global):
                         self.c.cloud()
                         self.play_fight_running = False 
                    
-
             if not self.run_clicked:
                 self.message_start()
             else:

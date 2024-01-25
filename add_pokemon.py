@@ -2,7 +2,6 @@ from global_def import Global
 from info_pokemon import Info_pokemon
 import pygame
 import json
-
 class Add_Pokemon(Global):
     def __init__(self):
         Global.__init__(self)

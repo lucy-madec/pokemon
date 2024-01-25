@@ -1,5 +1,4 @@
 from type_pok import Type
-
 class Attack_player(Type):
     
     def __init__(self):

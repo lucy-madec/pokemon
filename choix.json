@@ -8,11 +8,11 @@
     "defense": 40
   },
   {
-    "nom": "Carapuce",
-    "type": "eau",
+    "nom": "Poussacha",
+    "type": "plante",
     "niveau": 1,
-    "puissance": 48,
-    "pv": 44,
-    "defense": 65
+    "puissance": 61,
+    "pv": 40,
+    "defense": 54
   }
 ]
