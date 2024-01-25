@@ -86,16 +86,7 @@ class Info_pokemon(Global):
         background = pygame.image.load(r'images\images-pokedex\pokedex211.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
-        self.button_back()       
-
-    # def button_back(self):
-    #     # Affiche le bouton BACK
-    #     self.rect_radius(5, self.white, 640, 10, 70, 25)
-                
-    # def button_add(self):
-    #     # Affiche le bouton BACK
-    #     self.rect_radius(5, self.white, 540, 10, 70, 25)
-    #     self.text_c1("ADD", self.black, 550, 13)                    
+        self.button_back()                        
 
     def is_mouse_over_button(self, button_rect):
         mouse_pos = pygame.mouse.get_pos()

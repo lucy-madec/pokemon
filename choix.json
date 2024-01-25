@@ -1,9 +1,9 @@
 [
   {
-    "nom": "Evoli",
-    "type": "normal",
+    "nom": "Etourvol",
+    "type": "vol",
     "niveau": 1,
-    "puissance": 55,
+    "puissance": 75,
     "pv": 55,
     "defense": 50
   },
