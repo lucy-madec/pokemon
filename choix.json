@@ -1,11 +1,11 @@
 [
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Tiplouf",
+    "type": "eau",
     "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50
+    "puissance": 51,
+    "pv": 53,
+    "defense": 53
   },
   {
     "nom": "Poussacha",
