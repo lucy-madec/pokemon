@@ -54,5 +54,21 @@
     "puissance": 51,
     "pv": 53,
     "defense": 53
-  }  
+  },
+  {
+    "nom": "Caninos",
+    "type": "feu",
+    "niveau": 1,
+    "puissance": 70,
+    "pv": 55,
+    "defense": 45
+  },
+  {
+    "nom": "Etourvol",
+    "type": "vol",
+    "niveau": 1,
+    "puissance": 75,
+    "pv": 55,
+    "defense": 50
+  }
 ]
