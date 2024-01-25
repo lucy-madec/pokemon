@@ -17,6 +17,8 @@ class Global:
         self.green = "#488030"
         self.brown = "#e09828"
         self.pink = "#f8a8b0"
+        self.red = "#d80001"
+        self.green2 = "#61e002"
         self.police_c1 = pygame.font.Font("Pokemon Classic.ttf",10)
         self.police_c2 = pygame.font.Font("Pokemon Classic.ttf",15)  
         self.police_c3 = pygame.font.Font("Pokemon Classic.ttf",50)

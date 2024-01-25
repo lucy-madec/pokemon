@@ -18,11 +18,13 @@ class Pokedex(Global):
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c3("POKEDEX",self.black,230,30)     
     
-    # Afficher page 2 Pokedex
+    # Afficher page 2
     def ajout_pokemon(self): 
         
         # Afficher titre
         self.background()
+
+        # Afficher titre
         self.rect_radius(10,self.white,200, 40, 440, 80)
         self.text_c3("POKEDEX",self.black,230,30)
 

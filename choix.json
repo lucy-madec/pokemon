@@ -1,51 +1,11 @@
 [
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Pikachu",
+    "type": "electrique",
     "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50
-  },
-  {
-    "nom": "Coupenotte",
-    "type": "dragon",
-    "niveau": 1,
-    "puissance": 87,
-    "pv": 46,
-    "defense": 60
-  },
-  {
-    "nom": "Chochodile",
-    "type": "feu",
-    "niveau": 1,
-    "puissance": 45,
-    "pv": 67,
-    "defense": 59
-  },
-  {
-    "nom": "Coupenotte",
-    "type": "dragon",
-    "niveau": 1,
-    "puissance": 87,
-    "pv": 46,
-    "defense": 60
-  },
-  {
-    "nom": "Manzai",
-    "type": "roche",
-    "niveau": 1,
-    "puissance": 80,
-    "pv": 50,
-    "defense": 95
-  },
-  {
-    "nom": "Spectrum",
-    "type": "poison",
-    "niveau": 1,
-    "puissance": 50,
-    "pv": 45,
-    "defense": 45
+    "puissance": 55,
+    "pv": 35,
+    "defense": 40
   },
   {
     "nom": "Magireve",
@@ -54,13 +14,5 @@
     "puissance": 60,
     "pv": 60,
     "defense": 60
-  },
-  {
-    "nom": "Manzai",
-    "type": "roche",
-    "niveau": 1,
-    "puissance": 80,
-    "pv": 50,
-    "defense": 95
   }
 ]
