@@ -201,25 +201,37 @@ class Add_Pokemon(Global):
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 130, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
-                                self.read_json("Etourvol") 
+                                self.read_json("Etourvol")
+                                pokemon_image = pygame.image.load("images/images-add/add_pokemon11.png")
+                                pokemon_image = pygame.transform.scale(pokemon_image, (50, 50))
+                                self.screen.blit(pokemon_image, (100, 130))
    
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 250, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
                                 self.read_json("Floravol")
+                                pokemon_image = pygame.image.load("images/images-add/add_pokemon11.png")
+                                pokemon_image = pygame.transform.scale(pokemon_image, (50, 50))
+                                self.screen.blit(pokemon_image, (100, 250))
                                             
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 370, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
-                                self.read_json("Lainergie")           
+                                self.read_json("Lainergie")
+                                pokemon_image = pygame.image.load("images/images-add/add_pokemon11.png")
+                                pokemon_image = pygame.transform.scale(pokemon_image, (50, 50))
+                                self.screen.blit(pokemon_image, (100, 370))       
                                                         
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 490, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
                                 self.read_json("Luxio")
+                                pokemon_image = pygame.image.load("images/images-add/add_pokemon11.png")
+                                pokemon_image = pygame.transform.scale(pokemon_image, (50, 50))
+                                self.screen.blit(pokemon_image, (100, 490))
 
                     if self.poke2:
                         self.button_menu()
@@ -230,25 +242,37 @@ class Add_Pokemon(Global):
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 130, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
-                                self.read_json("Magicarpe") 
+                                self.read_json("Magicarpe")
+                                pokemon_image = pygame.image.load("images/images-add/add_pokemon11.png")
+                                pokemon_image = pygame.transform.scale(pokemon_image, (50, 50))
+                                self.screen.blit(pokemon_image, (100, 130)) 
                                     
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(70, 230, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
                                 self.read_json("Phanpy")
+                                pokemon_image = pygame.image.load("images/images-add/add_pokemon11.png")
+                                pokemon_image = pygame.transform.scale(pokemon_image, (50, 50))
+                                self.screen.blit(pokemon_image, (100, 253))
                                             
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 370, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
-                                self.read_json("Psykokwak")           
+                                self.read_json("Psykokwak")  
+                                pokemon_image = pygame.image.load("images/images-add/add_pokemon11.png")
+                                pokemon_image = pygame.transform.scale(pokemon_image, (50, 50))
+                                self.screen.blit(pokemon_image, (100, 370))         
                                                         
                         if event.type == pygame.MOUSEBUTTONDOWN:
                             mouse_x, mouse_y = pygame.mouse.get_pos()
                             button_rect = pygame.Rect(100, 490, 600, 100)
                             if button_rect.collidepoint(mouse_x, mouse_y):
                                 self.read_json("Roudoudou")
+                                pokemon_image = pygame.image.load("images/images-add/add_pokemon11.png")
+                                pokemon_image = pygame.transform.scale(pokemon_image, (50, 50))
+                                self.screen.blit(pokemon_image, (100, 490))
 
             self.button_menu()
             self.button_quit()
@@ -258,5 +282,5 @@ class Add_Pokemon(Global):
             pygame.display.flip()
             self.clock.tick(30)
 
-# test_add_pokemon = Add_Pokemon()
-# test_add_pokemon.add_pokemon_run()
+test_add_pokemon = Add_Pokemon()
+test_add_pokemon.add_pokemon_run()

@@ -64,11 +64,11 @@
     "defense": 45
   },
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Phanpy",
+    "type": "sol",
     "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50
+    "puissance": 60,
+    "pv": 90,
+    "defense": 60
   }
 ]
