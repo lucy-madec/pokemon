@@ -4,7 +4,7 @@ class Attack_enemy(Type):
     
     def __init__(self):
         Type.__init__(self)
-        self.remaining_life_player = 1
+        self.remaining_life_player = 100
         self.att = False
         
     def pv_start(self,pv):

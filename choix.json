@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Etourvol",
-    "type": "vol",
+    "nom": "Pikachu",
+    "type": "electrique",
     "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50
+    "puissance": 55,
+    "pv": 35,
+    "defense": 40
   },
   {
-    "nom": "Charibari",
-    "type": "acier",
+    "nom": "Manzai",
+    "type": "roche",
     "niveau": 1,
     "puissance": 80,
-    "pv": 72,
-    "defense": 49
+    "pv": 50,
+    "defense": 95
   }
 ]
