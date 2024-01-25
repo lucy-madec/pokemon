@@ -19,25 +19,25 @@ class Combat(Type):
             pokemon_dict = choix_data[0]
             rival_dict = choix_data[1]
 
-            name_pokemon= pokemon_dict["nom"]
-            type_pokemon = pokemon_dict["type"]
-            puissance_pokemon = pokemon_dict["puissance"]
-            pv_pokemon = pokemon_dict["pv"]
-            defense_pokemon = pokemon_dict["defense"]
+            self.name_pokemon= pokemon_dict["nom"]
+            self.type_pokemon = pokemon_dict["type"]
+            self.puissance_pokemon = pokemon_dict["puissance"]
+            self.pv_pokemon = pokemon_dict["pv"]
+            self.defense_pokemon = pokemon_dict["defense"]
             
-            name_rival = rival_dict["nom"]
-            type_rival = rival_dict["type"]
-            puissance_rival = rival_dict["puissance"]
-            pv_rival = rival_dict["pv"]
-            defense_rival = rival_dict["defense"]
+            self.name_rival = rival_dict["nom"]
+            self.type_rival = rival_dict["type"]
+            self.puissance_rival = rival_dict["puissance"]
+            self.pv_rival = rival_dict["pv"]
+            self.defense_rival = rival_dict["defense"]
 
         if type_player =="normal":
-            pokemon_damage = self.normal(type_enemy, puissance)
+            pokemon_damage = self.normal(self.type_rival, self.puissance_pokemon)
             self.damage_poke = pokemon_damage * (1 - defense // 200)
             remaining_life  = pv - self.damage_poke
             print (f"Le pokemon inflige {self.damage_poke} dégats, l'autre avait {pv}HP, il lui reste {remaining_life }HP mais il avait {defense}de def")
             return remaining_life
-        
+
         if type_player =="feu":
             pokemon_damage = self.feu(type_enemy, puissance)
             self.damage_poke = pokemon_damage * (1 - defense // 200) 
