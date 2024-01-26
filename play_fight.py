@@ -431,7 +431,9 @@ class Play_Fight(Global):
                         self.run_clicked = True
                         self.message_run()
                         self.c.cloud()
-                        self.play_fight_running = False 
+                        self.play_fight_running = False
+                        self.run_clicked = False
+
                    
             if not self.run_clicked:
                 self.message_start()

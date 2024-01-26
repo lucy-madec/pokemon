@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Tiplouf",
-    "type": "eau",
+    "nom": "Evoli",
+    "type": "normal",
     "niveau": 1,
-    "puissance": 51,
-    "pv": 53,
-    "defense": 53
+    "puissance": 55,
+    "pv": 55,
+    "defense": 50
   },
   {
-    "nom": "Soporifix",
-    "type": "psy",
+    "nom": "Chochodile",
+    "type": "feu",
     "niveau": 1,
-    "puissance": 48,
-    "pv": 60,
-    "defense": 45
+    "puissance": 45,
+    "pv": 67,
+    "defense": 59
   }
 ]
