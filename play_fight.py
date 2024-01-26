@@ -20,6 +20,7 @@ class Play_Fight(Global):
         self.poke = Pokedex()
         self.attack_p = True
         self.attack_e = False
+        self.play2 = False
         
     # Afficher background
     def background(self):
@@ -352,13 +353,17 @@ class Play_Fight(Global):
     def rect_hp(self, x, y, longueur, largeur, hp, hp_max):
             if longueur * hp // hp_max >= 110:
                 pygame.draw.rect(self.screen, (self.green2), pygame.Rect(x, y, longueur * hp // hp_max, largeur))
-            elif 85 > longueur * hp // hp_max >= 35:
+            elif 85 > longueur * hp // hp_max >= 20:
                 pygame.draw.rect(self.screen, (self.yellow), pygame.Rect(x, y, longueur * hp // hp_max, largeur))
             elif 34 > longueur * hp // hp_max > 0 :
                 pygame.draw.rect(self.screen, (self.red), pygame.Rect(x, y, longueur * hp // hp_max, largeur))
             else:
                 pygame.draw.rect(self.screen, (self.black), pygame.Rect(x, y, longueur * hp // hp_max, largeur))
-            
+                if self.attack_enemy.remaining_life_player == 0:
+                    self.message_end_lose()
+                elif self.attack_player.remaining_life_enemy == 0:
+                    self.message_end_win()
+                   
     def play_fight_run(self):
         self.play_fight_running = True 
         self.run()
@@ -385,16 +390,29 @@ class Play_Fight(Global):
                     # Fight                      
                     elif self.is_mouse_over_button (pygame.Rect(350, 450, 95, 75)):
                         self.message_fight()
-                        if self.attack_p == True:
-                            self.attack_player.attack_p(self.pv_rival,self.puissance_pokemon,self.type_pokemon,self.type_rival,self.defense_rival,self.name_pokemon,self.name_rival)
-                            self.attack_p = False
-                            self.attack_e = True
-                            
-                        elif self.attack_e == True:
-                            self.attack_enemy.attack_e(self.pv_pokemon,self.puissance_rival,self.type_rival,self.type_pokemon,self.defense_pokemon,self.name_rival,self.name_pokemon)
-                            self.attack_e = False
-                            self.attack_p = True
-                        
+                        if not self.play2:
+                            if self.attack_p == True:
+                                self.attack_player.attack_p(self.pv_rival,self.puissance_pokemon,self.type_pokemon,self.type_rival,self.defense_rival,self.name_pokemon,self.name_rival)
+                                self.attack_p = False
+                                self.attack_e = True
+                                
+                            elif self.attack_e == True:
+                                self.attack_enemy.attack_e(self.pv_pokemon,self.puissance_rival,self.type_rival,self.type_pokemon,self.defense_pokemon,self.name_rival,self.name_pokemon)
+                                self.attack_e = False
+                                self.attack_p = True
+                                self.play2 = True
+                        else:
+                            if self.attack_p == True:
+                                self.attack_player.attack_p(self.attack_player.remaining_life_enemy,self.puissance_pokemon,self.type_pokemon,self.type_rival,self.defense_rival,self.name_pokemon,self.name_rival)
+                                self.attack_p = False
+                                self.attack_e = True
+                                
+                            elif self.attack_e == True:
+                                self.attack_enemy.attack_e(self.attack_enemy.remaining_life_player,self.puissance_rival,self.type_rival,self.type_pokemon,self.defense_pokemon,self.name_rival,self.name_pokemon)
+                                self.attack_e = False
+                                self.attack_p = True
+
+                                
                     # Bag                        
                     # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
                     #     self.message_bag()
@@ -436,6 +454,7 @@ class Play_Fight(Global):
                 
             self.rival()
             self.attack_player.pv_start(self.pv_rival)
+            self.attack_enemy.pv_start(self.pv_pokemon)
             
             self.rect_hp(650,350,110,10,self.attack_enemy.remaining_life_player,self.pv_pokemon)
             self.rect_hp(75,52,110,10,self.attack_player.remaining_life_enemy,self.pv_rival)

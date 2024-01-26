@@ -5,7 +5,7 @@ class Type:
             damage = damage // 2
             return damage
 
-        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "plante" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "poison" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebres" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "plante" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "poison" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage
             print(damage)
             return damage
@@ -23,7 +23,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "electrique"or type_rival == "combat" or type_rival == "poison" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "spectre" or type_rival == "tenebres" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "electrique"or type_rival == "combat" or type_rival == "poison" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "spectre" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
@@ -42,7 +42,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "poison" or type_rival == "vol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "spectre" or type_rival == "tenebres" or type_rival == "acier" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "poison" or type_rival == "vol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "spectre" or type_rival == "tenebre" or type_rival == "acier" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
@@ -61,7 +61,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "psy" or type_rival == "spectre" or type_rival == "tenebres" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "psy" or type_rival == "spectre" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
@@ -81,7 +81,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "feu" or type_rival == "glace" or type_rival == "combat" or type_rival == "poison" or type_rival == "sol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "roche" or type_rival == "spectre" or type_rival == "tenebres" or type_rival == "acier" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "feu" or type_rival == "glace" or type_rival == "combat" or type_rival == "poison" or type_rival == "sol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "roche" or type_rival == "spectre" or type_rival == "tenebre" or type_rival == "acier" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
@@ -100,7 +100,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "electrique" or type_rival == "combat" or type_rival == "poison" or type_rival == "psy" or type_rival == "insecte" or type_rival == "roche" or type_rival == "spectre" or type_rival == "tenebres" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "electrique" or type_rival == "combat" or type_rival == "poison" or type_rival == "psy" or type_rival == "insecte" or type_rival == "roche" or type_rival == "spectre" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
@@ -113,7 +113,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "glace" or type_rival == "roche" or type_rival == "tenebres" or type_rival == "acier":
+        elif type_rival == "normal" or type_rival == "glace" or type_rival == "roche" or type_rival == "tenebre" or type_rival == "acier":
             damage = damage * 2
             print(damage)
             print(type_rival)
@@ -138,7 +138,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "vol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "dragon" or type_rival == "tenebres" or type_rival == "acier":
+        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "vol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "dragon" or type_rival == "tenebre" or type_rival == "acier":
             damage = damage
             print(damage)
             print(type_rival)
@@ -158,7 +158,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "eau" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebres" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "eau" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
@@ -177,7 +177,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "glace" or type_rival == "poison" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebres" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "glace" or type_rival == "poison" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
@@ -196,7 +196,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "plante" or type_rival == "electrique" or type_rival == "glace" or type_rival == "sol" or type_rival == "vol" or type_rival == "insecte" or type_rival == "roche"  or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebres" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "plante" or type_rival == "electrique" or type_rival == "glace" or type_rival == "sol" or type_rival == "vol" or type_rival == "insecte" or type_rival == "roche"  or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
@@ -209,7 +209,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "plante" or type_rival == "psy" or type_rival == "tenebres":
+        elif type_rival == "plante" or type_rival == "psy" or type_rival == "tenebre":
             damage = damage * 2
             print(damage)
             print(type_rival)
@@ -234,12 +234,27 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "eau" or type_rival == "plante" or type_rival == "electrique" or type_rival == "poison" or type_rival == "psy" or type_rival == "roche" or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebres" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "eau" or type_rival == "plante" or type_rival == "electrique" or type_rival == "poison" or type_rival == "psy" or type_rival == "roche" or type_rival == "spectre" or type_rival == "dragon" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
             return damage
-    
+        
+    def spectre(self, type_rival, damage): 
+        if type_rival == "tenebre" or type_rival == "acier":
+            damage = damage // 2
+            return damage
+            
+        elif type_rival == "psy" or type_rival == "spectre":
+            damage = damage * 2
+            return damage
+            
+        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "plante" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "poison" or type_rival == "sol" or type_rival == "vol" or type_rival == "insecte" or type_rival == "roche" or type_rival == "dragon":
+            damage = damage
+            print(damage)
+            print(type_rival)
+            return damage
+        
     def dragon(self, type_rival, damage): 
         if type_rival == "acier":
             damage = damage // 2
@@ -253,14 +268,14 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "plante" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "poison" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "roche" or type_rival == "spectre" or type_rival == "tenebres" or type_rival == "fee":
+        elif type_rival == "normal" or type_rival == "feu" or type_rival == "eau" or type_rival == "plante" or type_rival == "electrique" or type_rival == "glace" or type_rival == "combat" or type_rival == "poison" or type_rival == "sol" or type_rival == "vol" or type_rival == "psy" or type_rival == "insecte" or type_rival == "roche" or type_rival == "spectre" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage
             print(damage)
             print(type_rival)
             return damage
     
-    def tenebres(self, type_rival, damage): 
-        if type_rival == "combat" or type_rival == "tenebres" or type_rival == "fee":
+    def tenebre(self, type_rival, damage): 
+        if type_rival == "combat" or type_rival == "tenebre" or type_rival == "fee":
             damage = damage // 2
             print(damage)
             print(type_rival)
@@ -285,7 +300,7 @@ class Type:
             print(type_rival)
             return damage
             
-        elif type_rival == "combat" or type_rival == "dragon" or type_rival == "tenebres":
+        elif type_rival == "combat" or type_rival == "dragon" or type_rival == "tenebre":
             damage = damage * 2
             print(damage)
             print(type_rival)
@@ -296,3 +311,4 @@ class Type:
             print(damage)
             print(type_rival)
             return damage
+        

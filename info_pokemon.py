@@ -45,8 +45,8 @@ class Info_pokemon(Global):
         background = pygame.image.load(r'images\images-pokedex\pokedex8b.png')
         background = background.convert()
         self.screen.blit(background, (0,0))
-
-
+        
+    #Information pokémon ADD
     def etourvol(self):
         background = pygame.image.load(r'images\images-pokedex\pokedex208.png')
         background = background.convert()
