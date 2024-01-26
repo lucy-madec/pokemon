@@ -20,7 +20,6 @@ class Play_Fight(Global):
         self.poke = Pokedex()
         self.attack_p = True
         self.attack_e = False
-        self.selected_pokemon = None
         
     # Afficher background
     def background(self):
@@ -108,7 +107,7 @@ class Play_Fight(Global):
             if name == "Luxio" and not self.run_clicked:
                 self.img_pokemon("Luxio",r'images/images-fight/fight12.png',190,209,110,215)
 
-            if name == "Magicarpe" and not self.run_clicked:
+            if name == "Magicarpe"and not self.run_clicked:
                 self.img_pokemon("Magicarpe",r'images/images-fight/fight13.png',190,199,109,225)
 
             if name == "Phanpy" and not self.run_clicked:
@@ -202,8 +201,11 @@ class Play_Fight(Global):
 
         if name_pokemons:
             current_pokemon_name = name_pokemons[0]
-            self.text_c1(current_pokemon_name, self.black, 620, 330)
-            self.text_c1(self.name_rival, self.black, 43, 25)
+            self.text_c2(current_pokemon_name, self.black, 43, 25)
+            self.text_c2(self.name_rival, self.black, 590, 323)
+
+        # self.text_c1(self.name_pokemon, self.black, 620, 330)
+        # self.text_c1(self.name_rival, self.black, 43, 25)
     
     def image_hp(self):
         # PV coté gauche
@@ -315,21 +317,27 @@ class Play_Fight(Global):
         for name in name_pokemons:
             if name == "Spectrum":
                 self.img_pokemon("Spectrum",r'images/images-enemy/enemy1.png', 200,209,400,105)
+                self.text_c2(name, self.black, 590, 323)
     
             elif name == "Soporifix":
                 self.img_pokemon("Soporifix",r'images/images-enemy/enemy2.png', 180,189,400,90)
+                self.text_c2(name, self.black, 580, 322)
 
             elif name == "Manzai":
                 self.img_pokemon("Manzai",r'images/images-enemy/enemy3.png', 200,209,430,80)
+                self.text_c2(name, self.black, 620, 323)
                                 
             elif name == "Magireve":
                 self.img_pokemon("Magireve",r'images/images-enemy/enemy4.png', 200,209,430,80)
+                self.text_c2(name, self.black, 590, 322)
 
             elif name == "Coupenotte":
                 self.img_pokemon("Coupenotte",r'images/images-enemy/enemy5.png', 200,209,430,80)
+                self.text_c1(name, self.black, 595, 328)
 
             elif name == "Charibari":
                 self.img_pokemon("Charibari",r'images/images-enemy/enemy6.png',200,209,430,80)
+                self.text_c2(name, self.black, 590, 322)
                 
             elif name == "Carapuce":
                 self.img_pokemon("Carapuce",r'images/images-enemy/enemy7.png',200,209,430,80)
@@ -337,9 +345,11 @@ class Play_Fight(Global):
 
             elif name == "Poussacha":
                 self.img_pokemon("Poussacha",r'images/images-enemy/enemy8.png',250,259,400,70)
+                self.text_c2(name, self.black, 580, 323)
 
             elif name == "Chochodile":
                 self.img_pokemon("Chochodile",r'images/images-enemy/enemy9.png', 250,259,400,70)
+                self.text_c2(name, self.black, 580, 323)
                 
     # Afficher barre hp
     def rect_hp(self, x, y, longueur, largeur, hp, hp_max):
@@ -403,7 +413,6 @@ class Play_Fight(Global):
                         self.message_run()
                         self.c.cloud()
                         self.play_fight_running = False 
-                        self.run_clicked = False
                    
             if not self.run_clicked:
                 self.message_start()
@@ -438,7 +447,7 @@ class Play_Fight(Global):
             self.show_pv()
             self.display_name_pokemon()
             # Afficher les messages 
-            self.message_start()
+            # self.message_start()
             # self.message_fight()
             # self.message_run()
             # self.message_pokemon()

@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Tiplouf",
-    "type": "eau",
+    "nom": "Pikachu",
+    "type": "electrique",
     "niveau": 1,
-    "puissance": 51,
-    "pv": 53,
-    "defense": 53
+    "puissance": 55,
+    "pv": 35,
+    "defense": 40
   },
   {
-    "nom": "Manzai",
-    "type": "roche",
+    "nom": "Carapuce",
+    "type": "eau",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 50,
-    "defense": 95
+    "puissance": 48,
+    "pv": 44,
+    "defense": 65
   }
 ]
