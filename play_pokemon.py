@@ -135,7 +135,7 @@ class Play_Pokemon(Global):
         pokemon_data = next((pokemon for pokemon in data if pokemon["nom"] == name), None)
 
         if pokemon_data:
-            with open('choix.json', 'w') as new_json_file:
+            with open('choice.json', 'w') as new_json_file:
                 json.dump([pokemon_data], new_json_file, indent=2)
         else:
             print(f"Pokemon {name} Non Trouvé")
