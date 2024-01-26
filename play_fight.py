@@ -72,52 +72,52 @@ class Play_Fight(Global):
         name_pokemons = [pokemon["nom"] for pokemon in data]
         
         for name in name_pokemons:
-            if name == "Pikachu" or not self.run_clicked:
+            if name == "Pikachu" and not self.run_clicked:
                 self.img_pokemon("Pikachu",r'images/images-fight/fight1.png',200,209,120,225)
                 
-            if name == "Capumain" or not self.run_clicked:
+            if name == "Capumain" and not self.run_clicked:
                 self.img_pokemon("Capumain",r'images/images-fight/fight2.png',190,209,120,225)
 
-            if name == "Evoli" or not self.run_clicked:
+            if name == "Evoli" and not self.run_clicked:
                 self.img_pokemon("Evoli",r'images/images-fight/fight3.png',205,209,100,205)
                                 
-            if name == "Marcacrin" or not self.run_clicked:
+            if name == "Marcacrin" and not self.run_clicked:
                 self.img_pokemon("Marcacrin",r'images/images-fight/fight4.png',150,169,139,245)
 
-            if name == "Salameche" or not self.run_clicked:
+            if name == "Salameche" and not self.run_clicked:
                 self.img_pokemon("Salameche",r'images/images-fight/fight5.png',190,199,120,225)
 
-            if name == "Medhyena" or not self.run_clicked:
+            if name == "Medhyena" and not self.run_clicked:
                 self.img_pokemon("Medhyena",r'images/images-fight/fight6.png',180,199,109,225)
                 
-            if name == "Tiplouf" or not self.run_clicked:
+            if name == "Tiplouf" and not self.run_clicked:
                 self.img_pokemon("Tiplouf",r'images/images-fight/fight7.png',230,219,100,200)
                 
-            if name == "Caninos" or not self.run_clicked:
+            if name == "Caninos" and not self.run_clicked:
                 self.img_pokemon("Caninos",r'images/images-fight/fight8.png',190,209,100,205)
                 
-            if name == "Etourvol" or not self.run_clicked:
+            if name == "Etourvol" and not self.run_clicked:
                 self.img_pokemon("Etourvol",r'images/images-fight/fight9.png',170,189,109,225)
                 
-            if name == "Floravol" or not self.run_clicked:
+            if name == "Floravol" and not self.run_clicked:
                 self.img_pokemon("Floravol",r'images/images-fight/fight10.png',180,199,109,225)
 
-            if name == "Lainergie" or not self.run_clicked:
+            if name == "Lainergie" and not self.run_clicked:
                 self.img_pokemon("Lainergie",r'images/images-fight/fight11.png',185,189,109,225)
                 
-            if name == "Luxio" or not self.run_clicked:
+            if name == "Luxio" and not self.run_clicked:
                 self.img_pokemon("Luxio",r'images/images-fight/fight12.png',190,209,110,215)
 
-            if name == "Magicarpe" or not self.run_clicked:
+            if name == "Magicarpe" and not self.run_clicked:
                 self.img_pokemon("Magicarpe",r'images/images-fight/fight13.png',190,199,109,225)
 
-            if name == "Phanpy" or not self.run_clicked:
+            if name == "Phanpy" and not self.run_clicked:
                 self.img_pokemon("Phanpy",r'images/images-fight/fight14.png',140,159,149,260)
                 
-            if name == "Psykokwak" or not self.run_clicked:
+            if name == "Psykokwak" and not self.run_clicked:
                 self.img_pokemon("Psykokwak",r'images/images-fight/fight15.png',170,189,120,225)
                 
-            if name == "Roudoudou" or not self.run_clicked:
+            if name == "Roudoudou" and not self.run_clicked:
                 self.img_pokemon("Roudoudou",r'images/images-fight/fight16.png',180,189,109,225)
 
     def rectangle(self): 
@@ -403,6 +403,7 @@ class Play_Fight(Global):
                         self.message_run()
                         self.c.cloud()
                         self.play_fight_running = False 
+                        self.run_clicked = False
                    
             if not self.run_clicked:
                 self.message_start()

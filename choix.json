@@ -1,11 +1,11 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Tiplouf",
+    "type": "eau",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 35,
-    "defense": 40
+    "puissance": 51,
+    "pv": 53,
+    "defense": 53
   },
   {
     "nom": "Manzai",
