@@ -6,15 +6,12 @@ class Attack_enemy(Type):
         Type.__init__(self)
         self.remaining_life_player = 100
         self.att = False
-        
+
     def pv_start(self,pv):
         if self.att == False:
             self.remaining_life_player = pv
             self.att = True
             return self.remaining_life_player
-            
-        else:
-            pass
         
     def attack_e(self, pv, puissance, type_player, type_enemy, defense,name_pok,name_rival):
 
@@ -23,6 +20,8 @@ class Attack_enemy(Type):
                 damage_poke = pokemon_damage - (defense // 200)
                 self.remaining_life_player  = pv - damage_poke
                 print (f"{name_pok} inflige {damage_poke} dégats,{name_rival} avait {pv} HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player
 
             if type_player =="feu":
@@ -30,6 +29,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv} HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="eau":
@@ -37,6 +38,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv} HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="plante":
@@ -44,6 +47,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv} HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="electrique":
@@ -51,6 +56,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv} HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
 
             if type_player =="glace":
@@ -58,6 +65,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv} HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="combat":
@@ -65,6 +74,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv} HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="poison":
@@ -72,6 +83,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv}HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="sol":
@@ -79,6 +92,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv}HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="vol":
@@ -86,6 +101,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv}HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="psy":
@@ -93,6 +110,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv}HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="insecte":
@@ -100,6 +119,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv}HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
                     
             if type_player =="roche":
@@ -107,13 +128,26 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv}HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
+            
+            if type_player =="spectre":
+                pokemon_damage = self.spectre(type_enemy, puissance)
+                damage_poke = pokemon_damage - (defense // 200)
+                self.remaining_life_player  = pv - damage_poke
+                print (f"{name_pok} inflige {damage_poke} dégats,{name_rival} avait {pv} HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
+                return self.remaining_life_player
             
             if type_player =="dragon":
                 pokemon_damage = self.dragon(type_enemy, puissance)
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv}HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="tenebre":
@@ -121,6 +155,8 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv}HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
             
             if type_player =="fee":
@@ -128,5 +164,7 @@ class Attack_enemy(Type):
                 self.damage_poke = pokemon_damage - (defense // 200) 
                 self.remaining_life_player  = pv - self.damage_poke
                 print (f"{name_pok} inflige {self.damage_poke} dégats,{name_rival} avait {pv}HP, il lui reste {self.remaining_life_player }HP mais il avait {defense}de def")
+                if self.remaining_life_player <= 0:
+                    self.remaining_life_player = 0
                 return self.remaining_life_player 
         

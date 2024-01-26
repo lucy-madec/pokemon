@@ -8,11 +8,11 @@
     "defense": 40
   },
   {
-    "nom": "Manzai",
-    "type": "roche",
+    "nom": "Spectrum",
+    "type": "poison",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 50,
-    "defense": 95
+    "puissance": 50,
+    "pv": 45,
+    "defense": 45
   }
 ]
