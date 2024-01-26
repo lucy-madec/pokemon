@@ -202,8 +202,8 @@ class Play_Fight(Global):
 
         if name_pokemons:
             current_pokemon_name = name_pokemons[0]
-            self.text_c2(current_pokemon_name, self.black, 43, 25)
-            self.text_c2(self.name_rival, self.black, 590, 323)
+            self.text_c1(current_pokemon_name, self.black, 43, 25)
+            self.text_c1(self.name_rival, self.black, 590, 323)
     
     def image_hp(self):
         # PV coté gauche
