@@ -191,11 +191,12 @@ class Pokedex(Global):
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.pok_running = False
+
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    # Vérifier si le bouton gauche de la souris est cliqué
+                    # Bouton QUIT
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
-                    #     # Quitterle jeu lors du clic sur le bouton QUIT
                         pygame.quit()
+                    # Bouton MENU
                     if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         self.pok_running = False
                         

@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 35,
-    "defense": 40
-  },
-  {
-    "nom": "Carapuce",
+    "nom": "Tiplouf",
     "type": "eau",
     "niveau": 1,
+    "puissance": 51,
+    "pv": 53,
+    "defense": 53
+  },
+  {
+    "nom": "Soporifix",
+    "type": "psy",
+    "niveau": 1,
     "puissance": 48,
-    "pv": 44,
-    "defense": 65
+    "pv": 60,
+    "defense": 45
   }
 ]

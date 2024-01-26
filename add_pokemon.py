@@ -174,8 +174,10 @@ class Add_Pokemon(Global):
                 if event.type == pygame.QUIT:
                     self.add_running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    # Bouton QUIT
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         pygame.quit()
+                    # Bouton MENU
                     if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         self.add_running = False  
 

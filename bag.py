@@ -4,12 +4,13 @@ import pygame
 class Bag(Global):
     def __init__(self): 
             Global.__init__(self)
+            self.bag_running = True
         
     # Initialisation de Pygame
     pygame.init()
     # Afficher background
     def background(self):
-        self.img_back("background", r"images/images-play/Play12.png")
+        self.img_back("background", r"images/images-play/Play13.png")
 
     def rect(self):
         self.rect_radius(10,self.white,10,400,70,460)
@@ -17,34 +18,56 @@ class Bag(Global):
     def text(self):
         self.text_c5("Sorry !",self.black, 250, 350)
         self.text_c6("There are no items available in the bag...", self.black, 250, 360)
+    
+    # Afficher bouton QUIT
+    def button_quit(self):
+        self.rect_radius(5, self.white, 720, 10, 70, 25)
+        self.text_c1("QUIT", self.black, 733, 13)
 
+    # Afficher bouton BACK
+    def button_menu(self):      
+        self.rect_radius(5, self.white, 640, 10, 70, 25)
+        self.text_c1("MENU", self.black, 650, 13)
+    
+    # Vérifier si souris au-dessus du bouton
+    def is_mouse_over_button(self, button_rect):
+        mouse_pos = pygame.mouse.get_pos()
+        return button_rect.collidepoint(mouse_pos) 
+    
     def bag_run(self):
-    # # Définition de la taille de la fenêtre
-    #     largeur, hauteur = 800, 600
-    #     taille_fenetre = (largeur, hauteur)
-    #     fenetre = pygame.display.set_mode(taille_fenetre)
-    
-    
-        
+        self.bag_running = True
+        self.run()
 
-        # Boucle principale
-        en_cours = True
-        while en_cours:
+    
+    def run(self):
+
+        while self.bag_running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    en_cours = False
+                    self.bag_running = False
+
+                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:                   
+                    # Quit
+                    if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
+                            pygame.quit() 
+
+                    # Menu
+                    elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
+                        self.bag_running = False
 
             # Remplir la fenêtre avec la couleur gris
-            # self.screen(self.orange)
             self.background()
             self.rect()
             self.text()
+            self.button_quit()
+            self.button_menu()
 
             # Mettre à jour l'affichage
             pygame.display.flip()
+            pygame.display.update()
 
         # Quand la boucle est terminée, quitter Pygame
-    pygame.quit()
+    # pygame.quit()
 
-test = Bag()
-test.bag_run()
+# test = Bag()
+# test.bag_run()

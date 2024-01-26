@@ -3,6 +3,7 @@ from attack_player import Attack_player
 from attack_enemy import Attack_enemy
 from cloud import Cloud
 from pokedex import Pokedex
+from bag import Bag
 import random
 import pygame
 import json
@@ -21,6 +22,7 @@ class Play_Fight(Global):
         self.attack_p = True
         self.attack_e = False
         self.play2 = False
+        self.bag = Bag()
         
     # Afficher background
     def background(self):
@@ -379,11 +381,11 @@ class Play_Fight(Global):
                     pygame.quit()
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 
-                    # Quit
+                    # Bouton Quit
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         pygame.quit() 
 
-                    # Menu
+                    # Bouton Menu
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                             self.play_fight_running = False                         
 
@@ -414,8 +416,10 @@ class Play_Fight(Global):
 
                                 
                     # Bag                        
-                    # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
-                    #     self.message_bag()
+                    elif self.is_mouse_over_button (pygame.Rect(450, 450, 95, 75)): 
+                        self.message_bag()
+                        self.bag.bag_run()
+                        self.play_fight_running = False
 
                     # Pokemon
                     elif self.is_mouse_over_button (pygame.Rect(550, 450, 95, 75)): 
