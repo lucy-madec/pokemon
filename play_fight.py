@@ -134,13 +134,23 @@ class Play_Fight(Global):
 
     # Afficher bouton QUIT
     def button_quit(self):
-        self.rect_radius(5, self.white, 720, 10, 70, 25)
-        self.text_c1("QUIT", self.black, 733, 13)
+        button_rect = pygame.Rect(720, 10, 70, 25)
+        if self.is_mouse_over_button(button_rect):
+            self.rect_radius(5, self.yellow, 720, 10, 70, 25)
+            self.text_c1("QUIT", self.black, 733, 13)
+        else:
+            self.rect_radius(5, self.white, 720, 10, 70, 25)
+            self.text_c1("QUIT", self.black, 733, 13)
 
-    # Afficher bouton BACK
-    def button_menu(self):      
-        self.rect_radius(5, self.white, 640, 10, 70, 25)
-        self.text_c1("MENU", self.black, 650, 13)
+    # Afficher bouton MENU
+    def button_menu(self):  
+        button_rect = pygame.Rect(640, 10, 70, 25)
+        if self.is_mouse_over_button(button_rect):    
+            self.rect_radius(5, self.yellow, 640, 10, 70, 25)
+            self.text_c1("MENU", self.black, 650, 13)
+        else:
+            self.rect_radius(5, self.white, 640, 10, 70, 25)
+            self.text_c1("MENU", self.black, 650, 13)
 
     # Vérifier si souris au-dessus du bouton
     def is_mouse_over_button(self, button_rect):
