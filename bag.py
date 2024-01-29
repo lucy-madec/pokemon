@@ -8,17 +8,20 @@ class Bag(Global):
         
     # Initialisation de Pygame
     pygame.init()
+
     # Afficher background
     def background(self):
         self.img_back("background", r"images/images-play/Play13.png")
 
-    def rect(self):
-        self.rect_radius(10,self.white,10,400,70,460)
-    
+    # Afficher texte
     def text(self):
-        self.text_c5("Sorry !",self.black, 250, 350)
-        self.text_c6("There are no items available in the bag...", self.black, 250, 360)
-    
+        self.text_c5("SORRY !",self.black, 470, 495)
+        self.text_c6("There are no items available in the bag...", self.black, 315, 530)
+
+    # Afficher zone texte
+    def rect(self):
+        self.rect_radius(10,self.white,300,475,430,95)
+        
     # Afficher bouton QUIT
     def button_quit(self):
         self.rect_radius(5, self.white, 720, 10, 70, 25)
@@ -69,5 +72,5 @@ class Bag(Global):
         # Quand la boucle est terminée, quitter Pygame
     # pygame.quit()
 
-# test = Bag()
-# test.bag_run()
+test = Bag()
+test.bag_run()
