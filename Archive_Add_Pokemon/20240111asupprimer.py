@@ -1,7 +1,7 @@
 # Importer les modules
 from global_def import Global
 from cloud import Test1
-from test2 import Test2
+from bag import Test2
 <<<<<<< HEAD:Archive_Pokedex/menu_am.py
 <<<<<<< HEAD:menu.py
 from info_pokemon import Info_pokemon

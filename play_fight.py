@@ -3,6 +3,7 @@ from attack_player import Attack_player
 from attack_enemy import Attack_enemy
 from cloud import Cloud
 from pokedex import Pokedex
+from bag import Bag
 import random
 import pygame
 import json
@@ -20,6 +21,8 @@ class Play_Fight(Global):
         self.poke = Pokedex()
         self.attack_p = True
         self.attack_e = False
+        self.play2 = False
+        self.bag = Bag()
         
     # Afficher background
     def background(self):
@@ -66,7 +69,7 @@ class Play_Fight(Global):
 
     # Afficher pokemon choisit pour fight
     def choose(self):
-        with open('choix.json', 'r') as json_file:
+        with open('choice.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
         
@@ -131,13 +134,23 @@ class Play_Fight(Global):
 
     # Afficher bouton QUIT
     def button_quit(self):
-        self.rect_radius(5, self.white, 720, 10, 70, 25)
-        self.text_c1("QUIT", self.black, 733, 13)
+        button_rect = pygame.Rect(720, 10, 70, 25)
+        if self.is_mouse_over_button(button_rect):
+            self.rect_radius(5, self.yellow, 720, 10, 70, 25)
+            self.text_c1("QUIT", self.black, 733, 13)
+        else:
+            self.rect_radius(5, self.white, 720, 10, 70, 25)
+            self.text_c1("QUIT", self.black, 733, 13)
 
-    # Afficher bouton BACK
-    def button_menu(self):      
-        self.rect_radius(5, self.white, 640, 10, 70, 25)
-        self.text_c1("MENU", self.black, 650, 13)
+    # Afficher bouton MENU
+    def button_menu(self):  
+        button_rect = pygame.Rect(640, 10, 70, 25)
+        if self.is_mouse_over_button(button_rect):    
+            self.rect_radius(5, self.yellow, 640, 10, 70, 25)
+            self.text_c1("MENU", self.black, 650, 13)
+        else:
+            self.rect_radius(5, self.white, 640, 10, 70, 25)
+            self.text_c1("MENU", self.black, 650, 13)
 
     # Vérifier si souris au-dessus du bouton
     def is_mouse_over_button(self, button_rect):
@@ -194,15 +207,15 @@ class Play_Fight(Global):
 
     # Afficher nom Pokemon player
     def display_name_pokemon(self):
-        with open('choix.json', 'r') as choix_file:
+        with open('choice.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
 
         name_pokemons = [pokemon["nom"] for pokemon in choix_data]
 
         if name_pokemons:
             current_pokemon_name = name_pokemons[0]
-            self.text_c2(current_pokemon_name, self.black, 43, 25)
-            self.text_c2(self.name_rival, self.black, 590, 323)
+            self.text_c1(current_pokemon_name, self.black, 590, 323)
+            self.text_c1(self.name_rival, self.black, 43, 25)
     
     def image_hp(self):
         # PV coté gauche
@@ -231,7 +244,7 @@ class Play_Fight(Global):
 
     # Choisir aléatoirement pokemon ennemi  
     def enemy(self):
-        with open('ennemi.json', 'r') as json_file:
+        with open('enemy.json', 'r') as json_file:
             data = json.load(json_file)
 
         self.name_pokemons = [pokemon["nom"] for pokemon in data]
@@ -255,19 +268,19 @@ class Play_Fight(Global):
             "defense": self.defense_rival
         }
         try:
-            with open('choix.json', 'r') as choix_file:
+            with open('choice.json', 'r') as choix_file:
                 choix_data = json.load(choix_file)
         except FileNotFoundError:
             choix_data = []
 
         choix_data.append(self.nouveau_pokemon)
 
-        with open('choix.json', 'w') as choix_file:
+        with open('choice.json', 'w') as choix_file:
             json.dump(choix_data, choix_file, indent=2)
         
-    # Récupérer info pokemon depuis choix.json
+    # Récupérer info pokemon depuis choice.json
     def information(self):
-        with open('choix.json', 'r') as choix_file:
+        with open('choice.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
         if choix_data:
             pokemon_dict = choix_data[0]
@@ -287,7 +300,7 @@ class Play_Fight(Global):
 
     # Afficher pv texte
     def show_pv(self):
-        with open('choix.json', 'r') as choix_file:
+        with open('choice.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
 
         if choix_data:
@@ -308,57 +321,52 @@ class Play_Fight(Global):
     # Afficher pokemon ennemi
     def rival(self):
         self.information()
-        with open('choix.json', 'r') as choix_file:
+        with open('choice.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
         name_pokemons = [pokemon["nom"] for pokemon in choix_data]
         for name in name_pokemons:
             if name == "Spectrum":
                 self.img_pokemon("Spectrum",r'images/images-enemy/enemy1.png', 200,209,400,105)
-                self.text_c2(name, self.black, 590, 323)
     
             elif name == "Soporifix":
                 self.img_pokemon("Soporifix",r'images/images-enemy/enemy2.png', 180,189,400,90)
-                self.text_c2(name, self.black, 580, 322)
 
             elif name == "Manzai":
                 self.img_pokemon("Manzai",r'images/images-enemy/enemy3.png', 200,209,430,80)
-                self.text_c2(name, self.black, 620, 323)
                                 
             elif name == "Magireve":
                 self.img_pokemon("Magireve",r'images/images-enemy/enemy4.png', 200,209,430,80)
-                self.text_c2(name, self.black, 590, 322)
 
             elif name == "Coupenotte":
                 self.img_pokemon("Coupenotte",r'images/images-enemy/enemy5.png', 200,209,430,80)
-                self.text_c1(name, self.black, 595, 328)
 
             elif name == "Charibari":
                 self.img_pokemon("Charibari",r'images/images-enemy/enemy6.png',200,209,430,80)
-                self.text_c2(name, self.black, 590, 322)
                 
             elif name == "Carapuce":
                 self.img_pokemon("Carapuce",r'images/images-enemy/enemy7.png',200,209,430,80)
-                self.text_c2(name, self.black, 585, 323)
 
             elif name == "Poussacha":
                 self.img_pokemon("Poussacha",r'images/images-enemy/enemy8.png',250,259,400,70)
-                self.text_c2(name, self.black, 580, 323)
 
             elif name == "Chochodile":
                 self.img_pokemon("Chochodile",r'images/images-enemy/enemy9.png', 250,259,400,70)
-                self.text_c2(name, self.black, 580, 323)
                 
     # Afficher barre hp
     def rect_hp(self, x, y, longueur, largeur, hp, hp_max):
             if longueur * hp // hp_max >= 110:
                 pygame.draw.rect(self.screen, (self.green2), pygame.Rect(x, y, longueur * hp // hp_max, largeur))
-            elif 85 > longueur * hp // hp_max >= 35:
+            elif 85 > longueur * hp // hp_max >= 20:
                 pygame.draw.rect(self.screen, (self.yellow), pygame.Rect(x, y, longueur * hp // hp_max, largeur))
             elif 34 > longueur * hp // hp_max > 0 :
                 pygame.draw.rect(self.screen, (self.red), pygame.Rect(x, y, longueur * hp // hp_max, largeur))
             else:
                 pygame.draw.rect(self.screen, (self.black), pygame.Rect(x, y, longueur * hp // hp_max, largeur))
-            
+                if self.attack_enemy.remaining_life_player == 0:
+                    self.message_end_lose()
+                elif self.attack_player.remaining_life_enemy == 0:
+                    self.message_end_win()
+                   
     def play_fight_run(self):
         self.play_fight_running = True 
         self.run()
@@ -374,30 +382,45 @@ class Play_Fight(Global):
                     pygame.quit()
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 
-                    # Quit
+                    # Bouton Quit
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         pygame.quit() 
 
-                    # Menu
+                    # Bouton Menu
                     elif self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                             self.play_fight_running = False                         
 
                     # Fight                      
                     elif self.is_mouse_over_button (pygame.Rect(350, 450, 95, 75)):
                         self.message_fight()
-                        if self.attack_p == True:
-                            self.attack_player.attack_p(self.pv_rival,self.puissance_pokemon,self.type_pokemon,self.type_rival,self.defense_rival,self.name_pokemon,self.name_rival)
-                            self.attack_p = False
-                            self.attack_e = True
-                            
-                        elif self.attack_e == True:
-                            self.attack_enemy.attack_e(self.pv_pokemon,self.puissance_rival,self.type_rival,self.type_pokemon,self.defense_pokemon,self.name_rival,self.name_pokemon)
-                            self.attack_e = False
-                            self.attack_p = True
-                        
+                        if not self.play2:
+                            if self.attack_p == True:
+                                self.attack_player.attack_p(self.pv_rival,self.puissance_pokemon,self.type_pokemon,self.type_rival,self.defense_rival,self.name_pokemon,self.name_rival)
+                                self.attack_p = False
+                                self.attack_e = True
+                                
+                            elif self.attack_e == True:
+                                self.attack_enemy.attack_e(self.pv_pokemon,self.puissance_rival,self.type_rival,self.type_pokemon,self.defense_pokemon,self.name_rival,self.name_pokemon)
+                                self.attack_e = False
+                                self.attack_p = True
+                                self.play2 = True
+                        else:
+                            if self.attack_p == True:
+                                self.attack_player.attack_p(self.attack_player.remaining_life_enemy,self.puissance_pokemon,self.type_pokemon,self.type_rival,self.defense_rival,self.name_pokemon,self.name_rival)
+                                self.attack_p = False
+                                self.attack_e = True
+                                
+                            elif self.attack_e == True:
+                                self.attack_enemy.attack_e(self.attack_enemy.remaining_life_player,self.puissance_rival,self.type_rival,self.type_pokemon,self.defense_pokemon,self.name_rival,self.name_pokemon)
+                                self.attack_e = False
+                                self.attack_p = True
+
+                                
                     # Bag                        
-                    # elif self.is_mouse_over_button (pygame.Rect(650, 450, 95, 75)): 
-                    #     self.message_bag()
+                    elif self.is_mouse_over_button (pygame.Rect(450, 450, 95, 75)): 
+                        self.message_bag()
+                        self.bag.bag_run()
+                        self.play_fight_running = False
 
                     # Pokemon
                     elif self.is_mouse_over_button (pygame.Rect(550, 450, 95, 75)): 
@@ -409,7 +432,9 @@ class Play_Fight(Global):
                         self.run_clicked = True
                         self.message_run()
                         self.c.cloud()
-                        self.play_fight_running = False 
+                        self.play_fight_running = False
+                        self.run_clicked = False
+
                    
             if not self.run_clicked:
                 self.message_start()
@@ -436,6 +461,7 @@ class Play_Fight(Global):
                 
             self.rival()
             self.attack_player.pv_start(self.pv_rival)
+            self.attack_enemy.pv_start(self.pv_pokemon)
             
             self.rect_hp(650,350,110,10,self.attack_enemy.remaining_life_player,self.pv_pokemon)
             self.rect_hp(75,52,110,10,self.attack_player.remaining_life_enemy,self.pv_rival)
@@ -444,7 +470,7 @@ class Play_Fight(Global):
             self.show_pv()
             self.display_name_pokemon()
             # Afficher les messages 
-            # self.message_start()
+            self.message_start()
             # self.message_fight()
             # self.message_run()
             # self.message_pokemon()

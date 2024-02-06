@@ -5,8 +5,7 @@
       "niveau": 1,
       "puissance": 50,
       "pv": 45,
-      "defense": 45,
-      "image": "images/images-enemy/enemy1.png"
+      "defense": 45
     },
     {
       "nom": "Soporifix",
@@ -14,8 +13,7 @@
       "niveau": 1,
       "puissance": 48,
       "pv": 60,
-      "defense": 45,
-      "image": "images/images-enemy/enemy2.png"
+      "defense": 45
     },
     {
       "nom": "Manzai",
@@ -23,8 +21,7 @@
       "niveau": 1,
       "puissance": 80,
       "pv": 50,
-      "defense": 95,
-      "image": "images/images-enemy/enemy3.png"
+      "defense": 95
     },
     {
       "nom": "Magireve",
@@ -32,8 +29,7 @@
       "niveau": 1,
       "puissance": 60,
       "pv": 60,
-      "defense": 60,
-      "image": "images/images-enemy/enemy4.png"
+      "defense": 60
     },
     {
       "nom": "Coupenotte",
@@ -41,8 +37,7 @@
       "niveau": 1,
       "puissance": 87,
       "pv": 46,
-      "defense": 60,
-      "image": "images/images-enemy/enemy5.png"
+      "defense": 60
     },
     {
       "nom": "Charibari",
@@ -50,8 +45,7 @@
       "niveau": 1,
       "puissance": 80,
       "pv": 72,
-      "defense": 49,
-      "image": "images/images-enemy/enemy6.png"
+      "defense": 49
     },
     {
       "nom": "Carapuce",
@@ -59,8 +53,7 @@
       "niveau": 1,
       "puissance": 48,
       "pv": 44,
-      "defense": 65,
-      "image": "images/images-enemy/enemy7.png"
+      "defense": 65
     },
     {
       "nom": "Poussacha",
@@ -68,8 +61,7 @@
       "niveau": 1,
       "puissance": 61,
       "pv": 40,
-      "defense": 54,
-      "image": "images/images-enemy/enemy8.png"
+      "defense": 54
     },
     {
       "nom": "Chochodile",
@@ -77,7 +69,6 @@
       "niveau": 1,
       "puissance": 45,
       "pv": 67,
-      "defense": 59,
-      "image": "images/images-enemy/enemy9.png"
+      "defense": 59
     }
   ]
