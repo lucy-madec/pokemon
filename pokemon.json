@@ -62,5 +62,37 @@
     "puissance": 70,
     "pv": 55,
     "defense": 45
+  },
+  {
+    "nom": "Etourvol",
+    "type": "vol",
+    "niveau": 1,
+    "puissance": 75,
+    "pv": 55,
+    "defense": 50
+  },
+  {
+    "nom": "Floravol",
+    "type": "plante",
+    "niveau": 1,
+    "puissance": 45,
+    "pv": 55,
+    "defense": 5
+  },
+  {
+    "nom": "Lainergie",
+    "type": "electrique",
+    "niveau": 1,
+    "puissance": 55,
+    "pv": 70,
+    "defense": 55
+  },
+  {
+    "nom": "Luxio",
+    "type": "electrique",
+    "niveau": 1,
+    "puissance": 85,
+    "pv": 60,
+    "defense": 49
   }
 ]
