@@ -8,11 +8,11 @@
     "defense": 53
   },
   {
-    "nom": "Manzai",
-    "type": "roche",
+    "nom": "Soporifix",
+    "type": "psy",
     "niveau": 1,
-    "puissance": 80,
-    "pv": 50,
-    "defense": 95
+    "puissance": 48,
+    "pv": 60,
+    "defense": 45
   }
 ]
