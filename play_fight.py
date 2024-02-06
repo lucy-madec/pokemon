@@ -470,7 +470,7 @@ class Play_Fight(Global):
             self.show_pv()
             self.display_name_pokemon()
             # Afficher les messages 
-            # self.message_start()
+            self.message_start()
             # self.message_fight()
             # self.message_run()
             # self.message_pokemon()
