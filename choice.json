@@ -1,18 +1,18 @@
 [
   {
-    "nom": "Evoli",
-    "type": "normal",
-    "niveau": 1,
-    "puissance": 55,
-    "pv": 55,
-    "defense": 50
-  },
-  {
-    "nom": "Carapuce",
+    "nom": "Tiplouf",
     "type": "eau",
     "niveau": 1,
-    "puissance": 48,
-    "pv": 44,
-    "defense": 65
+    "puissance": 51,
+    "pv": 53,
+    "defense": 53
+  },
+  {
+    "nom": "Magireve",
+    "type": "spectre",
+    "niveau": 1,
+    "puissance": 60,
+    "pv": 60,
+    "defense": 60
   }
 ]
