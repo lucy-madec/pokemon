@@ -25,7 +25,7 @@
   },
   {
     "nom": "Marcacrin",
-    "type": " glace",
+    "type": "glace",
     "niveau": 1,
     "puissance": 50,
     "pv": 50,
@@ -41,7 +41,7 @@
   },
   {
     "nom": "Medhyena",
-    "type": "tenebres",
+    "type": "tenebre",
     "niveau": 1,
     "puissance": 55,
     "pv": 35,

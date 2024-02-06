@@ -1,11 +1,11 @@
 [
   {
-    "nom": "Pikachu",
-    "type": "electrique",
+    "nom": "Evoli",
+    "type": "normal",
     "niveau": 1,
     "puissance": 55,
-    "pv": 35,
-    "defense": 40
+    "pv": 55,
+    "defense": 50
   },
   {
     "nom": "Carapuce",
