@@ -1,0 +1,18 @@
+[
+  {
+    "nom": "Evoli",
+    "type": "normal",
+    "niveau": 1,
+    "puissance": 55,
+    "pv": 55,
+    "defense": 50
+  },
+  {
+    "nom": "Carapuce",
+    "type": "eau",
+    "niveau": 1,
+    "puissance": 48,
+    "pv": 44,
+    "defense": 65
+  }
+]
