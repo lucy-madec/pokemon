@@ -1,11 +1,11 @@
 [
   {
-    "nom": "Evoli",
-    "type": "normal",
+    "nom": "Tiplouf",
+    "type": "eau",
     "niveau": 1,
-    "puissance": 55,
-    "pv": 55,
-    "defense": 50
+    "puissance": 51,
+    "pv": 53,
+    "defense": 53
   },
   {
     "nom": "Carapuce",
