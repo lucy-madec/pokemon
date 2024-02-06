@@ -1,0 +1,18 @@
+[
+  {
+    "nom": "Tiplouf",
+    "type": "eau",
+    "niveau": 1,
+    "puissance": 51,
+    "pv": 53,
+    "defense": 53
+  },
+  {
+    "nom": "Manzai",
+    "type": "roche",
+    "niveau": 1,
+    "puissance": 80,
+    "pv": 50,
+    "defense": 95
+  }
+]

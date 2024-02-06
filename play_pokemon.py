@@ -135,20 +135,30 @@ class Play_Pokemon(Global):
         pokemon_data = next((pokemon for pokemon in data if pokemon["nom"] == name), None)
 
         if pokemon_data:
-            with open('choix.json', 'w') as new_json_file:
+            with open('choice.json', 'w') as new_json_file:
                 json.dump([pokemon_data], new_json_file, indent=2)
         else:
             print(f"Pokemon {name} Non Trouvé")
             
     # Afficher bouton QUIT
     def button_quit(self):
-        self.rect_radius(5, self.white, 720, 10, 70, 25)
-        self.text_c1("QUIT", self.black, 733, 13)
-    
-    # Afficher bouton BACK
-    def button_menu(self):
-        self.rect_radius(5, self.white, 640, 10, 70, 25)
-        self.text_c1("MENU", self.black, 650, 13)
+        button_rect = pygame.Rect(720, 10, 70, 25)
+        if self.is_mouse_over_button(button_rect):
+            self.rect_radius(5, self.yellow, 720, 10, 70, 25)
+            self.text_c1("QUIT", self.black, 733, 13)
+        else:
+            self.rect_radius(5, self.white, 720, 10, 70, 25)
+            self.text_c1("QUIT", self.black, 733, 13)
+
+    # Afficher bouton MENU
+    def button_menu(self):  
+        button_rect = pygame.Rect(640, 10, 70, 25)
+        if self.is_mouse_over_button(button_rect):    
+            self.rect_radius(5, self.yellow, 640, 10, 70, 25)
+            self.text_c1("MENU", self.black, 650, 13)
+        else:
+            self.rect_radius(5, self.white, 640, 10, 70, 25)
+            self.text_c1("MENU", self.black, 650, 13)
 
     # Vérifier si souris au-dessus du bouton
     def is_mouse_over_button(self, button_rect):
@@ -171,9 +181,11 @@ class Play_Pokemon(Global):
                     self.play_pok_running = False
                 elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 
+                    # Bouton QUIT
                     if self.is_mouse_over_button(pygame.Rect(720, 10, 70, 25)):
                         pygame.quit()
                                          
+                    # Bouton MENU
                     if self.is_mouse_over_button(pygame.Rect(640, 10, 70, 25)):
                         print("menu")
                         self.play_pok_running = False                      
