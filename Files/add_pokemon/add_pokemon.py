@@ -1,5 +1,5 @@
-from global_def import Global
-from info_pokemon import Info_pokemon
+from Files.pygame.global_def import Global
+from Files.pokedex.info_pokemon import Info_pokemon
 import pygame
 import json
 class Add_Pokemon(Global):
@@ -17,21 +17,21 @@ class Add_Pokemon(Global):
         self.screen.blit(background, (0, 0))
 
     def read_json(self, name):
-        with open('add_json.json', 'r') as json_file:
+        with open('Files/add_pokemon/add_json.json', 'r') as json_file:
             data = json.load(json_file)
 
         if pokemon_data := next(
             (pokemon for pokemon in data if pokemon["nom"] == name), None
         ):
             try:
-                with open('pokemon.json', 'r') as dest_json_file:
+                with open('Files/pokedex/pokemon.json', 'r') as dest_json_file:
                     destination_data = json.load(dest_json_file)
             except FileNotFoundError:
                 destination_data = []
 
             destination_data.append(pokemon_data)
 
-            with open('pokemon.json', 'w') as new_json_file:
+            with open('Files/pokedex/pokemon.json', 'w') as new_json_file:
                 json.dump(destination_data, new_json_file, indent=2) 
 
     def page1(self): 
@@ -116,7 +116,7 @@ class Add_Pokemon(Global):
 
     # Afficher information pokémon depuis json
     def information(self,name_pokemon,x,y):
-        with open('add_json.json', 'r') as fichier:
+        with open('Files/add_pokemon/add_json.json', 'r') as fichier:
             donnees_pokemons = json.load(fichier)
 
         for pokemon in donnees_pokemons:

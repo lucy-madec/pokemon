@@ -1,5 +1,5 @@
-from global_def import Global
-from info_pokemon import Info_pokemon
+from Files.pygame.global_def import Global
+from Files.pokedex.info_pokemon import Info_pokemon
 import pygame
 import json
 
@@ -53,7 +53,7 @@ class Pokedex(Global):
         pygame.draw.polygon(self.screen, self.blue, ((30,410),(50,390),(50,430)), 7)
 
         # Récuperer nom pokemon du pokemon.json
-        with open('pokemon.json', 'r') as json_file:
+        with open('Files/pokedex/pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
     

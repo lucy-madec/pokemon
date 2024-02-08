@@ -1,7 +1,7 @@
-from global_def import Global
-from play_pokemon import Play_Pokemon
-from add_pokemon import Add_Pokemon
-from pokedex import Pokedex
+from Files.pygame.global_def import Global
+from Files.play.play_pokemon import Play_Pokemon
+from Files.add_pokemon.add_pokemon import Add_Pokemon
+from Files.pokedex.pokedex import Pokedex
 import pygame, time, sys
 
 class Menu(Global): 

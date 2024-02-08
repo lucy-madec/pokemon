@@ -1,4 +1,4 @@
-from global_def import Global
+from Files.pygame.global_def import Global
 import pygame
 
 class Info_pokemon(Global):

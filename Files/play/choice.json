@@ -1,0 +1,18 @@
+[
+  {
+    "nom": "Etourvol",
+    "type": "vol",
+    "niveau": 1,
+    "puissance": 75,
+    "pv": 55,
+    "defense": 50
+  },
+  {
+    "nom": "Poussacha",
+    "type": "plante",
+    "niveau": 1,
+    "puissance": 61,
+    "pv": 40,
+    "defense": 54
+  }
+]
