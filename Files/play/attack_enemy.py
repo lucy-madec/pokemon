@@ -1,4 +1,4 @@
-from type_pok import Type
+from Files.play.type_pok import Type
 
 class Attack_enemy(Type):
     

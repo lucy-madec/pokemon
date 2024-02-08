@@ -19,13 +19,13 @@ class Global:
         self.pink = "#f8a8b0"
         self.red = "#d80001"
         self.green2 = "#61e002"
-        self.police_c1 = pygame.font.Font("Pokemon Classic.ttf",10)
-        self.police_c2 = pygame.font.Font("Pokemon Classic.ttf",15)  
-        self.police_c3 = pygame.font.Font("Pokemon Classic.ttf",50)
-        self.police_c4 = pygame.font.Font("Pokemon Classic.ttf",5)  
-        self.police_c5 = pygame.font.Font("Pokemon Classic.ttf",15)    
-        self.police_c6 = pygame.font.Font("Pokemon Classic.ttf", 12)    
-        self.police_p1 = pygame.font.Font("Pixeled.ttf", 16)
+        self.police_c1 = pygame.font.Font("Files/pygame/Pokemon Classic.ttf",10)
+        self.police_c2 = pygame.font.Font("Files/pygame/Pokemon Classic.ttf",15)  
+        self.police_c3 = pygame.font.Font("Files/pygame/Pokemon Classic.ttf",50)
+        self.police_c4 = pygame.font.Font("Files/pygame/Pokemon Classic.ttf",5)  
+        self.police_c5 = pygame.font.Font("Files/pygame/Pokemon Classic.ttf",15)    
+        self.police_c6 = pygame.font.Font("Files/pygame/Pokemon Classic.ttf", 12)    
+        self.police_p1 = pygame.font.Font("Files/pygame/Pixeled.ttf", 16)
         self.lst_name = []
         
 #def text  
