@@ -1,5 +1,5 @@
-from global_def import Global
-from play_fight import Play_Fight
+from Files.pygame.global_def import Global
+from Files.play.play_fight import Play_Fight
 import pygame
 import json
 
@@ -37,7 +37,7 @@ class Play_Pokemon(Global):
         pygame.draw.polygon(self.screen, self.blue, ((50,90),(30,110),(50,130)), 7)
 
         # Récuperer nom pokemon du pokemon.json
-        with open('pokemon.json', 'r') as json_file:
+        with open('Files/pokedex/pokemon.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
 
@@ -129,13 +129,13 @@ class Play_Pokemon(Global):
         pygame.display.flip()
 
     def pokemon_choose(self, name):
-        with open('pokemon.json', 'r') as json_file:
+        with open('Files/pokedex/pokemon.json', 'r') as json_file:
             data = json.load(json_file)
 
         pokemon_data = next((pokemon for pokemon in data if pokemon["nom"] == name), None)
 
         if pokemon_data:
-            with open('choice.json', 'w') as new_json_file:
+            with open('Files/play/choice.json', 'w') as new_json_file:
                 json.dump([pokemon_data], new_json_file, indent=2)
         else:
             print(f"Pokemon {name} Non Trouvé")

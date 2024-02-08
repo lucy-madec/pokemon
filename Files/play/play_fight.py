@@ -1,9 +1,9 @@
-from global_def import Global
-from attack_player import Attack_player
-from attack_enemy import Attack_enemy
-from cloud import Cloud
-from pokedex import Pokedex
-from bag import Bag
+from Files.pygame.global_def import Global
+from Files.play.attack_player import Attack_player
+from Files.play.attack_enemy import Attack_enemy
+from Files.play.cloud import Cloud
+from Files.pokedex.pokedex import Pokedex
+from Files.bag.bag import Bag
 import random
 import pygame
 import json
@@ -69,7 +69,7 @@ class Play_Fight(Global):
 
     # Afficher pokemon choisit pour fight
     def choose(self):
-        with open('choice.json', 'r') as json_file:
+        with open('Files/play/choice.json', 'r') as json_file:
             data = json.load(json_file)
         name_pokemons = [pokemon["nom"] for pokemon in data]
         
@@ -207,7 +207,7 @@ class Play_Fight(Global):
 
     # Afficher nom Pokemon player
     def display_name_pokemon(self):
-        with open('choice.json', 'r') as choix_file:
+        with open('Files/play/choice.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
 
         name_pokemons = [pokemon["nom"] for pokemon in choix_data]
@@ -225,26 +225,26 @@ class Play_Fight(Global):
 
     # Lien au fichier JSON
     def read_json(self, name):
-        with open('add_json.json', 'r') as json_file:
+        with open('Files/add_pokemon/add_json.json', 'r') as json_file:
             data = json.load(json_file)
 
         if pokemon_data := next(
             (pokemon for pokemon in data if pokemon["nom"] == name), None
         ):
             try:
-                with open('pokemon.json', 'r') as dest_json_file:
+                with open('Files/pokedex/pokemon.json', 'r') as dest_json_file:
                     destination_data = json.load(dest_json_file)
             except FileNotFoundError:
                 destination_data = []
 
             destination_data.append(pokemon_data)
 
-            with open('pokemon.json', 'w') as new_json_file:
+            with open('Files/pokedex/pokemon.json', 'w') as new_json_file:
                 json.dump(destination_data, new_json_file, indent=2)
 
     # Choisir aléatoirement pokemon ennemi  
     def enemy(self):
-        with open('enemy.json', 'r') as json_file:
+        with open('Files/play/enemy.json', 'r') as json_file:
             data = json.load(json_file)
 
         self.name_pokemons = [pokemon["nom"] for pokemon in data]
@@ -268,19 +268,19 @@ class Play_Fight(Global):
             "defense": self.defense_rival
         }
         try:
-            with open('choice.json', 'r') as choix_file:
+            with open('Files/play/choice.json', 'r') as choix_file:
                 choix_data = json.load(choix_file)
         except FileNotFoundError:
             choix_data = []
 
         choix_data.append(self.nouveau_pokemon)
 
-        with open('choice.json', 'w') as choix_file:
+        with open('Files/play/choice.json', 'w') as choix_file:
             json.dump(choix_data, choix_file, indent=2)
         
     # Récupérer info pokemon depuis choice.json
     def information(self):
-        with open('choice.json', 'r') as choix_file:
+        with open('Files/play/choice.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
         if choix_data:
             pokemon_dict = choix_data[0]
@@ -300,7 +300,7 @@ class Play_Fight(Global):
 
     # Afficher pv texte
     def show_pv(self):
-        with open('choice.json', 'r') as choix_file:
+        with open('Files/play/choice.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
 
         if choix_data:
@@ -321,7 +321,7 @@ class Play_Fight(Global):
     # Afficher pokemon ennemi
     def rival(self):
         self.information()
-        with open('choice.json', 'r') as choix_file:
+        with open('Files/play/choice.json', 'r') as choix_file:
             choix_data = json.load(choix_file)
         name_pokemons = [pokemon["nom"] for pokemon in choix_data]
         for name in name_pokemons:
