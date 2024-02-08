@@ -62,21 +62,5 @@
     "puissance": 70,
     "pv": 55,
     "defense": 45
-  },
-  {
-    "nom": "Magicarpe",
-    "type": "eau",
-    "niveau": 1,
-    "puissance": 10,
-    "pv": 20,
-    "defense": 55
-  },
-  {
-    "nom": "Etourvol",
-    "type": "vol",
-    "niveau": 1,
-    "puissance": 75,
-    "pv": 55,
-    "defense": 50
   }
 ]
