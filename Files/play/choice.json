@@ -8,11 +8,11 @@
     "defense": 50
   },
   {
-    "nom": "Magireve",
-    "type": "spectre",
+    "nom": "Spectrum",
+    "type": "poison",
     "niveau": 1,
-    "puissance": 60,
-    "pv": 60,
-    "defense": 60
+    "puissance": 50,
+    "pv": 45,
+    "defense": 45
   }
 ]
